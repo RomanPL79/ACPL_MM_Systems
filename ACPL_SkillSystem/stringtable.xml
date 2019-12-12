@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ACPL_Setskill">
+	<Package name="ACPL_Setskill">
+        <Key ID="STR_ACPL_SkillSystem_empty">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_name">
+            <Original>ACPL SkillSystem Settings</Original>
+            <English>ACPL SkillSystem Settings</English>
+            <Polish>ACPL SkillSystem Ustawienia</Polish>
+            <Russian>ACPL SkillSystem Настройки</Russian>
+        </Key>
+        <Key ID="STR_ACPL_SkillSystem_category">
+            <Original>ACPL SkillSystem Modules</Original>
+            <English>ACPL SkillSystem Modules</English>
+            <Polish>ACPL SkillSystem Moduły</Polish>
+            <Russian>ACPL SkillSystem Модули</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_exclude_module">
+            <Original>ACPL Skill Exclude Units Module</Original>
+            <English>ACPL Skill Exclude Units Module</English>
+            <Polish>ACPL Moduł Wykluczenia Jednostek</Polish>
+            <Russian>ACPL Модуль Исключения Единиц</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_exclude_module_desc">
+            <Original>This module exclude every synchronized unit from SkillSystem</Original>
+            <English>This module exclude every synchronized unit from SkillSystem</English>
+            <Polish>Ten moduł wyklucza każdą zsynchronizowaną jednoskę z SkillSystem</Polish>
+            <Russian>Этот модуль исключает каждую синхронизированную единицу из SkillSystem</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module">
+            <Original>ACPL Skill Settings Module</Original>
+            <English>ACPL Skill Settings Module</English>
+            <Polish>ACPL Moduł Ustawień Umiejętności</Polish>
+            <Russian>ACPL Модуль перезагрузки навыков</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_reload_module">
+            <Original>ACPL Reload Skill Module</Original>
+            <English>ACPL Reload Skill Module</English>
+            <Polish>ACPL Moduł Restartu Umiejętności</Polish>
+            <Russian>ACPL Модуль Настройки Навыков</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_desc">
+            <Original>Module which sets AI's skills presets</Original>
+            <English>Module which sets AI's skills presets</English>
+            <Polish>Moduł, który ustawia wzorce umiejętności SI</Polish>
+            <Russian>Модуль, который устанавливает пресеты навыков ИИ</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_reload_module_desc">
+            <Original>Module resets skill settings of every AI on map</Original>
+            <English>Module resets skill settings of every AI on map</English>
+            <Polish>Moduł resetuje ustawienia umiejętności wszystkich SI na mapie</Polish>
+            <Russian>Модуль сбрасывает настройки Навыков каждого ИИ на карте</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_reload_func_desc">
+            <Original>Resets skill settings of every AI on map</Original>
+            <English>Resets skill settings of every AI on map</English>
+            <Polish>Resetuje ustawienia umiejętności wszystkich SI na mapie</Polish>
+            <Russian>Сбрасывает настройки Навыков каждого ИИ на карте</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_enable">
+            <Original>Enable skill system</Original>
+            <English>Enable skill system</English>
+            <Polish>Włączyć skill system</Polish>
+            <Russian>Включить систему навыков</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_enable">
+            <Original>Run skill reload on all units?</Original>
+            <English>Run skill reload on all units?</English>
+            <Polish>Uruchomić przeładowanie umiejętności na wszystkich jednostkach?</Polish>
+            <Russian>Запустить перезагрузку навыков на всех юнитах?</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_WEST_enable">
+            <Original>Enable setting skill for West side</Original>
+            <English>Enable setting skill for West side</English>
+            <Polish>Włączyć ustawianie umiejętności dla strony Zachodniej</Polish>
+            <Russian>Включить настройку навыка для западной стороны</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_EAST_enable">
+            <Original>Enable setting skill for East side</Original>
+            <English>Enable setting skill for East side</English>
+            <Polish>Włączyć ustawianie umiejętności dla strony Wschodniej</Polish>
+            <Russian>Включить настройку навыка для восточной стороны</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_RESISTANCE_enable">
+            <Original>Enable setting skill for Resistance side</Original>
+            <English>Enable setting skill for Resistance side</English>
+            <Polish>Włączyć ustawianie umiejętności dla strony Partyzanckiej</Polish>
+            <Russian>Включить настройку навыка для стороны Сопротивления</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Random">
+            <Original>Modifier of average level of skill (closer to 1 = higher to maximal level of skill)</Original>
+            <English>Modifier of average level of skill (closer to 1 = higher to maximal level of skill)</English>
+            <Polish>Modifikator średniej wartości umiejętności (bliżej 1 = bliżej maksymalnego poziomu umiejętności)</Polish>
+            <Russian>Модификатор среднего уровня навыка (ближе к 1 = ближе к максимальному уровню навыка)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Acc">
+            <Original>Accuracy skill preset (minimal, maximal)</Original>
+            <English>Accuracy skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu celności (minimalny, maksymalny)</Polish>
+            <Russian>Пресет навыка точности (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Shake">
+            <Original>Aim shake skill preset (minimal, maximal)</Original>
+            <English>Aim shake skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu drgania rąk (minimalny, maksymalny)</Polish>
+            <Russian>Пресет навыка встряхивания (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Speed">
+            <Original>Aim speed skill preset (minimal, maximal)</Original>
+            <English>Aim speed skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec dla poziomu szybkości celowania (minimalna, maksymalna)</Polish>
+            <Russian>Пресет навыка скорости стремления (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Spot">
+            <Original>Spotting distance skill preset (minimal, maximal)</Original>
+            <English>Spotting distance skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu odlegości wykrywania (minimalny, maksymalny)</Polish>
+            <Russian>Пресет навыка споттинга (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Time">
+            <Original>Spotting time skill preset (minimal, maximal)</Original>
+            <English>Spotting time skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu szybkości wykrywania (minimalny, maksymalny)</Polish>
+            <Russian>Пресет навыка скорости споттинга (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_General">
+            <Original>General skill preset (minimal, maximal)</Original>
+            <English>General speed skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu umiejętności ogólnych (minimalny, maksymalny)</Polish>
+            <Russian>Пресет общего навыка (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Courage">
+            <Original>Courage preset (minimal, maximal)</Original>
+            <English>Courage preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu odwagi (minimalny, maksymalny)</Polish>
+            <Russian>Пресет смелости (минимальная, максимальная)</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_settings_module_Reload">
+            <Original>Reloading speed skill preset (minimal, maximal)</Original>
+            <English>Reloading speed skill preset (minimal, maximal)</English>
+            <Polish>Wzorzec poziomu umiejętności przeładowywania (minimalny, maksymalny)</Polish>
+            <Russian>Пресет навыка перезарядки (минимальная, максимальная)</Russian>
+        </Key>
+	</Package>
+</Project>
