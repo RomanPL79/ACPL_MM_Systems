@@ -4,6 +4,11 @@ if (!isserver) exitwith {};
 
 //Setting default variables for skill
 
+//If msc is enabled then copy its settings instead of module's settings
+if (missionNamespace getVariable ["ACPL_SkillSystem_msc", false]) exitwith {
+	[] call ACPL_SkillSystem_fnc_mscCopy;
+};
+
 //WEST
 ACPL_SkillSystem_west_random = parseNumber ACPL_SkillSystem_west_random_str;
 

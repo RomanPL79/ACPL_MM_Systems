@@ -17,5 +17,8 @@ class ACPL_SkillSystem {
 		
 		//[] call ACPL_SkillSystem_fnc_Exclude
 		class Exclude {};
+		
+		//[] call ACPL_SkillSystem_fnc_mscCopy
+		class mscCopy {};
 	};
 };

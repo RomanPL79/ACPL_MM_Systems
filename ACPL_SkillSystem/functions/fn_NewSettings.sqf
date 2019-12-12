@@ -51,6 +51,15 @@ ACPL_SkillSystem_Enabled_Resistance = _resistance_enable;
 
 //Setting default variables for skill
 
+//If msc is enabled then copy its settings instead of module's settings
+if (missionNamespace getVariable ["ACPL_SkillSystem_msc", false]) exitwith {
+	[] call ACPL_SkillSystem_fnc_mscCopy;
+	
+	if (_reload) then {
+		[] call ACPL_SkillSystem_fnc_ReloadAll;
+	};
+};
+
 //WEST
 ACPL_SkillSystem_west_random = _west_random;
 
