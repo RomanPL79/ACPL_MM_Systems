@@ -2,7 +2,8 @@ class CfgPatches {
   class ACPL_SkillSystem {
     units[] = {
 		ACPL_SkillSystem_settings_module,
-		ACPL_SkillSystem_reset_module
+		ACPL_SkillSystem_reset_module,
+		ACPL_SkillSystem_exclude_module
 	};
     weapons[] = {};
     requiredVersion = 1.82;
@@ -12,8 +13,8 @@ class CfgPatches {
 		"cba_main"
 	};
 	
-    version = 19;
-    versionStr = "BETA-1";
+    version = 22;
+    versionStr = "BETA-2";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
@@ -25,12 +26,15 @@ class CfgPatches {
 class CfgFunctions
 {
 	#include "cfgFunctions.hpp"
-	class ACPL_Initialization
+	class ACPL_SkillSystem_Launch
 	{
-		class Init
+		class ACPL_SkillSystem_Initialization
 		{
-			file = "\Init.sqf";
-			preInit = 1;
+			class Init
+			{
+				file = "\ACPL_SkillSystem\functions\Init.sqf";
+				preInit = 1;
+			};
 		};
 	};
 };
