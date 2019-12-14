@@ -20,5 +20,8 @@ class ACPL_SkillSystem {
 		
 		//[] call ACPL_SkillSystem_fnc_mscCopy
 		class mscCopy {};
+		
+		//[] call ACPL_SkillSystem_fnc_CustomSettings
+		class CustomSettings {};
 	};
 };

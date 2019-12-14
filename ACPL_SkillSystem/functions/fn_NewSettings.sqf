@@ -37,6 +37,8 @@ params [
 
 if (!isserver) exitwith {};
 
+WaitUntil {sleep 1;time > 5};
+
 private _units = synchronizedObjects _logic;
 
 _excluded = _excluded + _units;
@@ -50,15 +52,6 @@ ACPL_SkillSystem_Enabled_East = _east_enable;
 ACPL_SkillSystem_Enabled_Resistance = _resistance_enable;
 
 //Setting default variables for skill
-
-//If msc is enabled then copy its settings instead of module's settings
-if (missionNamespace getVariable ["ACPL_SkillSystem_msc", false]) exitwith {
-	[] call ACPL_SkillSystem_fnc_mscCopy;
-	
-	if (_reload) then {
-		[] call ACPL_SkillSystem_fnc_ReloadAll;
-	};
-};
 
 //WEST
 ACPL_SkillSystem_west_random = _west_random;
@@ -100,4 +93,9 @@ ACPL_SkillSystem_Excluded = _excluded;
 
 if (_reload) then {
 	[] call ACPL_SkillSystem_fnc_ReloadAll;
+} else {
+	if (missionNamespace getVariable ["ACPL_SkillSystem_FirstChange", false]) then {} else {
+		[] call ACPL_SkillSystem_fnc_ReloadAll;
+		ACPL_SkillSystem_FirstChange = true;
+	};
 };

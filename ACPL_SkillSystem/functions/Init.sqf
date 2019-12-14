@@ -13,7 +13,7 @@ ACPL_SkillSystem_Excluded = [];
 
 [] spawn {
 
-	WaitUntil {sleep 1;time > 11};
+	WaitUntil {sleep 1;time > 4};
 	
 	if (missionNamespace getVariable ["acpl_msc", false]) then {
 		publicvariable "acpl_msc";

@@ -37,5 +37,3 @@ ACPL_SkillSystem_resistance_time = acpl_msc_resistance_time;
 ACPL_SkillSystem_resistance_general = acpl_msc_resistance_general;
 ACPL_SkillSystem_resistance_courage = acpl_msc_resistance_courage;
 ACPL_SkillSystem_resistance_reload = acpl_msc_resistance_reload;
-
-ACPL_SkillSystem_firstconvertion = true;

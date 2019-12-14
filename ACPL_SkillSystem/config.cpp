@@ -3,7 +3,8 @@ class CfgPatches {
     units[] = {
 		ACPL_SkillSystem_settings_module,
 		ACPL_SkillSystem_reset_module,
-		ACPL_SkillSystem_exclude_module
+		ACPL_SkillSystem_exclude_module,
+		ACPL_SkillSystem_custom_settings_module
 	};
     weapons[] = {};
     requiredVersion = 1.82;
@@ -13,15 +14,14 @@ class CfgPatches {
 		"cba_main"
 	};
 	
-    version = 22;
-    versionStr = "BETA-2";
+    version = 23;
+    versionStr = "BETA-3";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
 };
 
 #include "cfgFactionClasses.hpp"
-#include "BIS_AddonInfo.hpp"
 
 class CfgFunctions
 {

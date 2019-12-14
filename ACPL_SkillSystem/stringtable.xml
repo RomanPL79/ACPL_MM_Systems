@@ -47,6 +47,12 @@
             <Polish>ACPL Moduł Ustawień Umiejętności</Polish>
             <Russian>ACPL Модуль перезагрузки навыков</Russian>
         </Key>
+		<Key ID="STR_ACPL_SkillSystem_custom_settings_module">
+            <Original>ACPL Custom Skill Settings Module</Original>
+            <English>ACPL Custom Skill Settings Module</English>
+            <Polish>ACPL Moduł Własnych Ustawień Umiejętności</Polish>
+            <Russian>ACPL Модуль пользовательские перезагрузки навыков</Russian>
+        </Key>
 		<Key ID="STR_ACPL_SkillSystem_reload_module">
             <Original>ACPL Reload Skill Module</Original>
             <English>ACPL Reload Skill Module</English>
@@ -58,6 +64,12 @@
             <English>Module which sets AI's skills presets</English>
             <Polish>Moduł, który ustawia wzorce umiejętności SI</Polish>
             <Russian>Модуль, который устанавливает пресеты навыков ИИ</Russian>
+        </Key>
+		<Key ID="STR_ACPL_SkillSystem_custom_settings_module_desc">
+            <Original>Module which sets skills for synchronized AIs with defined in module presets</Original>
+            <English>Module which sets skills for synchronized AIs with defined in module presets</English>
+            <Polish>Moduł, który ustawia podane wzorce umiejętności dla zsynchronizowanych SI</Polish>
+            <Russian>Модуль, который устанавливает навыки для синхронизированных ИИ с определенными в настройках модуля</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_reload_module_desc">
             <Original>Module resets skill settings of every AI on map</Original>
