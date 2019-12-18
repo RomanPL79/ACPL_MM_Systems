@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ACPL_Setskill">
+	<Package name="ACPL_Setskill">
+        <Key ID="STR_ACPL_SkillSystem_empty">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet">
+            <Original>ACPL LooseHelmet</Original>
+            <English>ACPL LooseHelmet</English>
+            <Polish>ACPL LooseHelmet</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Enable">
+            <Original>Enable ACPL LooseHelmet</Original>
+            <English>Enable ACPL LooseHelmets</English>
+            <Polish>Aktywuj ACPL LooseHelmet</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Enable_Desc">
+            <Original>Activate system ACPL LooseHelmet, which allow to lose your weapon or helmet after being shot</Original>
+            <English>Activate system ACPL LooseHelmet, which allow to lose your weapon or helmet after being shot</English>
+            <Polish>Aktywuj system ACPL LooseHelmet, który pozwala na utracenie broni lub hełmu po postrzale</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_HelmetChance">
+            <Original>ACPL LooseHelmet</Original>
+            <English>ACPL LooseHelmet</English>
+            <Polish>ACPL LooseHelmet</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_HelmetChance_desc">
+            <Original>ACPL LooseHelmet</Original>
+            <English>ACPL LooseHelmet</English>
+            <Polish>ACPL LooseHelmet</Polish>
+        </Key>
+	</Package>
+</Project>
