@@ -14,8 +14,8 @@ class CfgPatches {
 		"cba_main"
 	};
 	
-    version = 23;
-    versionStr = "BETA-3";
+    version = 24;
+    versionStr = "BETA-4";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
