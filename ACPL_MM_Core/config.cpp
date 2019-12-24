@@ -12,7 +12,13 @@ class CfgPatches {
   };
 };
 
+#include cfgFactionClasses.hpp
+
 class CfgFunctions
 {
 	#include "cfgFunctions.hpp"
+};
+
+class CfgVehicles {
+	#include "cfgVehicles.hpp"
 };

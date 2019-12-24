@@ -5,5 +5,8 @@ class ACPL_LooseHelmet {
 		
 		//[] call ACPL_MM_Core_fnc_DoMove;
 		class DoMove {};
+		
+		//[] spawn ACPL_MM_Core_fnc_WeatherLoop;
+		class WeatherLoop {};
 	};
 }
