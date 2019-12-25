@@ -29,6 +29,7 @@ class ACPL_LooseHelmet {
 	{
 		file = "ACPL_LooseHelmet\FSMS";
 		
+		//[] spawn ACPL_LooseHelmet_fnc_PickUp;
 		class PickUp
 		{
 			ext = ".fsm";

@@ -98,7 +98,13 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				};
 			};
 		};
-			
+		
+		if (_nvg == "") then {
+			[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUp;
+		} else {
+			[_unit, _weaponholder, "HELMET", _helmet, _weaponHolder0, _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
+		};
+		
 		_moving = true;
 		
 		while {_moving} do {
@@ -163,6 +169,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		_dummy0 setVelocity [(random 1), (random 1), (random 3)];
 		_dummy0 addTorque (_dummy vectorModelToWorld [(random 5), (random 1), 0]);
+		
+		[_unit, _weaponHolder0, "NVG", _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
 		
 		[_dummy0, _weaponHolder0] spawn {
 			params ["_dummy", "_weaponholder"];

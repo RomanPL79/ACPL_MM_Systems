@@ -10,7 +10,8 @@ class CfgPatches {
 		"cba_settings",
 		"cba_main",
 		"A3_Structures_F",
-		"ace_interaction"
+		"ace_interaction",
+		"ACPL_MM_Core"
 	};
 	
     version = 2;

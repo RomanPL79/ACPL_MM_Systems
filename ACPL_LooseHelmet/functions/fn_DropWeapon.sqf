@@ -94,6 +94,8 @@ if (alive _unit) then {
 			};
 		};
 		
+		[_unit, _weaponholder, "GUN", _weapon] spawn ACPL_LooseHelmet_fnc_PickUp;
+		
 		detach _weaponHolder_dummy;
 		_weaponHolder_dummy enableSimulationGlobal true;
 		_pos = getposATL _dummy;
