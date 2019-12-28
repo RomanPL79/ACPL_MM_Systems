@@ -16,8 +16,8 @@ class CfgPatches {
 		"ace_common"
 	};
 	
-    version = 26;
-    versionStr = "BETA-5";
+    version = 27;
+    versionStr = "BETA-6";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };

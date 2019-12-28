@@ -5,8 +5,8 @@ class CfgPatches {
     requiredVersion = 1.82;
     requiredAddons[] = {};
 	
-    version = 1;
-    versionStr = "BETA-1";
+    version = 2;
+    versionStr = "BETA-2";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
