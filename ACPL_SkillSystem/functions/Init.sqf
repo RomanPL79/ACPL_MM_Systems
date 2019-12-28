@@ -23,3 +23,7 @@ ACPL_SkillSystem_Excluded = [];
 	};
 
 };
+
+//load settings from cba settings
+
+[] call ACPL_SkillSystem_fnc_CBAsettings_changed;

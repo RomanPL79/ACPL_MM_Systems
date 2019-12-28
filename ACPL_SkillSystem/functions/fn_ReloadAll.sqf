@@ -4,4 +4,4 @@ if (!isserver) exitwith {};
 
 {
 	[_x] call ACPL_SkillSystem_fnc_SetSkill;
-} foreach allunits;
+} foreach (allunits - _excluded);

@@ -1,5 +1,5 @@
-class ACPL_LooseHelmet {
-	tag = "ACPL_SkillSystem";
+class ACPL_MM_Core {
+	tag = "ACPL_MM_Core";
 	class Functions {
 		file = "ACPL_MM_Core\functions";
 		

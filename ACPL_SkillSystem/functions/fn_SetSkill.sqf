@@ -1,7 +1,5 @@
 params ["_unit"];
 
-private _side = side _unit;
-
 if (!isserver) exitwith {};
 
 private _random = 1;
@@ -17,7 +15,13 @@ private _reload = 1;
 WaitUntil {sleep 1;missionNamespace getVariable ["ACPL_SkillSystem_firstconvertion", false]};
 WaitUntil {sleep 1;time > 5};
 
+private _side = side _unit;
+
 if (ACPL_SkillSystem_Enabled) then {
+	
+	//Checking is unit in excluded list
+	if (_unit in ACPL_SkillSystem_Excluded) exitwith {};
+	
 	//Loading preset of skill depending on side
 	
 	if (_side == WEST) then {

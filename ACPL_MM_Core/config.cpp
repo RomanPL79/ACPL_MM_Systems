@@ -12,7 +12,7 @@ class CfgPatches {
   };
 };
 
-#include cfgFactionClasses.hpp
+#include "cfgFactionClasses.hpp"
 
 class CfgFunctions
 {

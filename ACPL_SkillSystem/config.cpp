@@ -11,14 +11,24 @@ class CfgPatches {
     requiredAddons[] = {
 		"A3_Characters_F",
 		"cba_settings",
-		"cba_main"
+		"cba_main",
+		"cba_common",
+		"ace_common"
 	};
 	
-    version = 24;
-    versionStr = "BETA-4";
+    version = 26;
+    versionStr = "BETA-5";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
+};
+
+class Extended_PreInit_EventHandlers
+{
+	class ACPL_SkillSystem
+	{
+		init="call compile preProcessFileLineNumbers 'ACPL_SkillSystem\cba_settings.sqf'";
+	};
 };
 
 #include "cfgFactionClasses.hpp"
@@ -45,29 +55,8 @@ class CfgVehicles {
 };
 
 class Extended_InitPost_EventHandlers {
-    class CAManBase;
-	class SoldierWB: CAManBase {
-        class ACPL_SkillSystem_CAManBase_W_initpost_eh {
-            init = "params ['_entity'];[_entity] spawn ACPL_SkillSystem_fnc_SetSkill;";
-        };
+	class Man;
+	class CAManBase: Man {
+		init = "params ['_unit'];[_unit] spawn ACPL_SkillSystem_fnc_SetSkill;";
     };
-	class SoldierEB: CAManBase {
-        class ACPL_SkillSystem_CAManBase_E_initpost_eh {
-            init = "params ['_entity'];[_entity] spawn ACPL_SkillSystem_fnc_SetSkill;";
-        };
-    };
-	class SoldierGB: CAManBase {
-        class ACPL_SkillSystem_CAManBase_G_initpost_eh {
-            init = "params ['_entity'];[_entity] spawn ACPL_SkillSystem_fnc_SetSkill;";
-        };
-    };
-};
-
-//Load CBA Addon Settings
-class Extended_PreInit_EventHandlers
-{
-	class ACPL_SkillSystem_CBAsettings
-	{
-		init="call compile preProcessFileLineNumbers '\ACPL_SkillSystem\cba_settings.sqf'";
-	};
 };

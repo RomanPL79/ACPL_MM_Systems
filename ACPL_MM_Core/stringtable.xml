@@ -42,70 +42,105 @@
             <English>The closer to 1 then values of parameters are closer to he highest value, numbers only</English>
 			<Polish>Im bli¿ej do 1, tym wartoœci parametrów bêd¹ bli¿sze najwy¿szej wartoœci, tylko wartoœci liczbowe</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_changetime">
-			<Original>Change time</Original>
-            <English>Change time</English>
-			<Polish>Czas zmiany</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_changetime_min">
+			<Original>Change time (min)</Original>
+            <English>Change time (min)</English>
+			<Polish>Czas zmiany (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_changetime_max">
+			<Original>Change time (max)</Original>
+            <English>Change time (max)</English>
+			<Polish>Czas zmiany (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_changetime_desc">
 			<Original>How often weather is calculated, numbers only written in manner: [highest, lowest]</Original>
             <English>How often weather is calculated, numbers only written in manner: [highest, lowest]</English>
 			<Polish>Jak czêsto obliczana jest pogoda, tylko wartoœci liczbowe zapisane w sposób: [najwy¿szy, najni¿szy]</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_overcast">
-			<Original>Overcast</Original>
-            <English>Overcast</English>
-			<Polish>Zachmurzenie</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_overcast_min">
+			<Original>Overcast (min)</Original>
+            <English>Overcast (min)</English>
+			<Polish>Zachmurzenie (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_overcast_max">
+			<Original>Overcast (max)</Original>
+            <English>Overcast (max)</English>
+			<Polish>Zachmurzenie (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_overcast_desc">
 			<Original>Values for overcast parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for overcast parameter, numbers only written in manner: [highest, lowest]</English>
 			<Polish>Wartoœci dla parametru zachmurzenia, tylko wartoœci liczbowe zapisane w sposób: [najwy¿szy, najni¿szy]</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_rain">
-			<Original>Rain</Original>
-            <English>Rain</English>
-			<Polish>Deszcz</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_rain_min">
+			<Original>Rain (min)</Original>
+            <English>Rain (min)</English>
+			<Polish>Deszcz (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_rain_max">
+			<Original>Rain (max)</Original>
+            <English>Rain (max)</English>
+			<Polish>Deszcz (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_rain_desc">
 			<Original>Values for rain parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for rain parameter, numbers only written in manner: [highest, lowest]</English>
 			<Polish>Wartoœci dla parametru deszczu, tylko wartoœci liczbowe zapisane w sposób: [najwy¿szy, najni¿szy]</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_fog">
-			<Original>Fog</Original>
-            <English>Fog</English>
-			<Polish>Mg³a</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_fog_min">
+			<Original>Fog (min)</Original>
+            <English>Fog (min)</English>
+			<Polish>Mg³a (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_fog_max">
+			<Original>Fog (max)</Original>
+            <English>Fog (max)</English>
+			<Polish>Mg³a (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fog_desc">
 			<Original>Values for fog parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for fog parameter, numbers only written in manner: [highest, lowest]</English>
 			<Polish>Wartoœci dla parametru mg³y, tylko wartoœci liczbowe zapisane w sposób: [najwy¿szy, najni¿szy]</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay">
-			<Original>Fog density</Original>
-            <English>Fog density</English>
-			<Polish>Gêstoœæ mg³y</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay_min">
+			<Original>Fog density (min)</Original>
+            <English>Fog density (min)</English>
+			<Polish>Gêstoœæ mg³y (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay_max">
+			<Original>Fog density (max)</Original>
+            <English>Fog density (max)</English>
+			<Polish>Gêstoœæ mg³y (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay_desc">
 			<Original>Values for fog density parameter (from -1 to 1), numbers only written in manner: [highest, lowest]</Original>
             <English>Values for fog density parameter (from -1 to 1), numbers only written in manner: [highest, lowest]</English>
 			<Polish>Wartoœci dla parametru gêstoœci mg³y (od -1 do 1), tylko wartoœci liczbowe zapisane w sposób: [najwy¿szy, najni¿szy]</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase">
-			<Original>Fog altitude</Original>
-            <English>Fog altitude</English>
-			<Polish>Wysokoœæ mg³y</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase_min">
+			<Original>Fog altitude (min)</Original>
+            <English>Fog altitude (min)</English>
+			<Polish>Wysokoœæ mg³y (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase_max">
+			<Original>Fog altitude (max)</Original>
+            <English>Fog altitude (max)</English>
+			<Polish>Wysokoœæ mg³y (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase_desc">
 			<Original>Values for fog altitude parameter (from -5000 to 5000), numbers only written in manner: [highest, lowest]</Original>
             <English>Values for fog altitude parameter (from -5000 to 5000), numbers only written in manner: [highest, lowest]</English>
 			<Polish>Wartoœci dla parametru wysokoœci mg³y (od -5000 do 5000), tylko wartoœci liczbowe zapisane w sposób: [najwy¿szy, najni¿szy]</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder">
-			<Original>Thunder</Original>
-            <English>Thunder</English>
-			<Polish>B³yskawice</Polish>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder_min">
+			<Original>Thunder (min)</Original>
+            <English>Thunder (min)</English>
+			<Polish>B³yskawice (min)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder_max">
+			<Original>Thunder (max)</Original>
+            <English>Thunder (max)</English>
+			<Polish>B³yskawice (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder_desc">
 			<Original>Values for thunder parameter, numbers only written in manner: [highest, lowest]</Original>

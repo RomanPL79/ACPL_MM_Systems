@@ -39,61 +39,117 @@ class ACPL_SkillSystem_settings_module: Module_F {
 			typeName = "NUMBER";
 			defaultValue = 2;
 		};
-		class WEST_Acc {
-			displayName = "WEST Accuracy";
-			property = "ACPL_SkillSystem_WEST_Acc";
+		class WEST_Acc_min {
+			displayName = "WEST Accuracy (min)";
+			property = "ACPL_SkillSystem_WEST_Acc_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Acc";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class WEST_Shake {
-			displayName = "WEST Aim Shake";
-			property = "ACPL_SkillSystem_WEST_Shake";
+		class WEST_Acc_max {
+			displayName = "WEST Accuracy (max)";
+			property = "ACPL_SkillSystem_WEST_Acc_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Acc";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class WEST_Shake_min {
+			displayName = "WEST Aim Shake (min)";
+			property = "ACPL_SkillSystem_WEST_Shake_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Shake";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class WEST_Speed {
-			displayName = "WEST Aim Speed";
-			property = "ACPL_SkillSystem_WEST_Speed";
+		class WEST_Shake_max {
+			displayName = "WEST Aim Shake (max)";
+			property = "ACPL_SkillSystem_WEST_Shake_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Shake";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class WEST_Speed_min {
+			displayName = "WEST Aim Speed (min)";
+			property = "ACPL_SkillSystem_WEST_Speed_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Speed";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class WEST_Spot {
-			displayName = "WEST Spotting Distance";
-			property = "ACPL_SkillSystem_WEST_Spot";
+		class WEST_Speed_max {
+			displayName = "WEST Aim Speed (max)";
+			property = "ACPL_SkillSystem_WEST_Speed_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Speed";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class WEST_Spot_min {
+			displayName = "WEST Spotting Distance (min)";
+			property = "ACPL_SkillSystem_WEST_Spot_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Spot";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class WEST_Time {
-			displayName = "WEST Spotting Time";
-			property = "ACPL_SkillSystem_WEST_Time";
+		class WEST_Spot_max {
+			displayName = "WEST Spotting Distance (max)";
+			property = "ACPL_SkillSystem_WEST_Spot_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Spot";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class WEST_Time_min {
+			displayName = "WEST Spotting Time (min)";
+			property = "ACPL_SkillSystem_WEST_Time_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Time";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class WEST_General {
-			displayName = "WEST General";
-			property = "ACPL_SkillSystem_WEST_General";
+		class WEST_Time_max {
+			displayName = "WEST Spotting Time (max)";
+			property = "ACPL_SkillSystem_WEST_Time_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Time";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class WEST_General_min {
+			displayName = "WEST General (min)";
+			property = "ACPL_SkillSystem_WEST_General_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_General";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class WEST_Courage {
-			displayName = "WEST Courage";
-			property = "ACPL_SkillSystem_WEST_Courage";
+		class WEST_General_max {
+			displayName = "WEST General (max)";
+			property = "ACPL_SkillSystem_WEST_General_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_General";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class WEST_Courage_min {
+			displayName = "WEST Courage (min)";
+			property = "ACPL_SkillSystem_WEST_Courage_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Courage";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class WEST_Reload {
-			displayName = "WEST Reloading Time";
-			property = "ACPL_SkillSystem_WEST_Reload";
+		class WEST_Courage_max {
+			displayName = "WEST Courage (max)";
+			property = "ACPL_SkillSystem_WEST_Courage_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Courage";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class WEST_Reload_min {
+			displayName = "WEST Reloading Time (min)";
+			property = "ACPL_SkillSystem_WEST_Reload_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Reload";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
+		};
+		class WEST_Reload_max {
+			displayName = "WEST Reloading Time (max)";
+			property = "ACPL_SkillSystem_WEST_Reload_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Reload";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
 		class EAST_Enable {
 			displayName = "EAST";
@@ -109,61 +165,117 @@ class ACPL_SkillSystem_settings_module: Module_F {
 			typeName = "NUMBER";
 			defaultValue = 2;
 		};
-		class EAST_Acc {
-			displayName = "EAST Accuracy";
-			property = "ACPL_SkillSystem_EAST_Acc";
+		class EAST_Acc_min {
+			displayName = "EAST Accuracy (min)";
+			property = "ACPL_SkillSystem_EAST_Acc_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Acc";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class EAST_Shake {
-			displayName = "EAST Aim Shake";
-			property = "ACPL_SkillSystem_EAST_Shake";
+		class EAST_Acc_max {
+			displayName = "EAST Accuracy (max)";
+			property = "ACPL_SkillSystem_EAST_Acc_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Acc";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class EAST_Shake_min {
+			displayName = "EAST Aim Shake (min)";
+			property = "ACPL_SkillSystem_EAST_Shake_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Shake";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class EAST_Speed {
-			displayName = "EAST Aim Speed";
-			property = "ACPL_SkillSystem_EAST_Speed";
+		class EAST_Shake_max {
+			displayName = "EAST Aim Shake (max)";
+			property = "ACPL_SkillSystem_EAST_Shake_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Shake";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class EAST_Speed_min {
+			displayName = "EAST Aim Speed (min)";
+			property = "ACPL_SkillSystem_EAST_Speed_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Speed";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class EAST_Spot {
-			displayName = "EAST Spotting Distance";
-			property = "ACPL_SkillSystem_EAST_Spot";
+		class EAST_Speed_max {
+			displayName = "EAST Aim Speed (max)";
+			property = "ACPL_SkillSystem_EAST_Speed_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Speed";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class EAST_Spot_min {
+			displayName = "EAST Spotting Distance (min)";
+			property = "ACPL_SkillSystem_EAST_Spot_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Spot";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class EAST_Time {
-			displayName = "EAST Spotting Time";
-			property = "ACPL_SkillSystem_EAST_Time";
+		class EAST_Spot_max {
+			displayName = "EAST Spotting Distance (max)";
+			property = "ACPL_SkillSystem_EAST_Spot_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Spot";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class EAST_Time_min {
+			displayName = "EAST Spotting Time (min)";
+			property = "ACPL_SkillSystem_EAST_Time_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Time";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class EAST_General {
-			displayName = "EAST General";
-			property = "ACPL_SkillSystem_EAST_General";
+		class EAST_Time_max {
+			displayName = "EAST Spotting Time (max)";
+			property = "ACPL_SkillSystem_EAST_Time_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Time";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class EAST_General_min {
+			displayName = "EAST General (min)";
+			property = "ACPL_SkillSystem_EAST_General_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_General";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class EAST_Courage {
-			displayName = "EAST Courage";
-			property = "ACPL_SkillSystem_EAST_Courage";
+		class EAST_General_max {
+			displayName = "EAST General (max)";
+			property = "ACPL_SkillSystem_EAST_General_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_General";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class EAST_Courage_min {
+			displayName = "EAST Courage (min)";
+			property = "ACPL_SkillSystem_EAST_Courage_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Courage";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class EAST_Reload {
-			displayName = "EAST Reloading Time";
-			property = "ACPL_SkillSystem_EAST_Reload";
+		class EAST_Courage_max {
+			displayName = "EAST Courage (max)";
+			property = "ACPL_SkillSystem_EAST_Courage_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Courage";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class EAST_Reload_min {
+			displayName = "EAST Reloading Time (min)";
+			property = "ACPL_SkillSystem_EAST_Reload_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Reload";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
+		};
+		class EAST_Reload_max {
+			displayName = "EAST Reloading Time (max)";
+			property = "ACPL_SkillSystem_EAST_Reload_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Reload";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
 		class RESISTANCE_Enable {
 			displayName = "RESISTANCE";
@@ -179,61 +291,117 @@ class ACPL_SkillSystem_settings_module: Module_F {
 			typeName = "NUMBER";
 			defaultValue = 2;
 		};
-		class RESISTANCE_Acc {
-			displayName = "RESISTANCE Accuracy";
-			property = "ACPL_SkillSystem_RESISTANCE_Acc";
+		class RESISTANCE_Acc_min {
+			displayName = "RESISTANCE Accuracy (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Acc_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Acc";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class RESISTANCE_Shake {
-			displayName = "RESISTANCE Aim Shake";
-			property = "ACPL_SkillSystem_RESISTANCE_Shake";
+		class RESISTANCE_Acc_max {
+			displayName = "RESISTANCE Accuracy (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Acc_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Acc";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class RESISTANCE_Shake_min {
+			displayName = "RESISTANCE Aim Shake (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Shake_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Shake";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class RESISTANCE_Speed {
-			displayName = "RESISTANCE Aim Speed";
-			property = "ACPL_SkillSystem_RESISTANCE_Speed";
+		class RESISTANCE_Shake_max {
+			displayName = "RESISTANCE Aim Shake (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Shake_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Shake";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class RESISTANCE_Speed_min {
+			displayName = "RESISTANCE Aim Speed (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Speed_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Speed";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
 		};
-		class RESISTANCE_Spot {
-			displayName = "RESISTANCE Spotting Distance";
-			property = "ACPL_SkillSystem_RESISTANCE_Spot";
+		class RESISTANCE_Speed_max {
+			displayName = "RESISTANCE Aim Speed (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Speed_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Speed";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
+		};
+		class RESISTANCE_Spot_min {
+			displayName = "RESISTANCE Spotting Distance (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Spot_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Spot";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class RESISTANCE_Time {
-			displayName = "RESISTANCE Spotting Time";
-			property = "ACPL_SkillSystem_RESISTANCE_Time";
+		class RESISTANCE_Spot_max {
+			displayName = "RESISTANCE Spotting Distance (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Spot_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Spot";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class RESISTANCE_Time_min {
+			displayName = "RESISTANCE Spotting Time (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Time_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Time";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class RESISTANCE_General {
-			displayName = "RESISTANCE General";
-			property = "ACPL_SkillSystem_RESISTANCE_General";
+		class RESISTANCE_Time_max {
+			displayName = "RESISTANCE Spotting Time (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Time_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Time";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class RESISTANCE_General_min {
+			displayName = "RESISTANCE General (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_General_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_General";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class RESISTANCE_Courage {
-			displayName = "RESISTANCE Courage";
-			property = "ACPL_SkillSystem_RESISTANCE_Courage";
+		class RESISTANCE_General_max {
+			displayName = "RESISTANCE General (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_General_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_General";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class RESISTANCE_Courage_min {
+			displayName = "RESISTANCE Courage (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Courage_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Courage";
-			typeName = "ARRAY";
-			defaultValue = [0.4, 0.6];
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
-		class RESISTANCE_Reload {
-			displayName = "RESISTANCE Reloading Time";
-			property = "ACPL_SkillSystem_RESISTANCE_Reload";
+		class RESISTANCE_Courage_max {
+			displayName = "RESISTANCE Courage (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Courage_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Courage";
+			typeName = "NUMBER";
+			defaultValue = 0.6;
+		};
+		class RESISTANCE_Reload_min {
+			displayName = "RESISTANCE Reloading Time (min)";
+			property = "ACPL_SkillSystem_RESISTANCE_Reload_min";
 			description = "$STR_ACPL_SkillSystem_settings_module_Reload";
-			typeName = "ARRAY";
-			defaultValue = [0.2, 0.4];
+			typeName = "NUMBER";
+			defaultValue = 0.2;
+		};
+		class RESISTANCE_Reload_max {
+			displayName = "RESISTANCE Reloading Time (max)";
+			property = "ACPL_SkillSystem_RESISTANCE_Reload_max";
+			description = "$STR_ACPL_SkillSystem_settings_module_Reload";
+			typeName = "NUMBER";
+			defaultValue = 0.4;
 		};
 	};
 	class ModuleDescription: ModuleDescription {

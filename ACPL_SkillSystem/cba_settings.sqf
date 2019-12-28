@@ -1,4 +1,4 @@
-#define SETTINGS "ACPL SkillSystem"
+#define SETTINGS "ACPL SkillSystem Settings"
 
 [
     "ACPL_SkillSystem_Enabled", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
@@ -549,5 +549,3 @@
     true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {[] call ACPL_SkillSystem_fnc_CBAsettings_changed;} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
-
-[] call ACPL_SkillSystem_fnc_CBAsettings_changed;
