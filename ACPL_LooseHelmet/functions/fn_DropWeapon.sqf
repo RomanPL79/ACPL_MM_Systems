@@ -1,3 +1,22 @@
+/* ----------------------------------------------------------------------------
+	Function: ACPL_LooseHelmet_fnc_DropWeapon
+
+	Description: 	Function that is checking if weapon should be dropped and dropping it
+
+	Parameters: 
+		- unit			who should be checked
+		- velocity		velocity of bullet
+
+	Returns: nothing
+
+	Author: [ACPL] Roman79
+	
+	Version: 1
+	
+	Execution: spawn
+
+---------------------------------------------------------------------------- */
+
 params ["_unit", "_velocity"];
 private ["_weapon", "_weaponsItems", "_items", "_new_velocity", "_weaponHolder_dummy", "_dummy", "_muzzle", "_flash", "_optic", "_magazine1", "_magazine2", "_bipod"];
 	
@@ -72,29 +91,26 @@ if (alive _unit) then {
 		
 		_dummy setVelocity _new_velocity;
 		
-		[_dummy] spawn {
-			params ["_dummy"];
-			private ["_moving", "_pos", "_vel"];
-			
-			_moving = true;
-			
-			while {_moving} do {
-				_vel = velocity _dummy;
-				_pos = getposATL _dummy;
-				if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
-					_dummy setVelocity [0,0,0];
-					_dummy setposATL [(_pos select 0), (_pos select 1), 0];
-					_dummy enableSimulationGlobal false;
-					[_dummy, true] remoteExec ["hideobject",0,true];
-					
-					_moving = false;
-				};
+		private ["_moving", "_pos", "_vel"];
+		
+		_moving = true;
+		
+		while {_moving} do {
+			_vel = velocity _dummy;
+			_pos = getposATL _dummy;
+			if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
+				_dummy setVelocity [0,0,0];
+				_dummy setposATL [(_pos select 0), (_pos select 1), 0];
+				_dummy enableSimulationGlobal false;
+				[_dummy, true] remoteExec ["hideobject",0,true];
 				
-				sleep 0.05;
+				_moving = false;
 			};
+				
+			sleep 0.05;
 		};
 		
-		[_unit, _weaponholder, "GUN", _weapon] spawn ACPL_LooseHelmet_fnc_PickUp;
+		[_unit, _weaponHolder_dummy, "GUN", _weapon] spawn ACPL_LooseHelmet_fnc_PickUp;
 		
 		detach _weaponHolder_dummy;
 		_weaponHolder_dummy enableSimulationGlobal true;

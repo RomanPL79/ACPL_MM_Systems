@@ -32,15 +32,100 @@
             <English>Activate system ACPL LooseHelmet, which allow to lose your weapon or helmet after being shot</English>
             <Polish>Aktywuj system ACPL LooseHelmet, który pozwala na utracenie broni lub hełmu po postrzale</Polish>
         </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Enable_losenvgs">
+            <Original>Activate lose NVGs</Original>
+            <English>Activate lose NVGs</English>
+            <Polish>Aktywuj utratę noktowizji</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Enable_losenvgs_desc">
+            <Original>Activate possibility to lose NVGs even when helmet is fasten</Original>
+            <English>Activate possibility to lose NVGs even when helmet is fasten</English>
+            <Polish>Aktywuj możliwość utracenia noktowizji nawet jeśli hełm jest zapięty</Polish>
+        </Key>
 		<Key ID="STR_ACPL_LooseHelmet_HelmetChance">
-            <Original>ACPL LooseHelmet</Original>
-            <English>ACPL LooseHelmet</English>
-            <Polish>ACPL LooseHelmet</Polish>
+            <Original>Chance of losing a helmet</Original>
+            <English>Chance of losing a helmet</English>
+            <Polish>Szansa na utracenie hełmu</Polish>
         </Key>
 		<Key ID="STR_ACPL_LooseHelmet_HelmetChance_desc">
-            <Original>ACPL LooseHelmet</Original>
-            <English>ACPL LooseHelmet</English>
-            <Polish>ACPL LooseHelmet</Polish>
+            <Original>Chance in % to lose helmet after being shot in head if helmet is not fasten</Original>
+            <English>Chance in % to lose helmet after being shot in head if helmet is not fasten</English>
+            <Polish>Szansa w % na utratę hełmu po postrzale w głowę jeśli hełm nie jest zapięty</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_WeaponChance">
+            <Original>Chance of losing a weapon</Original>
+            <English>Chance of losing a weapon</English>
+            <Polish>Szansa na utracenie broni</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_WeaponChance_desc">
+            <Original>Chance in % to lose weapon after being shot in arm or hand if weapon is not fasten</Original>
+            <English>Chance in % to lose weapon after being shot in arm or hand if weapon is not fasten</English>
+            <Polish>Szansa w % na utracenie broni po byciu postrzelonym w rękę bądź ramie jeżeli broń nie jest przypięta</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Destroy">
+            <Original>Activate destroing items</Original>
+            <English>Activate destroing items</English>
+            <Polish>Aktywuj niszczenie przedmiotów</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Destroy_desc">
+            <Original>Activate a chance for dropped item to be destroyed. If item is destroyed you will be not able to pick it up.</Original>
+            <English>Activate a chance for dropped item to be destroyed. If item is destroyed you will be not able to pick it up.</English>
+            <Polish>Aktywuj szansę na zniszczenie upuszczonego przedmiotu. Jeśli przedmiot zostanie zniszczony nie będziesz wstanie go podnieść.</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_DestroyChance">
+            <Original>Chance of destroing item</Original>
+            <English>Chance of destroing item</English>
+            <Polish>Szansa na zniszczenie przedmiotu</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_DestroyChance_desc">
+            <Original>Chance in % to destroy dropped item. The chance is multiplied by velocity of bullet that been divided by 100.</Original>
+            <English>Chance in % to destroy dropped item. The chance is multiplied by velocity of bullet that been divided by 100.</English>
+            <Polish>Szansa w % na zniszczenie przedmiotu. Szansa jest mnożona przez prędkość pocisku, która została podzielona przez 100.</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Weap_PickUpChance">
+            <Original>Chance for picking up a weapon</Original>
+            <English>Chance for picking up a weapon</English>
+            <Polish>Szansa na podniesienie broni</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Weap_PickUpChance_desc">
+            <Original>Chance for picking up a dropped weapon even if is not necessary.</Original>
+            <English>Chance for picking up a dropped weapon even if is not necessary.</English>
+            <Polish>Szansa na podniesienie upuszczonej broni nawet jeśli nie jest to konieczne.</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Helm_PickUpChance">
+            <Original>Chance for picking up a helmet</Original>
+            <English>Chance for picking up a helmet</English>
+            <Polish>Szansa na podniesienie hełmu</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_Helm_PickUpChance_desc">
+            <Original>Chance for picking up a dropped helmet.</Original>
+            <English>Chance for picking up a dropped helmet.</English>
+            <Polish>Szansa na podniesienie upuszczonego hełmu.</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_NVG_PickUpChance">
+            <Original>Chance for picking up a NVGs</Original>
+            <English>Chance for picking up a NVGs</English>
+            <Polish>Szansa na podniesienie noktowizji</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_NVG_PickUpChance_desc">
+            <Original>Chance for picking up a dropped NVGs even if is not necessary.</Original>
+            <English>Chance for picking up a dropped NVGs even if is not necessary.</English>
+            <Polish>Szansa na podniesienie upuszczonej noktowizji nawet jeśli nie jest to konieczne.</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu">
+            <Original>Fasten</Original>
+            <English>Fasten</English>
+            <Polish>Przymocuj</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu_gun">
+            <Original>Weapon</Original>
+            <English>Weapon</English>
+            <Polish>Broń</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu_helmet">
+            <Original>Helmet</Original>
+            <English>Helmet</English>
+            <Polish>Hełm</Polish>
         </Key>
 	</Package>
 </Project>

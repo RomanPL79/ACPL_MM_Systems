@@ -1,5 +1,5 @@
 class ACPL_LooseHelmet {
-	tag = "ACPL_SkillSystem";
+	tag = "ACPL_LooseHelmet";
 	class Functions {
 		file = "ACPL_LooseHelmet\functions";
 		

@@ -1,3 +1,22 @@
+// ----------------------------------------------------------------------------
+//	Function: ACPL_LooseHelmet_fnc_DropHelmet
+//
+//	Description: 	Function that is checking if helmet should be dropped and dropping it
+//
+//	Parameters: 
+//		- unit			who should be checked
+//		- velocity		velocity of bullet
+//
+//	Returns: nothing
+//
+//	Author: [ACPL] Roman79
+//	
+//	Version: 1
+//	
+//	Execution: spawn
+//
+//----------------------------------------------------------------------------
+
 params ["_unit", "_velocity"];
 private ["_weaponHolder0", "_moving", "_pos", "_vel", "_mass", "_dummy0"];
 
@@ -68,8 +87,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			_dummy0 setVelocity [(random 1), (random 1), (random 3)];
 			_dummy0 addTorque (_dummy vectorModelToWorld [(random 5), (random 1), 0]);
 			
-			[_dummy0, _weaponHolder0] spawn {
-				params ["_dummy", "_weaponholder"];
+			[_dummy0, _weaponHolder0, _med_velocity] spawn {
+				params ["_dummy", "_weaponholder", "_med_velocity"];
 				private ["_vel", "_pos", "_moving"];
 				
 				_moving = true;
@@ -94,7 +113,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				};
 				
 				if (ACPL_LooseHelmet_Destroy) then {
-					[_weaponholder] call ACPL_LooseHelmet_fnc_Destroyed;
+					[_weaponholder, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;
 				};
 			};
 		};
@@ -135,8 +154,6 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
 		private _torque = [(_velocity select 0)/100,(_velocity select 1)/100,0];
-		
-		private _med_velocity = (((_new_velocity select 0) + (_new_velocity select 1) + ((_new_velocity select 2) / 3)) / 3);
 		
 		private _nvg = hmd _unit;
 		
@@ -198,7 +215,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			};
 			
 			if (ACPL_LooseHelmet_Destroy) then {
-				[_weaponholder] call ACPL_LooseHelmet_fnc_Destroyed;
+				[_weaponholder, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;
 			};
 		};
 	};

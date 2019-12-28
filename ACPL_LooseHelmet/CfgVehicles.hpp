@@ -14,8 +14,8 @@ class ACPL_LooseHelmet_invisible_can: Items_base_F
 	};
 	editorPreview="";
 	_generalMacro="";
-	scope=0;
-	scopeCurator=0;
+	scope=1;
+	scopeCurator=1;
 	displayName="ACPL_LooseHelmet_invisible_can";
 	model="ACPL_LooseHelmet\models\invisible_can.p3d";
 	icon="";

@@ -1,4 +1,4 @@
-params ["_unit", "_pos", ["_point_on_move", false], ["_max_time", 0], ["_stuck_check", true]];
+params ["_unit", "_pos", ["_object", ""], ["_point_on_move", false], ["_max_time", 0], ["_stuck_check", true]];
 
 /*
 	Basic function, 
@@ -9,13 +9,6 @@ params ["_unit", "_pos", ["_point_on_move", false], ["_max_time", 0], ["_stuck_c
 	by [ACPL] Roman79
 	v1.0
 */
-
-private _object = "";
-
-if (count _pos > 1) then {} else {
-	_object = _pos;
-	_pos = getposATL _object;
-};
 
 //getting basic info
 
@@ -95,7 +88,7 @@ while {_onmove && (alive _unit)} do {
 				private _pos_now = getposATL _unit;
 				private _times = _notmoving - 9;
 				
-				_unit setposATL [(_pos_now select 0),(_pos_now select 1),((_pos_now select 2) + (0.1 * _times))];
+				//_unit setposATL [(_pos_now select 0),(_pos_now select 1),((_pos_now select 2) + (0.1 * _times))];
 			};
 		};
 	};

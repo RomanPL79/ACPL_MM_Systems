@@ -1,3 +1,22 @@
+/* ----------------------------------------------------------------------------
+	Function: ACPL_LooseHelmet_fnc_NeedToPickUp
+
+	Description: Checking that is necessary picking up that item
+
+	Parameters: 
+		- unit			unit who will be picking up item
+		- type			type of item ("GUN", "HELMET" or "NVG")
+
+	Returns: true or false
+
+	Author: [ACPL] Roman79
+	
+	Version: 1
+	
+	Execution: call
+
+---------------------------------------------------------------------------- */
+
 params ["_unit", "_type"];
 
 private _return = false;

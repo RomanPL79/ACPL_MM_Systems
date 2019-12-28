@@ -11,7 +11,9 @@ class CfgPatches {
 		"cba_main",
 		"A3_Structures_F",
 		"ace_interaction",
-		"ACPL_MM_Core"
+		"ACPL_MM_Core",
+		"cba_common",
+		"ace_common"
 	};
 	
     version = 2;
@@ -27,46 +29,29 @@ class CfgVehicles {
 
 class CfgFunctions
 {
-	#include "cfgFunctions.hpp"
+	#include "CfgFunctions.hpp"
 	class ACPL_LooseHelmet_Initialization
 	{
 		class Init
 		{
-			file = "\ACPL_LooseHelmet\functions\Init.sqf";
+			file = "ACPL_LooseHelmet\functions\Init.sqf";
 			preInit = 1;
 		};
 	};
 };
 
-class Extended_InitPost_EventHandlers {
-    class CAManBase;
-	class SoldierWB: CAManBase {
-        class ACPL_LooseHelmet_CAManBase_W_initpost_eh {
-            hitpart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],acpl_event_hit_function] remoteExec ['spawn',2];";
-        };
-    };
-	class SoldierEB: CAManBase {
-        class ACPL_LooseHelmet_CAManBase_E_initpost_eh {
-            hitpart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],acpl_event_hit_function] remoteExec ['spawn',2];";
-        };
-    };
-	class SoldierGB: CAManBase {
-        class ACPL_LooseHelmet_CAManBase_G_initpost_eh {
-            hitpart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],acpl_event_hit_function] remoteExec ['spawn',2];";
-        };
-    };
-	class Civilian_F : CAManBase {
-        class ACPL_LooseHelmet_CAManBase_C_initpost_eh {
-            hitpart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],acpl_event_hit_function] remoteExec ['spawn',2];";
-        };
-    }; 
-};
-
 //Load CBA Addon Settings
 class Extended_PreInit_EventHandlers
 {
-	class ACPL_SkillSystem_CBAsettings
+	class ACPL_LooseHelmet
 	{
-		init="call compile preProcessFileLineNumbers '\ACPL_LooseHelmet\cba_settings.sqf'";
+		init="call compile preProcessFileLineNumbers 'ACPL_LooseHelmet\cba_settings.sqf'";
 	};
+};
+
+class Extended_HitPart_EventHandlers {
+	class Man;
+	class CAManBase: Man {
+		HitPart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],ACPL_LooseHelmet_fnc_HitHandler] remoteExec ['spawn',2];";
+    };
 };
