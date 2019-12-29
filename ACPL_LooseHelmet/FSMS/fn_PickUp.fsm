@@ -6,21 +6,39 @@ item1[] = {"isPlayer",4,218,-154.883713,-149.999985,-64.883728,-99.999985,0.0000
 item2[] = {"Player_s_End",1,250,-281.370728,-151.662323,-191.370728,-101.662338,0.000000,"Player's" \n "End"};
 item3[] = {"isAI",4,218,-37.415649,-66.558777,52.584351,-16.558777,0.000000,"isAI"};
 item4[] = {"Need_to_Pick_Up",2,250,-39.484131,14.990356,50.515884,64.990356,0.000000,"Need to" \n "Pick Up?"};
-item5[] = {"false",4,218,-138.770508,85.318192,-48.770508,135.318192,0.000000,"false"};
+item5[] = {"false",4,218,-38.882133,108.568047,51.117817,158.568069,0.000000,"false"};
 item6[] = {"true",4,218,84.649742,57.618629,174.649750,107.618683,0.000000,"true"};
-item7[] = {"Remember_What_to",1,250,-277.357727,86.007706,-187.357697,136.007706,0.000000,"Remember" \n "What to" \n "Pick Up End"};
+item7[] = {"Remember_What_to",1,250,-39.692444,204.840332,50.307587,254.840347,0.000000,"Remember" \n "What to" \n "Pick Up End"};
 item8[] = {"Go_and_Pick_Up",2,250,83.296692,264.566467,173.296707,314.566437,0.000000,"Go and" \n "Pick Up"};
-item9[] = {"Picked_up",4,218,83.050133,354.099823,173.050140,404.099823,0.000000,"Picked up"};
+item9[] = {"Picked_up",4,218,19.290489,373.017517,109.290558,423.017517,0.000000,"Picked up"};
 item10[] = {"Unit_Died",4,218,226.747772,15.264015,316.747772,65.264053,0.000000,"Unit Died"};
 item11[] = {"Dead_End",1,250,361.271057,16.828325,451.271088,66.828354,0.000000,"Dead End"};
 item12[] = {"Picked_End",1,250,83.746185,603.702148,173.746201,653.702087,0.000000,"Picked End"};
-item13[] = {"More_than_one_WeaponHandler",2,250,81.465576,449.622589,171.465591,499.622589,0.000000,"More than one" \n "WeaponHandler?"};
-item14[] = {"false",4,218,84.329216,520.732910,174.329224,570.732788,0.000000,"false"};
-item15[] = {"true",4,218,196.596985,453.366791,286.596985,503.366791,0.000000,"true"};
+item13[] = {"More_than_one_WeaponHandler",2,250,21.909866,446.119293,111.909912,496.119293,0.000000,"More than one" \n "WeaponHandler?"};
+item14[] = {"false",4,218,22.671535,518.630920,112.671677,568.630798,0.000000,"false"};
+item15[] = {"true",4,218,118.246063,350.518402,208.246094,400.518402,0.000000,"true"};
 item16[] = {"Go_and_Pick_Up_s",2,250,317.344482,452.430756,407.344482,502.430756,0.000000,"Go and Pick" \n "Up second"};
 item17[] = {"Picked_Up",4,218,251.113037,541.787109,341.113037,591.787109,0.000000,"Picked Up"};
 item18[] = {"delay",2,250,85.187836,123.304993,175.187851,173.304993,0.000000,"delay"};
 item19[] = {"delayed",4,218,85.596817,194.211136,175.596817,244.211136,0.000000,"delayed"};
+item20[] = {"unconscious",4,218,-149.024048,-43.083229,-59.024048,6.916771,0.000000,"unconscious"};
+item21[] = {"wait",2,250,-253.217880,30.971889,-163.217865,80.971893,0.000000,"wait"};
+item22[] = {"still_unconsciou",4,218,-379.109131,37.860733,-289.109131,87.860733,0.000000,"still" \n "unconscious"};
+item23[] = {"awaken",4,218,-154.360474,86.082672,-64.360474,136.082672,0.000000,"awaken"};
+item24[] = {"unconscious",4,218,-49.251228,265.645416,40.748775,315.645416,0.000000,"unconscious"};
+item25[] = {"wait_1",2,250,-166.047974,266.072968,-76.047951,316.072968,0.000000,"wait"};
+item26[] = {"still_unconsciou",4,4314,-165.246780,193.364441,-75.246719,243.364471,0.000000,"still" \n "unconscious"};
+item27[] = {"awaken",4,218,-46.627899,334.449982,43.372093,384.449982,0.000000,"awaken"};
+item28[] = {"unconscious",4,218,448.310791,393.641663,538.310547,443.641663,0.000000,"unconscious"};
+item29[] = {"wait_2",2,250,537.496704,459.298279,627.496704,509.298248,0.000000,"wait"};
+item30[] = {"still_unconsciou",4,218,656.402466,458.166779,746.402466,508.166870,0.000000,"still" \n "unconscious"};
+item31[] = {"awaken",4,218,442.974335,514.598145,532.974365,564.598145,0.000000,"awaken"};
+item32[] = {"need_to_pick_up",2,250,198.132629,263.356506,288.132446,313.356506,0.000000,"need to pick up?"};
+item33[] = {"false",4,218,121.883682,438.830902,211.883636,488.830872,0.000000,"false"};
+item34[] = {"true",4,218,212.632782,450.987091,302.632629,500.987091,0.000000,"true"};
+item35[] = {"",7,210,-433.875824,-239.661743,-425.875824,-231.661743,0.000000,""};
+item36[] = {"",7,210,267.506958,-238.674820,275.506958,-230.674820,0.000000,""};
+item37[] = {"",7,210,580.258484,-238.835175,588.258484,-230.835175,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,3};
 link2[] = {1,2};
@@ -28,23 +46,50 @@ link3[] = {3,4};
 link4[] = {4,5};
 link5[] = {4,6};
 link6[] = {4,10};
-link7[] = {5,7};
-link8[] = {6,18};
-link9[] = {8,9};
-link10[] = {8,10};
-link11[] = {9,13};
-link12[] = {10,11};
-link13[] = {13,14};
-link14[] = {13,15};
-link15[] = {14,12};
-link16[] = {15,16};
-link17[] = {16,10};
-link18[] = {16,17};
-link19[] = {17,12};
-link20[] = {18,19};
-link21[] = {19,8};
-globals[] = {0.000000,0,0,0,0,640,480,1,23,6316128,1,-483.328522,627.473145,1008.329224,168.054855,813,615,1};
-window[] = {0,-1,-1,-1,-1,910,150,1590,150,1,831};
+link7[] = {4,20};
+link8[] = {5,7};
+link9[] = {6,18};
+link10[] = {8,9};
+link11[] = {8,10};
+link12[] = {8,24};
+link13[] = {9,13};
+link14[] = {10,11};
+link15[] = {13,14};
+link16[] = {13,15};
+link17[] = {14,12};
+link18[] = {15,32};
+link19[] = {16,10};
+link20[] = {16,17};
+link21[] = {16,28};
+link22[] = {17,12};
+link23[] = {18,19};
+link24[] = {19,8};
+link25[] = {20,21};
+link26[] = {21,22};
+link27[] = {21,23};
+link28[] = {21,35};
+link29[] = {22,21};
+link30[] = {23,4};
+link31[] = {24,25};
+link32[] = {25,26};
+link33[] = {25,27};
+link34[] = {26,25};
+link35[] = {27,8};
+link36[] = {28,29};
+link37[] = {29,30};
+link38[] = {29,31};
+link39[] = {29,37};
+link40[] = {30,29};
+link41[] = {31,16};
+link42[] = {32,33};
+link43[] = {32,34};
+link44[] = {33,12};
+link45[] = {34,16};
+link46[] = {35,36};
+link47[] = {36,10};
+link48[] = {37,36};
+globals[] = {0.000000,0,0,0,0,640,480,1,41,6316128,1,-225.193024,705.357056,696.937439,-6.984139,813,615,1};
+window[] = {0,-1,-1,-1,-1,965,-1602,-162,205,1,831};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -56,7 +101,15 @@ class FSM
                 {
                         name = "start";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"params [""_unit"", ""_weaponhandler"", ""_type"", ""_class"", [""_weaponhandler_2"", """"], [""_class_2"" , """"]];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"params [" \n
+                         """_unit"", " \n
+                         """_weaponhandler"", " \n
+                         """_type"", " \n
+                         """_class""," \n
+                         "[""_nvg_t"", false], " \n
+                         "[""_weaponhandler_2"", """"], " \n
+                         "[""_class_2"" , """"]" \n
+                         "];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -113,7 +166,11 @@ class FSM
                                         priority = 0.000000;
                                         to="delay";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"([_unit, _type] call ACPL_LooseHelmet_fnc_NeedToPickUp) && (alive _unit)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([_unit, _type] call ACPL_LooseHelmet_fnc_NeedToPickUp) " \n
+                                         "&& " \n
+                                         "(alive _unit) " \n
+                                         "&& " \n
+                                         "(!(_unit getvariable [""ace_isunconscious"", false]) && !(_unit getvariable [""acpl_heal_heavy"", false]))"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -125,6 +182,17 @@ class FSM
                                         to="Dead_End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "unconscious">*/
+                                class unconscious
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ace_isunconscious"", false]) || (_unit getvariable [""acpl_heal_heavy"", false])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -175,6 +243,17 @@ class FSM
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
+                                /*%FSM<LINK "unconscious">*/
+                                class unconscious
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ace_isunconscious"", false]) || (_unit getvariable [""acpl_heal_heavy"", false])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "Picked_up">*/
                                 class Picked_up
                                 {
@@ -182,7 +261,13 @@ class FSM
                                         priority = 0.000000;
                                         to="More_than_one_WeaponHandler";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_LooseHelmet_GoPickUp"", false]) && (alive _unit)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_LooseHelmet_GoPickUp"", false]) " \n
+                                         "&& " \n
+                                         "(alive _unit) " \n
+                                         "&& " \n
+                                         "(!(_unit getvariable [""ace_isunconscious"", false]) " \n
+                                         "&& " \n
+                                         "!(_unit getvariable [""acpl_heal_heavy"", false]))"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -218,7 +303,7 @@ class FSM
                 {
                         name = "More_than_one_WeaponHandler";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = time + 1;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -227,9 +312,9 @@ class FSM
                                 {
                                         itemno = ;
                                         priority = 0.000000;
-                                        to="Go_and_Pick_Up_s";
+                                        to="need_to_pick_up";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_weaponhandler_2 != """") && ([_unit, ""NVG""] call ACPL_LooseHelmet_fnc_NeedToPickUp)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_nvg_t && (time > _t)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -240,7 +325,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Picked_End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_weaponhandler_2 == """") || !([_unit, ""NVG""] call ACPL_LooseHelmet_fnc_NeedToPickUp)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!_nvg_t"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -264,7 +349,24 @@ class FSM
                                         priority = 0.000000;
                                         to="Picked_End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_LooseHelmet_GoPickUp"", false]) && (alive _unit)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_LooseHelmet_GoPickUp"", false]) " \n
+                                         "&& " \n
+                                         "(alive _unit) " \n
+                                         "&& " \n
+                                         "(!(_unit getvariable [""ace_isunconscious"", false]) " \n
+                                         "&& " \n
+                                         "!(_unit getvariable [""acpl_heal_heavy"", false]))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "unconscious">*/
+                                class unconscious
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ace_isunconscious"", false]) || (_unit getvariable [""acpl_heal_heavy"", false])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -287,7 +389,7 @@ class FSM
                 {
                         name = "delay";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"private _delay = time + 1 + (random [1,2,3]);"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_delay = time + 1 + (random [1,2,3]);"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -299,6 +401,182 @@ class FSM
                                         to="Go_and_Pick_Up";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"time > _delay"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait">*/
+                class wait
+                {
+                        name = "wait";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_t = time + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "awaken">*/
+                                class awaken
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Need_to_Pick_Up";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ace_isunconscious"", false]) && !(_unit getvariable [""acpl_heal_heavy"", false]) " \n
+                                         "&& " \n
+                                         "(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Unit_Died">*/
+                                class Unit_Died
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Dead_End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "still_unconsciou">*/
+                                class still_unconsciou
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_unit getvariable [""ace_isunconscious"", false]) || (_unit getvariable [""acpl_heal_heavy"", false])) " \n
+                                         "&& " \n
+                                         "(time > _t)" \n
+                                         "&& " \n
+                                         "(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait_1">*/
+                class wait_1
+                {
+                        name = "wait_1";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"private _t = time + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "awaken">*/
+                                class awaken
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Go_and_Pick_Up";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ace_isunconscious"", false]) && !(_unit getvariable [""acpl_heal_heavy"", false]) " \n
+                                         "&& " \n
+                                         "(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "still_unconsciou">*/
+                                class still_unconsciou
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_unit getvariable [""ace_isunconscious"", false]) || (_unit getvariable [""acpl_heal_heavy"", false])) " \n
+                                         "&& " \n
+                                         "(time > _t)" \n
+                                         "&& " \n
+                                         "(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait_2">*/
+                class wait_2
+                {
+                        name = "wait_2";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_t = time + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "awaken">*/
+                                class awaken
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Go_and_Pick_Up_s";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ace_isunconscious"", false]) && !(_unit getvariable [""acpl_heal_heavy"", false]) " \n
+                                         "&& " \n
+                                         "(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Unit_Died">*/
+                                class Unit_Died
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Dead_End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "still_unconsciou">*/
+                                class still_unconsciou
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_unit getvariable [""ace_isunconscious"", false]) || (_unit getvariable [""acpl_heal_heavy"", false])) " \n
+                                         "&& " \n
+                                         "(time > _t)" \n
+                                         "&& " \n
+                                         "(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "need_to_pick_up">*/
+                class need_to_pick_up
+                {
+                        name = "need_to_pick_up";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Go_and_Pick_Up_s";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([_unit, ""NVG""] call ACPL_LooseHelmet_fnc_NeedToPickUp)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "false">*/
+                                class false
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Picked_End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!([_unit, ""NVG""] call ACPL_LooseHelmet_fnc_NeedToPickUp)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

@@ -122,6 +122,26 @@
             <English>Weapon</English>
             <Polish>Broń</Polish>
         </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu_helmet_fasten">
+            <Original>Helmet has been fasten</Original>
+            <English>Helmet was fasten</English>
+            <Polish>Hełm został zapięty</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu_helmet_unfasten">
+            <Original>Helmet has been unfasten</Original>
+            <English>Helmet has been unfasten</English>
+            <Polish>Hełm został odpięty</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu_gun_fasten">
+            <Original>Weapon has been fasten</Original>
+            <English>Weapon has been fasten</English>
+            <Polish>Broń została zapięta</Polish>
+        </Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_menu_gun_unfasten">
+            <Original>Weapon has been unfasten</Original>
+            <English>Weapon has been unfasten</English>
+            <Polish>Broń została odpięta</Polish>
+        </Key>
 		<Key ID="STR_ACPL_LooseHelmet_act_menu_helmet">
             <Original>Helmet</Original>
             <English>Helmet</English>

@@ -116,7 +116,7 @@ if (alive _unit) then {
 		_weaponHolder_dummy enableSimulationGlobal true;
 		_pos = getposATL _dummy;
 		deletevehicle _dummy;
-		_weaponHolder_dummy setposATL _pos;
+		_weaponHolder_dummy setposATL [(_pos select 0), (_pos select 1), 0];
 		_weaponHolder_dummy setVelocity [0,0,0];
 		
 		if (ACPL_LooseHelmet_Destroy) then {

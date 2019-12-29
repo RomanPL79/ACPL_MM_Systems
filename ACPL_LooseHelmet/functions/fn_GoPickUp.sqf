@@ -23,13 +23,19 @@ params ["_unit", "_weaponhandler", "_class", "_type"];
 
 //giving info about state of script
 
-_unit setvariable ["ACPL_LooseHelmet_GoPickUp", true];
+_unit setvariable ["ACPL_LooseHelmet_GoPickUp", false];
+
+//if wrong position then exit
+
+if ((getposATL _weaponhandler) distance [0,0,0] < 2) exitwith {
+	_unit setvariable ["ACPL_LooseHelmet_GoPickUp", true];
+};
 
 //making unit go to weaponhandler by another function and waiting
 
 [_unit, getposATL _weaponhandler, _weaponhandler, true] spawn ACPL_MM_Core_fnc_DoMove;
 
-WaitUntil {sleep 1;_unit getvariable ["ACPL_MM_Core_DoMove", false];};
+WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false])};
 
 //if weapon or item is destroyed informing script is done
 
@@ -41,20 +47,25 @@ if (_weaponhandler in ACPL_LooseHelmet_Destroyed) exitwith {
 
 switch (_type) do {
 	case "GUN": {
-		_unit action ["TakeWeapon", _weaponholder, _class];
+		[_unit,"PutDown"] remoteExec ["playAction",0];
+		_unit action ["TakeWeapon", _weaponhandler, _class];
+		_unit setvariable ["ACPL_MM_Core_DoMove", true];
 	};
 	case "HELMET": {
 		[_unit,"PutDown"] remoteExec ["playAction",0];
 		deletevehicle _weaponhandler;
 		[_unit,_class] remoteExec ["addHeadGear",0];
+		_unit setvariable ["ACPL_MM_Core_DoMove", true];
 	};
 	case "NVG": {
 		[_unit,"PutDown"] remoteExec ["playAction",0];
 		deletevehicle _weaponhandler;
 		[_unit,_class] remoteExec ["linkItem",0];
+		_unit setvariable ["ACPL_MM_Core_DoMove", true];
 	};
 };
 
 //ending script
 
-_unit setvariable ["ACPL_LooseHelmet_GoPickUp", false];
+_unit setvariable ["ACPL_LooseHelmet_GoPickUp", true];
+_unit setvariable ["ACPL_MM_Core_DoMove", true];

@@ -111,3 +111,5 @@ if (missionNamespace getVariable ["VCM_ActivateAI", false]) then {
 if (missionNamespace getVariable ["TCL_Initialize", false]) then {
 	_unit setvariable ["TCL_Disabled",false];
 };
+
+_unit dofollow (leader (group _unit));

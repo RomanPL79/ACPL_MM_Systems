@@ -14,7 +14,7 @@
 	
 	Version: 1
 	
-	Execution: 
+	Execution: call
 
 ---------------------------------------------------------------------------- */
 
@@ -25,13 +25,13 @@ switch (_type) do {
 		private _status = _unit getvariable ["ACPL_LooseWeapon_fix_gun",false];
 		
 		switch (_status) do {
-			case true: {
-				_unit setvariable ["ACPL_LooseWeapon_fix_gun", true, true];
-				[""] remoteExec ["hint",_unit];
-			};
 			case false: {
+				_unit setvariable ["ACPL_LooseWeapon_fix_gun", true, true];
+				[localize "STR_ACPL_LooseHelmet_act_menu_gun_fasten"] remoteExec ["hint",_unit];
+			};
+			case true: {
 				_unit setvariable ["ACPL_LooseWeapon_fix_gun", false, true];
-				[""] remoteExec ["hint",_unit];
+				[localize "STR_ACPL_LooseHelmet_act_menu_gun_unfasten"] remoteExec ["hint",_unit];
 			};
 		};
 	};
@@ -39,13 +39,13 @@ switch (_type) do {
 		private _status = _unit getvariable ["ACPL_LooseWeapon_fix_helmet",false];
 		
 		switch (_status) do {
-			case true: {
-				_unit setvariable ["ACPL_LooseWeapon_fix_helmet", true, true];
-				[""] remoteExec ["hint",_unit];
-			};
 			case false: {
+				_unit setvariable ["ACPL_LooseWeapon_fix_helmet", true, true];
+				[localize "STR_ACPL_LooseHelmet_act_menu_helmet_fasten"] remoteExec ["hint",_unit];
+			};
+			case true: {
 				_unit setvariable ["ACPL_LooseWeapon_fix_helmet", false, true];
-				[""] remoteExec ["hint",_unit];
+				[localize "STR_ACPL_LooseHelmet_act_menu_helmet_unfasten"] remoteExec ["hint",_unit];
 			};
 		};
 	};
