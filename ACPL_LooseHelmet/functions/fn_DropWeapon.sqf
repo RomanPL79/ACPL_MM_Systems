@@ -118,6 +118,7 @@ if (alive _unit) then {
 		deletevehicle _dummy;
 		_weaponHolder_dummy setposATL [(_pos select 0), (_pos select 1), 0];
 		_weaponHolder_dummy setVelocity [0,0,0];
+		_weaponHolder_dummy setdir (getdir _weaponHolder_dummy);
 		
 		if (ACPL_LooseHelmet_Destroy) then {
 			[_weaponHolder_dummy, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;

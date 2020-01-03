@@ -36,16 +36,13 @@ class Extended_PreInit_EventHandlers
 class CfgFunctions
 {
 	#include "cfgFunctions.hpp"
-	class ACPL_SkillSystem_Launch
+};
+
+class Extended_PostInit_EventHandlers
+{
+	class ACPL_SkillSystem
 	{
-		class ACPL_SkillSystem_Initialization
-		{
-			class Init
-			{
-				file = "\ACPL_SkillSystem\functions\Init.sqf";
-				preInit = 1;
-			};
-		};
+		init="call compile preProcessFileLineNumbers 'ACPL_SkillSystem\functions\Init.sqf'";
 	};
 };
 

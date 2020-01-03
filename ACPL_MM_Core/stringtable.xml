@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+Ôªø<?xml version="1.0" encoding="utf-8" ?>
 <Project name="ACPL_MM_Core">
 	<Package name="ACPL_MM_Core">
         <Key ID="STR_ACPL_MM_Core_empty">
@@ -20,7 +20,7 @@
 		<Key ID="STR_ACPL_MM_Core_category">
 			<Original>ACPL MM Core modules</Original>
             <English>ACPL MM Core modules</English>
-			<Polish>ACPL MM Core modu≥y</Polish>
+			<Polish>ACPL MM Core modu≈Çy</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module">
 			<Original>ACPL Weather</Original>
@@ -30,7 +30,7 @@
 		<Key ID="STR_ACPL_MM_Core_Weather_module_desc">
 			<Original>Module which calculates weather conditions based on given data</Original>
             <English>Module which calculates weather conditions based on given data</English>
-			<Polish>Modu≥ obliczajπcy warunki pogodowe na podstawie podanych danych</Polish>
+			<Polish>Modu≈Ç obliczajƒÖcy warunki pogodowe na podstawie podanych danych</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_random">
 			<Original>Modifier</Original>
@@ -40,7 +40,7 @@
 		<Key ID="STR_ACPL_MM_Core_Weather_module_random_desc">
 			<Original>The closer to 1 then values of parameters are closer to he highest value, numbers only</Original>
             <English>The closer to 1 then values of parameters are closer to he highest value, numbers only</English>
-			<Polish>Im bliøej do 1, tym wartoúci parametrÛw bÍdπ bliøsze najwyøszej wartoúci, tylko wartoúci liczbowe</Polish>
+			<Polish>Im bli≈ºej do 1, tym warto≈õci parametr√≥w bƒôdƒÖ bli≈ºsze najwy≈ºszej warto≈õci, tylko warto≈õci liczbowe</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_changetime_min">
 			<Original>Change time (min)</Original>
@@ -55,7 +55,7 @@
 		<Key ID="STR_ACPL_MM_Core_Weather_module_changetime_desc">
 			<Original>How often weather is calculated, numbers only written in manner: [highest, lowest]</Original>
             <English>How often weather is calculated, numbers only written in manner: [highest, lowest]</English>
-			<Polish>Jak czÍsto obliczana jest pogoda, tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Jak czƒôsto obliczana jest pogoda, tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_overcast_min">
 			<Original>Overcast (min)</Original>
@@ -70,7 +70,7 @@
 		<Key ID="STR_ACPL_MM_Core_Weather_module_overcast_desc">
 			<Original>Values for overcast parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for overcast parameter, numbers only written in manner: [highest, lowest]</English>
-			<Polish>Wartoúci dla parametru zachmurzenia, tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Warto≈õci dla parametru zachmurzenia, tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_rain_min">
 			<Original>Rain (min)</Original>
@@ -85,67 +85,297 @@
 		<Key ID="STR_ACPL_MM_Core_Weather_module_rain_desc">
 			<Original>Values for rain parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for rain parameter, numbers only written in manner: [highest, lowest]</English>
-			<Polish>Wartoúci dla parametru deszczu, tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Warto≈õci dla parametru deszczu, tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fog_min">
 			<Original>Fog (min)</Original>
             <English>Fog (min)</English>
-			<Polish>Mg≥a (min)</Polish>
+			<Polish>Mg≈Ça (min)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fog_max">
 			<Original>Fog (max)</Original>
             <English>Fog (max)</English>
-			<Polish>Mg≥a (max)</Polish>
+			<Polish>Mg≈Ça (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fog_desc">
 			<Original>Values for fog parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for fog parameter, numbers only written in manner: [highest, lowest]</English>
-			<Polish>Wartoúci dla parametru mg≥y, tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Warto≈õci dla parametru mg≈Çy, tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay_min">
 			<Original>Fog density (min)</Original>
             <English>Fog density (min)</English>
-			<Polish>GÍstoúÊ mg≥y (min)</Polish>
+			<Polish>Gƒôsto≈õƒá mg≈Çy (min)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay_max">
 			<Original>Fog density (max)</Original>
             <English>Fog density (max)</English>
-			<Polish>GÍstoúÊ mg≥y (max)</Polish>
+			<Polish>Gƒôsto≈õƒá mg≈Çy (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogdecay_desc">
 			<Original>Values for fog density parameter (from -1 to 1), numbers only written in manner: [highest, lowest]</Original>
             <English>Values for fog density parameter (from -1 to 1), numbers only written in manner: [highest, lowest]</English>
-			<Polish>Wartoúci dla parametru gÍstoúci mg≥y (od -1 do 1), tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Warto≈õci dla parametru gƒôsto≈õci mg≈Çy (od -1 do 1), tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase_min">
 			<Original>Fog altitude (min)</Original>
             <English>Fog altitude (min)</English>
-			<Polish>WysokoúÊ mg≥y (min)</Polish>
+			<Polish>Wysoko≈õƒá mg≈Çy (min)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase_max">
 			<Original>Fog altitude (max)</Original>
             <English>Fog altitude (max)</English>
-			<Polish>WysokoúÊ mg≥y (max)</Polish>
+			<Polish>Wysoko≈õƒá mg≈Çy (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_fogbase_desc">
 			<Original>Values for fog altitude parameter (from -5000 to 5000), numbers only written in manner: [highest, lowest]</Original>
             <English>Values for fog altitude parameter (from -5000 to 5000), numbers only written in manner: [highest, lowest]</English>
-			<Polish>Wartoúci dla parametru wysokoúci mg≥y (od -5000 do 5000), tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Warto≈õci dla parametru wysoko≈õci mg≈Çy (od -5000 do 5000), tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder_min">
 			<Original>Thunder (min)</Original>
             <English>Thunder (min)</English>
-			<Polish>B≥yskawice (min)</Polish>
+			<Polish>B≈Çyskawice (min)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder_max">
 			<Original>Thunder (max)</Original>
             <English>Thunder (max)</English>
-			<Polish>B≥yskawice (max)</Polish>
+			<Polish>B≈Çyskawice (max)</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module_thunder_desc">
 			<Original>Values for thunder parameter, numbers only written in manner: [highest, lowest]</Original>
             <English>Values for thunder parameter, numbers only written in manner: [highest, lowest]</English>
-			<Polish>Wartoúci dla parametru b≥yskawic, tylko wartoúci liczbowe zapisane w sposÛb: [najwyøszy, najniøszy]</Polish>
+			<Polish>Warto≈õci dla parametru b≈Çyskawic, tylko warto≈õci liczbowe zapisane w spos√≥b: [najwy≈ºszy, najni≈ºszy]</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Menu">
+			<Original>ACPL MM Core Settings</Original>
+            <English>ACPL MM Core Settings</English>
+			<Polish>ACPL MM Core Ustawienia</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Menu_Med">
+			<Original>Medical Supplies</Original>
+            <English>Medical Supplies</English>
+			<Polish>Zapasy Medyczne</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Menu_Med_nonmed">
+			<Original>Medical Supplies: non-medic units</Original>
+            <English>Medical Supplies: non-medic units</English>
+			<Polish>Zapasy Medyczne: jednostki niemedyczne</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Menu_Med_med">
+			<Original>Medical Supplies: medic units</Original>
+            <English>Medical Supplies: medic units</English>
+			<Polish>Zapasy Medyczne: jednostki medyczne</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Med_En">
+			<Original>Enable adding medical supplies</Original>
+            <English>Enable adding medical supplies</English>
+			<Polish>Aktywuj dodawanie zapas√≥w medycznych</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Med_En_desc">
+			<Original>Enable adding medical supplies for every unit. Amount of supplies may be defined below.</Original>
+            <English>Enable adding medical supplies for every unit. Amount of supplies may be defined below.</English>
+			<Polish>Aktywuj dodawanie zapas√≥w medycznych dla ka≈ºdej jednostki. Ilo≈õc zapas√≥w mo≈ºe byƒá zdefiniowana poni≈ºej.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_ban">
+			<Original>Field Dressing</Original>
+            <English>Field Dressing</English>
+			<Polish>Opatrunek Polowy</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_e_ban">
+			<Original>Elastic Bandage</Original>
+            <English>Elastic Bandage</English>
+			<Polish>Banda≈º Elastyczny</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_p_ban">
+			<Original>Packing Bandage</Original>
+            <English>Packing Bandage</English>
+			<Polish>Packing Bandage</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_adenosine">
+			<Original>Adenosine</Original>
+            <English>Adenosine</English>
+			<Polish>Adenozyna</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_atropine">
+			<Original>Atropine</Original>
+            <English>Atropine</English>
+			<Polish>Atropina</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_morphine">
+			<Original>Morphine</Original>
+            <English>Morphine</English>
+			<Polish>Morfina</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_epinephrine">
+			<Original>Epinephrine</Original>
+            <English>Epinephrine</English>
+			<Polish>Adrenalina</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_PAK">
+			<Original>PAK</Original>
+            <English>PAK</English>
+			<Polish>PAK</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_torniquet">
+			<Original>Torniquet</Original>
+            <English>Torniquet</English>
+			<Polish>Opaska uciskowa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Plasma250">
+			<Original>Plasma 250ml</Original>
+            <English>Plasma 250ml</English>
+			<Polish>Osocze 250ml</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Plasma500">
+			<Original>Plasma 500ml</Original>
+            <English>Plasma 500ml</English>
+			<Polish>Osocze 500ml</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Plasma1">
+			<Original>Plasma 1l</Original>
+            <English>Plasma 1l</English>
+			<Polish>Osocze 1l</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Saline250">
+			<Original>Saline 250ml</Original>
+            <English>Saline 250ml</English>
+			<Polish>S√≥l Fizjologiczna 250ml</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Saline500">
+			<Original>Saline 500ml</Original>
+            <English>Saline 500ml</English>
+			<Polish>S√≥l Fizjologiczna 500ml</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Saline1">
+			<Original>Saline 1l</Original>
+            <English>Saline 1l</English>
+			<Polish>S√≥l Fizjologiczna 1l</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Blood250">
+			<Original>Blood 250ml</Original>
+            <English>Blood 250ml</English>
+			<Polish>Krew 250ml</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Blood500">
+			<Original>Blood 500ml</Original>
+            <English>Blood 500ml</English>
+			<Polish>Krew 500ml</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Blood1">
+			<Original>Blood 1l</Original>
+            <English>Blood 1l</English>
+			<Polish>Krew 1l</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_quicklot">
+			<Original>Quikclot</Original>
+            <English>Quikclot</English>
+			<Polish>Opatrunek hemostatyczny</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_sewing">
+			<Original>Surgical Kit</Original>
+            <English>Surgical Kit</English>
+			<Polish>Zestaw Chirurgiczny</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_strecher">
+			<Original>Strecher</Original>
+            <English>Strecher</English>
+			<Polish>Nosze</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_medicbag">
+			<Original>Medic bag</Original>
+            <English>Medic bag</English>
+			<Polish>Torba medyczna</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_bodybag">
+			<Original>Bodybag</Original>
+            <English>Bodybag</English>
+			<Polish>Worek na cia≈Ço</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Meds_desc">
+			<Original>Amount of specified item for non-medic units.</Original>
+            <English>Amount of specified item for non-medic units.</English>
+			<Polish>Ilo≈õƒá okre≈õlonego pzedmiotu dla jednostek niemedycznych.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Meds_med_desc">
+			<Original>Amount of specified item for non-medic units.</Original>
+            <English>Amount of specified item for non-medic units.</English>
+			<Polish>Ilo≈õƒá okre≈õlonego pzedmiotu dla jednostek niemedycznych.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Meds_cus_desc">
+			<Original>Amount of specified item for synchronized units.</Original>
+            <English>Amount of specified item for synchronized units.</English>
+			<Polish>Ilo≈õƒá okre≈õlonego pzedmiotu dla zsynchronizowanych jednostek.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module">
+			<Original>ACPL Custom Medicaments Amount</Original>
+            <English>ACPL Custom Medicaments Amount</English>
+			<Polish>ACPL Niestandardowa Ilo≈õƒá Medykament√≥w</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module_desc">
+			<Original>This module adds custom amount of medical items for synchronized units.</Original>
+            <English>This module adds custom amount of medical items for synchronized units.</English>
+			<Polish>Ten modu≈Ç dodaje niestandardowƒÖ ilo≈õƒá przedmiot√≥w medycznych dla zsynchronizowanyc jednostek.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module_medic">
+			<Original>Level of medical knowledge</Original>
+            <English>Level of medical knowledge</English>
+			<Polish>Poziom wiedzy medycznej</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module_medic_desc">
+			<Original>Setting level of unit's medical knowledge.</Original>
+            <English>Setting level of unit's medical knowledge.</English>
+			<Polish>Ustalenie poziomu wiedzy medycznej jednostki.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module_medic_nonmedic">
+			<Original>Basic knowledge</Original>
+            <English>Basic knowledge</English>
+			<Polish>Bazowa wiedza</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module_medic_medic">
+			<Original>Paramedic</Original>
+            <English>Paramedic</English>
+			<Polish>Sanitariusz</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_CustomMedical_module_medic_doctor">
+			<Original>Doctor</Original>
+            <English>Doctor</English>
+			<Polish>Lekarz</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_MC_module">
+			<Original>ACPL Create Medical Centre</Original>
+            <English>ACPL Create Medical Centre</English>
+			<Polish>ACPL Stw√≥rz Centrum Medyczne</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_MC_module_desc">
+			<Original>This module is converting object or vehicle into a medical centre and adding specified amount of medical equipment.</Original>
+            <English>This module is converting object or vehicle into a medical centre and adding specified amount of medical equipment.</English>
+			<Polish>Ten modu≈Ç przekszta≈Çca obiekt bƒÖd≈∫ pojazd w centrum medyczne oraz dodaje okre≈õlonƒÖ ilo≈õƒá wyposa≈ºenia medycznego.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Set_Meds_MC_desc">
+			<Original>Amount of specified item for synchronized object and vehicles.</Original>
+            <English>Amount of specified item for synchronized object and vehicles.</English>
+			<Polish>Ilo≈õƒá okre≈õlonego pzedmiotu dla zsynchronizowanych obiekt√≥w oraz jednostek.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_MedicalChangeRole_module">
+			<Original>ACPL Change Medical Role</Original>
+            <English>ACPL Change Medical Role</English>
+			<Polish>ACPL Zmie≈Ñ Rolƒô MedycznƒÖ</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_MedicalChangeRole_module_desc">
+			<Original>This module is changing medical role of unit and resetting its medical equipment.</Original>
+            <English>This module is changing medical role of unit and resetting its medical equipment.</English>
+			<Polish>Ten modu≈Ç zmienia rolƒô medycznƒÖ jednostki i resetuje jej ekwipunek medyczny.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_MedicalExclude_module">
+			<Original>ACPL Medical Add Excluded</Original>
+            <English>ACPL Medical Add Excluded</English>
+			<Polish>ACPL Medyczny Dodaj Wykluczone</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_MedicalExclude_module_desc">
+			<Original>This module is excluding synchronized units from auto-adding medical equipment.</Original>
+            <English>This module is excluding synchronized units from auto-adding medical equipment.</English>
+			<Polish>Ten modu≈Ç wyklucza zsynchronizowane jednostki z automatycznego dodawania sprzƒôtu medycznego.</Polish>
 		</Key>
 	</Package>
 </Project>

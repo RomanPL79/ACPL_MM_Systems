@@ -1,0 +1,400 @@
+/*%FSM<COMPILE "D:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_PickUp">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start",0,250,24.661777,169.687393,114.661797,219.687393,0.000000,"Start"};
+item1[] = {"__isplayer",4,218,25.110680,256.452026,115.110680,306.452026,0.000000,"!isplayer"};
+item2[] = {"isplayer",4,218,-102.037033,171.262070,-12.037014,221.262070,0.000000,"isplayer"};
+item3[] = {"wait",2,250,-233.592773,170.237274,-143.592758,220.237274,0.000000,"wait"};
+item4[] = {"isplayer",4,218,-233.344650,88.321899,-143.344650,138.321854,0.000000,"isplayer"};
+item5[] = {"Main_Loop___1",2,250,-102.059097,322.750122,-12.059082,372.750122,0.000000,"Main Loop" \n "" \n "#1"};
+item6[] = {"Dead",4,218,-218.916382,322.010529,-128.916382,372.010529,0.000000,"Dead"};
+item7[] = {"Dead_Ending",1,250,-342.430054,322.010498,-252.430023,372.010498,0.000000,"Dead Ending"};
+item8[] = {"in_players__dist",4,218,-101.774750,417.828430,-11.774811,467.828430,0.000000,"in players" \n " distance"};
+item9[] = {"beyond_players_d",4,218,38.140450,380.001068,128.140442,430.001068,0.000000,"beyond" \n "players" \n "distance"};
+item10[] = {"wait_1",2,250,207.080597,322.683105,297.080566,372.683105,0.000000,"wait"};
+item11[] = {"back_to__loop",4,218,40.880417,323.638245,130.880402,373.638245,0.000000,"back to " \n "loop"};
+item12[] = {"disable_simulati",2,250,38.970085,450.676300,128.970093,500.676086,0.000000,"disable" \n "simulation"};
+item13[] = {"back_to_loop",8,218,152.635696,450.676331,242.635696,500.676331,0.000000,"back to loop"};
+item14[] = {"Main_Loop___2",2,250,-101.731483,532.351807,-11.731430,582.351807,0.000000,"Main Loop" \n "" \n "#2"};
+item15[] = {"in_veh",4,218,-237.075043,601.593628,-147.075043,651.593628,0.000000,"in" \n "veh"};
+item16[] = {"on_foot",4,218,-102.362717,646.795776,-12.362743,696.795776,0.000000,"on foot"};
+item17[] = {"disable",4,218,-218.927063,407.569275,-128.927063,457.569275,0.000000,"disable"};
+item18[] = {"__DoStop__Ending",1,250,-341.086456,407.569275,-251.086426,457.569275,0.000000,"!DoStop" \n "" \n "Ending"};
+item19[] = {"Veh_Loop",2,250,-391.092621,601.950134,-301.092621,651.950134,0.000000,"Veh Loop"};
+item20[] = {"Veh_Destroyed",4,218,-499.477631,492.471863,-409.477631,542.471863,0.000000,"Veh" \n "Destroyed"};
+item21[] = {"Run_away__Ending",1,250,-637.731079,491.726196,-547.731018,541.726196,0.000000,"Run away" \n "" \n "Ending"};
+item22[] = {"outside_veh",4,218,-507.519318,603.240784,-417.519318,653.240784,0.000000,"outside" \n "veh"};
+item23[] = {"Outside_End",1,250,-636.964539,603.240723,-546.964478,653.240723,0.000000,"Outside End"};
+item24[] = {"back_to_loop",8,218,-292.996338,698.386353,-202.996490,748.386353,0.000000,"back to loop"};
+item25[] = {"",7,210,247.284103,727.393860,255.284073,735.393860,0.000000,""};
+item26[] = {"On_foot_Loop",2,250,-102.934174,795.600342,-12.934170,845.600342,0.000000,"On foot" \n "Loop"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,5};
+link3[] = {2,3};
+link4[] = {3,1};
+link5[] = {3,4};
+link6[] = {4,3};
+link7[] = {5,2};
+link8[] = {5,6};
+link9[] = {5,8};
+link10[] = {5,9};
+link11[] = {5,17};
+link12[] = {6,7};
+link13[] = {8,14};
+link14[] = {9,12};
+link15[] = {10,11};
+link16[] = {11,5};
+link17[] = {12,13};
+link18[] = {13,10};
+link19[] = {14,15};
+link20[] = {14,16};
+link21[] = {15,19};
+link22[] = {16,26};
+link23[] = {17,18};
+link24[] = {19,20};
+link25[] = {19,22};
+link26[] = {19,24};
+link27[] = {20,21};
+link28[] = {22,23};
+link29[] = {24,25};
+link30[] = {25,10};
+globals[] = {0.000000,0,0,0,0,640,480,1,68,6316128,1,-594.939880,310.839417,1033.397095,348.213562,813,615,1};
+window[] = {0,-1,-1,-1,-1,810,50,1490,50,1,831};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_PickUp";
+        class States
+        {
+                /*%FSM<STATE "Start">*/
+                class Start
+                {
+                        name = "Start";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "isplayer">*/
+                                class isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__isplayer">*/
+                                class __isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Main_Loop___1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait">*/
+                class wait
+                {
+                        name = "wait";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "isplayer">*/
+                                class isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__isplayer">*/
+                                class __isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Main_Loop___1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Main_Loop___1">*/
+                class Main_Loop___1
+                {
+                        name = "Main_Loop___1";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Dead">*/
+                                class Dead
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Dead_Ending";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "in_players__dist">*/
+                                class in_players__dist
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Main_Loop___2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "beyond_players_d">*/
+                                class beyond_players_d
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="disable_simulati";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "disable">*/
+                                class disable
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="__DoStop__Ending";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "isplayer">*/
+                                class isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Dead_Ending">*/
+                class Dead_Ending
+                {
+                        name = "Dead_Ending";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait_1">*/
+                class wait_1
+                {
+                        name = "wait_1";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "back_to__loop">*/
+                                class back_to__loop
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Main_Loop___1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "disable_simulati">*/
+                class disable_simulati
+                {
+                        name = "disable_simulati";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "back_to_loop">*/
+                                class back_to_loop
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Main_Loop___2">*/
+                class Main_Loop___2
+                {
+                        name = "Main_Loop___2";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "on_foot">*/
+                                class on_foot
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="On_foot_Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "in_veh">*/
+                                class in_veh
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Veh_Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "__DoStop__Ending">*/
+                class __DoStop__Ending
+                {
+                        name = "__DoStop__Ending";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Veh_Loop">*/
+                class Veh_Loop
+                {
+                        name = "Veh_Loop";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "outside_veh">*/
+                                class outside_veh
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Outside_End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "back_to_loop">*/
+                                class back_to_loop
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Veh_Destroyed">*/
+                                class Veh_Destroyed
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Run_away__Ending";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Run_away__Ending">*/
+                class Run_away__Ending
+                {
+                        name = "Run_away__Ending";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Outside_End">*/
+                class Outside_End
+                {
+                        name = "Outside_End";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "On_foot_Loop">*/
+                class On_foot_Loop
+                {
+                        name = "On_foot_Loop";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Start";
+        finalStates[] =
+        {
+                "Dead_Ending",
+                "__DoStop__Ending",
+                "Run_away__Ending",
+                "Outside_End",
+        };
+};
+/*%FSM</COMPILE>*/

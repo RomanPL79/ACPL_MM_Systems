@@ -17,7 +17,7 @@ class CfgPatches {
 	};
 	
     version = 2;
-    versionStr = "WIP";
+    versionStr = "BETA-1";
     author = "[ACPL] Roman";
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
@@ -30,14 +30,6 @@ class CfgVehicles {
 class CfgFunctions
 {
 	#include "CfgFunctions.hpp"
-	class ACPL_LooseHelmet_Initialization
-	{
-		class Init
-		{
-			file = "ACPL_LooseHelmet\functions\Init.sqf";
-			preInit = 1;
-		};
-	};
 };
 
 //Load CBA Addon Settings
@@ -46,6 +38,14 @@ class Extended_PreInit_EventHandlers
 	class ACPL_LooseHelmet
 	{
 		init="call compile preProcessFileLineNumbers 'ACPL_LooseHelmet\cba_settings.sqf'";
+	};
+};
+
+class Extended_PostInit_EventHandlers
+{
+	class ACPL_LooseHelmet
+	{
+		init="call compile preProcessFileLineNumbers 'ACPL_LooseHelmet\functions\Init.sqf'";
 	};
 };
 
