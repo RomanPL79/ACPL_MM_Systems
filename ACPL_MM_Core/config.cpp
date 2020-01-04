@@ -36,7 +36,7 @@ class Extended_PostInit_EventHandlers
 	class Man
 	{
 		class ACPL_MM_Core_Camo_ClientInit {
-			clientInit = "params ['_unit'];[_unit,ACPL_MM_Core_fnc_CalculateCamo] remoteExec ['spawn',_unit];";
+			clientInit = "params ['_unit'];if (ACPL_MM_Core_Camo_enabled) then {[_unit,ACPL_MM_Core_fnc_CalculateCamo] remoteExec ['spawn',_unit];};";
 		};
 	};
 };

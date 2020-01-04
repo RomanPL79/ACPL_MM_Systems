@@ -349,3 +349,23 @@
     true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
+
+[
+    "ACPL_MM_Core_Camo_enabled", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "CHECKBOX", // setting type
+    [localize "STR_ACPL_MM_Core_Camo_Enabled_Name", localize "STR_ACPL_MM_Core_Camo_Enabled_Desc"], // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    [localize "STR_ACPL_MM_Core_Set_Menu", localize "STR_ACPL_MM_Core_Camo_Enabled_Sec"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    true, // data for this setting: [min, max, default, number of shown trailing decimals]
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_Settings_fnc_init;
+
+[
+    "ACPL_MM_Core_Camo_groupAI_enabled", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "CHECKBOX", // setting type
+    [localize "STR_ACPL_MM_Core_Camo_groupAI_Enabled_Name", localize "STR_ACPL_MM_Core_Camo_groupAI_Enabled_Desc"], // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    [localize "STR_ACPL_MM_Core_Set_Menu", localize "STR_ACPL_MM_Core_Camo_Enabled_Sec"], // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    true, // data for this setting: [min, max, default, number of shown trailing decimals]
+    true, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_Settings_fnc_init;

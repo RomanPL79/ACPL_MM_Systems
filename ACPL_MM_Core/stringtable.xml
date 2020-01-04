@@ -377,5 +377,30 @@
             <English>This module is excluding synchronized units from auto-adding medical equipment.</English>
 			<Polish>Ten moduł wyklucza zsynchronizowane jednostki z automatycznego dodawania sprzętu medycznego.</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_Camo_Enabled_Name">
+			<Original>Enable Dynamic Camo</Original>
+            <English>Enable Dynamic Camo</English>
+			<Polish>Aktywować Dynamiczne Camo</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Camo_Enabled_Desc">
+			<Original>Enable Dynamic Camo. That function is calculating visibility of player based on light, weather, type of uniform, surroundings, posture and speed of movement.</Original>
+            <English>Enable Dynamic Camo. That function is calculating visibility of player based on light, weather, type of uniform, surroundings, posture and speed of movement.</English>
+			<Polish>Aktywować Dynamiczne Camo. Ta funkcja oblicza widoczność gracza na podstawie światła, pogody, rodzaju munduru, otoczenia, postawy i prędkości ruchu.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Camo_Enabled_Sec">
+			<Original>Dynamic Camo</Original>
+            <English>Dynamic Camo</English>
+			<Polish>Dynamiczne Camo</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Camo_groupAI_Enabled_Name">
+			<Original>Enable Dynamic Camo for AI</Original>
+            <English>Enable Dynamic Camo for AI</English>
+			<Polish>Aktywować Dynamiczne Camo dla SI</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Camo_groupAI_Enabled_Desc">
+			<Original>Enable Dynamic Camo for AI in player's group. That function is calculating visibility of player based on light, weather, type of uniform, surroundings, posture and speed of movement.</Original>
+            <English>Enable Dynamic Camo for AI in player's group. That function is calculating visibility of player based on light, weather, type of uniform, surroundings, posture and speed of movement.</English>
+			<Polish>Aktywować Dynamiczne Camo dla SI w grupie gracza. Ta funkcja oblicza widoczność gracza na podstawie światła, pogody, rodzaju munduru, otoczenia, postawy i prędkości ruchu.</Polish>
+		</Key>
 	</Package>
 </Project>

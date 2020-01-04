@@ -29,5 +29,11 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_CalculateCamo
 		class CalculateCamo {};
+		
+		//[] call ACPL_MM_Core_fnc_CheckEnemy
+		class CheckEnemy {};
+		
+		//[] call ACPL_MM_Core_fnc_EnemyToClose
+		class EnemyToClose {};
 	};
 }
