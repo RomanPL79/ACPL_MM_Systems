@@ -14,10 +14,12 @@ class Module_F: Logic {
 
 #include "modules\cfgMedicalChangeRole.hpp"
 
+#include "modules\cfgDoStop.hpp"
+
 class Man;
 class CAManBase: Man {
 	class EventHandlers
 	{
-		init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_CalculateCamo;";
+		init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_CalculateCamo;[_unit] spawn ACPL_MM_Core_fnc_BS_init;";
 	};
 };

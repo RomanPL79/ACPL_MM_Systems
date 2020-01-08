@@ -1,0 +1,152 @@
+/*%FSM<COMPILE "D:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_DoRoam">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"start_",0,250,-131.800140,1073.383667,-41.800179,1123.383667,0.000000,"start" \n ""};
+item1[] = {"true",8,218,-130.578644,1149.967163,-40.578651,1199.967163,0.000000,"true"};
+item2[] = {"Prepare",2,250,-131.778778,1228.204590,-41.778786,1278.204590,0.000000,"Prepare"};
+item3[] = {"prepared",4,218,-132.687927,1314.573853,-42.687935,1364.573853,0.000000,"prepared"};
+item4[] = {"Go",2,4346,-132.687927,1400.033813,-42.687904,1450.033813,0.000000,"Go"};
+item5[] = {"stopped",4,218,-131.778778,1487.312256,-41.778786,1537.312256,0.000000,"stopped"};
+item6[] = {"End",1,250,-132.687927,1574.590942,-42.687904,1624.590942,0.000000,"End"};
+item7[] = {"wrong_data",4,218,-19.953346,1228.039307,70.046646,1278.039307,0.000000,"wrong data"};
+item8[] = {"",7,210,21.091667,1595.649292,29.091667,1603.649292,0.000000,""};
+item9[] = {"dead",4,218,-241.126068,1227.820801,-151.126068,1277.820801,0.000000,"dead"};
+item10[] = {"",7,210,-200.876190,1595.819946,-192.876190,1603.819946,0.000000,""};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,7};
+link4[] = {2,9};
+link5[] = {3,4};
+link6[] = {4,5};
+link7[] = {5,6};
+link8[] = {7,8};
+link9[] = {8,6};
+link10[] = {9,10};
+link11[] = {10,6};
+globals[] = {0.000000,0,0,0,0,640,480,1,147,6316128,1,-599.583679,260.588684,1657.480591,1029.952759,843,615,1};
+window[] = {0,-1,-1,-1,-1,985,225,1665,225,1,861};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_DoRoam";
+        class States
+        {
+                /*%FSM<STATE "start_">*/
+                class start_
+                {
+                        name = "start_";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"params [""_unit""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Prepare";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Prepare">*/
+                class Prepare
+                {
+                        name = "Prepare";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_positions = _unit getvariable [""ACPL_MM_Core_DoStop_PPL_Roam"", []];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wrong_data">*/
+                                class wrong_data
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count _positions == 0)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "prepared">*/
+                                class prepared
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Go";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count _positions > 0)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Go">*/
+                class Go
+                {
+                        name = "Go";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_random = _positions select floor(random(count _positions));" \n
+                         "" \n
+                         "_pos = _random select 0;" \n
+                         "_unitpos = _random select 1;" \n
+                         "" \n
+                         "[_unit, _pos, _unitpos] spawn ACPL_MM_Core_fnc_DoStop_ChangePos;" \n
+                         "" \n
+                         "_unit setvariable [""ACPL_MM_Core_DoStop_DoRoam"", true, true];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "stopped">*/
+                                class stopped
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_MM_Core_DoStop_DoMove"", true])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "End">*/
+                class End
+                {
+                        name = "End";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_unit setvariable [""ACPL_MM_Core_DoStop_DoRoam"", false, true];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="start_";
+        finalStates[] =
+        {
+                "End",
+        };
+};
+/*%FSM</COMPILE>*/

@@ -402,5 +402,10 @@
             <English>Enable Dynamic Camo for AI in player's group. That function is calculating visibility of player based on light, weather, type of uniform, surroundings, posture and speed of movement.</English>
 			<Polish>Aktywować Dynamiczne Camo dla SI w grupie gracza. Ta funkcja oblicza widoczność gracza na podstawie światła, pogody, rodzaju munduru, otoczenia, postawy i prędkości ruchu.</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_MissionModules_category">
+			<Original>ACPL Mission Modules</Original>
+            <English>ACPL Mission Modules</English>
+			<Polish>ACPL Modułu Misji</Polish>
+		</Key>
 	</Package>
 </Project>

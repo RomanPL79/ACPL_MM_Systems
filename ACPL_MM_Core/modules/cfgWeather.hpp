@@ -1,6 +1,6 @@
 class ACPL_MM_Core_Weather_module: Module_F {
 	author = "[ACPL] Roman79";
-	category = "ACPL_MM_Core";
+	category = "ACPL_MM_Core_MissionModules";
 	displayName = "$STR_ACPL_MM_Core_Weather_module";
 	function = "ACPL_MM_Core_fnc_WeatherLoop";
 	functionPriority = 1;
