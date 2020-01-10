@@ -52,7 +52,7 @@ if (ACPL_SkillSystem_Enabled) then {
 	};
 	if (_side == RESISTANCE) then {
 		if (ACPL_SkillSystem_Enabled_Resistance) then {
-			random = ACPL_SkillSystem_resistance_random;
+			_random = ACPL_SkillSystem_resistance_random;
 			_acc = random [(ACPL_SkillSystem_resistance_acc select 0), (((ACPL_SkillSystem_resistance_acc select 0) + (ACPL_SkillSystem_resistance_acc select 1))/_random), (ACPL_SkillSystem_resistance_acc select 1)];
 			_shake = random [(ACPL_SkillSystem_resistance_shake select 0), (((ACPL_SkillSystem_resistance_shake select 0) + (ACPL_SkillSystem_resistance_shake select 1))/_random), (ACPL_SkillSystem_resistance_shake select 1)];
 			_speed = random [(ACPL_SkillSystem_resistance_speed select 0), (((ACPL_SkillSystem_resistance_speed select 0) + (ACPL_SkillSystem_resistance_speed select 1))/_random), (ACPL_SkillSystem_resistance_speed select 1)];
