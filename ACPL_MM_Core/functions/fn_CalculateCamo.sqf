@@ -1,5 +1,7 @@
 params ["_unit", ["_sleep", 0.1], ["_custom", false]];
 
+if (isNil "ACPL_MM_Core_Camo_groupAI_enabled") then {ACPL_MM_Core_Camo_groupAI_enabled = false;};
+
 private _sunriseSunsetTime = date call BIS_fnc_sunriseSunsetTime;
 private _sunrise = _sunriseSunsetTime select 0;
 private _sunset = _sunriseSunsetTime select 1;

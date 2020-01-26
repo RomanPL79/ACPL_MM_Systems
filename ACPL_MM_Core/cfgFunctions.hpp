@@ -50,6 +50,9 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_CheckSeeEnemy_FromPos
 		class CheckSeeEnemy_FromPos {};
+		
+		//[] call ACPL_MM_Core_fnc_PlayerInRange
+		class PlayerInRange {};
 	};
 	
 	class DoStop {
@@ -119,9 +122,9 @@ class ACPL_MM_Core {
 		class DoStop_start {};
 	}
 	
-	class FSM
+	class DoStop_FSMs
 	{
-		file = "ACPL_MM_Core\fsm";
+		file = "ACPL_MM_Core\doStop_fncs\FSMs";
 		
 		//[] spawn ACPL_MM_Core_fnc_DoStop;
 		class DoStop
@@ -148,5 +151,32 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_BS_init;
 		class BS_init {};
+	}
+	
+	class DoSupp
+	{
+		file = "ACPL_MM_Core\DoSupp";
+		
+		//[] spawn ACPL_MM_Core_fnc_DoSupp_fnc;
+		class DoSupp_fnc {};
+		
+		//[] call ACPL_MM_Core_fnc_DoSupp_ListAvaibleTargets;
+		class DoSupp_ListAvaibleTargets {};
+		
+		//[] spawn ACPL_MM_Core_fnc_DoSupp_OrderSupp;
+		class DoSupp_OrderSupp {};
+		
+		//[] call ACPL_MM_Core_fnc_DoSupp_isBusy;
+		class DoSupp_isBusy {};
+	}
+	
+	class DoSupp_FSMs
+	{
+		file = "ACPL_MM_Core\DoSupp\FSMs";
+		
+		//[] spawn ACPL_MM_Core_fnc_DoSupp;
+		class DoSupp {
+			ext = ".fsm";
+		};
 	}
 }

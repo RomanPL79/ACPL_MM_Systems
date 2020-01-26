@@ -7,7 +7,7 @@ if (count _statics > 0) then {
 	
 	private _random = _statics select floor(random(count _statics));
 	
-	private _actpos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getposATL)];
+	private _actpos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getposATL _unit)];
 	
 	private _pos = getposATL _random;
 	

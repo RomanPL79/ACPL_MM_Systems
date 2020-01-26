@@ -1,13 +1,13 @@
-params ["_unit", "_side", "_distance"];
+params ["_unit", "_distance"];
 
 private _return = false;
 
-private _enemies = [_side] call ACPL_MM_Core_fnc_CheckEnemy;
+private _players = allPlayers;
 
 private _objects = nearestObjects [_unit, ["Man"], _distance];
 
 {
-	if ((side _x) in _enemies) then {
+	if (_x in _players) then {
 		_return = true;
 	};
 } foreach _objects;

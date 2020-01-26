@@ -24,11 +24,18 @@ params ["_unit", "_weaponhandler", "_class", "_type"];
 //giving info about state of script
 
 _unit setvariable ["ACPL_LooseHelmet_GoPickUp", false];
+_unit setvariable ["ACPL_LooseHelmet_Busy", true, true];
 
 //if wrong position then exit
 
 if ((getposATL _weaponhandler) distance [0,0,0] < 2) exitwith {
 	_unit setvariable ["ACPL_LooseHelmet_GoPickUp", true];
+};
+
+//if dostop is activated
+
+if (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false]) then {
+	[_unit, false] spawn ACPL_MM_Core_fnc_DoStop_Prepare;
 };
 
 //making unit go to weaponhandler by another function and waiting
@@ -68,4 +75,18 @@ switch (_type) do {
 //ending script
 
 _unit setvariable ["ACPL_LooseHelmet_GoPickUp", true];
-_unit setvariable ["ACPL_MM_Core_DoMove", true];
+_unit setvariable ["ACPL_MM_Core_DoMove", false];
+
+//if DoStop then is returning to position
+
+if (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false]) then {
+	private _pos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getPosATL _unit)];
+
+	[_unit, _pos] spawn ACPL_MM_Core_fnc_DoStop_DoMove;
+	
+	WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false])};
+	
+	[_unit, true] spawn ACPL_MM_Core_fnc_DoStop_Prepare;
+};
+
+_unit setvariable ["ACPL_LooseHelmet_Busy", false, true];

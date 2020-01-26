@@ -3,11 +3,13 @@ params ["_unit", "_type"];
 switch (_type) do {
 	case true: {
 		_unit DisableAI "PATH";
-		_unit DisableAI "AUTODANGER";
+		_unit DisableAI "AUTOCOMBAT";
 
 		private _pos = _unit getvariable ["ACPL_MM_Core_DoStop_pos", "UP"];
 
 		_unit setUnitPos _pos;
+		
+		_unit setBehaviour "SAFE";
 
 		_unit setVariable ["VCOM_NOAI",true];
 		_unit setVariable ["Vcm_Disable",true];
@@ -20,7 +22,7 @@ switch (_type) do {
 	};
 	case false: {
 		_unit EnableAI "PATH";
-		_unit EnableAI "AUTODANGER";
+		_unit EnableAI "AUTOCOMBAT";
 
 		_unit setUnitPos "AUTO";
 
@@ -30,6 +32,8 @@ switch (_type) do {
 		(group _unit) setVariable ["Vcm_Disable",false];
 		(group _unit) setvariable ["TCL_Disabled",false];
 		(group _unit) setVariable ["zbe_cacheDisabled",true];
+		
+		_unit setBehaviour "AWARE";
 		
 		_unit forceWalk false;
 		

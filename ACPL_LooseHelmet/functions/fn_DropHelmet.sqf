@@ -103,7 +103,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 						_weaponholder enableSimulationGlobal true;
 						deletevehicle _dummy;
 						_weaponHolder setdir (getDir _weaponHolder);
-						_weaponholder setposATL [(_pos select 0), (_pos select 1), 0];
+						_weaponholder setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
 						_weaponholder setVelocity [0,0,0];
 						
 						_moving = false;
@@ -136,7 +136,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				_weaponholder enableSimulationGlobal true;
 				deletevehicle _dummy;
 				_weaponHolder setdir (getDir _weaponHolder);
-				_weaponholder setposATL [(_pos select 0), (_pos select 1), 0];
+				_weaponholder setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
 				_weaponholder setVelocity [0,0,0];
 				
 				_moving = false;

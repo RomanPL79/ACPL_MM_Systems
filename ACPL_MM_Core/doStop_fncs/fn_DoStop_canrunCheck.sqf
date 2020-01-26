@@ -18,9 +18,9 @@ if (isNil {_unit getvariable "ACPL_MM_Core_DoStop_canrun_random"}) then {
 	};
 };
 
-private _chance = _unit getvariable ["ACPL_MM_Core_DoStop_canrun_chance", 30, true];
+private _chance = _unit getvariable ["ACPL_MM_Core_DoStop_canrun_chance", 30];
 private _random = random 100;
-private _distance = _unit getvariable ["ACPL_MM_Core_DoStop_canrun_distance", 100, true];
+private _distance = _unit getvariable ["ACPL_MM_Core_DoStop_canrun_distance", 100];
 private _side = side _unit;
 
 if ((_chance > _random) && ([_unit, _side, _distance] call ACPL_MM_Core_fnc_EnemyToClose)) then {

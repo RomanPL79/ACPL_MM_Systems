@@ -7,6 +7,12 @@ params [
 if (_activated) then {
 	private _units = synchronizedObjects _logic;
 	
+	{
+		_x DisableAI "PATH";
+	} foreach _units;
+	
+	WaitUntil {sleep 1;((time > 5) && (missionnamespace getvariable ["ACPL_MM_Core_Started", true]))};
+	
 	private _pos = _logic getvariable ["ACPL_MM_Core_DoStop_pos", "UP"];
 	private _duck = _logic getvariable ["ACPL_MM_Core_DoStop_duck", true];
 	private _run = _logic getvariable ["ACPL_MM_Core_DoStop_run", false];
@@ -32,14 +38,24 @@ if (_activated) then {
 		_x setvariable ["ACPL_MM_Core_DoStop_anim_list", _anim_list];
 		_x setvariable ["ACPL_MM_Core_DoStop_dosupp", _dosupp];
 		
-		private _building = ((nearestObjects [_x, ["House", "Building"], 50]) select 0);
+		private _buildings = (nearestObjects [_x, ["House", "Building"], 50]);
+		private _building = ObjNull;
+		
+		if (count _buildings > 0) then {
+			_building = _buildings select 0;
+		};
+		
+		private _actPos = getposATL _x;
 		
 		_x setvariable ["ACPL_MM_Core_DoStop_building", _building];
-		_x setvariable ["ACPL_MM_Core_DoStop_startPos", (getposATL _x)];
-		_x setvariable ["ACPL_MM_Core_DoStop_actPos", (getposATL _x)];
+		_x setvariable ["ACPL_MM_Core_DoStop_startPos", _actPos];
+		_x setvariable ["ACPL_MM_Core_DoStop_actPos", _actPos];
 		_x setvariable ["ACPL_MM_Core_DoStop_startDir", (getdir _x)];
 		
-		if (vehicle _x == _x) then {ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos + [(getposATL _x)];};
+		if (vehicle _x == _x) then {
+			if (isNil "ACPL_MM_Core_TakenPos") then {ACPL_MM_Core_TakenPos = [];};
+			ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos + [(getposATL _x)];
+		};
 		
 		[_x] spawn ACPL_MM_Core_fnc_DoStop;
 	} foreach _units;

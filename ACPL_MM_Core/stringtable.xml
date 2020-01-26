@@ -197,10 +197,10 @@
             <English>Adenosine</English>
 			<Polish>Adenozyna</Polish>
 		</Key>
-		<Key ID="STR_ACPL_MM_Core_Set_atropine">
-			<Original>Atropine</Original>
-            <English>Atropine</English>
-			<Polish>Atropina</Polish>
+		<Key ID="STR_ACPL_MM_Core_Set_splint">
+			<Original>Splint</Original>
+            <English>Splint</English>
+			<Polish>Szyna</Polish>
 		</Key>
 		<Key ID="STR_ACPL_MM_Core_Set_morphine">
 			<Original>Morphine</Original>
@@ -405,7 +405,172 @@
 		<Key ID="STR_ACPL_MM_Core_MissionModules_category">
 			<Original>ACPL Mission Modules</Original>
             <English>ACPL Mission Modules</English>
-			<Polish>ACPL Modułu Misji</Polish>
+			<Polish>ACPL Moduły Misji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_category">
+			<Original>ACPL DoStop Modules</Original>
+            <English>ACPL DoStop Modules</English>
+			<Polish>ACPL Moduły DoStop</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoPatrol_category">
+			<Original>ACPL DoPatrol Modules</Original>
+            <English>ACPL DoPatrol Modules</English>
+			<Polish>ACPL Moduły DoPatrol</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_category">
+			<Original>ACPL Spawner Modules</Original>
+            <English>ACPL Spawner Modules</English>
+			<Polish>ACPL Moduły Spawnujące</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Medical_category">
+			<Original>ACPL Medical Modules</Original>
+            <English>ACPL Medical Modules</English>
+			<Polish>ACPL Moduły Medyczne</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Briefing_category">
+			<Original>ACPL Briefing Modules</Original>
+            <English>ACPL Briefing Modules</English>
+			<Polish>ACPL Moduły Odprawy</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Intro_category">
+			<Original>ACPL Intro Modules</Original>
+            <English>ACPL Intro Modules</English>
+			<Polish>ACPL Moduły Intra</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Name">
+			<Original>ACPL DoStop</Original>
+            <English>ACPL DoStop</English>
+			<Polish>ACPL DoStop</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Name_desc">
+			<Original>This module is activating DoStop function for synchronized units. DoStop is a function which is managing stationary placed units.</Original>
+            <English>This module is activating DoStop function for synchronized units. DoStop is a function which is managing stationary placed units.</English>
+			<Polish>Ten moduł aktywuje funkcję DoStop dla zsynchronizowanych jednostek. DoStop jest funkcją, która zarządza stacjonarnie umieszczonymi jednostkami.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Position">
+			<Original>Stance</Original>
+            <English>Stance</English>
+			<Polish>Postawa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Position_desc">
+			<Original>Starting stance of unit</Original>
+            <English>Starting stance of unit</English>
+			<Polish>Startowa postawa jednostki</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Position_up">
+			<Original>Standing</Original>
+            <English>Standing</English>
+			<Polish>Stojąca</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Position_middle">
+			<Original>Crouching</Original>
+            <English>Crouching</English>
+			<Polish>Kucająca</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Position_down">
+			<Original>Prone</Original>
+            <English>Prone</English>
+			<Polish>Leżąca</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Duck">
+			<Original>Enable hiding</Original>
+            <English>Enable hiding</English>
+			<Polish>Aktywuj ukrywanie</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_Duck_desc">
+			<Original>Enable hiding when unit is suppressed. Unit may duck behind a cover or run to safe place.</Original>
+            <English>Enable hiding when unit is suppressed. Unit may duck behind a cover or run to safe place.</English>
+			<Polish>Aktywuj ukrywanie się gdy jednostka jest przygwożdzona. Jednostka może ukryć się za osłoną lub uciec w bezpieczne miejsce.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_run">
+			<Original>Enable abandoning of position</Original>
+            <English>Enable abandoning of position</English>
+			<Polish>Aktywuj porzucanie pozycji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_run_desc">
+			<Original>Enable abandoning of position after fight begin.</Original>
+            <English>Enable abandoning of position after fight begin.</English>
+			<Polish>Aktywuj porzucanie pozycji po rozpoczęciu walki.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_canrun">
+			<Original>Enable possibility abandoning of position</Original>
+            <English>Enable possibility abandoning of position</English>
+			<Polish>Aktywuj możliwość porzucanie pozycji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_canrun_desc">
+			<Original>Enable possibility abandoning of position after fight begin.</Original>
+            <English>Enable possibility abandoning of position after fight begin.</English>
+			<Polish>Aktywuj możliwość porzucanie pozycji po rozpoczęciu walki.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_canrun_chance">
+			<Original>Chance of abandoning position</Original>
+            <English>Chance of abandoning position</English>
+			<Polish>Szansa na porzucenie pozycji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_canrun_chance_desc">
+			<Original>Chance in % of abandoning position. The chance is calculated once in minute.</Original>
+            <English>Chance in % of abandoning position. The chance is calculated once in minute.</English>
+			<Polish>Szansa w % na porzucenie pozycji. Szansa jest obliczana raz na minutę.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_canrun_distance">
+			<Original>Distance for abandoing position</Original>
+            <English>Distance for abandoing position</English>
+			<Polish>Dystans do porzucenia pozycji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_canrun_distance_desc">
+			<Original>Distance within which enemy must be to consider abandoning of position.</Original>
+            <English>Distance within which enemy must be to consider abandoning of position.</English>
+			<Polish>Dystans w którym przeciwnik musi się znajdować aby rozważyć porzucenie pozycji.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_roam">
+			<Original>Enable roaming</Original>
+            <English>Enable roaming</English>
+			<Polish>Aktywuj wędrowanie</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_roam_desc">
+			<Original>Enable function of unit's roaming in building or near starting position of unit.</Original>
+            <English>Enable function of unit's roaming in building or near starting position of unit.</English>
+			<Polish>Aktywuj funkcję wędrowania jednostki po budynku lub w pobliżu jej pozycji startowej.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_react">
+			<Original>Enable reacting</Original>
+            <English>Enable reacting</English>
+			<Polish>Aktywuj reagowanie</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_react_desc">
+			<Original>Enable function of reacting for unit. The unit will change position if better is available and will react to enemy presence.</Original>
+            <English>Enable function of reacting for unit. The unit will change position if better is available and will react to enemy presence.</English>
+			<Polish>Aktywuj funkcję reagowania dla jednostki. Jednostka będzie zmieniać pozycję, jeżeli lepsza jest dostępna oraz reagować na obecność przeciwnika.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_animation">
+			<Original>Enable animations</Original>
+            <English>Enable animations</English>
+			<Polish>Aktywuj animacje</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_animation_desc">
+			<Original>Enable displaying of animations for unit.</Original>
+            <English>Enable displaying of animations for unit.</English>
+			<Polish>Aktywuj wyświetlanie animacji dla jednostki.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_animlist">
+			<Original>Select type of animation</Original>
+            <English>Select type of animation</English>
+			<Polish>Wybierz rodzaj animacji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_animlist_desc">
+			<Original>Select type of animation.</Original>
+            <English>Select type of animation.</English>
+			<Polish>Wybierz rodzaj animacji.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_dosupp">
+			<Original>Enable suppressing fire</Original>
+            <English>Enable suppressing fire</English>
+			<Polish>Aktywuj ogień zaporowy</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_DoStop_Module_dosupp_desc">
+			<Original>Enable suppressing with fire of spotted units.</Original>
+            <English>Enable suppressing with fire of spotted units.</English>
+			<Polish>Aktywuj przyciskanie ogniem zauważonych jednostek.</Polish>
 		</Key>
 	</Package>
 </Project>

@@ -10,7 +10,7 @@ private _checked = [];
 {
 	private _gunner = gunner _x;
 	private _reserved = _x getvariable ["ACPL_MM_Core_Static_Reserved", false];
-	private _reserved_unit = _x getvariable ["ACPL_MM_Core_Static_Reserved_Unit", Nil];
+	private _reserved_unit = _x getvariable ["ACPL_MM_Core_Static_Reserved_Unit", ObjNull];
 	private _noammo = _x getvariable ["ACPL_MM_Core_Static_noammo", false];
 	
 	if ((isNull _gunner) && (!(_reserved) || !(alive _reserved_unit)) && !(_noammo)) then {

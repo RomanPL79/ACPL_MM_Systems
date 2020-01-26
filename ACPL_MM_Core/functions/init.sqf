@@ -12,3 +12,6 @@ if (missionNamespace getVariable ["acpl_medical", false]) then {
 [false] remoteExec ["enableDynamicSimulationSystem",0,true];
 
 if (isNil "ACPL_MM_Core_TakenPos") then {ACPL_MM_Core_TakenPos = [];};
+if (isNil "ACPL_MM_Core_BeeingSuppressed") then {ACPL_MM_Core_BeeingSuppressed = [];};
+
+ACPL_MM_Core_Started = true;

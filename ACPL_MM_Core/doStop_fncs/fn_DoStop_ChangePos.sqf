@@ -20,3 +20,5 @@ _unit setvariable ["ACPL_MM_Core_DoStop_pos", _unitpos, true];
 _unit DisableAI "PATH";
 _unit setUnitPos _unitpos;
 _unit forceWalk true;
+
+ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos - [_oldpos] + [_pos];

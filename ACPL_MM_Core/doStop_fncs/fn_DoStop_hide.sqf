@@ -29,8 +29,9 @@ _positions_c = _positions_c - _check_c;
 
 if (count _positions_c > 0) then {
 	private _random = _positions_c select floor(random(count _positions_c));
+	private _pos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getPosATL _unit)];
 	
-	ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos + [_random];
+	ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos + [_random] - [_pos];
 	
 	[_unit, _random] spawn ACPL_MM_Core_fnc_DoMove;
 	
@@ -44,10 +45,20 @@ if (count _positions_c > 0) then {
 		sleep 1;
 	};
 	
-	ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos - [_random];
+	if (count [[_pos]] call ACPL_MM_Core_fnc_CheckTakenPos < 1) then {
+		private _positions = [_building] call BIS_fnc_buildingPositions;
+		
+		if (_pos distance (_unit getvariable "ACPL_MM_Core_DoStop_startPos") > 2) then {
+			_positions = _positions + [(_unit getvariable "ACPL_MM_Core_DoStop_startPos")];
+		};
+		
+		private _positions_c = [_positions] call ACPL_MM_Core_fnc_CheckTakenPos;
+		
+		_pos = _positions_c select floor(random(count _positions_c));
+	};
 	
-	_pos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getPosATL _unit)];
-
+	ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos - [_random] + [_pos];
+	
 	[_unit, _pos] spawn ACPL_MM_Core_fnc_DoStop_DoMove;
 	
 	waitUntil {sleep 1;(_unit getvariable ["ACPL_MM_Core_DoStop_DoMove", false])};

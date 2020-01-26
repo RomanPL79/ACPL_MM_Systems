@@ -18,8 +18,10 @@
 ---------------------------------------------------------------------------- */
 
 params ["_unit", "_velocity"];
-private ["_weapon", "_weaponsItems", "_items", "_new_velocity", "_weaponHolder_dummy", "_dummy", "_muzzle", "_flash", "_optic", "_magazine1", "_magazine2", "_bipod"];
-	
+private ["_weapon", "_weaponsItems", "_new_velocity", "_weaponHolder_dummy", "_dummy", "_muzzle", "_flash", "_optic", "_magazine1", "_magazine2", "_bipod"];
+
+private _items = [];
+
 private _primary = false;
 
 private _med_velocity = (((_velocity select 0) + (_velocity select 1) + (_velocity select 2)) / 3);
@@ -100,7 +102,7 @@ if (alive _unit) then {
 			_pos = getposATL _dummy;
 			if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
 				_dummy setVelocity [0,0,0];
-				_dummy setposATL [(_pos select 0), (_pos select 1), 0];
+				_dummy setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
 				_dummy enableSimulationGlobal false;
 				[_dummy, true] remoteExec ["hideobject",0,true];
 				
@@ -116,7 +118,7 @@ if (alive _unit) then {
 		_weaponHolder_dummy enableSimulationGlobal true;
 		_pos = getposATL _dummy;
 		deletevehicle _dummy;
-		_weaponHolder_dummy setposATL [(_pos select 0), (_pos select 1), 0];
+		_weaponHolder_dummy setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
 		_weaponHolder_dummy setVelocity [0,0,0];
 		_weaponHolder_dummy setdir (getdir _weaponHolder_dummy);
 		
