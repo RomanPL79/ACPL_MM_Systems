@@ -120,6 +120,15 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_DoStop_start
 		class DoStop_start {};
+		
+		//[] call ACPL_MM_Core_fnc_DoStop_checkDoSupp
+		class DoStop_checkDoSupp {};
+		
+		//[] call ACPL_MM_Core_fnc_DoStop_CheckSeeEnemy_FromPos
+		class DoStop_CheckSeeEnemy_FromPos {};
+		
+		//[] call ACPL_MM_Core_fnc_DoStop_Reload
+		class DoStop_Reload {};
 	}
 	
 	class DoStop_FSMs
@@ -155,7 +164,7 @@ class ACPL_MM_Core {
 	
 	class DoSupp
 	{
-		file = "ACPL_MM_Core\DoSupp";
+		file = "ACPL_MM_Core\doSupp_fncs";
 		
 		//[] spawn ACPL_MM_Core_fnc_DoSupp_fnc;
 		class DoSupp_fnc {};
@@ -168,15 +177,138 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_DoSupp_isBusy;
 		class DoSupp_isBusy {};
+		
+		//[] call ACPL_MM_Core_fnc_DoSupp_fire;
+		class DoSupp_fire {};
+		
+		//[] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
+		class DoSupp_CheckSeeEnemy_FromPos {};
 	}
 	
 	class DoSupp_FSMs
 	{
-		file = "ACPL_MM_Core\DoSupp\FSMs";
+		file = "ACPL_MM_Core\doSupp_fncs\FSMs";
 		
 		//[] spawn ACPL_MM_Core_fnc_DoSupp;
 		class DoSupp {
 			ext = ".fsm";
 		};
+	}
+	
+	class Spawner
+	{
+		file = "ACPL_MM_Core\spawner_fncs";
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_CreateList;
+		class Spawner_CreateList {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo;
+		class Spawner_LogInfo {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo_unit;
+		class Spawner_LogInfo_unit {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo_veh;
+		class Spawner_LogInfo_veh {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo_way;
+		class Spawner_LogInfo_way {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_Spawn;
+		class Spawner_Spawn {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_SpawnGroup;
+		class Spawner_SpawnGroup {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Spawner_AddGear;
+		class Spawner_AddGear {};
+	}
+	
+	class Taskmaster
+	{
+		file = "ACPL_MM_Core\taskmaster";
+		
+		//[] spawn ACPL_MM_Core_fnc_shk_taskmaster;
+		class shk_taskmaster {};
+		
+		//[] spawn ACPL_MM_Core_fnc_shk_actualize;
+		class shk_actualize {};
+		
+		//[] spawn ACPL_MM_Core_fnc_shk_createNew;
+		class shk_createNew {};
+	}
+	
+	class Convoy
+	{
+		file = "ACPL_MM_Core\convoy_fnc";
+		
+		//[] spawn ACPL_MM_Core_fnc_Convoy_Create;
+		class Convoy_Create {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Convoy_Destroy;
+		class Convoy_Destroy {};
+		
+		//[] spawn ACPL_MM_Core_fnc_Convoy_Set;
+		class Convoy_Set {};
+	}
+	
+	class VCOM
+	{
+		file = "ACPL_MM_Core\Vcom";
+		
+		//[] spawn ACPL_MM_Core_fnc_VcomInit;
+		class VcomInit {};
+	}
+	
+	class TCL
+	{
+		file = "ACPL_MM_Core\TCL_System";
+		
+		//[] spawn ACPL_MM_Core_fnc_TCLInit;
+		class TCLInit {};
+	}
+	
+	class CM
+	{
+		file = "ACPL_MM_Core\CustomMarkers_fncs";
+		
+		//[] spawn ACPL_MM_Core_fnc_CM_add;
+		class CM_add {};
+		
+		//[] spawn ACPL_MM_Core_fnc_CM_Mark;
+		class CM_Mark {};
+	}
+	
+	class DoPatrol
+	{
+		file = "ACPL_MM_Core\doPatrol_fncs";
+		
+		//[] spawn ACPL_MM_Core_fnc_DoPatrol_init;
+		class DoPatrol_init {};
+		
+		//[] spawn ACPL_MM_Core_fnc_DoPatrol_selectPos;
+		class DoPatrol_selectPos {};
+		
+	}
+	
+	class DoPatrol_FSM
+	{
+		file = "ACPL_MM_Core\doPatrol_fncs\FSMs";
+		
+		//[] spawn ACPL_MM_Core_fnc_DoPatrol_DoPatrol;
+		class DoPatrol {
+			ext = ".fsm";
+		};
+	}
+	
+	class headless
+	{
+		file = "ACPL_MM_Core\Headless_fncs";
+		
+		//[] spawn ACPL_MM_Core_fnc_init_headless;
+		class init_headless {};
+		
+		//[] spawn ACPL_MM_Core_fnc_headless_givecontrol;
+		class headless_givecontrol {};
 	}
 }

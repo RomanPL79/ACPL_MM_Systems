@@ -32,4 +32,12 @@ class CfgFactionClasses {
 	{
 		displayName = "$STR_ACPL_MM_Core_Spawner_Category";
 	};
+	class ACPL_MM_Core_CreateConvoy_Category: NO_CATEGORY
+	{
+		displayName = "$STR_ACPL_MM_Core_CreateConvoy_category";
+	};
+	class ACPL_MM_Core_AImods_Category: NO_CATEGORY
+	{
+		displayName = "$STR_ACPL_MM_Core_AImods_Category";
+	};
 };

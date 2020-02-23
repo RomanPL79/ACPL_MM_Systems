@@ -22,6 +22,16 @@
             <English>ACPL MM Core modules</English>
 			<Polish>ACPL MM Core moduły</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Spawn_Name">
+			<Original>Name</Original>
+            <English>Name</English>
+			<Polish>Nazwa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Spawn_Name_desc">
+			<Original>Name of the task which is defined in briefing</Original>
+            <English>Name of the task which is defined in briefing</English>
+			<Polish>Nazwa zadania, która została zdefiniowana w briefingu</Polish>
+		</Key>
 		<Key ID="STR_ACPL_MM_Core_Weather_module">
 			<Original>ACPL Weather</Original>
             <English>ACPL Weather</English>
@@ -422,6 +432,11 @@
             <English>ACPL Spawner Modules</English>
 			<Polish>ACPL Moduły Spawnujące</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_CreateConvoy_category">
+			<Original>ACPL Convoy Modules</Original>
+            <English>ACPL Convoy Modules</English>
+			<Polish>ACPL Moduły Konwojów</Polish>
+		</Key>
 		<Key ID="STR_ACPL_MM_Core_Medical_category">
 			<Original>ACPL Medical Modules</Original>
             <English>ACPL Medical Modules</English>
@@ -571,6 +586,276 @@
 			<Original>Enable suppressing with fire of spotted units.</Original>
             <English>Enable suppressing with fire of spotted units.</English>
 			<Polish>Aktywuj przyciskanie ogniem zauważonych jednostek.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_CreateList_Module">
+			<Original>ACPL Spawner Create List</Original>
+            <English>ACPL Spawner Create List</English>
+			<Polish>ACPL Spawner Create List</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_CreateList_Module_desc">
+			<Original>This module is creating list of possible to spawn units from synchronised groups. Units from groups will be despawn.</Original>
+            <English>This module is creating list of possible to spawn units from synchronised groups. Units from groups will be despawn.</English>
+			<Polish>Ten moduł tworzy listę jednostek możliwych to zespawnowania z synchronizowanych grup. Jednostki z grup zostaną despawnowane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Module">
+			<Original>ACPL Spawner Spawn</Original>
+            <English>ACPL Spawner Spawn</English>
+			<Polish>ACPL Spawner Spawn</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Module_desc">
+			<Original>This module is spawning specified number of groups using list from ACPL Spawner Create List Module. Must be synchronised with at least one ACPL Spawner Create List Module.</Original>
+            <English>This module is spawning specified number of groups using list from ACPL Spawner Create List Module. Must be synchronised with at least one ACPL Spawner Create List Module.</English>
+			<Polish>Ten moduł spawnuje określoną liczbę grup z listy modułu ACPL Spawner Create List. Musi być zsynchronizowany z conajmniej jednym modułem ACPL Spawner Create List.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Number_min">
+			<Original>Minimal number of groups to spawn.</Original>
+            <English>Minimal number of groups to spawn.</English>
+			<Polish>Minimalna ilość grup do zespawnowania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Number_max">
+			<Original>Maximal number of groups to spawn.</Original>
+            <English>Maximal number of groups to spawn.</English>
+			<Polish>Maksymalna ilość grup do zespawnowania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Number_desc">
+			<Original>How many groups should be spawned when module is activated.</Original>
+            <English>How many groups should be spawned when module is activated.</English>
+			<Polish>Jak wiele grup powinno być zrespawnowanych gdy moduł zostanie aktywowany.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Module">
+			<Original>ACPL Taskmaster Update Task</Original>
+            <English>ACPL Taskmaster Update Task</English>
+			<Polish>ACPL Taskmaster Aktualizacja Zadania</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Module_desc">
+			<Original>This module is changing state of specified task.</Original>
+            <English>This module is changing state of specified task.</English>
+			<Polish>Ten moduł zmienia status podanego zadania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Name">
+			<Original>Name</Original>
+            <English>Name</English>
+			<Polish>Nazwa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Name_desc">
+			<Original>Name of the task.</Original>
+            <English>Name of the task.</English>
+			<Polish>Nazwa zadania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Status">
+			<Original>Status</Original>
+            <English>Status</English>
+			<Polish>Status</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Status_desc">
+			<Original>Status of the task.</Original>
+            <English>Status of the task.</English>
+			<Polish>Status zadania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Status_succeeded">
+			<Original>Succeeded</Original>
+            <English>Succeeded</English>
+			<Polish>Wykonane</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Status_failed">
+			<Original>Failed</Original>
+            <English>Failed</English>
+			<Polish>Porażka</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Status_canceled">
+			<Original>Canceled</Original>
+            <English>Canceled</English>
+			<Polish>Anulowane</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_CreateTask_Module">
+			<Original>ACPL Taskmaster Create Task</Original>
+            <English>ACPL Taskmaster Create Task</English>
+			<Polish>ACPL Taskmaster Stwórz Zadanie</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_CreateTask_Module_desc">
+			<Original>This module is creating a new task.</Original>
+            <English>This module is creating a new task.</English>
+			<Polish>Ten moduł zmienia status podanego zadania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Name">
+			<Original>Name</Original>
+            <English>Name</English>
+			<Polish>Nazwa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Name_desc">
+			<Original>Name of task (must be unique), it's not displayed.</Original>
+            <English>Name of task (must be unique), it's not displayed.</English>
+			<Polish>Nazwa zadania (musi być unikalna), nie jest wyświetlana.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Title">
+			<Original>Title</Original>
+            <English>Title</English>
+			<Polish>Tytuł</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Title_desc">
+			<Original>Title of the task.</Original>
+            <English>Title of the task.</English>
+			<Polish>Tytuł zadania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Desc">
+			<Original>Description</Original>
+            <English>Description</English>
+			<Polish>Opis</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Desc_desc">
+			<Original>Description of the task.</Original>
+            <English>Description of the task.</English>
+			<Polish>Opis zadania.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Side">
+			<Original>Side</Original>
+            <English>Side</English>
+			<Polish>Strona</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Taskmaster_UpdateTask_Side_desc">
+			<Original>To which side task will be assigned.</Original>
+            <English>To which side task will be assigned.</English>
+			<Polish>Do której strony zadanie zostanie przypisane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_Module">
+			<Original>ACPL Convoy Create</Original>
+            <English>ACPL Convoy Create</English>
+			<Polish>ACPL Stwórz Konwój</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_Module_desc">
+			<Original>Create convoy for synchronized groups. Synchronized groups have to have defined waypoints.</Original>
+            <English>Create convoy for synchronized groups. Synchronized groups have to have defined waypoints.</English>
+			<Polish>Stwórz konwój dla zsynchronizowanych grup. Zsynchronizowane grupy muszą mieć zdefiniowane waypointy.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_speed">
+			<Original>Speed</Original>
+            <English>Speed</English>
+			<Polish>Prędkość</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_speed_desc">
+			<Original>Maximum speed of the convoy.</Original>
+            <English>Maximum speed of the convoy.</English>
+			<Polish>Maksymalna prędkość konwoju.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_separation">
+			<Original>Separation</Original>
+            <English>Separation</English>
+			<Polish>Separacja</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_separation_desc">
+			<Original>Separation between vehicles in convoy.</Original>
+            <English>Separation between vehicles in convoy.</English>
+			<Polish>Odległość pomiędzy pojazdami w konwoju.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_push">
+			<Original>Push Through</Original>
+            <English>Push Through</English>
+			<Polish>Przebij się</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Create_push_desc">
+			<Original>Should convoy be pushing through enemy of encountered on his way?</Original>
+            <English>Should convoy be pushing through enemy of encountered on his way?</English>
+			<Polish>Czy konwój powinien przebijać się przez napotkanego przeciwnika?</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Destroy_Module">
+			<Original>ACPL Convoy Deactivate</Original>
+            <English>ACPL Convoy Deactivate</English>
+			<Polish>ACPL Dezaktywuj Konwój</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Convoy_Destroy_Module_desc">
+			<Original>Deactivate convoy for synchronized groups.</Original>
+            <English>Deactivate convoy for synchronized groups.</English>
+			<Polish>Dezaktywuj konwój dla zsynchronizowanych grup.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_AImods_Category">
+			<Original>ACPL AI Mods</Original>
+            <English>ACPL AI Mods</English>
+			<Polish>ACPL Modyfikacje AI</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_AImods_VCOM_Module">
+			<Original>ACPL Enable VCOMAI</Original>
+            <English>ACPL Enable VCOMAI</English>
+			<Polish>ACPL Aktywuj VCOMAI</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_AImods_VCOM_Module_desc">
+			<Original>Activate VCOMAI mod, which is making AI more aggressive.</Original>
+            <English>Activate VCOMAI mod, which is making AI more aggressive.</English>
+			<Polish>Aktywuj modyfikację VCOMAI, która sprawia, że AI jest bardziej agresywne.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_AImods_TCL_Module">
+			<Original>ACPL Enable TCLAI</Original>
+            <English>ACPL Enable TCLAI</English>
+			<Polish>ACPL Aktywuj TCLAI</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_AImods_TCL_Module_desc">
+			<Original>Activate TCLAI mod, which is making AI more organized.</Original>
+            <English>Activate TCLAI mod, which is making AI more organized.</English>
+			<Polish>Aktywuj modyfikację TCLAI, która sprawia, że AI jest bardziej zorganizowane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_module">
+			<Original>ACPL Add Custom Markers</Original>
+            <English>ACPL Add Custom Markers</English>
+			<Polish>ACPL Dodaj Dodatkowe Markery</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_module_desc">
+			<Original>This module is adding custom markers for additional objects placed on map by mission marker. Objects must be synchronized.</Original>
+            <English>This module is adding custom markers for additional objects placed on map by mission marker. Objects must be synchronized.</English>
+			<Polish>Ten moduł dodaje markery do objektów postawionych na mapę przez mission makera. Objekty muszą być zsynchronizowane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_type">
+			<Original>Type</Original>
+            <English>Type</English>
+			<Polish>Rodzaj</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_type_desc">
+			<Original>Type of the ojects</Original>
+            <English>Type of the ojects</English>
+			<Polish>Rodzaj obiektów</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_type_building">
+			<Original>Building</Original>
+            <English>Building</English>
+			<Polish>Budynek</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_type_tree">
+			<Original>Tree</Original>
+            <English>Tree</English>
+			<Polish>Drzewo</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Custmomarker_type_bush">
+			<Original>Bush</Original>
+            <English>Bush</English>
+			<Polish>Krzak</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Name">
+			<Original>Name</Original>
+            <English>Name</English>
+			<Polish>Nazwa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Name_desc">
+			<Original>Name of the task (variable, not visible)</Original>
+            <English>Name of the task (variable, not visible)</English>
+			<Polish>Nazwa zadania (wartość, nie widoczna)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Title">
+			<Original>Title</Original>
+            <English>Title</English>
+			<Polish>Tytuł</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Title_desc">
+			<Original>Title of the task</Original>
+            <English>Title of the task</English>
+			<Polish>Tytuł zadania</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Desc">
+			<Original>Description</Original>
+            <English>Description</English>
+			<Polish>Opis</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Desc_desc">
+			<Original>Description of the task</Original>
+            <English>Description of the task</English>
+			<Polish>Opis zadania</Polish>
 		</Key>
 	</Package>
 </Project>

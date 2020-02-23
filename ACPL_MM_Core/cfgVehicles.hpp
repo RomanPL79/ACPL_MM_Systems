@@ -16,6 +16,24 @@ class Module_F: Logic {
 
 #include "modules\doStop\cfgDoStop.hpp"
 
+#include "modules\spawner\cfgSpawnerCreateList.hpp"
+
+#include "modules\spawner\cfgSpawnerSpawn.hpp"
+
+#include "modules\briefing\cfgBriefing_CreateTask.hpp"
+
+#include "modules\briefing\cfgBriefing_UpdateTask.hpp"
+
+#include "modules\convoy\createConvoy.hpp"
+
+#include "modules\convoy\destroyConvoy.hpp"
+
+#include "modules\AI_Mods\cfg_VCOM.hpp"
+
+#include "modules\AI_Mods\cfg_TCL.hpp"
+
+#include "modules\misc\cfgCustomMarker.hpp"
+
 class Man;
 class CAManBase: Man {
 	class EventHandlers
