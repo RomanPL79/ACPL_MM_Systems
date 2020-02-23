@@ -20,6 +20,8 @@
 params ["_unit", "_velocity"];
 private ["_weaponHolder0", "_moving", "_pos", "_vel", "_mass", "_dummy0"];
 
+if (vehicle _unit != _unit) exitwith {};
+
 private _random = random 100;
 if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_LooseWeapon_fix_helmet", false])) then {
 
@@ -99,12 +101,10 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 					_pos = getposATL _dummy;
 					
 					if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
-						detach _weaponholder;
+						_dummy enableSimulationGlobal false;
+						detach _weaponHolder;
 						_weaponholder enableSimulationGlobal true;
 						deletevehicle _dummy;
-						_weaponHolder setdir (getDir _weaponHolder);
-						_weaponholder setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
-						_weaponholder setVelocity [0,0,0];
 						
 						_moving = false;
 					};
@@ -118,10 +118,12 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			};
 		};
 		
-		if (_nvg == "") then {
-			[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUp;
-		} else {
-			[_unit, _weaponholder, "HELMET", _helmet, true, _weaponHolder0, _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
+		if (!(_unit in allplayers)) then {
+			if (_nvg == "") then {
+				[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUp;
+			} else {
+				[_unit, _weaponholder, "HELMET", _helmet, true, _weaponHolder0, _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
+			};
 		};
 		
 		_moving = true;
@@ -132,13 +134,11 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			_pos = getposATL _dummy;
 			
 			if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
-				detach _weaponholder;
+				_dummy enableSimulationGlobal false;
+				detach _weaponHolder;
 				_weaponholder enableSimulationGlobal true;
 				deletevehicle _dummy;
-				_weaponHolder setdir (getDir _weaponHolder);
-				_weaponholder setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
-				_weaponholder setVelocity [0,0,0];
-				
+					
 				_moving = false;
 			};
 			
@@ -201,12 +201,10 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				_pos = getposATL _dummy;
 				
 				if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
-					detach _weaponholder;
+					_dummy enableSimulationGlobal false;
+					detach _weaponHolder;
 					_weaponholder enableSimulationGlobal true;
 					deletevehicle _dummy;
-					_weaponHolder setdir (getDir _weaponHolder);
-					_weaponholder setposATL _pos;
-					_weaponholder setVelocity [0,0,0];
 					
 					_moving = false;
 				};

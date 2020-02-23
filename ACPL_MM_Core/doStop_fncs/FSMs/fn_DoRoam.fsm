@@ -3,9 +3,9 @@
 /*
 item0[] = {"start_",0,250,-131.800140,1073.383667,-41.800179,1123.383667,0.000000,"start" \n ""};
 item1[] = {"true",8,218,-130.578644,1149.967163,-40.578651,1199.967163,0.000000,"true"};
-item2[] = {"Prepare",2,4346,-131.778778,1228.204590,-41.778786,1278.204590,0.000000,"Prepare"};
+item2[] = {"Prepare",2,250,-131.778778,1228.204590,-41.778786,1278.204590,0.000000,"Prepare"};
 item3[] = {"prepared_buildin",4,218,-131.667557,1314.573853,-41.667564,1364.573853,1.000000,"prepared" \n "building"};
-item4[] = {"Go",2,250,-132.687927,1400.033813,-42.687904,1450.033813,0.000000,"Go"};
+item4[] = {"Go",2,4346,-132.687927,1400.033813,-42.687904,1450.033813,0.000000,"Go"};
 item5[] = {"stopped",4,218,-131.778778,1487.312256,-41.778786,1537.312256,0.000000,"stopped"};
 item6[] = {"End",1,250,-132.687927,1574.590942,-42.687904,1624.590942,0.000000,"End"};
 item7[] = {"",7,210,145.576874,1595.649292,153.576874,1603.649292,0.000000,""};
@@ -36,7 +36,7 @@ link14[] = {13,14};
 link15[] = {14,15};
 link16[] = {15,16};
 link17[] = {16,7};
-globals[] = {0.000000,0,0,0,0,640,480,1,155,6316128,1,-483.034515,343.243652,1623.151367,1020.350586,843,615,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,155,6316128,1,-483.034515,343.243652,1726.068604,1123.267822,843,615,1};
 window[] = {0,-1,-1,-1,-1,785,25,1465,25,1,861};
 *//*%FSM</HEAD>*/
 class FSM
@@ -72,7 +72,9 @@ class FSM
                 {
                         name = "Prepare";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"_positions = _unit getvariable [""ACPL_MM_Core_DoStop_PPL_Roam"", []];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_positions = _unit getvariable [""ACPL_MM_Core_DoStop_PPL_Roam"", []];" \n
+                         "" \n
+                         "_positions = [_positions] call ACPL_MM_Core_fnc_CheckTakenPos;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -118,6 +120,17 @@ class FSM
                         name = "Go";
                         itemno = ;
                         init = /*%FSM<STATEINIT""">*/"_random = _positions select floor(random(count _positions));" \n
+                         "" \n
+                         "_taken = ([[_random]] call ACPL_MM_Core_fnc_CheckTakenPos);" \n
+                         "" \n
+                         "_check = ((count _taken) > 0);" \n
+                         "" \n
+                         "if (!_check) then {" \n
+                         "	_positions = _positions - [_random];" \n
+                         "	_random = _positions select floor(random(count _positions));" \n
+                         "};" \n
+                         "" \n
+                         "ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos + [_random];" \n
                          "" \n
                          "_unitpos = ""UP"";" \n
                          "" \n

@@ -32,9 +32,9 @@ class ACPL_MM_Core_CreateMedicalCentre_module: Module_F {
 			typeName = "NUMBER";
 			defaultValue = 20;
 		};
-		class ACPL_MM_Core_Medical_atropine {
-			displayName = "$STR_ACPL_MM_Core_Set_atropine";
-			property = "ACPL_MM_Core_Medical_atropine";
+		class ACPL_MM_Core_Medical_splint {
+			displayName = "$STR_ACPL_MM_Core_Set_splint";
+			property = "ACPL_MM_Core_Medical_splint";
 			description = "$STR_ACPL_MM_Core_Set_Meds_MC_desc";
 			typeName = "NUMBER";
 			defaultValue = 20;

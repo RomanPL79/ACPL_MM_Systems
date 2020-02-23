@@ -1,5 +1,7 @@
 params ["_unit"];
 
+if (!isserver) exitwith {};
+
 WaitUntil {sleep 1;!(isNil "ACPL_MM_Core_MedicalSupplies_Enabled")};
 
 if (!ACPL_MM_Core_MedicalSupplies_Enabled) exitwith {};

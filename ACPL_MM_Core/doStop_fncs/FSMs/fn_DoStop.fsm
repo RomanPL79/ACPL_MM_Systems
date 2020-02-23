@@ -15,7 +15,7 @@ item10[] = {"wait_1",2,250,2040.868042,724.010010,2130.867920,774.010010,0.00000
 item11[] = {"back_to__loop",4,218,1874.667847,724.965149,1964.667847,774.965149,0.000000,"back to " \n "loop"};
 item12[] = {"disable_simulati",2,250,1872.757446,852.003174,1962.757568,902.002991,0.000000,"disable" \n "simulation"};
 item13[] = {"back_to_loop",8,218,1986.423096,852.003235,2076.423096,902.003235,0.000000,"back to loop"};
-item14[] = {"Main_Loop___2",2,250,1732.055908,933.678711,1822.056030,983.678711,0.000000,"Main Loop" \n "" \n "#2"};
+item14[] = {"Main_Loop___2",2,4346,1732.055908,933.678711,1822.056030,983.678711,0.000000,"Main Loop" \n "" \n "#2"};
 item15[] = {"in_veh",4,218,1596.712402,1005.223022,1686.712402,1055.223022,0.000000,"in" \n "veh"};
 item16[] = {"on_foot",4,218,1731.424683,1048.122681,1821.424683,1098.122681,0.000000,"on foot"};
 item17[] = {"disable",4,218,1329.301025,814.550842,1419.301025,864.550842,0.000000,"disable"};
@@ -68,7 +68,7 @@ item63[] = {"",7,210,1879.724854,1873.935547,1887.724854,1881.935547,0.000000,""
 item64[] = {"Manage_Animation",2,250,1949.918579,1673.361694,2039.918457,1723.361694,0.000000,"Manage" \n "Animations"};
 item65[] = {"Done",4,218,1950.647095,1760.783447,2040.646973,1810.783447,0.000000,"Done"};
 item66[] = {"",7,210,1991.443970,1873.703247,1999.443970,1881.703247,0.000000,""};
-item67[] = {"Static_to_mount",4,218,2189.172119,1392.184814,2279.172119,1442.184814,5.000000,"Static" \n "to mount"};
+item67[] = {"Static_to_mount",4,218,2188.115967,1390.072266,2278.115967,1440.072266,5.000000,"Static" \n "to mount"};
 item68[] = {"Mount",2,250,2188.704590,1285.470581,2278.704346,1335.470459,0.000000,"Mount"};
 item69[] = {"Done",4,218,2188.902588,1182.567505,2278.902588,1232.567505,0.000000,"Done"};
 item70[] = {"DoSupp",4,218,2079.332764,1582.599365,2169.332764,1632.599365,6.000000,"DoSupp"};
@@ -81,7 +81,7 @@ item76[] = {"Done",4,218,754.033508,1093.615479,844.034119,1143.615479,0.000000,
 item77[] = {"",7,210,795.617737,810.081299,803.617737,818.081299,0.000000,""};
 item78[] = {"",7,210,1105.426880,810.081360,1113.426880,818.081360,0.000000,""};
 item79[] = {"Prepare",2,250,1790.980835,646.940918,1880.980835,696.940918,0.000000,"Prepare"};
-item80[] = {"done",8,218,1907.295166,647.273560,1997.295166,697.273560,0.000000,"done"};
+item80[] = {"done",4,218,1907.295166,647.273560,1997.295166,697.273560,0.000000,"done"};
 item81[] = {"Disable",2,250,1730.668945,490.926697,1820.668945,540.926697,0.000000,"Disable"};
 item82[] = {"done",8,218,1601.334839,489.289551,1691.334839,539.289551,0.000000,"done"};
 item83[] = {"noammo",4,218,1038.176636,1009.510803,1128.176636,1059.510742,0.000000,"noammo"};
@@ -96,12 +96,14 @@ item91[] = {"",7,210,1063.203369,1361.861938,1071.203369,1369.861938,0.000000,""
 item92[] = {"",7,210,1301.628784,1360.416138,1309.628784,1368.416138,0.000000,""};
 item93[] = {"",7,210,958.055542,1323.285645,966.055542,1331.285645,0.000000,""};
 item94[] = {"daed",4,218,878.249084,1912.136841,968.249084,1962.136841,0.000000,"daed"};
-item95[] = {"",7,210,2283.745850,1930.055664,2291.745850,1938.055664,0.000000,""};
+item95[] = {"",7,210,2288.875732,1931.454712,2296.875732,1939.454712,0.000000,""};
 item96[] = {"",7,210,2288.976807,1064.738403,2296.976807,1072.738403,0.000000,""};
 item97[] = {"Picking_weap_hel",4,218,2195.766602,1584.050903,2285.766602,1634.050903,0.000000,"Picking" \n "weap/helm"};
 item98[] = {"Wait_until_is_do",2,250,2195.870850,1674.096069,2285.870850,1724.096069,0.000000,"Wait until" \n "is done"};
-item99[] = {"Done",4,4314,2195.761230,1761.764404,2285.761230,1811.764404,0.000000,"Done"};
+item99[] = {"Done",4,218,2195.761230,1761.764404,2285.761230,1811.764404,0.000000,"Done"};
 item100[] = {"",7,210,2237.844727,1873.409424,2245.844727,1881.409424,0.000000,""};
+item101[] = {"Did_not_mount",4,218,2306.882813,1284.652588,2396.882813,1334.652588,0.000000,"Did not" \n "mount"};
+item102[] = {"",7,210,2347.485596,1872.946655,2355.485596,1880.946655,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,79};
@@ -194,51 +196,54 @@ link88[] = {65,66};
 link89[] = {66,63};
 link90[] = {67,68};
 link91[] = {68,69};
-link92[] = {69,25};
-link93[] = {70,71};
-link94[] = {71,72};
-link95[] = {72,73};
-link96[] = {73,66};
-link97[] = {74,75};
-link98[] = {75,76};
-link99[] = {76,77};
-link100[] = {77,78};
-link101[] = {78,19};
-link102[] = {79,80};
-link103[] = {80,5};
-link104[] = {81,82};
-link105[] = {82,3};
-link106[] = {83,84};
-link107[] = {85,25};
-link108[] = {86,85};
-link109[] = {87,88};
-link110[] = {87,89};
-link111[] = {87,94};
-link112[] = {88,90};
-link113[] = {89,49};
-link114[] = {90,91};
-link115[] = {91,92};
-link116[] = {92,33};
-link117[] = {92,35};
-link118[] = {92,36};
-link119[] = {92,37};
-link120[] = {92,38};
-link121[] = {92,39};
-link122[] = {92,44};
-link123[] = {92,45};
-link124[] = {92,67};
-link125[] = {92,70};
-link126[] = {92,97};
-link127[] = {93,34};
-link128[] = {94,95};
-link129[] = {95,96};
-link130[] = {96,25};
-link131[] = {97,98};
-link132[] = {98,99};
-link133[] = {99,100};
-link134[] = {100,73};
-globals[] = {0.000000,0,0,0,0,640,480,1,325,6316128,1,1463.949463,2615.510742,2065.706543,1023.557373,842,762,1};
-window[] = {0,-1,-1,-1,-1,1010,180,1620,103,1,860};
+link92[] = {68,101};
+link93[] = {69,25};
+link94[] = {70,71};
+link95[] = {71,72};
+link96[] = {72,73};
+link97[] = {73,66};
+link98[] = {74,75};
+link99[] = {75,76};
+link100[] = {76,77};
+link101[] = {77,78};
+link102[] = {78,19};
+link103[] = {79,80};
+link104[] = {80,5};
+link105[] = {81,82};
+link106[] = {82,3};
+link107[] = {83,84};
+link108[] = {85,25};
+link109[] = {86,85};
+link110[] = {87,88};
+link111[] = {87,89};
+link112[] = {87,94};
+link113[] = {88,90};
+link114[] = {89,49};
+link115[] = {90,91};
+link116[] = {91,92};
+link117[] = {92,33};
+link118[] = {92,35};
+link119[] = {92,36};
+link120[] = {92,37};
+link121[] = {92,38};
+link122[] = {92,39};
+link123[] = {92,44};
+link124[] = {92,45};
+link125[] = {92,67};
+link126[] = {92,70};
+link127[] = {92,97};
+link128[] = {93,34};
+link129[] = {94,95};
+link130[] = {95,96};
+link131[] = {96,25};
+link132[] = {97,98};
+link133[] = {98,99};
+link134[] = {99,100};
+link135[] = {100,73};
+link136[] = {101,102};
+link137[] = {102,100};
+globals[] = {0.000000,0,0,0,0,640,480,1,327,6316128,1,1385.313110,2266.875977,1269.864380,586.952759,1176,911,1};
+window[] = {2,-1,-1,-1,-1,957,-1870,-430,50,3,1194};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -462,7 +467,9 @@ class FSM
                 {
                         name = "Main_Loop___2";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"_t = time + 1;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = time + 1;" \n
+                         "" \n
+                         "[_unit, true] remoteExec [""enableSimulation"", 0, true];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -516,8 +523,12 @@ class FSM
                          "" \n
                          "_t = time + 1;" \n
                          "" \n
+                         "_dosupp = _unit getvariable [""ACPL_MM_Core_DoStop_dosupp"", false];" \n
+                         "" \n
                          "_destroyed = [vehicle _unit] call ACPL_MM_Core_fnc_DoStop_Static_isDestroyed;" \n
-                         "_noammo = [vehicle _unit] call ACPL_MM_Core_fnc_DoStop_Static_hasammo;"/*%FSM</STATEINIT""">*/;
+                         "_noammo = [vehicle _unit] call ACPL_MM_Core_fnc_DoStop_Static_hasammo;" \n
+                         "" \n
+                         "if (_dosupp) then {_dosupp = [_unit] call ACPL_MM_Core_fnc_DoStop_checkDoSupp;};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -550,7 +561,7 @@ class FSM
                                         priority = 0.000000;
                                         to="DoSupp_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && false"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && _dosupp"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -709,6 +720,7 @@ class FSM
                          "_supp = _unit getvariable [""ACPL_MM_Core_DoStop_duck"", false];" \n
                          "_anim = _unit getvariable [""ACPL_MM_Core_DoStop_anim"", false];" \n
                          "_dosupp = _unit getvariable [""ACPL_MM_Core_DoStop_dosupp"", false];" \n
+                         "_static = false;" \n
                          "" \n
                          "if (_react) then {_react = [_unit] call ACPL_MM_Core_fnc_DoStop_needToReact;};" \n
                          "if (_roam) then {_roam = [_unit] call ACPL_MM_Core_fnc_DoStop_needToRoam;};" \n
@@ -718,7 +730,7 @@ class FSM
                          "if (_ptr) then {_ptr = [_unit] call ACPL_MM_Core_fnc_DoStop_canrunCheck;};" \n
                          "if (_supp) then {_supp = [_unit] call ACPL_MM_Core_fnc_DoStop_checkSuppresed;};" \n
                          "if (_anim) then {_anim = false;};" \n
-                         "if (_dosupp) then {_dosupp = false;};" \n
+                         "if (_dosupp) then {_dosupp = [_unit] call ACPL_MM_Core_fnc_DoStop_checkDoSupp;};" \n
                          "_static = [_unit] call ACPL_MM_Core_fnc_DoStop_isStaticNearby;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -741,7 +753,7 @@ class FSM
                                         priority = 6.000000;
                                         to="DoSupp";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && false"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (_dosupp)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1090,10 +1102,23 @@ class FSM
                 {
                         name = "Mount";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"[_unit] spawn ACPL_MM_Core_fnc_DoStop_MountStatic;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"[_unit] spawn ACPL_MM_Core_fnc_DoStop_MountStatic;" \n
+                         "" \n
+                         "_static = false;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "Did_not_mount">*/
+                                class Did_not_mount
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="more_to_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_DoStop_MM_Core_DoStop_Static_Done"", false]) && (vehicle _unit == _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "Done">*/
                                 class Done
                                 {
@@ -1101,7 +1126,7 @@ class FSM
                                         priority = 0.000000;
                                         to="wait_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_DoStop_MM_Core_DoStop_Static_Done"", false])"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_DoStop_MM_Core_DoStop_Static_Done"", false]) && (vehicle _unit != _unit)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1113,7 +1138,9 @@ class FSM
                 {
                         name = "DoSupp";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"_dosupp = false;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_dosupp = false;" \n
+                         "" \n
+                         "[_unit, 60] spawn ACPL_MM_Core_fnc_DoSupp_OrderSupp;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -1124,7 +1151,7 @@ class FSM
                                         priority = 0.000000;
                                         to="more_to_check";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_MM_Core_DoSupp_Enabled"", false]) && !(_unit getvariable [""ACPL_MM_Core_DoSupp_Suppressing"", false])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1136,7 +1163,10 @@ class FSM
                 {
                         name = "DoSupp_1";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_dosupp = false;" \n
+                         "" \n
+                         "[_unit] spawn ACPL_MM_Core_fnc_DoSupp;" \n
+                         "_unit setvariable [""ACPL_MM_Core_DoSupp"", true, true];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -1147,7 +1177,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Veh_Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_MM_Core_DoSupp"", false])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1159,7 +1189,9 @@ class FSM
                 {
                         name = "Prepare";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"[_unit, true] spawn ACPL_MM_Core_fnc_DoStop_Prepare;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"[_unit, true] spawn ACPL_MM_Core_fnc_DoStop_Prepare;" \n
+                         "" \n
+                         "_random_sleep = (time + (random 1));"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -1170,7 +1202,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Main_Loop___1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_random_sleep < time)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1239,7 +1271,7 @@ class FSM
                                         priority = 1.000000;
                                         to="check";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_react) && (_roam) && (_wup) && (_wp) && (_ntr) && (_ptr) && (_supp) && (_anim) && (_dosupp) && (_static)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_react) || (_roam) || (_wup) || (_wp) || (_ntr) || (_ptr) || (_supp) || (_anim) || (_dosupp) || (_static)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1273,7 +1305,7 @@ class FSM
                                         priority = 6.000000;
                                         to="DoSupp";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && false"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (_dosupp)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

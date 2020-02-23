@@ -4,7 +4,7 @@ if (!isserver) exitwith {};
 
 //Setting default variables for skill
 
-//If msc is enabled then copy its settings instead of module's settings
+//If msc (old version, script only) is enabled then copy its settings instead of module's settings
 if (missionNamespace getVariable ["ACPL_SkillSystem_msc", false]) exitwith {
 	[] call ACPL_SkillSystem_fnc_mscCopy;
 };
@@ -45,4 +45,5 @@ ACPL_SkillSystem_resistance_general = [parseNumber ACPL_SkillSystem_resistance_g
 ACPL_SkillSystem_resistance_courage = [parseNumber ACPL_SkillSystem_resistance_courage_min, parseNumber ACPL_SkillSystem_resistance_courage_max];
 ACPL_SkillSystem_resistance_reload = [parseNumber ACPL_SkillSystem_resistance_reload_min, parseNumber ACPL_SkillSystem_resistance_reload_max];
 
+//Informing about first load (prevents server configuration overwriting module settings)
 ACPL_SkillSystem_firstconvertion = true;

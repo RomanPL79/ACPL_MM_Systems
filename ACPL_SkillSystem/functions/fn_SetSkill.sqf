@@ -17,6 +17,8 @@ WaitUntil {sleep 1;time > 5};
 
 private _side = side _unit;
 
+if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
+
 if (ACPL_SkillSystem_Enabled) then {
 	
 	//Checking is unit in excluded list

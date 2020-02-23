@@ -107,6 +107,8 @@ private _r_reload_1 = _logic getvariable ["RESISTANCE_Reload_max", 0.4];
 
 private _units = synchronizedObjects _logic;
 
+if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
+
 _excluded = ACPL_SkillSystem_Excluded + _units;
 
 ACPL_SkillSystem_Enabled = _enable;

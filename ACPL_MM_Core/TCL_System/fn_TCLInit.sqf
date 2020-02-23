@@ -1,0 +1,11 @@
+TCL_Path = "\ACPL_MM_Core\TCL_System\";
+sleep 2;
+call compile preprocessFileLineNumbers (TCL_Path+"TCL_Preprocess.sqf");
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_AI.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_Debug.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_Feature.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_FX.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_System.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_Tweak.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_IQ.sqf";
+[] execVM "\ACPL_MM_Core\TCL_System\config\TCL_Radio.sqf";

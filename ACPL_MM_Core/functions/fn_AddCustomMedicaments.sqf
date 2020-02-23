@@ -4,6 +4,8 @@ params [
 	"_activated"
 ];
 
+if (!isserver) exitwith {};
+
 WaitUntil {sleep 1;time > 2};
 
 if (_activated) then {

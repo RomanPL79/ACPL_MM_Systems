@@ -58,5 +58,24 @@ if (_activated) then {
 		};
 		
 		[_x] spawn ACPL_MM_Core_fnc_DoStop;
+		
+		_x addEventHandler ["FiredMan", {
+			params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
+			
+			private _state = weaponState_unit;
+			private _bl = _state select 4;
+			
+			if ((_bl == 0) && !(_unit in AllPlayers) && (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false])) then {
+				[_unit] spawn ACPL_MM_Core_fnc_DoStop_Reload;
+			};
+		}];
+		
+		_x addEventHandler ["Reloaded", {
+			params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
+			
+			if (!(_unit in allPlayers) && (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false])) then {
+				[_unit,(_oldMagazine select 0)] remoteExec ["addmagazine",_unit];
+			};
+		}];
 	} foreach _units;
 };

@@ -54,8 +54,8 @@ class ACPL_MM_Core_CustomMedical_module: Module_F {
 			typeName = "NUMBER";
 			defaultValue = 2;
 		};
-		class ACPL_MM_Core_Medical_atropine {
-			displayName = "$STR_ACPL_MM_Core_Set_atropine";
+		class ACPL_MM_Core_Medical_splint {
+			displayName = "$STR_ACPL_MM_Core_Set_splint";
 			property = "ACPL_MM_Core_Medical_atropine";
 			description = "$STR_ACPL_MM_Core_Set_Meds_cus_desc";
 			typeName = "NUMBER";

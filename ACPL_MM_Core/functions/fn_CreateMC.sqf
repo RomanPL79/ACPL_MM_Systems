@@ -4,6 +4,8 @@ params [
 	"_activated"
 ];
 
+if (!isserver) exitwith {};
+
 if (_activated) then {
 	private _objects = synchronizedObjects _logic;
 	
@@ -12,7 +14,7 @@ if (_activated) then {
 	private _p_bandages = _logic getvariable ["ACPL_MM_Core_Medical_p_ban", 0];
 	private _quick = _logic getvariable ["ACPL_MM_Core_Medical_quicklot", 0];
 	private _adenosine = _logic getvariable ["ACPL_MM_Core_Medical_adenosine", 0];
-	private _atropine = _logic getvariable ["ACPL_MM_Core_Medical_atropine", 0];
+	private _splint = _logic getvariable ["ACPL_MM_Core_Medical_splint", 0];
 	private _morphine = _logic getvariable ["ACPL_MM_Core_Medical_morphine", 0];
 	private _epinephrine = _logic getvariable ["ACPL_MM_Core_Medical_epinephrine", 0];
 	private _saline250 = _logic getvariable ["ACPL_MM_Core_Medical_saline250", 0];
@@ -38,7 +40,7 @@ if (_activated) then {
 		_x additemCargoGlobal ["ACE_fieldDressing",_bandages];
 		_x additemCargoGlobal ["ACE_elasticBandage",_e_bandages];
 		_x additemCargoGlobal ["ACE_adenosine",_adenosine];
-		_x additemCargoGlobal ["ACE_atropine",_atropine];
+		_x additemCargoGlobal ["ACE_splint",_splint];
 		_x additemCargoGlobal ["ACE_bloodIV_250",_blood250];
 		_x additemCargoGlobal ["ACE_bloodIV_500",_blood500];
 		_x additemCargoGlobal ["ACE_bloodIV",_blood1];

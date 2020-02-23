@@ -38,6 +38,8 @@ class Man;
 class CAManBase: Man {
 	class EventHandlers
 	{
-		Init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_CalculateCamo;[_unit] spawn ACPL_MM_Core_fnc_BS_init;";
+		class ACPL_MM_Core {
+			Init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_CalculateCamo;[_unit] spawn ACPL_MM_Core_fnc_BS_init;";
+		};
 	};
 };

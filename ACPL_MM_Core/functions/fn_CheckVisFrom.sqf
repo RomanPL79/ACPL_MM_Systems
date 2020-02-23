@@ -1,7 +1,7 @@
-params ["_pos", "_target"];
+params ["_pos", "_target", ["_ignore", objNull]];
 
 private _return = false;
 
-if (([objNull, "VIEW"] checkVisibility [_pos, _target]) > 0) then {_return = true;};
+if (([_ignore, "VIEW"] checkVisibility [_pos, _target]) > 0.1) then {_return = true;};
 
 _return

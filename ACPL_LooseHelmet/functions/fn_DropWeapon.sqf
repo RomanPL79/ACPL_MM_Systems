@@ -18,7 +18,9 @@
 ---------------------------------------------------------------------------- */
 
 params ["_unit", "_velocity"];
-private ["_weapon", "_weaponsItems", "_new_velocity", "_weaponHolder_dummy", "_dummy", "_muzzle", "_flash", "_optic", "_magazine1", "_magazine2", "_bipod"];
+private ["_weapon", "_weaponsItems", "_new_velocity", "_weaponHolder_dummy", "_dummy"];
+
+if (vehicle _unit != _unit) exitwith {};
 
 private _items = [];
 
@@ -57,21 +59,27 @@ if (alive _unit) then {
 		_weapon = [_weapon] call BIS_fnc_baseWeapon;
 		_weaponHolder_dummy attachto [_dummy,[0,0,0.6]];
 		
+		private _muzzle = "";
+		private _flash = "";
+		private _optic = "";
+		private _magazine1 = "";
+		private _magazine2 = "";
+		private _bipod = "";
+		
 		if (count _items > 6) then
 		{
-			_muzzle = (_items select 1);
-			_flash = (_items select 2);
-			_optic = (_items select 3);
-			_magazine1 = (_items select 4);
-			_magazine2 = (_items select 5);
-			_bipod = (_items select 6);
+			if ((_items select 1) != "") then {_muzzle = (_items select 1);};
+			if ((_items select 2) != "") then {_flash = (_items select 2);};
+			if ((_items select 3) != "") then {_optic = (_items select 3);};
+			if ((_items select 4) != "") then {_magazine1 = (_items select 4);};
+			if ((_items select 5) != "") then {_magazine2 = (_items select 5);};
+			if ((_items select 6) != "") then {_bipod = (_items select 6);};
 		} else {
-			_muzzle = (_items select 1);
-			_flash = (_items select 2);
-			_optic = (_items select 3);
-			_magazine1 = (_items select 4);
-			_bipod = (_items select 5);
-			_magazine2 = [];
+			if ((_items select 1) != "") then {_muzzle = (_items select 1);};
+			if ((_items select 2) != "") then {_flash = (_items select 2);};
+			if ((_items select 3) != "") then {_optic = (_items select 3);};
+			if ((_items select 4) != "") then {_magazine1 = (_items select 4);};
+			if ((_items select 5) != "") then {_bipod = (_items select 5);};
 		};
 			
 		_weaponHolder_dummy addWeaponWithAttachmentsCargoGlobal [[_weapon, _muzzle, _flash, _optic, _magazine1, _magazine2, _bipod], 1];
@@ -102,9 +110,11 @@ if (alive _unit) then {
 			_pos = getposATL _dummy;
 			if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
 				_dummy setVelocity [0,0,0];
-				_dummy setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
 				_dummy enableSimulationGlobal false;
-				[_dummy, true] remoteExec ["hideobject",0,true];
+				
+				detach _weaponHolder_dummy;
+				_weaponHolder_dummy enableSimulationGlobal true;
+				deletevehicle _dummy;
 				
 				_moving = false;
 			};
@@ -112,15 +122,9 @@ if (alive _unit) then {
 			sleep 0.05;
 		};
 		
-		[_unit, _weaponHolder_dummy, "GUN", _weapon] spawn ACPL_LooseHelmet_fnc_PickUp;
-		
-		detach _weaponHolder_dummy;
-		_weaponHolder_dummy enableSimulationGlobal true;
-		_pos = getposATL _dummy;
-		deletevehicle _dummy;
-		_weaponHolder_dummy setposATL [(_pos select 0), (_pos select 1), (_pos select 2)];
-		_weaponHolder_dummy setVelocity [0,0,0];
-		_weaponHolder_dummy setdir (getdir _weaponHolder_dummy);
+		if (!(_unit in allplayers)) then {
+			[_unit, _weaponHolder_dummy, "GUN", _weapon] spawn ACPL_LooseHelmet_fnc_PickUp;
+		};
 		
 		if (ACPL_LooseHelmet_Destroy) then {
 			[_weaponHolder_dummy, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;

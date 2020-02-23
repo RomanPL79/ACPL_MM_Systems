@@ -31,6 +31,10 @@ class ACPL_MM_Core_DoStop_module: Module_F {
 					name = "$STR_ACPL_MM_Core_DoStop_Module_Position_down";
 					value = "DOWN";
 				};
+				class v_auto {
+					name = "AUTO";
+					value = "AUTO";
+				}
 			};
 		};
 		class ACPL_MM_Core_DoStop_duck {

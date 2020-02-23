@@ -7,7 +7,8 @@ params [
 if (!isserver) exitwith {};
 
 if (_activated) then {
-
+	//Loading settings from module
+	
 	private _random = _logic getvariable ["custom_Random", 2];
 
 	private _acc_0 = _logic getvariable ["custom_Acc_min", 0.2];
@@ -34,15 +35,27 @@ if (_activated) then {
 	private _reload_0 = _logic getvariable ["custom_Reload_min", 0.2];
 	private _reload_1 = _logic getvariable ["custom_Reload_max", 0.4];
 
+	//checking synchronized units
+	
 	private _units = synchronizedObjects _logic;
-
+	
+	//adding units to excluded list
+	
+	if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
+	
 	_excluded = ACPL_SkillSystem_Excluded + _units;
 
 	ACPL_SkillSystem_Excluded = _excluded;
 	
+	//Waiting 10 sec after start of the mission
+	
 	waitUntil {sleep 1;time > 10};
 
+	//configurating skill sets for synchronized units
+	
 	{
+		//calculating randomized values
+		
 		private _acc_new = random [_acc_0, ((_acc_0 + _acc_1)/_random), _acc_1];
 		private _shake_new = random [_shake_0, ((_shake_0 + _shake_1)/_random), _shake_1];
 		private _speed_new = random [_speed_0, ((_speed_0 + _speed_1)/_random), _speed_1];

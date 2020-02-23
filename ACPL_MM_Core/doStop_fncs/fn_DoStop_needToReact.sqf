@@ -24,7 +24,7 @@ if (([_unit] call ACPL_MM_Core_fnc_isInCombat)) then {
 		
 		private _positions_c = [_positions] call ACPL_MM_Core_fnc_CheckTakenPos;
 		
-		private _check = [_positions_c, _unit] call ACPL_MM_Core_fnc_CheckSeeEnemy_FromPos;
+		private _check = [_positions_c, _unit] call ACPL_MM_Core_fnc_DoStop_CheckSeeEnemy_FromPos;
 		private _status = _check select 0;
 		_positions = _check select 1;
 		

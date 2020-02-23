@@ -10,8 +10,12 @@ private _unitPos_actual = UnitPos _unit;
 _unitPos = toUpper _unitPos;
 _unitPos_actual = toUpper _unitPos_actual;
 
-if (_unitPos != _unitPos_actual) then {
-	_return = true;
+if (_unitPos != "AUTO") then {
+
+	if (_unitPos != _unitPos_actual) then {
+		_return = true;
+	};
+
 };
 
 _return

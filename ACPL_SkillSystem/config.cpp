@@ -12,8 +12,7 @@ class CfgPatches {
 		"A3_Characters_F",
 		"cba_settings",
 		"cba_main",
-		"cba_common",
-		"ace_common"
+		"cba_common"
 	};
 	
     version = 28;
