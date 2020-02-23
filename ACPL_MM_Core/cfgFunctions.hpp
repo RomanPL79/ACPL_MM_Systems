@@ -129,8 +129,8 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_DoStop_Reload
 		class DoStop_Reload {};
-	}
-	
+	};
+
 	class DoStop_FSMs
 	{
 		file = "ACPL_MM_Core\doStop_fncs\FSMs";
@@ -152,16 +152,16 @@ class ACPL_MM_Core {
 		{
 			ext = ".fsm";
 		};
-	}
-	
+	};
+
 	class betterSupp
 	{
 		file = "ACPL_MM_Core\betterSupp";
 		
 		//[] spawn ACPL_MM_Core_fnc_BS_init;
 		class BS_init {};
-	}
-	
+	};
+
 	class DoSupp
 	{
 		file = "ACPL_MM_Core\doSupp_fncs";
@@ -183,8 +183,8 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
 		class DoSupp_CheckSeeEnemy_FromPos {};
-	}
-	
+	};
+
 	class DoSupp_FSMs
 	{
 		file = "ACPL_MM_Core\doSupp_fncs\FSMs";
@@ -193,8 +193,8 @@ class ACPL_MM_Core {
 		class DoSupp {
 			ext = ".fsm";
 		};
-	}
-	
+	};
+
 	class Spawner
 	{
 		file = "ACPL_MM_Core\spawner_fncs";
@@ -222,8 +222,8 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_Spawner_AddGear;
 		class Spawner_AddGear {};
-	}
-	
+	};
+
 	class Taskmaster
 	{
 		file = "ACPL_MM_Core\taskmaster";
@@ -236,8 +236,8 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_shk_createNew;
 		class shk_createNew {};
-	}
-	
+	};
+
 	class Convoy
 	{
 		file = "ACPL_MM_Core\convoy_fnc";
@@ -250,24 +250,24 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_Convoy_Set;
 		class Convoy_Set {};
-	}
-	
+	};
+
 	class VCOM
 	{
 		file = "ACPL_MM_Core\Vcom";
 		
 		//[] spawn ACPL_MM_Core_fnc_VcomInit;
 		class VcomInit {};
-	}
-	
+	};
+
 	class TCL
 	{
 		file = "ACPL_MM_Core\TCL_System";
 		
 		//[] spawn ACPL_MM_Core_fnc_TCLInit;
 		class TCLInit {};
-	}
-	
+	};
+
 	class CM
 	{
 		file = "ACPL_MM_Core\CustomMarkers_fncs";
@@ -277,8 +277,8 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_CM_Mark;
 		class CM_Mark {};
-	}
-	
+	};
+
 	class DoPatrol
 	{
 		file = "ACPL_MM_Core\doPatrol_fncs";
@@ -288,8 +288,7 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_DoPatrol_selectPos;
 		class DoPatrol_selectPos {};
-		
-	}
+	};
 	
 	class DoPatrol_FSM
 	{
@@ -299,7 +298,7 @@ class ACPL_MM_Core {
 		class DoPatrol {
 			ext = ".fsm";
 		};
-	}
+	};
 	
 	class headless
 	{
@@ -310,5 +309,5 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_headless_givecontrol;
 		class headless_givecontrol {};
-	}
-}
+	};
+};
