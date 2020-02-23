@@ -1,7 +1,7 @@
 params [
-	"_logic",
-	"_synch",
-	"_activated"
+	["_logic", objNull],
+	["_synch", []],
+	["_activated", false]
 ];
 
 if (!isserver) exitwith {};
@@ -109,7 +109,7 @@ private _units = synchronizedObjects _logic;
 
 if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
 
-_excluded = ACPL_SkillSystem_Excluded + _units;
+ACPL_SkillSystem_Excluded append _units;
 
 ACPL_SkillSystem_Enabled = _enable;
 
@@ -157,13 +157,7 @@ ACPL_SkillSystem_resistance_general = [_r_general_0, _r_general_1];
 ACPL_SkillSystem_resistance_courage = [_r_courage_0, _r_courage_1];
 ACPL_SkillSystem_resistance_reload = [_r_reload_0, _r_reload_1];
 
-ACPL_SkillSystem_Excluded = _excluded;
-
-if (_reload) then {
+if (_reload || !(missionNamespace getVariable ["ACPL_SkillSystem_FirstChange", false])) then {
 	[] call ACPL_SkillSystem_fnc_ReloadAll;
-} else {
-	if (missionNamespace getVariable ["ACPL_SkillSystem_FirstChange", false]) then {} else {
-		[] call ACPL_SkillSystem_fnc_ReloadAll;
-		ACPL_SkillSystem_FirstChange = true;
-	};
+	ACPL_SkillSystem_FirstChange = true;
 };
