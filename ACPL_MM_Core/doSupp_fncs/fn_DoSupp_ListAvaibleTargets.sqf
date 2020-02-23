@@ -37,21 +37,12 @@ switch (_vehicle) do {
 	case false: {
 		private _units = nearestObjects [_unit, ["Man"], 2000];
 		
-		private _eyepos = eyepos _unit;
-		private _unitpos = stance _unit;
-		_unitpos = toUpper(_unitpos);
-		
 		{
 			if (((side _x) in _enemy) && ((_unit knowsAbout _x) > 1)) then {
-				private _info = [[_eyepos], _x, _unitpos, _unit] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
+				private _info = [_unit, _x] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
 				
 				private _check = _info select 0;
-				private _info_1 = _info select 1;
-				private _positions = [];
-				
-				{
-					_positions = _positions + [_x select 1];
-				} foreach _info_1;
+				private _positions = _info select 1;
 				
 				if (_check) then {
 					_list = _list + [[_x, _positions]];

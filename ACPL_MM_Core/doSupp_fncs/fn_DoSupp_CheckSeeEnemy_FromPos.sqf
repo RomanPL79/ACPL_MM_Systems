@@ -1,18 +1,22 @@
-params ["_positions", "_unit", ["_stance", "STAND"], ["_ignore", ObjNull]];
+params ["_unit", "_target"];
+	
+private _eyepos = eyepos _unit;
+private _stance = toUpper(stance _unit);
+private _t_eye = eyepos _target;
 
-private _return = [false, []];
+private _return = [];
+private _pos = [];
+private _check = false;
 
 private _up_offset = 1.53;
 private _middle_offset = 1.05;
 private _down_offset = 0.38;
 
-private _actualpos = [0,0,0];
-
 switch (_stance) do {
 	case "STAND": {
 		_down_offset = _down_offset - _up_offset;
 		_middle_offset = _middle_offset - _up_offset;
-		_up_offset = 0;
+			_up_offset = 0;
 	};
 	case "CROUCH": {
 		_down_offset = _down_offset - _middle_offset;
@@ -26,29 +30,27 @@ switch (_stance) do {
 	};
 };
 
-{
-	private _pos = _x;
-	
-	private _eye_up = [(_pos select 0), (_pos select 1), ((_pos select 2) + _up_offset)];
-	private _eye_middle = [(_pos select 0), (_pos select 1), ((_pos select 2) + _middle_offset)];
-	private _eye_down = [(_pos select 0), (_pos select 1), ((_pos select 2) + _down_offset)];
-	
-	private _return1 = _return select 1;
-	
-	if ([_eye_up, _unit] call ACPL_MM_Core_fnc_CheckSeeEnemy) then {
-		_return1 = _return1 + [[_x, "UP"]];
-		_return = [true, _return1];
-	};
-	
-	if ([_eye_middle, _unit] call ACPL_MM_Core_fnc_CheckSeeEnemy) then {
-		_return1 = _return1 + [[_x, "MIDDLE"]];
-		_return = [true, _return1];
-	};
-	
-	if ([_eye_down, _unit] call ACPL_MM_Core_fnc_CheckSeeEnemy) then {
-		_return1 = _return1 + [[_x, "DOWN"]];
-		_return = [true, _return1];
-	};
-} foreach _positions;
+systemchat str(_down_offset);
+systemchat str(_middle_offset);
+systemchat str(_up_offset);
+
+private _eye_up = [(_eyepos select 0), (_eyepos select 1), ((_eyepos select 2) + _up_offset)];
+private _eye_middle = [(_eyepos select 0), (_eyepos select 1), ((_eyepos select 2) + _middle_offset)];
+private _eye_down = [(_eyepos select 0), (_eyepos select 1), ((_eyepos select 2) + _down_offset)];
+
+if (([_unit, "VIEW", _target] checkVisibility [_eye_up, _t_eye]) > 0) then {
+	_check = true;
+	_pos pushback ["UP"];
+};
+if (([_unit, "VIEW", _target] checkVisibility [_eye_middle, _t_eye]) > 0) then {
+	_check = true;
+	_pos pushback ["MIDDLE"];
+};
+if (([_unit, "VIEW", _target] checkVisibility [_eye_down, _t_eye]) > 0) then {
+	_check = true;
+	_pos pushback ["DOWN"];
+};
+
+_return = [_check, _pos];
 
 _return
