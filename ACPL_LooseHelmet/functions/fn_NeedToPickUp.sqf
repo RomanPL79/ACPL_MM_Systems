@@ -23,82 +23,36 @@ private _return = false;
 
 //getting basic data
 
-private _beh = behaviour _unit;
-private _incombat = false;
-private _isweapon = false;
-private _weapons = weapons _unit;
-
-private _prim_w = primaryWeapon _unit;
-private _hand_w = handgunWeapon _unit;
-private _sec_w = secondaryWeapon _unit;
-
-if (_beh == "COMBAT") then {_incombat = true;};
-
 switch (_type) do {
 	case "GUN": {
 		//if it was weapon then checking if unit has any backup weapon
 		
-		private _noweapon = true;
-		
-		if (_prim_w != "") then {_noweapon = false;};
-		if (_hand_w != "") then {_noweapon = false;};
-		if (_sec_w != "") then {_noweapon = false;};
-		
-		if (_noweapon) then {
-			//if have no other weapon is always true
-			
-			_return = true;
-		} else {
-			//if have other weapon then calculating posibility based on config setting
-			
-			private _random = random 100;
-			
-			if (_random < ACPL_LooseHelmet_Weap_PickUpChance) then {
-				//if random value is lower than configure setting then is true
-				
-				_return = true;
-			};
-		};
+		private _noweapon = primaryWeapon _unit == "" && handgunWeapon _unit == "" && secondaryWeapon _unit == "";
+
+		//if have other weapon then calculating posibility based on config setting
+
+		//if random value is lower than configure setting then is true
+		_return = _noweapon || random 100 < ACPL_LooseHelmet_Weap_PickUpChance;
 	};
 	case "HELMET": {
 		//if it was headgear then calculating posibility based on config setting
 		
-		private _random = random 100;
-			
-		if (_random < ACPL_LooseHelmet_Helm_PickUpChance) then {
-			//if random value is lower than configure setting then is true
-			
-			_return = true;
-		};
+		//if random value is lower than configure setting then is true
+		_return = random 100 < ACPL_LooseHelmet_Helm_PickUpChance;
 	};
 	case "NVG": {
 		//if it was NVG then checking is it a night/day and calculating posibility based on config setting
 		//if it's night then always picking up
 		
-		private _time = daytime;
-		
-		private _day = true;
-		
+		private _daytime = daytime;
 		private _sunriseSunsetTime = date call BIS_fnc_sunriseSunsetTime;
 		private _sunrise = _sunriseSunsetTime select 0;
 		private _sunset = _sunriseSunsetTime select 1;
 		
-		if ((_time < _sunrise) && (_time > _sunset)) then {
-			_day = false
-		};
+		private _day = (_daytime > _sunrise) && (_daytime < _sunset);
 		
-		if (_day) then {
-		
-			private _random = random 100;
-				
-			if (_random < ACPL_LooseHelmet_NVG_PickUpChance) then {
-				//if random value is lower than configure setting then is true
-				
-				_return = true;
-			};
-		} else {
-			_return = true;
-		};
+		// if random value is lower than configure setting then is true
+		_return = _day || random 100 < ACPL_LooseHelmet_NVG_PickUpChance;
 	};
 };
 
