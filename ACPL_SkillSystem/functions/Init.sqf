@@ -2,8 +2,8 @@ if (!isserver) exitwith {};
 
 //Inform SkillSystem is activated
 
-publicvariable "ACPL_SkillSystem_Activated";
 ACPL_SkillSystem_Activated = true;
+publicVariable "ACPL_SkillSystem_Activated";
 
 //Defines Excluded list
 
@@ -16,8 +16,8 @@ ACPL_SkillSystem_Excluded = [];
 	WaitUntil {sleep 1;time > 4};
 	
 	if (missionNamespace getVariable ["acpl_msc", false]) then {
-		publicvariable "acpl_msc";
 		acpl_msc = false;
+		publicVariable "acpl_msc";
 		
 		[] call ACPL_SkillSystem_fnc_mscCopy;
 	};
