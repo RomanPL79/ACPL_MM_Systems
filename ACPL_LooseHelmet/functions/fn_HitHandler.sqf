@@ -18,7 +18,10 @@
 
 params ["_unit", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
 
-_selection = toLower _selection;
+{
+	_selection deleteAt (_selection find _x);
+	_selection pushback (toLower _x);
+} foreach _selection;
 if (_selection in ["head"]) then {
 	[_unit, _velocity] spawn ACPL_LooseHelmet_fnc_DropHelmet;
 };

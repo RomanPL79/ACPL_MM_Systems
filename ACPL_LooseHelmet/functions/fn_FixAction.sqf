@@ -39,7 +39,7 @@ switch (_type) do {
 	case "HELMET": {
 		_variable = "ACPL_LooseWeapon_fix_helmet";
 		_hintFastened = localize "STR_ACPL_LooseHelmet_hint_helmet_has_been_fastened";
-		_hintUnfastened = localize "STR_ACPL_LooseHelmet_hint_helmet_has_been_fastened";
+		_hintUnfastened = localize "STR_ACPL_LooseHelmet_hint_helmet_has_been_unfastened";
 	};
 };
 
