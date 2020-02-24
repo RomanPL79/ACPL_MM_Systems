@@ -6,7 +6,6 @@
 //
 //	Parameters: 
 //		- object				what object are needed to check
-//		- velocity				what velocity was when item was dropped
 //
 //	Returns: nothing
 //
@@ -18,13 +17,11 @@
 //
 ---------------------------------------------------------------------------- */
 
-params ["_objects"];
+params ["_object"];
 
-private _random = random 100;
+if (random 100 > ACPL_LooseHelmet_DestroyChance) exitWith {};
 
 if (isNil "ACPL_LooseHelmet_Destroyed") then {ACPL_LooseHelmet_Destroyed = [];};
+ACPL_LooseHelmet_Destroyed append _object;
 
-if (_random < ACPL_LooseHelmet_DestroyChance) then {
-	[_objects,false] remoteExec ["enablesimulation",0,true];
-	ACPL_LooseHelmet_Destroyed = ACPL_LooseHelmet_Destroyed + [_objects];
-};
+[_object, false] remoteExec ["enablesimulation", 0, true];
