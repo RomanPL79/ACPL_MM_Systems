@@ -40,12 +40,6 @@ private _reload_1 = _logic getvariable ["custom_Reload_max", 0.4];
 
 private _units = synchronizedObjects _logic;
 
-//adding units to excluded list
-
-if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = []};
-
-ACPL_SkillSystem_Excluded append _units;
-
 //Waiting 10 sec after start of the mission
 
 waitUntil {sleep 1; time > 10};
@@ -87,4 +81,9 @@ waitUntil {sleep 1; time > 10};
 
 	//Set reload
 	_x setSkill ["reloadSpeed", _reload_new];
+	
+	_unit setvariable ["ACPL_SkillSystem_Done", true];
+	_unit setvariable ["ACPL_SkillSystem_Excluded", true];
 } forEach _units;
+
+deletevehicle _logic;

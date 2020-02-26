@@ -1,4 +1,7 @@
-params ["_unit"];
+params [
+	["_unit", ObjNull],
+	["_reset", false]
+];
 
 if (!isserver) exitwith {};
 
@@ -17,54 +20,53 @@ WaitUntil {sleep 1;time > 5};
 
 private _side = side _unit;
 
-if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
-
 if (ACPL_SkillSystem_Enabled) then {
 	
 	//Checking is unit in excluded list
-	if (_unit in ACPL_SkillSystem_Excluded) exitwith {};
+	if (_unit getvariable ["ACPL_SkillSystem_Excluded", false] || (_unit getvariable ["ACPL_SkillSystem_Done", false] && !_reset)) exitwith {};
 	
 	//Loading preset of skill depending on side
 	
-	if (_side == WEST) then {
-		if (ACPL_SkillSystem_Enabled_West) then {
-			_random = ACPL_SkillSystem_west_random;
-			_acc = random [(ACPL_SkillSystem_west_acc select 0), (((ACPL_SkillSystem_west_acc select 0) + (ACPL_SkillSystem_west_acc select 1))/_random), (ACPL_SkillSystem_west_acc select 1)];
-			_shake = random [(ACPL_SkillSystem_west_shake select 0), (((ACPL_SkillSystem_west_shake select 0) + (ACPL_SkillSystem_west_shake select 1))/_random), (ACPL_SkillSystem_west_shake select 1)];
-			_speed = random [(ACPL_SkillSystem_west_speed select 0), (((ACPL_SkillSystem_west_speed select 0) + (ACPL_SkillSystem_west_speed select 1))/_random), (ACPL_SkillSystem_west_speed select 1)];
-			_spot = random [(ACPL_SkillSystem_west_spot select 0), (((ACPL_SkillSystem_west_spot select 0) + (ACPL_SkillSystem_west_spot select 1))/_random), (ACPL_SkillSystem_west_spot select 1)];
-			_time = random [(ACPL_SkillSystem_west_time select 0), (((ACPL_SkillSystem_west_time select 0) + (ACPL_SkillSystem_west_time select 1))/_random), (ACPL_SkillSystem_west_time select 1)];
-			_general = random [(ACPL_SkillSystem_west_general select 0), (((ACPL_SkillSystem_west_general select 0) + (ACPL_SkillSystem_west_general select 1))/_random), (ACPL_SkillSystem_west_general select 1)];
-			_courage = random [(ACPL_SkillSystem_west_courage select 0), (((ACPL_SkillSystem_west_courage select 0) + (ACPL_SkillSystem_west_courage select 1))/_random), (ACPL_SkillSystem_west_courage select 1)];
-			_reload = random [(ACPL_SkillSystem_west_reload select 0), (((ACPL_SkillSystem_west_reload select 0) + (ACPL_SkillSystem_west_reload select 1))/_random), (ACPL_SkillSystem_west_reload select 1)];
+	switch (_side) do {
+		case WEST: {
+			if (ACPL_SkillSystem_Enabled_West) then {
+				_random = ACPL_SkillSystem_west_random;
+				_acc = random [(ACPL_SkillSystem_west_acc select 0), (((ACPL_SkillSystem_west_acc select 0) + (ACPL_SkillSystem_west_acc select 1))/_random), (ACPL_SkillSystem_west_acc select 1)];
+				_shake = random [(ACPL_SkillSystem_west_shake select 0), (((ACPL_SkillSystem_west_shake select 0) + (ACPL_SkillSystem_west_shake select 1))/_random), (ACPL_SkillSystem_west_shake select 1)];
+				_speed = random [(ACPL_SkillSystem_west_speed select 0), (((ACPL_SkillSystem_west_speed select 0) + (ACPL_SkillSystem_west_speed select 1))/_random), (ACPL_SkillSystem_west_speed select 1)];
+				_spot = random [(ACPL_SkillSystem_west_spot select 0), (((ACPL_SkillSystem_west_spot select 0) + (ACPL_SkillSystem_west_spot select 1))/_random), (ACPL_SkillSystem_west_spot select 1)];
+				_time = random [(ACPL_SkillSystem_west_time select 0), (((ACPL_SkillSystem_west_time select 0) + (ACPL_SkillSystem_west_time select 1))/_random), (ACPL_SkillSystem_west_time select 1)];
+				_general = random [(ACPL_SkillSystem_west_general select 0), (((ACPL_SkillSystem_west_general select 0) + (ACPL_SkillSystem_west_general select 1))/_random), (ACPL_SkillSystem_west_general select 1)];
+				_courage = random [(ACPL_SkillSystem_west_courage select 0), (((ACPL_SkillSystem_west_courage select 0) + (ACPL_SkillSystem_west_courage select 1))/_random), (ACPL_SkillSystem_west_courage select 1)];
+				_reload = random [(ACPL_SkillSystem_west_reload select 0), (((ACPL_SkillSystem_west_reload select 0) + (ACPL_SkillSystem_west_reload select 1))/_random), (ACPL_SkillSystem_west_reload select 1)];
+			};
 		};
-	};
-	if (_side == EAST) then {
-		if (ACPL_SkillSystem_Enabled_East) then {
-			_random = ACPL_SkillSystem_east_random;
-			_acc = random [(ACPL_SkillSystem_east_acc select 0), (((ACPL_SkillSystem_east_acc select 0) + (ACPL_SkillSystem_east_acc select 1))/_random), (ACPL_SkillSystem_east_acc select 1)];
-			_shake = random [(ACPL_SkillSystem_east_shake select 0), (((ACPL_SkillSystem_east_shake select 0) + (ACPL_SkillSystem_east_shake select 1))/_random), (ACPL_SkillSystem_east_shake select 1)];
-			_speed = random [(ACPL_SkillSystem_east_speed select 0), (((ACPL_SkillSystem_east_speed select 0) + (ACPL_SkillSystem_east_speed select 1))/_random), (ACPL_SkillSystem_east_speed select 1)];
-			_spot = random [(ACPL_SkillSystem_east_spot select 0), (((ACPL_SkillSystem_east_spot select 0) + (ACPL_SkillSystem_east_spot select 1))/_random), (ACPL_SkillSystem_east_spot select 1)];
-			_time = random [(ACPL_SkillSystem_east_time select 0), (((ACPL_SkillSystem_east_time select 0) + (ACPL_SkillSystem_east_time select 1))/_random), (ACPL_SkillSystem_east_time select 1)];
-			_general = random [(ACPL_SkillSystem_east_general select 0), (((ACPL_SkillSystem_east_general select 0) + (ACPL_SkillSystem_east_general select 1))/_random), (ACPL_SkillSystem_east_general select 1)];
-			_courage = random [(ACPL_SkillSystem_east_courage select 0), (((ACPL_SkillSystem_east_courage select 0) + (ACPL_SkillSystem_east_courage select 1))/_random), (ACPL_SkillSystem_east_courage select 1)];
-			_reload = random [(ACPL_SkillSystem_east_reload select 0), (((ACPL_SkillSystem_east_reload select 0) + (ACPL_SkillSystem_east_reload select 1))/_random), (ACPL_SkillSystem_east_reload select 1)];
+		case EAST: {
+			if (ACPL_SkillSystem_Enabled_East) then {
+				_random = ACPL_SkillSystem_east_random;
+				_acc = random [(ACPL_SkillSystem_east_acc select 0), (((ACPL_SkillSystem_east_acc select 0) + (ACPL_SkillSystem_east_acc select 1))/_random), (ACPL_SkillSystem_east_acc select 1)];
+				_shake = random [(ACPL_SkillSystem_east_shake select 0), (((ACPL_SkillSystem_east_shake select 0) + (ACPL_SkillSystem_east_shake select 1))/_random), (ACPL_SkillSystem_east_shake select 1)];
+				_speed = random [(ACPL_SkillSystem_east_speed select 0), (((ACPL_SkillSystem_east_speed select 0) + (ACPL_SkillSystem_east_speed select 1))/_random), (ACPL_SkillSystem_east_speed select 1)];
+				_spot = random [(ACPL_SkillSystem_east_spot select 0), (((ACPL_SkillSystem_east_spot select 0) + (ACPL_SkillSystem_east_spot select 1))/_random), (ACPL_SkillSystem_east_spot select 1)];
+				_time = random [(ACPL_SkillSystem_east_time select 0), (((ACPL_SkillSystem_east_time select 0) + (ACPL_SkillSystem_east_time select 1))/_random), (ACPL_SkillSystem_east_time select 1)];
+				_general = random [(ACPL_SkillSystem_east_general select 0), (((ACPL_SkillSystem_east_general select 0) + (ACPL_SkillSystem_east_general select 1))/_random), (ACPL_SkillSystem_east_general select 1)];
+				_courage = random [(ACPL_SkillSystem_east_courage select 0), (((ACPL_SkillSystem_east_courage select 0) + (ACPL_SkillSystem_east_courage select 1))/_random), (ACPL_SkillSystem_east_courage select 1)];
+				_reload = random [(ACPL_SkillSystem_east_reload select 0), (((ACPL_SkillSystem_east_reload select 0) + (ACPL_SkillSystem_east_reload select 1))/_random), (ACPL_SkillSystem_east_reload select 1)];
+			};
 		};
-	};
-	if (_side == RESISTANCE) then {
-		if (ACPL_SkillSystem_Enabled_Resistance) then {
-			_random = ACPL_SkillSystem_resistance_random;
-			_acc = random [(ACPL_SkillSystem_resistance_acc select 0), (((ACPL_SkillSystem_resistance_acc select 0) + (ACPL_SkillSystem_resistance_acc select 1))/_random), (ACPL_SkillSystem_resistance_acc select 1)];
-			_shake = random [(ACPL_SkillSystem_resistance_shake select 0), (((ACPL_SkillSystem_resistance_shake select 0) + (ACPL_SkillSystem_resistance_shake select 1))/_random), (ACPL_SkillSystem_resistance_shake select 1)];
-			_speed = random [(ACPL_SkillSystem_resistance_speed select 0), (((ACPL_SkillSystem_resistance_speed select 0) + (ACPL_SkillSystem_resistance_speed select 1))/_random), (ACPL_SkillSystem_resistance_speed select 1)];
-			_spot = random [(ACPL_SkillSystem_resistance_spot select 0), (((ACPL_SkillSystem_resistance_spot select 0) + (ACPL_SkillSystem_resistance_spot select 1))/_random), (ACPL_SkillSystem_resistance_spot select 1)];
-			_time = random [(ACPL_SkillSystem_resistance_time select 0), (((ACPL_SkillSystem_resistance_time select 0) + (ACPL_SkillSystem_resistance_time select 1))/_random), (ACPL_SkillSystem_resistance_time select 1)];
-			_general = random [(ACPL_SkillSystem_resistance_general select 0), (((ACPL_SkillSystem_resistance_general select 0) + (ACPL_SkillSystem_resistance_general select 1))/_random), (ACPL_SkillSystem_resistance_general select 1)];
-			_courage = random [(ACPL_SkillSystem_resistance_courage select 0), (((ACPL_SkillSystem_resistance_courage select 0) + (ACPL_SkillSystem_resistance_courage select 1))/_random), (ACPL_SkillSystem_resistance_courage select 1)];
-			_reload = random [(ACPL_SkillSystem_resistance_reload select 0), (((ACPL_SkillSystem_resistance_reload select 0) + (ACPL_SkillSystem_resistance_reload select 1))/_random), (ACPL_SkillSystem_resistance_reload select 1)];
+		case RESISTANCE: {
+			if (ACPL_SkillSystem_Enabled_Resistance) then {
+				_random = ACPL_SkillSystem_resistance_random;
+				_acc = random [(ACPL_SkillSystem_resistance_acc select 0), (((ACPL_SkillSystem_resistance_acc select 0) + (ACPL_SkillSystem_resistance_acc select 1))/_random), (ACPL_SkillSystem_resistance_acc select 1)];
+				_shake = random [(ACPL_SkillSystem_resistance_shake select 0), (((ACPL_SkillSystem_resistance_shake select 0) + (ACPL_SkillSystem_resistance_shake select 1))/_random), (ACPL_SkillSystem_resistance_shake select 1)];
+				_speed = random [(ACPL_SkillSystem_resistance_speed select 0), (((ACPL_SkillSystem_resistance_speed select 0) + (ACPL_SkillSystem_resistance_speed select 1))/_random), (ACPL_SkillSystem_resistance_speed select 1)];
+				_spot = random [(ACPL_SkillSystem_resistance_spot select 0), (((ACPL_SkillSystem_resistance_spot select 0) + (ACPL_SkillSystem_resistance_spot select 1))/_random), (ACPL_SkillSystem_resistance_spot select 1)];
+				_time = random [(ACPL_SkillSystem_resistance_time select 0), (((ACPL_SkillSystem_resistance_time select 0) + (ACPL_SkillSystem_resistance_time select 1))/_random), (ACPL_SkillSystem_resistance_time select 1)];
+				_general = random [(ACPL_SkillSystem_resistance_general select 0), (((ACPL_SkillSystem_resistance_general select 0) + (ACPL_SkillSystem_resistance_general select 1))/_random), (ACPL_SkillSystem_resistance_general select 1)];
+				_courage = random [(ACPL_SkillSystem_resistance_courage select 0), (((ACPL_SkillSystem_resistance_courage select 0) + (ACPL_SkillSystem_resistance_courage select 1))/_random), (ACPL_SkillSystem_resistance_courage select 1)];
+				_reload = random [(ACPL_SkillSystem_resistance_reload select 0), (((ACPL_SkillSystem_resistance_reload select 0) + (ACPL_SkillSystem_resistance_reload select 1))/_random), (ACPL_SkillSystem_resistance_reload select 1)];
+			};
 		};
-	};
 	
 	//Set accuracy
 	_unit setSkill ["aimingAccuracy", _acc];
@@ -89,4 +91,6 @@ if (ACPL_SkillSystem_Enabled) then {
 	
 	//Set reload
 	_unit setSkill ["reloadSpeed", _reload];
+	
+	_unit setvariable ["ACPL_SkillSystem_Done", true];
 };

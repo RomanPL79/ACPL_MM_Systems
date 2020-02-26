@@ -1,4 +1,11 @@
-params ["_unit", "_pos", ["_object", ""], ["_point_on_move", false], ["_max_time", 0], ["_stuck_check", true]];
+params [
+	["_unit", ObjNull],
+	["_pos", getpos _unit], 
+	["_object", ObjNull], 
+	["_point_on_move", false], 
+	["_max_time", 0], 
+	["_stuck_check", true]
+];
 
 /*
 	Basic function, 
@@ -52,6 +59,8 @@ if (missionNamespace getVariable ["TCL_Initialize", false]) then {
 
 private _onmove = true;
 private _notmoving = 0;
+
+if (isNil "_object") then {_point_on_move = false;};
 
 while {_onmove && (alive _unit)} do {
 	//If pos is able to move

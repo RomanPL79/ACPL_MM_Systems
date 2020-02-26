@@ -1,14 +1,5 @@
 if (!isserver) exitwith {};
 
-//Inform SkillSystem is activated
-
-ACPL_SkillSystem_Activated = true;
-publicVariable "ACPL_SkillSystem_Activated";
-
-//Defines Excluded list
-
-ACPL_SkillSystem_Excluded = [];
-
 //Looks for script version of SkillSystem and if it's loaded disable it
 
 [] spawn {

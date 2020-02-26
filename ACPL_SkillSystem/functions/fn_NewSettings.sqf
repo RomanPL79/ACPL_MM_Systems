@@ -4,7 +4,7 @@ params [
 	["_activated", false]
 ];
 
-if (!isserver) exitwith {};
+if (!isserver || !_activated) exitwith {};
 
 WaitUntil {sleep 1;time > 5};
 
@@ -107,9 +107,7 @@ private _r_reload_1 = _logic getvariable ["RESISTANCE_Reload_max", 0.4];
 
 private _units = synchronizedObjects _logic;
 
-if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
-
-ACPL_SkillSystem_Excluded append _units;
+{_x setvariable ["ACPL_SkillSystem_Excluded", true]} foreach _units;
 
 ACPL_SkillSystem_Enabled = _enable;
 
@@ -161,3 +159,5 @@ if (_reload || !(missionNamespace getVariable ["ACPL_SkillSystem_FirstChange", f
 	[] call ACPL_SkillSystem_fnc_ReloadAll;
 	ACPL_SkillSystem_FirstChange = true;
 };
+
+deletevehicle _logic;

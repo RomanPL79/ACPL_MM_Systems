@@ -4,8 +4,8 @@ params [
 	["_activated", false]
 ];
 
-if (!isserver) exitwith {};
+if (!isserver || !_activated) exitwith {};
 
-if (isNil "ACPL_SkillSystem_Excluded") then {ACPL_SkillSystem_Excluded = [];};
+{_x setvariable ["ACPL_SkillSystem_Excluded", true]} foreach _synch;
 
-ACPL_SkillSystem_Excluded append _synch;
+deletevehicle _logic;

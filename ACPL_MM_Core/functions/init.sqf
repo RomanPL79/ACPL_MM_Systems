@@ -1,7 +1,5 @@
 if (!isserver) exitwith {};
 
-if (isNil "ACPL_MM_Core_Medicaments_Excluded") then {ACPL_MM_Core_Medicaments_Excluded = [];};
-
 if (missionNamespace getVariable ["acpl_medical", false]) then {
 	acpl_medical = false;
 	acpl_medical_AI = false;

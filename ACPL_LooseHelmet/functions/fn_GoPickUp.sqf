@@ -19,12 +19,20 @@
 
 ---------------------------------------------------------------------------- */
 
-params ["_unit", "_weaponhandler", "_class", "_type"];
+params [
+	["_unit", ObjNull], 
+	["_weaponhandler", ObjNull], 
+	["_class", ""], 
+	["_type", ""]
+];
+
+private _needToPick = [_unit, _type] call ACPL_LooseHelmet_fnc_NeedToPickUp;
+if (!_needToPick || !(alive _unit)) exitwith {_unit setvariable ["ACPL_LooseHelmet_GoPickUp", false];};
 
 //giving info about state of script
 
 _unit setvariable ["ACPL_LooseHelmet_GoPickUp", false];
-_unit setvariable ["ACPL_LooseHelmet_Busy", true, true];
+_unit setvariable ["ACPL_LooseHelmet_Busy", true];
 
 //if wrong position then exit
 
@@ -47,7 +55,7 @@ WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false])};
 //if weapon or item is destroyed informing script is done
 
 if (_weaponhandler in ACPL_LooseHelmet_Destroyed) exitwith {
-	_unit setvariable ["ACPL_LooseHelmet_GoPickUp", false];
+	_unit setvariable ["ACPL_LooseHelmet_GoPickUp", true];
 };
 
 //checking type of item and picking it up
@@ -89,4 +97,4 @@ if (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false]) then {
 	[_unit, true] spawn ACPL_MM_Core_fnc_DoStop_Prepare;
 };
 
-_unit setvariable ["ACPL_LooseHelmet_Busy", false, true];
+_unit setvariable ["ACPL_LooseHelmet_Busy", false];

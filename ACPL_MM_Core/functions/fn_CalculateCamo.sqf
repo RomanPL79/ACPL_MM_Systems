@@ -1,4 +1,8 @@
-params ["_unit", ["_sleep", 0.1], ["_custom", false]];
+params [
+	["_unit", ObjNull], 
+	["_sleep", 0.1], 
+	["_custom", false]
+];
 
 if (isNil "ACPL_MM_Core_Camo_groupAI_enabled") then {ACPL_MM_Core_Camo_groupAI_enabled = false;};
 
