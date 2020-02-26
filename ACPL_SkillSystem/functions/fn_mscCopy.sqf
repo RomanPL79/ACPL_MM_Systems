@@ -1,6 +1,6 @@
 ACPL_SkillSystem_msc = true;
 
-ACPL_SkillSystem_Excluded = ACPL_SkillSystem_Excluded + acpl_msc_exception;
+ACPL_SkillSystem_Excluded append acpl_msc_exception;
 
 //WEST
 ACPL_SkillSystem_west_random = acpl_msc_west_random;
