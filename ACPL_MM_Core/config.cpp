@@ -34,10 +34,13 @@ class Extended_PostInit_EventHandlers
 		init="call compile preProcessFileLineNumbers 'ACPL_MM_Core\functions\Init.sqf'";
 	};
 	
-	class Man
+	class CAManBase
 	{
 		class ACPL_MM_Core_Camo_ClientInit {
 			clientInit = "params ['_unit'];if (ACPL_MM_Core_Camo_enabled) then {[_unit,ACPL_MM_Core_fnc_CalculateCamo] remoteExec ['spawn',_unit];};";
+		};
+		class ACPL_MM_Core_Init {
+			init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_BS_init;";
 		};
 	};
 };

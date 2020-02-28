@@ -33,13 +33,3 @@ class Module_F: Logic {
 #include "modules\AI_Mods\cfg_TCL.hpp"
 
 #include "modules\misc\cfgCustomMarker.hpp"
-
-class Man;
-class CAManBase: Man {
-	class EventHandlers
-	{
-		class ACPL_MM_Core {
-			Init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_CalculateCamo;[_unit] spawn ACPL_MM_Core_fnc_BS_init;";
-		};
-	};
-};

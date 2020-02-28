@@ -22,6 +22,9 @@ private ["_weaponHolder0", "_moving", "_pos", "_vel", "_mass", "_dummy0"];
 
 if (vehicle _unit != _unit) exitwith {};
 
+private _weaponHolder_ap = [-0.1,-0.62,-0.7];
+private _weaponHolder0_ap = [-0.1,-0.72,0.6];
+
 private _random = random 100;
 if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_LooseWeapon_fix_helmet", false])) then {
 
@@ -36,7 +39,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		private _mass = getNumber (configfile >> "CfgWeapons" >> _helmet >> "ItemInfo" >> "mass");
 		
-		private _weaponHolder = "GroundWeaponHolder_Scripted" createVehicle [0,0,0];
+		private _weaponHolder = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
 		_weaponHolder addItemCargoGlobal [_helmet,1];
 		[_unit] remoteExec ["removeHeadgear",0];
 			
@@ -46,65 +49,59 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		_dummy setmass _mass;
 		
-		IF (_nvg != "") then {
+		if (_nvg != "") then {
 			_dummy0 = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
 			_dummy0 enableSimulationGlobal true;
 			_dummy0 allowdamage false;
 			
 			[_unit, _nvg] remoteExec ["unlinkItem",0];
-			_weaponHolder0 = "GroundWeaponHolder_Scripted" createVehicle [0,0,0];
+			_weaponHolder0 = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
 			_weaponHolder0 addItemCargoGlobal [_nvg,1];
-			_weaponHolder0 attachTo [_dummy0, [-0.1,-0.62,-0.7]];
+			_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
+			
+			[_weaponHolder0, _unit] remoteExecCall ["disableCollisionWith", 0];
 		};
 		
-		_weaponHolder attachTo [_dummy, [-0.1,-0.62,-0.7]]; 
+		_weaponHolder attachTo [_dummy, _weaponHolder_ap]; 
 		_weaponHolder setVectorDirAndUp [[0, 0, 0.5],[0, -0.5, -1]];
-
-		IF ("STAND" == stance _unit )  then {
-			_dummy setPos (_unit modelToWorld [0.02,0.05,1.7]); 
-			IF (_nvg != "") then {_dummy0 setPos (_unit modelToWorld [0.02,0.05,1.73]);};
-		};
-
-		IF ("CROUCH" == stance _unit ) then {
-			_dummy setPos (_unit modelToWorld [0.02,0.05,1.1]); 
-			IF (_nvg != "") then {_dummy0 setPos (_unit modelToWorld [0.02,0.05,1.13]);};	
-		};
-
-		IF ("PRONE" == stance _unit ) then {
-			_dummy setPos (_unit modelToWorld [0.02,0.75,0.4]); 
-			IF (_nvg != "") then {_dummy0 setPos (_unit modelToWorld [0.02,0.75,0.43]);};
-		};
-
-		IF ("UNDEFINED" == stance _unit ) then {
-			_dummy setPos (_unit modelToWorld [0.02,0.05,1.4]); 
-			IF (_nvg != "") then {_dummy0 setPos (_unit modelToWorld [0.02,0.05,1.43]);};
-		};
+		
+		private _attachpos_dummy = _unit selectionPosition "head";
+		private _attachpos_dummy0 = _unit selectionPosition "head";
+		_attachpos_dummy0 set [2, (_attachpos_dummy0 select 2) + 0.03];
+		
+		[_weaponHolder, _unit] remoteExecCall ["disableCollisionWith", 0];
+		
+		_dummy setPos (_unit modelToWorld _attachpos_dummy); 
+		if (_nvg != "") then {_dummy0 setPos (_unit modelToWorld _attachpos_dummy0);};
 
 		_dummy setDir (getdir _unit);
-		IF (_nvg != "") then {_dummy0 setDir (getdir _unit);};
+		if (_nvg != "") then {_dummy0 setDir (getdir _unit);};
 
 		_dummy setVelocity _new_velocity;
 		_dummy addTorque (_dummy vectorModelToWorld _torque);
-		IF (_nvg != "") then {
+		if (_nvg != "") then {
 			_dummy0 setVelocity [(random 1), (random 1), (random 3)];
 			_dummy0 addTorque (_dummy vectorModelToWorld [(random 5), (random 1), 0]);
 			
-			[_dummy0, _weaponHolder0, _med_velocity] spawn {
-				params ["_dummy", "_weaponholder", "_med_velocity"];
+			[_dummy0, _weaponHolder0, _med_velocity, _nvg] spawn {
+				params ["_dummy", "_weaponholder", "_med_velocity", "_nvg"];
 				private ["_vel", "_pos", "_moving"];
 				
 				_moving = true;
+				
+				private _time = time + 10;
 				
 				while {_moving} do {
 				
 					_vel = velocity _dummy;
 					_pos = getposATL _dummy;
 					
-					if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
+					if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || (time > _time)) then {
 						_dummy enableSimulationGlobal false;
-						detach _weaponHolder;
 						_weaponholder enableSimulationGlobal true;
-						deletevehicle _dummy;
+						[_dummy,true] remoteExec ["hideobject",0,true];
+						
+						[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
 						
 						_moving = false;
 					};
@@ -112,8 +109,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 					sleep 0.05;
 				};
 				
-				if (ACPL_LooseHelmet_Destroy) then {
-					[_weaponholder, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;
+				if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
+					[_weaponholder, true] call ACPL_LooseHelmet_fnc_Destroy;
 				};
 			};
 		};
@@ -128,16 +125,20 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		_moving = true;
 		
+		private _time = time + 10;
+		
 		while {_moving} do {
 			
 			_vel = velocity _dummy;
 			_pos = getposATL _dummy;
+			_wh_pos = getposATL _weaponHolder;
 			
-			if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
+			if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || (_time < time)) then {
 				_dummy enableSimulationGlobal false;
-				detach _weaponHolder;
 				_weaponholder enableSimulationGlobal true;
-				deletevehicle _dummy;
+				[_dummy,true] remoteExec ["hideobject",0,true];
+				
+				[_weaponholder, "HELMET", _helmet, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
 					
 				_moving = false;
 			};
@@ -145,8 +146,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			sleep 0.05;
 		};
 		
-		if (ACPL_LooseHelmet_Destroy) then {
-			[_weaponholder, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;
+		if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
+			[_weaponholder, true] call ACPL_LooseHelmet_fnc_Destroy;
 		};
 	};
 } else {
@@ -162,25 +163,14 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		_dummy0 allowdamage false;
 			
 		[_unit, _nvg] remoteExec ["unlinkItem",0];
-		_weaponHolder0 = "GroundWeaponHolder_Scripted" createVehicle [0,0,0];
+		_weaponHolder0 = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
 		_weaponHolder0 addItemCargoGlobal [_nvg,1];
-		_weaponHolder0 attachTo [_dummy0, [-0.1,-0.62,-0.7]];
+		_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
 		
-		IF ("STAND" == stance _unit )  then {
-			_dummy0 setPos (_unit modelToWorld [0.02,0.05,1.73]);
-		};
-
-		IF ("CROUCH" == stance _unit ) then {
-			_dummy0 setPos (_unit modelToWorld [0.02,0.05,1.13]);	
-		};
-
-		IF ("PRONE" == stance _unit ) then {
-			_dummy0 setPos (_unit modelToWorld [0.02,0.75,0.43]);
-		};
-
-		IF ("UNDEFINED" == stance _unit ) then {
-			_dummy0 setPos (_unit modelToWorld [0.02,0.05,1.43]);
-		};
+		private _attachpos_dummy0 = _unit selectionPosition "head";
+		_attachpos_dummy0 set [2, (_attachpos_dummy0 select 2) + 0.03];
+		
+		_dummy0 setPos (_unit modelToWorld _attachpos_dummy0);
 		
 		_dummy0 setDir (getdir _unit);
 		
@@ -195,16 +185,19 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			
 			_moving = true;
 			
+			private _time = time + 10;
+			
 			while {_moving} do {
 			
 				_vel = velocity _dummy;
 				_pos = getposATL _dummy;
 				
-				if (((_vel select 0 == 0) AND (_vel select 1 == 0) AND (_vel select 2 == 0)) OR (_pos select 2 < 0)) then {
+				if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || (_time < time)) then {
 					_dummy enableSimulationGlobal false;
-					detach _weaponHolder;
 					_weaponholder enableSimulationGlobal true;
-					deletevehicle _dummy;
+					[_dummy,true] remoteExec ["hideobject",0,true];
+					
+					[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
 					
 					_moving = false;
 				};
@@ -212,8 +205,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				sleep 0.05;
 			};
 			
-			if (ACPL_LooseHelmet_Destroy) then {
-				[_weaponholder, _med_velocity] call ACPL_LooseHelmet_fnc_Destroyed;
+			if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
+				[_weaponholder, true] call ACPL_LooseHelmet_fnc_Destroy;
 			};
 		};
 	};

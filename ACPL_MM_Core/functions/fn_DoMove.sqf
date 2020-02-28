@@ -1,9 +1,9 @@
 params [
 	["_unit", ObjNull],
-	["_pos", getpos _unit], 
-	["_object", ObjNull], 
-	["_point_on_move", false], 
-	["_max_time", 0], 
+	["_pos", [0,0,0]],
+	["_object", ObjNull],
+	["_point_on_move", false],
+	["_max_time", 0],
 	["_stuck_check", true]
 ];
 

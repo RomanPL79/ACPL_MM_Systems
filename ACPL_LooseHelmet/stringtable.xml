@@ -167,5 +167,30 @@
 			<English>The helmet has been unfastened</English>
 			<Polish>Hełm został odpięty</Polish>
 		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_helmet_pickup">
+			<Original>Pick up helmet</Original>
+			<English>Pick up helmet</English>
+			<Polish>Podnieś hełm</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_nvg_pickup">
+			<Original>Pick up NVG</Original>
+			<English>Pick up NVG</English>
+			<Polish>Podnieś noktowizję</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_weapon_pickup">
+			<Original>Pick up Weapon</Original>
+			<English>Pick up Weapon</English>
+			<Polish>Podnieś broń</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_destroyed_pickup">
+			<Original>Item is destroyed</Original>
+			<English>Item is destroyed</English>
+			<Polish>Przedmiot jest zniszczony</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_noplace_pickup">
+			<Original>You have no place to pick up the item</Original>
+			<English>You have no place to pick up the item</English>
+			<Polish>Nie masz miejsca aby podnieść przedmiot</Polish>
+		</Key>
 	</Package>
 </Project>

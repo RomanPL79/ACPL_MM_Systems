@@ -62,9 +62,15 @@ if (_weaponhandler in ACPL_LooseHelmet_Destroyed) exitwith {
 
 switch (_type) do {
 	case "GUN": {
+		private _weap = _class select 0;
 		[_unit,"PutDown"] remoteExec ["playAction",0];
-		_unit action ["TakeWeapon", _weaponhandler, _class];
+		_unit action ["TakeWeapon", _weaponhandler, _weap];
+		[_unit,_weap] remoteExec ["addWeapon",_unit];
+		{
+			[_unit,[_weap, _x]] remoteExec ["addWeaponItem",_unit];
+		} foreach (_class - [_class select 0]);
 		_unit setvariable ["ACPL_MM_Core_DoMove", true];
+		deletevehicle _weaponhandler;
 	};
 	case "HELMET": {
 		[_unit,"PutDown"] remoteExec ["playAction",0];

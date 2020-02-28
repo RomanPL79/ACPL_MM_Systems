@@ -12,8 +12,8 @@ class ACPL_LooseHelmet {
 		//[] call ACPL_LooseHelmet_fnc_DropWeapon;
 		class DropWeapon {};
 		
-		//[] call ACPL_LooseHelmet_fnc_Destroyed;
-		class Destroyed {};
+		//[] call ACPL_LooseHelmet_fnc_Destroy;
+		class Destroy {};
 		
 		//[] call ACPL_LooseHelmet_fnc_NeedToPickUp;
 		class NeedToPickUp {};
@@ -23,6 +23,9 @@ class ACPL_LooseHelmet {
 		
 		//[] call ACPL_LooseHelmet_fnc_FixAction;
 		class FixAction {};
+		
+		//[] call ACPL_LooseHelmet_fnc_player_pickup;
+		class player_pickup {};
 	}
 	
 	class FSM

@@ -48,3 +48,10 @@ class Extended_PostInit_EventHandlers
 		init="call compile preProcessFileLineNumbers 'ACPL_LooseHelmet\functions\Init.sqf'";
 	};
 };
+
+class Extended_HitPart_EventHandlers {
+	class Man;
+	class CAManBase: Man {
+		HitPart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],ACPL_LooseHelmet_fnc_HitHandler] remoteExec ['spawn',2];";
+    };
+};
