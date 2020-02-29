@@ -111,7 +111,7 @@ switch (_type) do {
 	_text,
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-	"_this distance _target < 2",
+	"_this distance _target < 5",
 	"true",
 	{},
 	{}, 

@@ -13,7 +13,7 @@ private _units = synchronizedObjects _logic;
 	_x DisableAI "PATH";
 } foreach _units;
 
-WaitUntil {sleep 1;((time > 5) && (missionnamespace getvariable ["ACPL_MM_Core_Started", true]))};
+WaitUntil {sleep 1;((time > 35) && (missionnamespace getvariable ["ACPL_MM_Core_Started", true]))};
 
 private _pos = _logic getvariable ["ACPL_MM_Core_DoStop_pos", "UP"];
 private _duck = _logic getvariable ["ACPL_MM_Core_DoStop_duck", true];
@@ -28,17 +28,18 @@ private _anim_list = _logic getvariable ["ACPL_MM_Core_DoStop_anim_list", "STAND
 private _dosupp = _logic getvariable ["ACPL_MM_Core_DoStop_dosupp", true];
 
 {
-	_x setvariable ["ACPL_MM_Core_DoStop_pos", _pos];
-	_x setvariable ["ACPL_MM_Core_DoStop_duck", _duck];
-	_x setvariable ["ACPL_MM_Core_DoStop_run", _run];
-	_x setvariable ["ACPL_MM_Core_DoStop_canrun", _canrun];
-	_x setvariable ["ACPL_MM_Core_DoStop_canrun_chance", _canrun_chance];
-	_x setvariable ["ACPL_MM_Core_DoStop_canrun_distance", _canrun_distance];
-	_x setvariable ["ACPL_MM_Core_DoStop_roam", _roam];
-	_x setvariable ["ACPL_MM_Core_DoStop_react", _react];
-	_x setvariable ["ACPL_MM_Core_DoStop_anim", _anim];
-	_x setvariable ["ACPL_MM_Core_DoStop_anim_list", _anim_list];
-	_x setvariable ["ACPL_MM_Core_DoStop_dosupp", _dosupp];
+	private _ownerid = owner _x;
+	_x setvariable ["ACPL_MM_Core_DoStop_pos", _pos, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_duck", _duck, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_run", _run, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_canrun", _canrun, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_canrun_chance", _canrun_chance, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_canrun_distance", _canrun_distance, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_roam", _roam, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_react", _react, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_anim", _anim, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_anim_list", _anim_list, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_dosupp", _dosupp, [_ownerid, 2]];
 	
 	private _buildings = (nearestObjects [_x, ["House", "Building"], 50]);
 	private _building = ObjNull;
@@ -49,17 +50,17 @@ private _dosupp = _logic getvariable ["ACPL_MM_Core_DoStop_dosupp", true];
 	
 	private _actPos = getposATL _x;
 	
-	_x setvariable ["ACPL_MM_Core_DoStop_building", _building];
-	_x setvariable ["ACPL_MM_Core_DoStop_startPos", _actPos];
-	_x setvariable ["ACPL_MM_Core_DoStop_actPos", _actPos];
-	_x setvariable ["ACPL_MM_Core_DoStop_startDir", (getdir _x)];
+	_x setvariable ["ACPL_MM_Core_DoStop_building", _building, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_startPos", _actPos, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_actPos", _actPos, [_ownerid, 2]];
+	_x setvariable ["ACPL_MM_Core_DoStop_startDir", (getdir _x), [_ownerid, 2]];
 	
 	if (vehicle _x == _x) then {
 		if (isNil "ACPL_MM_Core_TakenPos") then {ACPL_MM_Core_TakenPos = [];};
 		ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos + [(getposATL _x)];
 	};
 	
-	[_x] spawn ACPL_MM_Core_fnc_DoStop;
+	[[_x],ACPL_MM_Core_fnc_DoStop] remoteExec ["spawn",_ownerid];
 	
 	_x addEventHandler ["FiredMan", {
 		params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];

@@ -16,12 +16,13 @@ private _add = {
 	
 	{
 		private _noplayable = true;
+		private _actualowner = owner _x;
 		{
 			if (_x in playableUnits) then {
 				_noplayable = false;
 			};
 		} foreach (units _x);
-		if (_noplayable) then {
+		if (_noplayable && _actualowner == 0) then {
 			[_x, _owner] remoteExec ["setGroupOwner",2];
 		};
 	} foreach _list;
