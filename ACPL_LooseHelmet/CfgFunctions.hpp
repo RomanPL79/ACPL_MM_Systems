@@ -26,6 +26,9 @@ class ACPL_LooseHelmet {
 		
 		//[] call ACPL_LooseHelmet_fnc_player_pickup;
 		class player_pickup {};
+		
+		//[] class ACPL_LooseHelmet_fnc_inventoryhandler;
+		class inventoryhandler {};
 	}
 	
 	class FSM

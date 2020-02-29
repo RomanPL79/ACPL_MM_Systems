@@ -183,6 +183,9 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
 		class DoSupp_CheckSeeEnemy_FromPos {};
+		
+		//[] call ACPL_MM_Core_fnc_DoSupp_StayInPos;
+		class DoSupp_StayInPos {};
 	};
 
 	class DoSupp_FSMs

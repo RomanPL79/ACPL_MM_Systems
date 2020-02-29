@@ -192,5 +192,10 @@
 			<English>You have no place to pick up the item</English>
 			<Polish>Nie masz miejsca aby podnieść przedmiot</Polish>
 		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_act_inventory_forbidden">
+			<Original>You are not able to pick up this object using inventory - use action in scroll menu instead</Original>
+			<English>You are not able to pick up this object using inventory - use action in scroll menu instead</English>
+			<Polish>Nie możesz podnieść tego przedmiotu za pomocą inwentarza - zamiast tego użyj opcji w menu pod kółkiem myszy</Polish>
+		</Key>
 	</Package>
 </Project>

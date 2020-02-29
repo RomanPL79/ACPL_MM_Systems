@@ -256,8 +256,8 @@ switch (_vehicle) do {
 				};
 			};
 		};
-
-		_unit setunitpos _position;
+		
+		[_unit, _position] spawn ACPL_MM_Core_fnc_DoSupp_StayInPos;
 		
 		_unit forcespeed 0;
 		

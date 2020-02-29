@@ -26,7 +26,7 @@ ACPL_MM_Core_Started = true;
 };
 
 [] spawn {
-	waitUntil {time > 5;};
+	waitUntil {time > 30;};
 	
 	if (isNil "ACPL_MM_Core_Headless") then {ACPL_MM_Core_Headless = false;};
 	

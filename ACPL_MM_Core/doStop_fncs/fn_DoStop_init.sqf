@@ -6,7 +6,7 @@ params [
 
 if (!isserver) exitwith {};
 
-if (!_activated) exitwith {}
+if (!_activated) exitwith {};
 private _units = synchronizedObjects _logic;
 
 {
@@ -80,5 +80,3 @@ private _dosupp = _logic getvariable ["ACPL_MM_Core_DoStop_dosupp", true];
 		};
 	}];
 } foreach _units;
-
-deletevehicle _logic;

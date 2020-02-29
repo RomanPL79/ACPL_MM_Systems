@@ -1,5 +1,7 @@
 if (!isserver) exitwith {};
 
+private _chosen = ObjNull;
+
 private _pool = allGroups;
 private _hc = ACPL_MM_Core_Headless_list;
 private _count_hc = (count ACPL_MM_Core_Headless_list) + 1;
@@ -33,7 +35,7 @@ while {true} do {
 	private _number = _count_groups / _count_hc;
 	
 	if (_count_hc > _count_groups) then {
-		private _chosen = _hc select _id;
+		_chosen = _hc select _id;
 		
 		_list = _pool;
 		_done = _done + _list;

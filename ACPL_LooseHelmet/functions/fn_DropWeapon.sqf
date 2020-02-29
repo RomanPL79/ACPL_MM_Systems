@@ -50,7 +50,9 @@ if (alive _unit) then {
 	
 	if (!(_random < ACPL_LooseHelmet_WeaponChance) && (_weapon == "")) exitwith {};
 	if ((_primary) && (_unit getvariable ["ACPL_LooseWeapon_fix_gun",false])) exitwith {};
-	private _weaponHolder_dummy = "GroundWeaponHolder_Scripted" createVehicle [0,0,0];
+	private _weaponHolder_dummy = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
+	
+	_weaponHolder_dummy setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
 	
 	_weaponHolder_dummy enableSimulationGlobal true;
 	
@@ -69,7 +71,15 @@ if (alive _unit) then {
 	
 	[_unit,_weapon] remoteExec ["removeweapon",0];
 	
-	_weaponHolder_dummy attachto [_dummy,[0,0,0.6]];
+	_weaponHolder_dummy attachto [_dummy,[0,0,0]];
+	private _y = 0;
+	private _p = 0;
+	private _r = 90;
+	_weaponHolder_dummy setVectorDirAndUp [ 
+		[sin _y * cos _p,cos _y * cos _p,sin _p], 
+		[[sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D 
+	];
+	_weaponHolder_dummy attachto [_dummy,[0.6,0,0]];
 	
 	_weaponHolder_dummy addWeaponWithAttachmentsCargoGlobal [_items, 1];
 	

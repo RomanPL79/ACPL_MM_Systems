@@ -42,6 +42,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		private _weaponHolder = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
 		_weaponHolder addItemCargoGlobal [_helmet,1];
 		[_unit] remoteExec ["removeHeadgear",0];
+		
+		_weaponHolder setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
 			
 		private _dummy = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
 		_dummy enableSimulationGlobal true;
@@ -60,6 +62,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
 			
 			[_weaponHolder0, _unit] remoteExecCall ["disableCollisionWith", 0];
+			
+			_weaponHolder0 setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
 		};
 		
 		_weaponHolder attachTo [_dummy, _weaponHolder_ap]; 
@@ -166,6 +170,8 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		_weaponHolder0 = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
 		_weaponHolder0 addItemCargoGlobal [_nvg,1];
 		_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
+		
+		_weaponHolder0 setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
 		
 		private _attachpos_dummy0 = _unit selectionPosition "head";
 		_attachpos_dummy0 set [2, (_attachpos_dummy0 select 2) + 0.03];
