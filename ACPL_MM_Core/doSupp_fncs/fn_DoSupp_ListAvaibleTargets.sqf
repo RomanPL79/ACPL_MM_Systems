@@ -24,11 +24,13 @@ switch (_vehicle) do {
 			private _eyepos = eyepos vehicle _unit;
 			
 			{
-				if (((side _x) in _enemy) && ((_unit knowsAbout _x) > 1)) then {
-					private _info = [_eyepos, eyepos _x] call ACPL_MM_Core_fnc_CheckVisFrom;
+				private _trg = _x;
+				if (vehicle _trg != _trg) then {_trg = vehicle _x;};
+				if (((side _x) in _enemy) && ((_unit knowsAbout _trg) > 1)) then {
+					private _info = [_eyepos, eyepos _trg] call ACPL_MM_Core_fnc_CheckVisFrom;
 					
 					if (_info) then {
-						_list = _list + [[_x, ["AUTO"]]];
+						_list = _list + [[_trg, ["AUTO"]]];
 					};
 				};
 			} foreach _units;
@@ -38,14 +40,16 @@ switch (_vehicle) do {
 		private _units = nearestObjects [_unit, ["Man"], 2000];
 		
 		{
-			if (((side _x) in _enemy) && ((_unit knowsAbout _x) > 1)) then {
-				private _info = [_unit, _x] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
+			private _trg = _x;
+			if (vehicle _trg != _trg) then {_trg = vehicle _x;};
+			if (((side _x) in _enemy) && ((_unit knowsAbout _trg) > 1)) then {
+				private _info = [_unit, _trg] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
 				
 				private _check = _info select 0;
 				private _positions = _info select 1;
 				
 				if (_check) then {
-					_list = _list + [[_x, _positions]];
+					_list = _list + [[_trg, _positions]];
 				};
 			};
 		} foreach _units;

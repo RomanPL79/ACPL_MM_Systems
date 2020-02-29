@@ -7,7 +7,7 @@ class ACPL_MM_Core_Spawner_CreateList_Module: Module_F {
 	scope = 2;  //show in editor
 	isGlobal = 0; //run on server
 	isTriggerActivated  = 0; //Wait for triggers
-	isDisposable = 0;
+	isDisposable = 1;
 	is3DEN = 0;
 	//icon = "\SkillSystem\icons\acpl_icon(.paa)";
 	class ModuleDescription: ModuleDescription {

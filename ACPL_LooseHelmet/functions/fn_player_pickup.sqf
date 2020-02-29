@@ -81,9 +81,6 @@ switch (_type) do {
 					hint (localize "STR_ACPL_LooseHelmet_act_destroyed_pickup");
 				} else {
 					[_caller, _weapon] remoteExec ["addWeapon",_caller];
-					{
-						[_caller,[_weapon, _x, true]] remoteExec ["addWeaponItem",_caller];
-					} foreach _ammo;
 					switch (_w_type) do {
 						case "PRIMARY": {
 							{[_caller, _x] remoteExec ["addprimaryweaponitem",_caller];} foreach _attachments;
@@ -95,6 +92,9 @@ switch (_type) do {
 							{[_caller, _x] remoteExec ["addhandgunitem",_caller];} foreach _attachments;
 						};
 					};
+					{
+						[_caller,[_weapon, _x, true]] remoteExec ["addWeaponItem",_caller];
+					} foreach _ammo;
 					[[_target,_actionId], BIS_fnc_holdActionRemove] remoteExec ["call",0];
 					deletevehicle _target;
 					deletevehicle _dummy;
