@@ -9,15 +9,15 @@ item4[] = {"isplayer",4,218,1492.243774,491.433624,1582.243774,541.433594,0.0000
 item5[] = {"Main_Loop___1",2,250,1731.728271,724.077026,1821.728271,774.077026,0.000000,"Main Loop" \n "" \n "#1"};
 item6[] = {"Dead",4,218,1329.311768,728.992065,1419.311768,778.992065,0.000000,"Dead"};
 item7[] = {"Dead_Ending",1,250,1201.961182,730.271057,1291.961182,780.271057,0.000000,"Dead Ending"};
-item8[] = {"in_players__dist",4,218,1732.012695,819.155334,1822.012573,869.155334,2.000000,"in players" \n " distance"};
+item8[] = {"in_players__dist",4,218,1732.762329,793.667969,1822.762207,843.667969,2.000000,"in players" \n " distance"};
 item9[] = {"beyond_players_d",4,218,1871.927856,781.328003,1961.927856,831.328003,2.000000,"beyond" \n "players" \n "distance"};
 item10[] = {"wait_1",2,250,2040.868042,724.010010,2130.867920,774.010010,0.000000,"wait"};
 item11[] = {"back_to__loop",4,218,1874.667847,724.965149,1964.667847,774.965149,0.000000,"back to " \n "loop"};
 item12[] = {"disable_simulati",2,250,1872.757446,852.003174,1962.757568,902.002991,0.000000,"disable" \n "simulation"};
 item13[] = {"back_to_loop",8,218,1986.423096,852.003235,2076.423096,902.003235,0.000000,"back to loop"};
-item14[] = {"Main_Loop___2",2,4346,1732.055908,933.678711,1822.056030,983.678711,0.000000,"Main Loop" \n "" \n "#2"};
-item15[] = {"in_veh",4,218,1596.712402,1005.223022,1686.712402,1055.223022,0.000000,"in" \n "veh"};
-item16[] = {"on_foot",4,218,1731.424683,1048.122681,1821.424683,1098.122681,0.000000,"on foot"};
+item14[] = {"Main_Loop___2",2,250,1628.607422,797.246582,1718.607544,847.246582,0.000000,"Main Loop" \n "" \n "#2"};
+item15[] = {"in_veh",4,218,1628.946289,1005.223022,1718.946289,1055.223022,0.000000,"in" \n "veh"};
+item16[] = {"on_foot",4,218,1731.424683,1066.113770,1821.424683,1116.113770,0.000000,"on foot"};
 item17[] = {"disable",4,218,1329.301025,814.550842,1419.301025,864.550842,0.000000,"disable"};
 item18[] = {"__DoStop__Ending",1,250,1200.746826,814.550842,1290.746826,864.550842,0.000000,"!DoStop" \n "" \n "Ending"};
 item19[] = {"Veh_Loop",2,250,1375.011963,1005.150208,1465.011963,1055.150146,0.000000,"Veh Loop"};
@@ -104,6 +104,10 @@ item99[] = {"Done",4,218,2195.761230,1761.764404,2285.761230,1811.764404,0.00000
 item100[] = {"",7,210,2237.844727,1873.409424,2245.844727,1881.409424,0.000000,""};
 item101[] = {"Did_not_mount",4,218,2306.882813,1284.652588,2396.882813,1334.652588,0.000000,"Did not" \n "mount"};
 item102[] = {"",7,210,2347.485596,1872.946655,2355.485596,1880.946655,0.000000,""};
+item103[] = {"in_combat",4,4314,1629.669678,867.057495,1719.669678,917.057495,0.000000,"in combat"};
+item104[] = {"out_of_combat",4,218,1731.619141,866.307922,1821.619141,916.307922,0.000000,"out of combat"};
+item105[] = {"beh_to_safe",2,250,1730.869385,934.523987,1820.869385,984.523987,0.000000,"beh to safe"};
+item106[] = {"beh_to_aware",2,250,1629.669800,934.523987,1719.669800,984.523987,0.000000,"beh to aware"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,79};
@@ -124,8 +128,8 @@ link16[] = {10,11};
 link17[] = {11,5};
 link18[] = {12,13};
 link19[] = {13,10};
-link20[] = {14,15};
-link21[] = {14,16};
+link20[] = {14,103};
+link21[] = {14,104};
 link22[] = {15,19};
 link23[] = {16,26};
 link24[] = {17,18};
@@ -242,8 +246,14 @@ link134[] = {99,100};
 link135[] = {100,73};
 link136[] = {101,102};
 link137[] = {102,100};
-globals[] = {0.000000,0,0,0,0,640,480,1,327,6316128,1,1385.313110,2266.875977,1269.864380,586.952759,1176,911,1};
-window[] = {2,-1,-1,-1,-1,957,-1870,-430,50,3,1194};
+link138[] = {103,106};
+link139[] = {104,105};
+link140[] = {105,15};
+link141[] = {105,16};
+link142[] = {106,15};
+link143[] = {106,16};
+globals[] = {0.000000,0,0,0,0,640,480,1,331,6316128,1,1269.119141,2150.680908,1360.573730,677.663208,1176,911,1};
+window[] = {2,-1,-1,-1,-1,1057,150,1590,150,3,1194};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -473,25 +483,25 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "on_foot">*/
-                                class on_foot
+                                /*%FSM<LINK "out_of_combat">*/
+                                class out_of_combat
                                 {
                                         itemno = ;
                                         priority = 0.000000;
-                                        to="On_foot_Loop__1";
+                                        to="beh_to_safe";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (vehicle _unit == _unit)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!([_unit, 1000] call ACPL_MM_Core_fnc_isInCombat)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
-                                /*%FSM<LINK "in_veh">*/
-                                class in_veh
+                                /*%FSM<LINK "in_combat">*/
+                                class in_combat
                                 {
                                         itemno = ;
                                         priority = 0.000000;
-                                        to="Veh_Loop";
+                                        to="beh_to_aware";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (vehicle _unit != _unit)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_unit, 1000] call ACPL_MM_Core_fnc_isInCombat"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1439,6 +1449,74 @@ class FSM
                                         to="more_to_check";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_LooseHelmet_Busy"", false])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "beh_to_safe">*/
+                class beh_to_safe
+                {
+                        name = "beh_to_safe";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_unit setBehaviour ""SAFE"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "on_foot">*/
+                                class on_foot
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="On_foot_Loop__1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (vehicle _unit == _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "in_veh">*/
+                                class in_veh
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Veh_Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (vehicle _unit != _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "beh_to_aware">*/
+                class beh_to_aware
+                {
+                        name = "beh_to_aware";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_unit setBehaviour ""AWARE"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "on_foot">*/
+                                class on_foot
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="On_foot_Loop__1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (vehicle _unit == _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "in_veh">*/
+                                class in_veh
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="Veh_Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time > _t) && (vehicle _unit != _unit)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
