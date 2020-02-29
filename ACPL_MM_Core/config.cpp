@@ -43,10 +43,7 @@ class Extended_PostInit_EventHandlers
 			init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_AddMedicaments;[_unit] spawn ACPL_MM_Core_fnc_BS_init;";
 		};
 	};
-};
-
-class Extended_Init_Eventhandlers
-{
+	
 	class HeadlessClient_F
 	{
 		class HeadlessClient_F_init 
@@ -55,7 +52,7 @@ class Extended_Init_Eventhandlers
 			init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_init_headless;";
 		};
 	}
-}
+};
 
 #include "cfgFactionClasses.hpp"
 
