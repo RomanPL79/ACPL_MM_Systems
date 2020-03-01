@@ -24,7 +24,6 @@ class Extended_PreInit_EventHandlers
 	{
 		init="call compile preProcessFileLineNumbers 'ACPL_MM_Core\cba_settings.sqf'";
 	};
-	VCM_CBASettings = call compile preprocessFileLineNumbers "\ACPL_MM_Core\Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
 };
 
 class Extended_PostInit_EventHandlers
@@ -59,29 +58,8 @@ class Extended_PostInit_EventHandlers
 class CfgFunctions
 {
 	#include "cfgFunctions.hpp"
-	#include "vcom\cfgFunctions.hpp"
 };
 
 class CfgVehicles {
 	#include "cfgVehicles.hpp"
-};
-
-class CfgRemoteExec
-{
-	// List of script functions allowed to be sent from client via remoteExec
-	class Functions
-	{
-		mode = 2;
-		jip = 1;		
-		
-		class vcm_serverask { allowedTargets = 0;jip = 1; };
-		class VCM_PublicScript { allowedTargets = 0;jip = 1; };
-		class BIS_fnc_debugConsoleExec { allowedTargets = 0;jip = 1; };
-		class SpawnScript { allowedTargets = 0;jip = 1; };
-		class enableSimulationGlobal { allowedTargets = 0;jip = 1; };
-		class VCM_fnc_KnowAbout { allowedTargets = 0;jip = 1; };
-		
-	};
-	
-	
 };

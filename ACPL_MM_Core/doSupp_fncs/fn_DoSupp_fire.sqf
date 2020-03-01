@@ -8,6 +8,8 @@ private _rof = (getNumber (configFile >> "cfgweapons" >> _weap >> "reloadTime"))
 private _toslow = false;
 private _bc = 0;
 
+systemchat str(_mode);
+
 if (_rof < 0.05) then {
 		_rof = 0.05;
 	};
@@ -50,7 +52,7 @@ if (_mode == "SINGLE") then {
 } else {
 	switch (_mode) do {
 		case "BURST": {_bc = 3;};
-		case "BURST_R": {_bc = random [2, 3, 5];};
+		case "BURST_R": {_bc = random [2, 3.5, 5];};
 		case "FULLAUTO": {_bc = random [5, 10, 30];};
 	};
 	
@@ -63,6 +65,8 @@ if (_mode == "SINGLE") then {
 			_bc = _bullets;
 		};
 	};
+	
+	systemchat str(_bc);
 	
 	for "_i" from 1 to _bc do {
 		[_gun, _weap] call BIS_fnc_fire;

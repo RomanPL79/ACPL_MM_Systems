@@ -25,6 +25,8 @@ if (vehicle _unit != _unit) exitwith {};
 private _weaponHolder_ap = [-0.1,-0.62,-0.7];
 private _weaponHolder0_ap = [-0.1,-0.72,0.6];
 
+private _nvg = "";
+
 private _random = random 100;
 if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_LooseWeapon_fix_helmet", false])) then {
 
@@ -143,7 +145,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				[_dummy,true] remoteExec ["hideobject",0,true];
 				
 				[_weaponholder, "HELMET", _helmet, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
-					
+
 				_moving = false;
 			};
 			
@@ -203,7 +205,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 					_weaponholder enableSimulationGlobal true;
 					[_dummy,true] remoteExec ["hideobject",0,true];
 					
-					[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
+					i[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
 					
 					_moving = false;
 				};

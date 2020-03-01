@@ -857,5 +857,10 @@
             <English>Description of the task</English>
 			<Polish>Opis zadania</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_Targets_cat">
+			<Original>ACPL Invisible Targets</Original>
+            <English>ACPL Invisible Targets</English>
+			<Polish>ACPL Niewidzialne Cele</Polish>
+		</Key>
 	</Package>
 </Project>
