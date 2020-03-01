@@ -32,7 +32,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 
 	private _helmet = headgear _unit;
 	if (_helmet != "") then {
-		private _nvg = hmd _unit;
+		_nvg = hmd _unit;
 		
 		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
 		private _torque = [(_velocity select 0)/100,(_velocity select 1)/100,0];
@@ -162,7 +162,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
 		private _torque = [(_velocity select 0)/100,(_velocity select 1)/100,0];
 		
-		private _nvg = hmd _unit;
+		_nvg = hmd _unit;
 		
 		_dummy0 = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
 		_dummy0 enableSimulationGlobal true;
@@ -205,7 +205,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 					_weaponholder enableSimulationGlobal true;
 					[_dummy,true] remoteExec ["hideobject",0,true];
 					
-					i[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
+					[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
 					
 					_moving = false;
 				};

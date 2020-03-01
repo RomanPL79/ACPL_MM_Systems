@@ -4,23 +4,23 @@
 item0[] = {"Start",0,250,-372.570740,1114.904785,-282.570740,1164.904785,0.000000,"Start"};
 item1[] = {"__isPlayer",4,218,-375.164124,1179.846069,-285.164124,1229.846069,0.000000,"!isPlayer"};
 item2[] = {"Have_a_target_and",2,250,-375.164124,1245.878784,-285.164124,1295.878784,0.000000,"Have a target" \n "and ordered" \n "to suppress"};
-item3[] = {"isPlayer",4,218,-480.560883,1114.296631,-390.560883,1164.296631,0.000000,"isPlayer"};
-item4[] = {"End",1,4346,-597.171021,1114.437012,-507.170990,1164.437012,0.000000,"End"};
-item5[] = {"no",4,218,-471.036316,1305.617188,-381.036316,1355.617188,0.000000,"no"};
-item6[] = {"yes",4,218,-269.358765,1304.858887,-179.358734,1354.858887,1.000000,"yes"};
+item3[] = {"isPlayer",4,218,-480.560883,1114.296631,-390.560883,1164.296631,1.000000,"isPlayer"};
+item4[] = {"End",1,250,-597.171021,1114.437012,-507.170990,1164.437012,0.000000,"End"};
+item5[] = {"no",4,218,-471.036316,1305.617188,-381.036316,1355.617188,1.000000,"no"};
+item6[] = {"yes",4,218,-269.358765,1304.858887,-179.358734,1354.858887,0.000000,"yes"};
 item7[] = {"",7,210,-555.953247,1326.088135,-547.953247,1334.088135,0.000000,""};
 item8[] = {"is_Busy_",2,250,-373.988434,1376.886597,-283.988403,1426.886597,0.000000,"is Busy?"};
-item9[] = {"yes",4,218,-470.278137,1447.397705,-380.278137,1497.397705,1.000000,"yes"};
+item9[] = {"yes",4,218,-470.278137,1447.397705,-380.278137,1497.397705,0.000000,"yes"};
 item10[] = {"no",4,218,-266.325989,1447.397583,-176.326004,1497.397583,1.000000,"no"};
 item11[] = {"",7,210,-555.953186,1467.868652,-547.953186,1475.868652,0.000000,""};
 item12[] = {"Suppress_random",2,250,-370.197510,1525.490967,-280.197510,1575.490967,0.000000,"Suppress" \n "random" \n "target"};
 item13[] = {"stopped_suppresi",4,218,-370.019196,1591.099243,-280.019196,1641.099243,1.000000,"stopped" \n "suppresing"};
-item14[] = {"dead",4,218,-471.656189,1527.457153,-381.656189,1577.457153,0.000000,"dead"};
+item14[] = {"dead",4,218,-471.656189,1527.457153,-381.656189,1577.457153,2.000000,"dead"};
 item15[] = {"",7,210,-555.454346,1548.199219,-547.454346,1556.199219,0.000000,""};
 item16[] = {"Check_targets",2,250,-369.792694,1660.805298,-279.792694,1710.805298,0.000000,"Check targets"};
-item17[] = {"has_target",4,218,-263.331726,1593.620972,-173.331711,1643.620972,1.000000,"has target"};
-item18[] = {"disabled",4,218,-472.119354,1660.804932,-382.119354,1710.804932,0.000000,"disabled"};
-item19[] = {"no_targets",4,218,-469.018555,1589.486328,-379.018555,1639.486328,2.000000,"no targets"};
+item17[] = {"has_target",4,4314,-263.331726,1593.620972,-173.331711,1643.620972,0.000000,"has target"};
+item18[] = {"disabled",4,218,-472.119354,1660.804932,-382.119354,1710.804932,2.000000,"disabled"};
+item19[] = {"no_targets",4,218,-469.018555,1589.486328,-379.018555,1639.486328,1.000000,"no targets"};
 item20[] = {"",7,210,-555.841125,1736.257935,-547.841125,1744.257935,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,3};
@@ -49,8 +49,8 @@ link23[] = {17,12};
 link24[] = {18,20};
 link25[] = {19,20};
 link26[] = {20,15};
-globals[] = {0.000000,0,0,0,0,640,480,1,174,6316128,1,-784.745667,86.580940,1580.307007,948.389709,848,615,1};
-window[] = {0,-1,-1,-1,-1,935,175,1615,175,1,866};
+globals[] = {0.000000,0,0,0,0,640,480,1,174,6316128,1,-784.745667,86.580940,1893.697021,1261.779663,848,615,1};
+window[] = {0,-1,-1,-1,-1,885,125,1565,125,1,866};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -83,7 +83,7 @@ class FSM
                                 class isPlayer
                                 {
                                         itemno = ;
-                                        priority = 0.000000;
+                                        priority = 1.000000;
                                         to="End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(isPlayer _unit) || (_unit in allPlayers)"/*%FSM</CONDITION""">*/;
@@ -113,27 +113,27 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "yes">*/
-                                class yes
-                                {
-                                        itemno = ;
-                                        priority = 1.000000;
-                                        to="is_Busy_";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_MM_Core_DoSupp_Enabled"", false]) && (count _list > 0)"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "no">*/
                                 class no
                                 {
                                         itemno = ;
-                                        priority = 0.000000;
+                                        priority = 1.000000;
                                         to="End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((count _list) == 0) " \n
                                          "|| " \n
                                          "!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "yes">*/
+                                class yes
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="is_Busy_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_unit getvariable [""ACPL_MM_Core_DoSupp_Enabled"", false]) && (count _list > 0)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -165,6 +165,17 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "no">*/
                                 class no
                                 {
@@ -180,21 +191,10 @@ class FSM
                                 class yes
                                 {
                                         itemno = ;
-                                        priority = 1.000000;
-                                        to="End";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"([_unit] call ACPL_MM_Core_fnc_DoSupp_isBusy)"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "dead">*/
-                                class dead
-                                {
-                                        itemno = ;
                                         priority = 0.000000;
                                         to="End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([_unit] call ACPL_MM_Core_fnc_DoSupp_isBusy)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -210,6 +210,17 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "stopped_suppresi">*/
                                 class stopped_suppresi
                                 {
@@ -218,17 +229,6 @@ class FSM
                                         to="Check_targets";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_MM_Core_DoSupp_Suppressing"", true])"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "dead">*/
-                                class dead
-                                {
-                                        itemno = ;
-                                        priority = 0.000000;
-                                        to="End";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(alive _unit)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -244,11 +244,22 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "disabled">*/
+                                class disabled
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_MM_Core_DoSupp_Enabled"", true])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "no_targets">*/
                                 class no_targets
                                 {
                                         itemno = ;
-                                        priority = 2.000000;
+                                        priority = 1.000000;
                                         to="End";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((count _list) == 0) " \n
@@ -261,23 +272,12 @@ class FSM
                                 class has_target
                                 {
                                         itemno = ;
-                                        priority = 1.000000;
+                                        priority = 0.000000;
                                         to="Suppress_random";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((count _list) < 0) " \n
                                          "&&" \n
                                          "(alive _unit)"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "disabled">*/
-                                class disabled
-                                {
-                                        itemno = ;
-                                        priority = 0.000000;
-                                        to="End";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_MM_Core_DoSupp_Enabled"", true])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
