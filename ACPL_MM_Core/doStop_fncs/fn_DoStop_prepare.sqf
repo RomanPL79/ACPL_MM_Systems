@@ -14,6 +14,7 @@ switch (_type) do {
 		_unit setVariable ["VCOM_NOAI",true];
 		_unit setVariable ["Vcm_Disable",true];
 		_unit setvariable ["TCL_Disabled",true];
+		_unit setVariable ["lambs_danger_disableAI",true];
 		(group _unit) setVariable ["Vcm_Disable",true];
 		(group _unit) setvariable ["TCL_Disabled",true];
 		(group _unit) setVariable ["zbe_cacheDisabled",true];
@@ -29,6 +30,7 @@ switch (_type) do {
 		_unit setVariable ["VCOM_NOAI",false];
 		_unit setVariable ["Vcm_Disable",false];
 		_unit setvariable ["TCL_Disabled",false];
+		_unit setVariable ["lambs_danger_disableAI",false];
 		(group _unit) setVariable ["Vcm_Disable",false];
 		(group _unit) setvariable ["TCL_Disabled",false];
 		(group _unit) setVariable ["zbe_cacheDisabled",true];

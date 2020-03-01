@@ -36,6 +36,11 @@ for "_i" from 0 to 9 do {
 
 ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed + [_target];
 
+_unit setVariable ["VCOM_NOAI",true];
+_unit setVariable ["Vcm_Disable",true];
+_unit setvariable ["TCL_Disabled",true];
+_unit setVariable ["lambs_danger_disableAI",true];
+
 private _vehicle = false;
 private _gunner = false;
 
@@ -71,6 +76,11 @@ private _wait = _angle / 30;
 private _distance = _unit distance _target;
 if (_distance < 20) exitwith {
 	ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
+	
+	_unit setVariable ["VCOM_NOAI",false];
+	_unit setVariable ["Vcm_Disable",false];
+	_unit setvariable ["TCL_Disabled",false];
+	_unit setVariable ["lambs_danger_disableAI",false];
 };
 
 
@@ -233,6 +243,11 @@ switch (_vehicle) do {
 						_unit forcespeed 99999;
 						
 						ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
+						
+						_unit setVariable ["VCOM_NOAI",false];
+						_unit setVariable ["Vcm_Disable",false];
+						_unit setvariable ["TCL_Disabled",false];
+						_unit setVariable ["lambs_danger_disableAI",false];
 					};
 				};
 			};
@@ -359,3 +374,8 @@ switch (_vehicle) do {
 _unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", false, true];
 
 ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
+
+_unit setVariable ["VCOM_NOAI",false];
+_unit setVariable ["Vcm_Disable",false];
+_unit setvariable ["TCL_Disabled",false];
+_unit setVariable ["lambs_danger_disableAI",false];
