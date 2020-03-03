@@ -1,8 +1,10 @@
 params [
-	"_logic",
-	"_synch",
-	"_activated"
+	["_logic", ObjNull],
+	["_synch", []],
+	["_activated", false]
 ];
+
+waitUntil {sleep 1;time > 10};
 
 if (_activated) then {
 	private _list = [];

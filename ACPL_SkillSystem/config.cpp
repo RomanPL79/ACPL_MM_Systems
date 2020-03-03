@@ -53,6 +53,8 @@ class CfgVehicles {
 class Extended_InitPost_EventHandlers {
 	class Man;
 	class CAManBase: Man {
-		init = "params ['_unit'];[_unit] spawn ACPL_SkillSystem_fnc_SetSkill;";
+		class ACPL_SkillSystem_Init {
+			init = "params ['_unit'];[_unit] spawn ACPL_SkillSystem_fnc_SetSkill;";
+		};
     };
 };

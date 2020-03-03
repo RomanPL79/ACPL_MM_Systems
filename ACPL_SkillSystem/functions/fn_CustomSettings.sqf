@@ -82,8 +82,8 @@ waitUntil {sleep 1; time > 10};
 	//Set reload
 	_x setSkill ["reloadSpeed", _reload_new];
 	
-	_unit setvariable ["ACPL_SkillSystem_Done", true];
-	_unit setvariable ["ACPL_SkillSystem_Excluded", true];
+	_x setvariable ["ACPL_SkillSystem_Done", true];
+	_x setvariable ["ACPL_SkillSystem_Excluded", true];
 } forEach _units;
 
 deletevehicle _logic;

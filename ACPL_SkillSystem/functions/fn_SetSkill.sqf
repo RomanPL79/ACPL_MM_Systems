@@ -67,6 +67,7 @@ if (ACPL_SkillSystem_Enabled) then {
 				_reload = random [(ACPL_SkillSystem_resistance_reload select 0), (((ACPL_SkillSystem_resistance_reload select 0) + (ACPL_SkillSystem_resistance_reload select 1))/_random), (ACPL_SkillSystem_resistance_reload select 1)];
 			};
 		};
+	};
 	
 	//Set accuracy
 	_unit setSkill ["aimingAccuracy", _acc];
