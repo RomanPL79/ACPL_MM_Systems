@@ -4,7 +4,7 @@ class ACPL_MM_Core_AImods_VCOM_Module: Module_F {
 	displayName = "$STR_ACPL_MM_Core_AImods_VCOM_Module";
 	function = "ACPL_MM_Core_fnc_VcomInit";
 	functionPriority = 1;
-	scope = 0;  //show in editor
+	scope = 1;  //show in editor
 	isGlobal = 0; //run on server
 	isTriggerActivated  = 0; //Wait for triggers
 	isDisposable = 1;

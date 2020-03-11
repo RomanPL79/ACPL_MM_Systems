@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ACPL_MM">
+	<Package name="ACPL_LooseHelmet">
+		<Key ID="STR_ACPL_LooseHelmet_empty">
+			<Original></Original>
+			<English></English>
+			<Czech></Czech>
+			<French></French>
+			<German></German>
+			<Italian></Italian>
+			<Polish></Polish>
+			<Portuguese></Portuguese>
+			<Russian></Russian>
+			<Spanish></Spanish>
+			<Korean></Korean>
+			<Japanese></Japanese>
+			<Chinesesimp></Chinesesimp>
+			<Chinese></Chinese>
+		</Key>
+		<Key ID="STR_ACPL_WeaponsOnBack_act_menu">
+			<Original>Weapons on backs</Original>
+			<English>Weapons on backs</English>
+			<Polish>Broń na plecach</Polish>
+		</Key>
+		<Key ID="STR_ACPL_WeaponsOnBack_act_primary">
+			<Original>Primary weapon on backs</Original>
+			<English>Primary weapon on backs</English>
+			<Polish>Główna broń na plecy</Polish>
+		</Key>
+		<Key ID="STR_ACPL_WeaponsOnBack_act_secondary">
+			<Original>Launcher on backs</Original>
+			<English>Launcher on backs</English>
+			<Polish>Wyrzutna na plecy</Polish>
+		</Key>
+		<Key ID="STR_ACPL_WeaponsOnBack_act_drop">
+			<Original>Drop weapon from backs</Original>
+			<English>Drop weapon from backs</English>
+			<Polish>Upuść broń z pleców</Polish>
+		</Key>
+		<Key ID="STR_ACPL_WeaponsOnBack_act_swap">
+			<Original>Swap weapon from backs</Original>
+			<English>Swap weapon from backs</English>
+			<Polish>Zamień broń z pleców</Polish>
+		</Key>
+		<Key ID="STR_ACPL_WeaponsOnBack_act_info">
+			<Original>Info about weapon on backs</Original>
+			<English>Info about weapon on backs</English>
+			<Polish>Informacje o broni na plecach</Polish>
+		</Key>
+	</Package>
+</Project>
