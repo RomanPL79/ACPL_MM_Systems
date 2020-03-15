@@ -12,26 +12,26 @@ if (_activated) then {
 
 	private _random = _logic getvariable ["ACPL_MM_Core_Weather_random", 2];
 
-	private _change_0 = _logic getvariable ["ACPL_MM_Core_Weather_changetimem_min", 10];
-	private _change_1 = _logic getvariable ["ACPL_MM_Core_Weather_changetimem_max", 60];
+	private _change_0 = _logic getvariable ["ACPL_MM_Core_Weather_changetime_min", 10];
+	private _change_1 = _logic getvariable ["ACPL_MM_Core_Weather_changetime_max", 60];
 
 	private _overcast_0 = _logic getvariable ["ACPL_MM_Core_Weather_overcast_min", 0];
-	private _overcast_1 = _logic getvariable ["ACPL_MM_Core_Weather_overcast_max", 1];
+	private _overcast_1 = _logic getvariable ["ACPL_MM_Core_Weather_overcast_max", 0];
 
 	private _rain_0 = _logic getvariable ["ACPL_MM_Core_Weather_rain_min", 0];
-	private _rain_1 = _logic getvariable ["ACPL_MM_Core_Weather_rain_max", 1];
+	private _rain_1 = _logic getvariable ["ACPL_MM_Core_Weather_rain_max", 0];
 
 	private _fog_0 = _logic getvariable ["ACPL_MM_Core_Weather_fog_min", 0];
-	private _fog_1 = _logic getvariable ["ACPL_MM_Core_Weather_fog_max", 1];
+	private _fog_1 = _logic getvariable ["ACPL_MM_Core_Weather_fog_max", 0];
 
-	private _fog_d_0 = _logic getvariable ["ACPL_MM_Core_Weather_fog_d_min", -1];
-	private _fog_d_1 = _logic getvariable ["ACPL_MM_Core_Weather_fog_d_max", 1];
+	private _fog_d_0 = _logic getvariable ["ACPL_MM_Core_Weather_fog_d_min", 0];
+	private _fog_d_1 = _logic getvariable ["ACPL_MM_Core_Weather_fog_d_max", 0];
 
-	private _fog_a_0 = _logic getvariable ["ACPL_MM_Core_Weather_fog_a_min", -5000];
-	private _fog_a_1 = _logic getvariable ["ACPL_MM_Core_Weather_fog_a_max", 5000];
+	private _fog_a_0 = _logic getvariable ["ACPL_MM_Core_Weather_fog_a_min", 0];
+	private _fog_a_1 = _logic getvariable ["ACPL_MM_Core_Weather_fog_a_max", 0];
 
 	private _thunder_0 = _logic getvariable ["ACPL_MM_Core_Weather_thunder_min", 0];
-	private _thunder_1 = _logic getvariable ["ACPL_MM_Core_Weather_thunder_max", 1];
+	private _thunder_1 = _logic getvariable ["ACPL_MM_Core_Weather_thunder_max", 0];
 
 	while {true} do {
 		

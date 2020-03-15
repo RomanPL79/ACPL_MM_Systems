@@ -7,7 +7,7 @@ class ACPL_MM_Core_Weather_module: Module_F {
 	scope = 2;  //show in editor
 	isGlobal = 0; //run on server
 	isTriggerActivated  = 0; //Wait for triggers
-	isDisposable = 1;
+	isDisposable = 0;
 	is3DEN = 0;
 	//icon = "\SkillSystem\icons\acpl_icon(.paa)";
 	class Arguments {

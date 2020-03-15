@@ -95,7 +95,7 @@ if (alive _unit) then {
 	private ["_pos", "_vel"];
 	
 	private _moving = true;
-	private _time = time + 10;
+	private _time = time + 20;
 	
 	while {_moving} do {
 		_vel = velocity _dummy;

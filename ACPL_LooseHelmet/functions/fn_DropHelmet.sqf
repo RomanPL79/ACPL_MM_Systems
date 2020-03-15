@@ -95,7 +95,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 				
 				_moving = true;
 				
-				private _time = time + 10;
+				private _time = time + 20;
 				
 				while {_moving} do {
 				
@@ -131,7 +131,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		_moving = true;
 		
-		private _time = time + 10;
+		private _time = time + 20;
 		
 		while {_moving} do {
 			
@@ -183,17 +183,17 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		_dummy0 setDir (getdir _unit);
 		
 		_dummy0 setVelocity [(random 1), (random 1), (random 3)];
-		_dummy0 addTorque (_dummy vectorModelToWorld [(random 5), (random 1), 0]);
+		_dummy0 addTorque (_dummy0 vectorModelToWorld [(random 5), (random 1), 0]);
 		
 		[_unit, _weaponHolder0, "NVG", _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
 		
-		[_dummy0, _weaponHolder0] spawn {
-			params ["_dummy", "_weaponholder"];
+		[_dummy0, _weaponHolder0, _nvg] spawn {
+			params ["_dummy", "_weaponholder", "_nvg"];
 			private ["_vel", "_pos", "_moving"];
 			
 			_moving = true;
 			
-			private _time = time + 10;
+			private _time = time + 20;
 			
 			while {_moving} do {
 			

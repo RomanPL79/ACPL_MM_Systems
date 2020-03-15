@@ -40,7 +40,8 @@ switch (_type) do {
 				if (_target getvariable ["ACPL_LooseHelmet_Destroyed", false]) then {
 					hint (localize "STR_ACPL_LooseHelmet_act_destroyed_pickup");
 				} else {
-					[_caller,_class] remoteExec ["linkItem",_caller];
+					[_caller,_class] remoteExec ["addItem",_caller];
+					[_caller,_class] remoteExec ["assignItem",_caller];
 					[[_target,_actionId], BIS_fnc_holdActionRemove] remoteExec ["call",0];
 					deletevehicle _target;
 					deletevehicle _dummy;
