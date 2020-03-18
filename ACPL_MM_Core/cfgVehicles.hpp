@@ -33,3 +33,7 @@ class Module_F: Logic {
 #include "modules\AI_Mods\cfg_TCL.hpp"
 
 #include "modules\misc\cfgCustomMarker.hpp"
+
+#include "modules\misc\cfg_zbe_cache.hpp"
+
+#include "modules\misc\cfg_zbe_cache_exclude.hpp"

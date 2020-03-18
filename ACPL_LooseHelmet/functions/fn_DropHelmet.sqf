@@ -41,25 +41,25 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		private _mass = getNumber (configfile >> "CfgWeapons" >> _helmet >> "ItemInfo" >> "mass");
 		
-		private _weaponHolder = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
+		private _weaponHolder = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
 		_weaponHolder addItemCargoGlobal [_helmet,1];
 		[_unit] remoteExec ["removeHeadgear",0];
 		
 		_weaponHolder setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
-			
-		private _dummy = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
+		
+		private _dummy = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
 		_dummy enableSimulationGlobal true;
 		_dummy allowdamage false;
 		
 		_dummy setmass _mass;
 		
 		if (_nvg != "") then {
-			_dummy0 = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
+			_dummy0 = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
 			_dummy0 enableSimulationGlobal true;
 			_dummy0 allowdamage false;
 			
 			[_unit, _nvg] remoteExec ["unlinkItem",0];
-			_weaponHolder0 = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
+			_weaponHolder0 = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
 			_weaponHolder0 addItemCargoGlobal [_nvg,1];
 			_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
 			
@@ -121,7 +121,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			};
 		};
 		
-		if (!(_unit in allplayers)) then {
+		if (!(isPlayer _unit)) then {
 			if (_nvg == "") then {
 				[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUp;
 			} else {
@@ -164,12 +164,12 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		
 		_nvg = hmd _unit;
 		
-		_dummy0 = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
+		_dummy0 = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
 		_dummy0 enableSimulationGlobal true;
 		_dummy0 allowdamage false;
 			
 		[_unit, _nvg] remoteExec ["unlinkItem",0];
-		_weaponHolder0 = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
+		_weaponHolder0 = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
 		_weaponHolder0 addItemCargoGlobal [_nvg,1];
 		_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
 		

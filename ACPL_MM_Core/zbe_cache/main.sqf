@@ -13,9 +13,9 @@ zbe_cachedVehicles 			= 0;
 zbe_objectView	   			= 0;
 zbe_players					= [];
 
-call compileFinal preprocessFileLineNumbers "ACPL_MM_Core\zbe_cache\zbe_functions.sqf";
+call compileFinal preprocessFileLineNumbers "zbe_cache\zbe_functions.sqf";
 
-if (zbe_minFrameRate == -1) then {if (isDedicated) then {zbe_minFrameRate = 1} else {zbe_minFrameRate = 1};};
+if (zbe_minFrameRate == -1) then {if (isDedicated) then {zbe_minFrameRate = 16} else {zbe_minFrameRate = 31};};
 
 zbe_mapsize = [] call bis_fnc_mapSize;
 zbe_mapside = zbe_mapsize / 2;
@@ -26,16 +26,13 @@ zbe_centerPOS = [zbe_mapside, zbe_mapside, 0];
 		sleep 15;
 		zbe_players = (switchableUnits + playableUnits);
 		{
-			private ["_disable"];
-			_disable = _x getVariable ["zbe_cacheDisabled",false];
-			if (!(isNull objectParent (leader _x))) then {_disable = true};
-			if ((waypointType [_x,currentWaypoint _x]) == "GETIN") then {_disable = true};
-			if (!(_disable) && !(_x in zbe_cachedGroups)) then {
-					zbe_cachedGroups = zbe_cachedGroups + [_x];
-				 [zbe_aiCacheDist, _x, zbe_minFrameRate, zbe_debug] execFSM "ACPL_MM_Core\zbe_cache\zbe_aiCaching.fsm";
+			_disable = _x getVariable "zbe_cacheDisabled";
+			_disable = if (isNil "_disable") then { false;
+				} else {_disable;
 				};
-			if ((_disable) && (_x in zbe_cachedGroups)) then {
-					zbe_cachedGroups = zbe_cachedGroups - [_x];
+			if (!_disable && !(_x in zbe_cachedGroups)) then {
+					zbe_cachedGroups = zbe_cachedGroups + [_x];
+				 [zbe_aiCacheDist, _x, zbe_minFrameRate, zbe_debug] execFSM "zbe_cache\zbe_aiCaching.fsm";
 				};
 		} forEach allGroups;
 	};
@@ -51,21 +48,21 @@ zbe_centerPOS = [zbe_mapside, zbe_mapside, 0];
 		{
 			if !(_x in zbe_cached_cars) then {
 				zbe_cached_cars = zbe_cached_cars + [_x];
-					[_x, zbe_vehicleCacheDistCar] execFSM "ACPL_MM_Core\zbe_cache\zbe_vehicleCaching.fsm";
+					[_x, zbe_vehicleCacheDistCar] execFSM "zbe_cache\zbe_vehicleCaching.fsm";
 			};
 		} forEach _assetscar;
 		_assetsair = zbe_centerPOS nearEntities ["Air", zbe_mapside];
 		{
 			if !(_x in zbe_cached_air) then {
 				zbe_cached_air = zbe_cached_air + [_x];
-				    [_x, zbe_vehicleCacheDistAir] execFSM "ACPL_MM_Core\zbe_cache\zbe_vehicleCaching.fsm";
+				    [_x, zbe_vehicleCacheDistAir] execFSM "zbe_cache\zbe_vehicleCaching.fsm";
 			};
 		} forEach _assetsair;
 		_assetsboat = zbe_centerPOS nearEntities ["Ship", zbe_mapside];
 		{
 			if !(_x in zbe_cached_boat) then {
 				zbe_cached_boat = zbe_cached_boat + [_x];
-					[_x, zbe_vehicleCacheDistBoat] execFSM "ACPL_MM_Core\zbe_cache\zbe_vehicleCaching.fsm";
+					[_x, zbe_vehicleCacheDistBoat] execFSM "zbe_cache\zbe_vehicleCaching.fsm";
 			};
 		} forEach _assetsboat;
 
@@ -114,4 +111,4 @@ zbe_centerPOS = [zbe_mapside, zbe_mapside, 0];
 		};
 };
 // Experimental, disabled for now
-// if (!isDedicated) then {execFSM "ACPL_MM_Core\zbe_cache\zbe_clientObjectDrawAuto.fsm";};
+// if (!isDedicated) then {execFSM "zbe_cache\zbe_clientObjectDrawAuto.fsm";};

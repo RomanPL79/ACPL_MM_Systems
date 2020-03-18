@@ -53,6 +53,12 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_PlayerInRange
 		class PlayerInRange {};
+		
+		//[] call ACPL_MM_Core_fnc_zbecache_module
+		class zbecache_module {};
+		
+		//[] call ACPL_MM_Core_fnc_zbecache_exclude_module
+		class zbecache_exclude_module {};
 	};
 	
 	class DoStop {

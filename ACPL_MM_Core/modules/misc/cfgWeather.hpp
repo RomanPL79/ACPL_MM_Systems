@@ -44,7 +44,7 @@ class ACPL_MM_Core_Weather_module: Module_F {
 			property = "ACPL_MM_Core_Weather_overcast_max";
 			description = "$STR_ACPL_MM_Core_Weather_module_overcast_desc";
 			typeName = "NUMBER";
-			defaultValue = 1;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_rain_min {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_rain_min";
@@ -58,7 +58,7 @@ class ACPL_MM_Core_Weather_module: Module_F {
 			property = "ACPL_MM_Core_Weather_rain_max";
 			description = "$STR_ACPL_MM_Core_Weather_module_rain_desc";
 			typeName = "NUMBER";
-			defaultValue = 1;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_fog_min {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_fog_min";
@@ -72,35 +72,35 @@ class ACPL_MM_Core_Weather_module: Module_F {
 			property = "ACPL_MM_Core_Weather_fog_max";
 			description = "$STR_ACPL_MM_Core_Weather_module_fog_desc";
 			typeName = "NUMBER";
-			defaultValue = 1;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_fog_d_min {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_fogdecay_min";
 			property = "ACPL_MM_Core_Weather_fog_d_min";
 			description = "$STR_ACPL_MM_Core_Weather_module_fogdecay_desc";
 			typeName = "NUMBER";
-			defaultValue = -1;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_fog_d_max {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_fogdecay_max";
 			property = "ACPL_MM_Core_Weather_fog_d_max";
 			description = "$STR_ACPL_MM_Core_Weather_module_fogdecay_desc";
 			typeName = "NUMBER";
-			defaultValue = 1;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_fog_a_min {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_fogbase_min";
 			property = "ACPL_MM_Core_Weather_fog_a_min";
 			description = "$STR_ACPL_MM_Core_Weather_module_fogbase_desc";
 			typeName = "NUMBER";
-			defaultValue = -5000;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_fog_a_max {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_fogbase_max";
 			property = "ACPL_MM_Core_Weather_fog_a_max";
 			description = "$STR_ACPL_MM_Core_Weather_module_fogbase_desc";
 			typeName = "NUMBER";
-			defaultValue = 5000;
+			defaultValue = 0;
 		};
 		class ACPL_MM_Core_Weather_thunder_min {
 			displayName = "$STR_ACPL_MM_Core_Weather_module_thunder_min";
@@ -114,7 +114,7 @@ class ACPL_MM_Core_Weather_module: Module_F {
 			property = "ACPL_MM_Core_Weather_thunder_max";
 			description = "$STR_ACPL_MM_Core_Weather_module_thunder_desc";
 			typeName = "NUMBER";
-			defaultValue = 1;
+			defaultValue = 0;
 		};
 	};
 	class ModuleDescription: ModuleDescription {

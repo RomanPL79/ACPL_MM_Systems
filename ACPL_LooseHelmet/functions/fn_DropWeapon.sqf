@@ -50,13 +50,13 @@ if (alive _unit) then {
 	
 	if (!(_random < ACPL_LooseHelmet_WeaponChance) && (_weapon == "")) exitwith {};
 	if ((_primary) && (_unit getvariable ["ACPL_LooseWeapon_fix_gun",false])) exitwith {};
-	private _weaponHolder_dummy = "WeaponHolderSimulated_Scripted" createVehicle [0,0,0];
+	private _weaponHolder_dummy = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
 	
 	_weaponHolder_dummy setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
 	
 	_weaponHolder_dummy enableSimulationGlobal true;
 	
-	private _dummy = "ACPL_LooseHelmet_invisible_can" createVehicle [0,0,0];
+	private _dummy = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
 	_dummy enableSimulationGlobal true;
 	_dummy allowdamage false;
 	
@@ -113,7 +113,7 @@ if (alive _unit) then {
 		sleep 0.05;
 	};
 	
-	if (!(_unit in allplayers)) then {
+	if (!(isPlayer _unit)) then {
 		[_unit, _weaponHolder_dummy, "GUN", _items] spawn ACPL_LooseHelmet_fnc_PickUp;
 	};
 	

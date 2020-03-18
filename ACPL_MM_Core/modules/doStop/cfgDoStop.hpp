@@ -34,7 +34,7 @@ class ACPL_MM_Core_DoStop_module: Module_F {
 				class v_auto {
 					name = "AUTO";
 					value = "AUTO";
-				}
+				};
 			};
 		};
 		class ACPL_MM_Core_DoStop_duck {

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ACPL_MM">
+	<Package name="ACPL_Factions">
+		<Key ID="STR_ACPL_Factions_empty">
+			<Original></Original>
+			<English></English>
+			<Czech></Czech>
+			<French></French>
+			<German></German>
+			<Italian></Italian>
+			<Polish></Polish>
+			<Portuguese></Portuguese>
+			<Russian></Russian>
+			<Spanish></Spanish>
+			<Korean></Korean>
+			<Japanese></Japanese>
+			<Chinesesimp></Chinesesimp>
+			<Chinese></Chinese>
+		</Key>
+		<Key ID="STR_ACPL_Factions_Altis_Army">
+			<Original>ACPL Altis Army</Original>
+			<English>ACPL Altis Army</English>
+			<Polish>ACPL Armia Altis</Polish>
+		</Key>
+		<Key ID="STR_ACPL_Factions_Inf">
+			<Original>Infantry</Original>
+			<English>Infantry</English>
+			<Polish>Piechota</Polish>
+		</Key>
+		
+		<Key ID="STR_ACPL_Altis_Army_Rifleman_M16A2">
+			<Original>Rifleman (M16A2)</Original>
+			<English>Rifleman (M16A2)</English>
+			<Polish>Strzelec (M16A2)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_Altis_Army_Rifleman_Colt">
+			<Original>Rifleman (Colt 723)</Original>
+			<English>Rifleman (Colt 723)</English>
+			<Polish>Strzelec (Colt 723)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_Altis_Army_Rifleman_Colt_s">
+			<Original>Rifleman (Colt 733)</Original>
+			<English>Rifleman (Colt 733)</English>
+			<Polish>Strzelec (Colt 733)</Polish>
+		</Key>
+		
+		<Key ID="STR_ACPL_Altis_Army_RiflemanAT_M16A2">
+			<Original>Rifleman AT (M16A2 + M72)</Original>
+			<English>Rifleman AT (M16A2 + M72)</English>
+			<Polish>Strzelec AT (M16A2 + M72)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_Altis_Army_RiflemanAT_Colt">
+			<Original>Rifleman AT (Colt 723 + M72)</Original>
+			<English>Rifleman AT (Colt 723 + M72)</English>
+			<Polish>Strzelec AT (Colt 723 + M72)</Polish>
+		</Key>
+		<Key ID="STR_ACPL_Altis_Army_RiflemanAT_Colt_s">
+			<Original>Rifleman AT (Colt 733 + M72)</Original>
+			<English>Rifleman AT (Colt 733 + M72)</English>
+			<Polish>Strzelec AT (Colt 733 + M72)</Polish>
+		</Key>
+	</Package>
+</Project>

@@ -6,14 +6,11 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0;
     requiredAddons[] = {
-		"A3_Characters_F",
-		"cba_settings",
-		"cba_main",
-		"A3_Structures_F",
-		"ace_interaction",
-		"ACPL_MM_Core",
+		"A3_Data_F_Tank_Loadorder",
 		"cba_common",
-		"ace_common"
+		"cba_settings",
+		"ace_interaction",
+		"ACPL_MM_Core"
 	};
 	
     version = 2;

@@ -862,5 +862,106 @@
             <English>ACPL Invisible Targets</English>
 			<Polish>ACPL Niewidzialne Cele</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module">
+			<Original>ACPL Enable zbe cache</Original>
+            <English>ACPL Enable zbe cache</English>
+			<Polish>ACPL Aktywuj zbe cache</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_desc">
+			<Original>Activate zbe cache system, that is managing units beyond player's viewdistance to increase performance.</Original>
+            <English>Activate zbe cache system, that is managing units beyond player's viewdistance to increase performance.</English>
+			<Polish>Aktywuj system zbe cache, który zarządza jednostkami poza zasięgiem wzroku gracza aby poprawić wydajność.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance">
+			<Original>Distance</Original>
+            <English>Distance</English>
+			<Polish>Zasięg</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_desc">
+			<Original>Distance beyond which units are cached.</Original>
+            <English>Distance beyond which units are cached.</English>
+			<Polish>Odległość, powyżej której jednostki są ukrywane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_frames">
+			<Original>Frames</Original>
+            <English>Frames</English>
+			<Polish>Klatki</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_frames_desc">
+			<Original>Amount of frames per second which should be maintained.</Original>
+            <English>Amount of frames per second which should be maintained.</English>
+			<Polish>Ilość klatek na sekundę, które powinny być utrzymane</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_debug">
+			<Original>Debug</Original>
+            <English>Debug</English>
+			<Polish>Debug</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_debug_desc">
+			<Original>Enable debugging.</Original>
+            <English>Enable debugging.</English>
+			<Polish>Aktywuj debugging.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_car">
+			<Original>Car Distance</Original>
+            <English>Car Distance</English>
+			<Polish>Zasięg dla pojazdów</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_car_desc">
+			<Original>Distance beyond which cars are cached.</Original>
+            <English>Distance beyond which cars are cached.</English>
+			<Polish>Odległość, powyżej której pojazdy są ukrywane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_air">
+			<Original>Air Distance</Original>
+            <English>Air Distance</English>
+			<Polish>Zasięg dla powietrznych</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_air_desc">
+			<Original>Distance beyond which air vehicles are cached.</Original>
+            <English>Distance beyond which air vehicles are cached.</English>
+			<Polish>Odległość, powyżej której pojazdy powietrzne są ukrywane.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_boat">
+			<Original>Boat Distance</Original>
+            <English>Boat Distance</English>
+			<Polish>Zasięg dla łódek</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_module_distance_boat_desc">
+			<Original>Distance beyond which boat are cached.</Original>
+            <English>Distance beyond which boat are cached.</English>
+			<Polish>Odległość, powyżej której łódki są ukrywane.</Polish>
+		</Key>
+		
+		<Key ID="STR_ACPL_MM_Core_zbecache_exclude_module">
+			<Original>ACPL zbe cache Exclude</Original>
+            <English>ACPL zbe cache Exclude</English>
+			<Polish>ACPL zbe cache Wyklucz</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_exclude_module_desc">
+			<Original>The module exclude units or groups from zbe cache system mechanics. Units must be synchronized with the module.</Original>
+            <English>The module exclude units or groups from zbe cache system mechanics. Units must be synchronized with the module.</English>
+			<Polish>Moduł wyklucza jednostki lub grupy z działania mechanik systemu zbe cache. Jednostki muszą być zsynchronizowane z modułem.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_exclude_type">
+			<Original>Type of synchronization</Original>
+            <English>Type of synchronization</English>
+			<Polish>Rodzaj synchronizacji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_exclude_type_desc">
+			<Original>Type of choosing which units should be excluded. Single units or every unit in group.</Original>
+            <English>Type of choosing which units should be excluded. Single units or every unit in group.</English>
+			<Polish>Rodzaj wyboru jednostek, które powinny być wykluczone. Pojedyńcze jednostki lub każda jednostka w grupie.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_exclude_type_group">
+			<Original>Whole group</Original>
+            <English>Whole group</English>
+			<Polish>Cała grupa</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_zbecache_exclude_type_unit">
+			<Original>Single unit</Original>
+            <English>Single unit</English>
+			<Polish>Pojedyńcza jednostka</Polish>
+		</Key>
 	</Package>
 </Project>
