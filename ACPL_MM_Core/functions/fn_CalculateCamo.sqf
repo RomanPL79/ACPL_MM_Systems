@@ -1,8 +1,12 @@
 params [
 	["_unit", ObjNull], 
-	["_sleep", 0.1], 
+	["_sleep", 1], 
 	["_custom", false]
 ];
+
+WaitUntil {!(isNil "ACPL_MM_Core_Camo_enabled")};
+
+if (!ACPL_MM_Core_Camo_enabled) exitwith {};
 
 if (isNil "ACPL_MM_Core_Camo_groupAI_enabled") then {ACPL_MM_Core_Camo_groupAI_enabled = false;};
 
@@ -66,10 +70,60 @@ if (ACPL_MM_Core_Camo_groupAI_enabled) then {
 	} foreach _units;
 };
 
+private _next_weathercheck = 0;
+
+private _timenow = 0;
+private _foglevel = 0;
+private _windstrength = 0;
+private _windscaled = 0;
+private _rainLevel = 0;
+private _rainLevelA = 0;
+private _lightlevelscaled = 0;
+private _overcastLevel = 0;
+
 while {(_unit getvariable ["ACPL_MM_Core_Camo", false]) && (alive _unit) && ((_custom && !(isPlayer _unit) && !(_unit in allPlayers)) || (isPlayer _unit) || (_unit in allPlayers))} do {
-	private _timenow = daytime;
+	if (_next_weathercheck < time) then {
+		_timenow = daytime;
+		
+		_foglevel = linearconversion [0,1,fog,0,0.9,true];
+		
+		_windstrength = vectormagnitude wind;
+		_windscaled = linearconversion [0,7,_windstrength,0,0.9,true];
+		
+		_rainLevel = linearconversion [0,1,rain,0,0.8,true];
+		_rainLevelA = linearconversion [0,1,rain,0,0.9,true];
+		
+		if ((_timenow >= 0) && (_timenow <=_srs)) then {
+			_lightlevel = 0;
+		};
+		
+		if ((_timenow >= _sse) && (_timenow <=24)) then {
+			_lightlevel = 0;
+		};
+		
+		if ((_timenow <= _sse) && (_timenow >=_sre)) then {
+			_lightlevel = 1;
+		};
+
+		if ((_timenow >=_srs) && (_timenow <= _sre)) then {
+			_lightlevel = 0.5 *(_timenow-_srs);
+		};
+		
+		if ((_timenow >=_sss) && (_timenow <=_sse)) then {
+			_lightlevel = -0.5 * (_timenow -(_sse));
+		};
+		
+		_lightlevelscaled = linearconversion [0,1,_lightlevel,0.05,1];
+		
+		_overcastLevel = linearconversion [0,1,overcast,0,0.9,true];
+		
+		_next_weathercheck = time + 300;
+	};
 	
-	private _foglevel = linearconversion [0,1,fog,0,0.9,true];
+	private _ntbh = count nearestterrainobjects [_unit,["Tree", "Bush", "Hide"],2.5,false,true];
+	//set default tbh factor before if
+	private _tbhf = 1;
+	_ntbh = _ntbh / _tbhf;
 	
 	if (uniform _unit != _uniform) then {
 		_camo = 0.75;
@@ -145,41 +199,6 @@ while {(_unit getvariable ["ACPL_MM_Core_Camo", false]) && (alive _unit) && ((_c
 	} else {
 		_noweap = false;
 	};
-	
-	private _windstrength = vectormagnitude wind;
-	private _windscaled = linearconversion [0,7,_windstrength,0,0.9,true];
-	
-	private _rainLevel = linearconversion [0,1,rain,0,0.8,true];
-	private _rainLevelA = linearconversion [0,1,rain,0,0.9,true];
-	
-	private _ntbh = count nearestterrainobjects [_unit,["Tree", "Bush", "Hide"],2.5,false,true];
-	//set default tbh factor before if
-	private _tbhf = 1;
-	_ntbh = _ntbh / _tbhf;
-	
-	if ((_timenow >= 0) && (_timenow <=_srs)) then {
-		_lightlevel = 0;
-	};
-	
-	if ((_timenow >= _sse) && (_timenow <=24)) then {
-		_lightlevel = 0;
-	};
-	
-	if ((_timenow <= _sse) && (_timenow >=_sre)) then {
-		_lightlevel = 1;
-	};
-
-	if ((_timenow >=_srs) && (_timenow <= _sre)) then {
-		_lightlevel = 0.5 *(_timenow-_srs);
-	};
-	
-	if ((_timenow >=_sss) && (_timenow <=_sse)) then {
-		_lightlevel = -0.5 * (_timenow -(_sse));
-	};
-	
-	private _lightlevelscaled = linearconversion [0,1,_lightlevel,0.05,1];
-	
-	private _overcastLevel = linearconversion [0,1,overcast,0,0.9,true];
 	
 	private _stanceresult = stance _unit;
 	private _st = 1;

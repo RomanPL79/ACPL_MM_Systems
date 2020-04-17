@@ -32,7 +32,10 @@ class Extended_PostInit_EventHandlers
 	{
 		init="call compile preProcessFileLineNumbers 'ACPL_MM_Core\functions\Init.sqf'";
 	};
-	
+};
+
+class Extended_InitPost_EventHandlers
+{	
 	class CAManBase
 	{
 		class ACPL_MM_Core_Camo_ClientInit {
@@ -50,7 +53,7 @@ class Extended_PostInit_EventHandlers
 			scope = 0;
 			init = "params ['_unit'];[_unit] spawn ACPL_MM_Core_fnc_init_headless;";
 		};
-	}
+	};
 };
 
 #include "cfgFactionClasses.hpp"

@@ -32,3 +32,7 @@ ACPL_MM_Core_Started = true;
 		[] spawn ACPL_MM_Core_fnc_headless_givecontrol;
 	};
 };
+
+ACPL_MM_Core_HighCommand_WEST = false;
+ACPL_MM_Core_HighCommand_EAST = false;
+ACPL_MM_Core_HighCommand_RESISTANCE = false;

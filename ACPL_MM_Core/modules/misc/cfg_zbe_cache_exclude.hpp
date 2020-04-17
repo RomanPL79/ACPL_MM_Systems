@@ -2,7 +2,7 @@ class ACPL_MM_Core_zbecache_exclude_module: Module_F {
 	author = "[ACPL] Roman79";
 	category = "ACPL_MM_Core_MissionModules";
 	displayName = "$STR_ACPL_MM_Core_zbecache_exclude_module";
-	function = "ACPL_MM_Core_fnc_zbecache_module";
+	function = "ACPL_MM_Core_fnc_zbecache_exclude_module";
 	functionPriority = 100;
 	scope = 2;  //show in editor
 	isGlobal = 0; //run on server

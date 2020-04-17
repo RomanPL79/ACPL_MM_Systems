@@ -11,6 +11,7 @@ private _units = synchronizedObjects _logic;
 
 {
 	_x DisableAI "PATH";
+	_x setVariable ["zbe_cacheDisabled",true];
 } foreach _units;
 
 WaitUntil {sleep 1;((time > 35) && (missionnamespace getvariable ["ACPL_MM_Core_Started", true]))};

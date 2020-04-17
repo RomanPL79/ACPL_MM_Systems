@@ -18,6 +18,7 @@ switch (_type) do {
 		(group _unit) setVariable ["Vcm_Disable",true];
 		(group _unit) setvariable ["TCL_Disabled",true];
 		(group _unit) setVariable ["zbe_cacheDisabled",true];
+		_unit setVariable ["zbe_cacheDisabled",true];
 		
 		_unit forceWalk true;
 	};
@@ -34,6 +35,7 @@ switch (_type) do {
 		(group _unit) setVariable ["Vcm_Disable",false];
 		(group _unit) setvariable ["TCL_Disabled",false];
 		(group _unit) setVariable ["zbe_cacheDisabled",true];
+		_unit setVariable ["zbe_cacheDisabled",true];
 		
 		_unit setBehaviour "AWARE";
 		

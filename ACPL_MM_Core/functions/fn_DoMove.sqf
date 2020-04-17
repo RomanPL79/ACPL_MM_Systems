@@ -43,12 +43,18 @@ if (isNil {_pos select 2} ) then {_pos = [(_pos select 0),(_pos select 1),_z];};
 
 //checking if VCOM or TCL are enabled
 
+private _lambs = false;
+
 if (missionNamespace getVariable ["VCM_ActivateAI", false]) then {
 	_unit setVariable ["VCOM_NOAI",true];
 	_unit setVariable ["Vcm_Disable",true];
 };
 if (missionNamespace getVariable ["TCL_Initialize", false]) then {
 	_unit setvariable ["TCL_Disabled",true];
+};
+if (!(_unit getvariable ["lambs_danger_disableAI",true])) then {
+	_unit setvariable ["lambs_danger_disableAI",true];
+	_lambs = true;
 };
 
 //giving order to move
@@ -120,5 +126,6 @@ if (missionNamespace getVariable ["VCM_ActivateAI", false]) then {
 if (missionNamespace getVariable ["TCL_Initialize", false]) then {
 	_unit setvariable ["TCL_Disabled",false];
 };
+if (_lambs) then {_unit setvariable ["lambs_danger_disableAI",false];};
 
 _unit dofollow (leader (group _unit));
