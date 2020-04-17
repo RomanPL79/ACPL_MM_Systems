@@ -29,16 +29,34 @@ class ACPL_LooseHelmet {
 		
 		//[] class ACPL_LooseHelmet_fnc_inventoryhandler;
 		class inventoryhandler {};
+		
+		//[] spawn ACPL_LooseHelmet_fnc_noWeapCheck;
+		class noWeapCheck {};
+		
+		//[] call ACPL_LooseHelmet_fnc_lookforgun;
+		class lookforgun {};
+		
+		//[] call ACPL_LooseHelmet_fnc_pickup;
+		class pickup {};
+
+		//[] spawn ACPL_LooseHelmet_fnc_notMoving;
+		class notMoving {};
 	}
 	
 	class FSM
 	{
 		file = "ACPL_LooseHelmet\FSMS";
 		
-		//[] spawn ACPL_LooseHelmet_fnc_PickUp;
-		class PickUp
+		//[] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
+		class PickUpFSM
 		{
 			ext = ".fsm";
 		};
-	}
+		
+		//[] spawn ACPL_LooseHelmet_fnc_LookForWeap;
+		class LookForWeap
+		{
+			ext = ".fsm";
+		};
+	};
 }

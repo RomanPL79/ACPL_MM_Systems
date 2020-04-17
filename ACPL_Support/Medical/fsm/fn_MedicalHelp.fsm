@@ -1,0 +1,266 @@
+/*%FSM<COMPILE "D:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_MedicalHelp">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"start",0,250,-315.111115,-283.342285,-225.111099,-233.342270,0.000000,"start"};
+item1[] = {"__isplayer",4,218,-77.627441,-283.442474,12.372561,-233.442474,0.000000,"!isplayer"};
+item2[] = {"isplayer",4,218,-315.463226,-190.712280,-225.463196,-140.712296,3.000000,"isplayer"};
+item3[] = {"WaitUntil_is_not",2,4346,-314.604645,-108.285461,-224.604614,-58.285461,0.000000,"WaitUntil" \n "is not player"};
+item4[] = {"wounded_check",2,250,-78.486053,49.699333,11.513962,99.699333,0.000000,"wounded" \n "check"};
+item5[] = {"__wounded",8,218,-198.691864,119.246971,-108.691856,169.246979,0.000000,"!wounded"};
+item6[] = {"wounded",4,218,-78.486053,120.964203,11.513943,170.964203,1.000000,"wounded"};
+item7[] = {"heal",2,250,-79.344681,203.391022,10.655352,253.391022,0.000000,"heal"};
+item8[] = {"dead",4,218,-187.529922,-27.575836,-97.529922,22.424179,4.000000,"dead"};
+item9[] = {"end__2",1,250,-314.604614,-28.434441,-224.604584,21.565548,0.000000,"end #2"};
+item10[] = {"healed",4,218,24.547485,204.249634,114.547493,254.249634,0.000000,"healed"};
+item11[] = {"",7,210,64.902298,71.164642,72.902298,79.164635,0.000000,""};
+item12[] = {"wait",2,250,-308.594299,118.388428,-218.594284,168.388428,0.000000,"wait"};
+item13[] = {"back_to_loop",4,218,-200.409073,52.275230,-110.409073,102.275230,0.000000,"back to loop"};
+item14[] = {"ace_queue_create",4,218,144.753296,22.223776,234.753265,72.223755,2.000000,"ace queue" \n "created"};
+item15[] = {"empty_queue",2,250,143.894699,-93.688942,233.894699,-43.688961,0.000000,"empty queue"};
+item16[] = {"done",4,218,39.143929,-26.717148,129.143921,23.282852,0.000000,"done"};
+item17[] = {"",7,210,-38.131245,-169.246979,-30.131241,-161.246979,0.000000,""};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,4};
+link3[] = {2,3};
+link4[] = {3,1};
+link5[] = {4,5};
+link6[] = {4,6};
+link7[] = {4,8};
+link8[] = {4,14};
+link9[] = {4,17};
+link10[] = {5,12};
+link11[] = {6,7};
+link12[] = {7,10};
+link13[] = {8,9};
+link14[] = {10,11};
+link15[] = {11,4};
+link16[] = {12,13};
+link17[] = {13,4};
+link18[] = {14,15};
+link19[] = {15,16};
+link20[] = {16,4};
+link21[] = {17,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,44,6316128,1,-479.106140,458.499146,360.617432,-167.429520,1092,615,1};
+window[] = {0,-1,-1,-1,-1,1010,250,1984,250,1,1110};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_MedicalHelp";
+        class States
+        {
+                /*%FSM<STATE "start">*/
+                class start
+                {
+                        name = "start";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"params [""_unit""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "isplayer">*/
+                                class isplayer
+                                {
+                                        itemno = ;
+                                        priority = 3.000000;
+                                        to="WaitUntil_is_not";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isPlayer _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__isplayer">*/
+                                class __isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wounded_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isPlayer _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "WaitUntil_is_not">*/
+                class WaitUntil_is_not
+                {
+                        name = "WaitUntil_is_not";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isplayer">*/
+                                class __isplayer
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wounded_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isPlayer _unit)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wounded_check">*/
+                class wounded_check
+                {
+                        name = "wounded_check";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = ;
+                                        priority = 4.000000;
+                                        to="end__2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "isplayer">*/
+                                class isplayer
+                                {
+                                        itemno = ;
+                                        priority = 3.000000;
+                                        to="WaitUntil_is_not";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isPlayer _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "ace_queue_create">*/
+                                class ace_queue_create
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="empty_queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"count (_unit getvariable [""ace_medical_healQueue"", []]) > 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "wounded">*/
+                                class wounded
+                                {
+                                        itemno = ;
+                                        priority = 1.000000;
+                                        to="heal";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((count ([_unit] call ACPL_Support_fnc_medical_check_woundednearby)) > 0) && !(_unit getvariable [""ACPL_Support_MedicBusy"", false])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__wounded">*/
+                                class __wounded
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wait";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "heal">*/
+                class heal
+                {
+                        name = "heal";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_target = ([_unit] call ACPL_Support_fnc_medical_check_woundednearby) select 0;" \n
+                         "" \n
+                         "[_unit, _target] spawn ACPL_Support_fnc_medical_action_heal;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "healed">*/
+                                class healed
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wounded_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_Support_MedicBusy"", true])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end__2">*/
+                class end__2
+                {
+                        name = "end__2";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait">*/
+                class wait
+                {
+                        name = "wait";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_time = time + 10;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "back_to_loop">*/
+                                class back_to_loop
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wounded_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "empty_queue">*/
+                class empty_queue
+                {
+                        name = "empty_queue";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_unit setvariable [""ace_medical_healQueue"", [], true];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "done">*/
+                                class done
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="wounded_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="start";
+        finalStates[] =
+        {
+                "end__2",
+        };
+};
+/*%FSM</COMPILE>*/

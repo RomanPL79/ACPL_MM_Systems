@@ -54,6 +54,9 @@ switch (_type) do {
 		// if random value is lower than configure setting then is true
 		_return = _day || random 100 < ACPL_LooseHelmet_NVG_PickUpChance;
 	};
+	case "CONTAINER": {
+		_return = true;
+	};
 };
 
 _return

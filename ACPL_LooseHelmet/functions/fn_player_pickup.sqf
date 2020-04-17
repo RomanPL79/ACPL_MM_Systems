@@ -23,7 +23,7 @@ switch (_type) do {
 					[_caller,_class] remoteExec ["addheadgear",_caller];
 					[[_target,_actionId], BIS_fnc_holdActionRemove] remoteExec ["call",0];
 					deletevehicle _target;
-					deletevehicle _dummy;
+					//deletevehicle _dummy;
 				};
 			} else {
 				hint (localize "STR_ACPL_LooseHelmet_act_noplace_pickup");
@@ -44,7 +44,7 @@ switch (_type) do {
 					[_caller,_class] remoteExec ["assignItem",_caller];
 					[[_target,_actionId], BIS_fnc_holdActionRemove] remoteExec ["call",0];
 					deletevehicle _target;
-					deletevehicle _dummy;
+					//deletevehicle _dummy;
 				};
 			} else {
 				hint (localize "STR_ACPL_LooseHelmet_act_noplace_pickup");
@@ -98,7 +98,7 @@ switch (_type) do {
 					} foreach _ammo;
 					[[_target,_actionId], BIS_fnc_holdActionRemove] remoteExec ["call",0];
 					deletevehicle _target;
-					deletevehicle _dummy;
+					//deletevehicle _dummy;
 				};
 			} else {
 				hint (localize "STR_ACPL_LooseHelmet_act_noplace_pickup");

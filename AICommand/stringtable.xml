@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AI_Command">
+	<Package name="AI_Command">
+        <Key ID="STR_AI_Command_empty">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
+		
+		<Key ID="STR_ACPL_AI_Command_Menu">
+			<Original>AI Command</Original>
+		</Key>
+		
+		<Key ID="STR_ACPL_AI_Command_Menu_Toggle_on">
+			<Original>Toggle On</Original>
+			<English>Toggle On</English>
+			<Polish>Włącz</Polish>
+		</Key>
+		<Key ID="STR_ACPL_AI_Command_Hint_Toggle_on">
+			<Original>AI Command has been toggled on</Original>
+			<English>AI Command has been toggled on</English>
+			<Polish>AI Command został włączony</Polish>
+		</Key>
+		
+		<Key ID="STR_ACPL_AI_Command_Menu_Toggle_off">
+			<Original>Toogle Off</Original>
+			<English>Toogle Off</English>
+			<Polish>Wyłącz</Polish>
+		</Key>
+		<Key ID="STR_ACPL_AI_Command_Hint_Toggle_off">
+			<Original>AI Command has been toggled off</Original>
+			<English>AI Command has been toggled off</English>
+			<Polish>AI Command został wyłączony</Polish>
+		</Key>
+		
+	</Package>
+</Project>

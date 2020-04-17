@@ -1,0 +1,342 @@
+/*%FSM<COMPILE "D:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_LookForWeap">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start",0,250,-40.348846,-148.837204,49.651154,-98.837204,0.000000,"Start"};
+item1[] = {"isPlayer_true",4,218,-154.932556,-149.690704,-64.932556,-99.690704,2.000000,"isPlayer" \n "true"};
+item2[] = {"end",1,250,-292.839752,-150.399597,-202.839767,-100.399620,0.000000,"end"};
+item3[] = {"PickUp_started",4,218,73.981918,-149.761932,163.981918,-99.761932,1.000000,"PickUp started"};
+item4[] = {"wait_until__PU_e",2,250,190.933258,-150.706177,280.933289,-100.706146,0.000000,"wait until " \n "PU ended"};
+item5[] = {"ended",4,218,306.120270,-150.759125,396.120178,-100.759201,0.000000,"ended"};
+item6[] = {"has_weapon__chec",2,250,306.810638,-51.672745,396.810516,-1.672748,0.000000,"has weapon " \n "check"};
+item7[] = {"true",8,218,-39.810963,-52.341942,50.189091,-2.341935,0.000000,"true"};
+item8[] = {"has_weapon",4,218,420.468903,-51.393974,510.468872,-1.393972,0.000000,"has weapon"};
+item9[] = {"",7,210,462.011688,-237.392700,470.011688,-229.392685,0.000000,""};
+item10[] = {"",7,210,-251.770065,-237.435074,-243.770081,-229.435074,0.000000,""};
+item11[] = {"look_for_weap_ne",2,250,-39.975544,31.866230,50.024471,81.866226,0.000000,"look for" \n "weap nearby"};
+item12[] = {"gun_found",4,218,-40.679016,105.597954,49.320984,155.597961,0.000000,"gun found"};
+item13[] = {"no_gun",4,218,-135.483978,105.112083,-45.484001,155.111969,1.000000,"no gun"};
+item14[] = {"wait_for_10s",2,250,-240.612808,106.136742,-150.612793,156.136749,0.000000,"wait for 10s"};
+item15[] = {"look_again",4,218,-239.746521,31.991383,-149.746506,81.991379,0.000000,"look again"};
+item16[] = {"go_and_pick_up",2,250,-41.423264,178.095322,48.576752,228.095322,0.000000,"go and pick up"};
+item17[] = {"picked_up",4,218,-40.772324,252.954193,49.227676,302.954193,0.000000,"picked up"};
+item18[] = {"",7,210,-251.983749,344.939056,-243.983673,352.939056,0.000000,""};
+item19[] = {"equipped_with__gun",2,250,-40.579674,323.296753,49.420341,373.296753,0.000000,"equipped with" \n " gun check"};
+item20[] = {"yes",4,218,-148.014496,323.296722,-58.014496,373.296722,0.000000,"yes"};
+item21[] = {"no",4,218,68.587959,321.563934,158.587952,371.563934,1.000000,"no"};
+item22[] = {"",7,210,110.175636,52.976887,118.175636,60.976887,0.000000,""};
+item23[] = {"dead",4,218,-151.568420,-46.660248,-61.568420,3.339752,2.000000,"dead"};
+item24[] = {"dead__2",4,218,-39.801567,402.140045,50.198433,452.140045,2.000000,"dead #2"};
+item25[] = {"",7,210,-252.071945,422.933868,-244.071945,430.933868,0.000000,""};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {0,7};
+link3[] = {1,2};
+link4[] = {3,4};
+link5[] = {4,5};
+link6[] = {5,6};
+link7[] = {6,7};
+link8[] = {6,8};
+link9[] = {7,11};
+link10[] = {8,9};
+link11[] = {9,10};
+link12[] = {10,2};
+link13[] = {11,12};
+link14[] = {11,13};
+link15[] = {11,23};
+link16[] = {12,16};
+link17[] = {13,14};
+link18[] = {14,15};
+link19[] = {14,23};
+link20[] = {15,11};
+link21[] = {16,17};
+link22[] = {17,19};
+link23[] = {18,2};
+link24[] = {19,20};
+link25[] = {19,21};
+link26[] = {19,24};
+link27[] = {20,18};
+link28[] = {21,22};
+link29[] = {22,11};
+link30[] = {23,2};
+link31[] = {24,25};
+link32[] = {25,18};
+globals[] = {0.000000,0,0,0,0,640,480,1,41,6316128,1,-522.445129,423.674377,664.793884,132.439407,1093,615,1};
+window[] = {0,-1,-1,-1,-1,999,128,1862,239,1,1111};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_LookForWeap";
+        class States
+        {
+                /*%FSM<STATE "Start">*/
+                class Start
+                {
+                        name = "Start";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"params [""_unit""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "isPlayer_true">*/
+                                class isPlayer_true
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isPlayer _unit && _unit getvariable [""ACPL_LooseHelmet_LookForWeap"", false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "PickUp_started">*/
+                                class PickUp_started
+                                {
+                                        itemno = ;
+                                        priority = 1.000000;
+                                        to="wait_until__PU_e";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_unit getvariable [""ACPL_LooseHelmet_GoPickUp_started"", false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="look_for_weap_ne";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end">*/
+                class end
+                {
+                        name = "end";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_unit setvariable [""ACPL_LooseHelmet_LookForWeap"", false];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait_until__PU_e">*/
+                class wait_until__PU_e
+                {
+                        name = "wait_until__PU_e";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "ended">*/
+                                class ended
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="has_weapon__chec";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(_unit getvariable [""ACPL_LooseHelmet_GoPickUp_started"", false])"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "has_weapon__chec">*/
+                class has_weapon__chec
+                {
+                        name = "has_weapon__chec";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "has_weapon">*/
+                                class has_weapon
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(primaryweapon _unit != """") || (handgunweapon _unit != """")"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="look_for_weap_ne";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "look_for_weap_ne">*/
+                class look_for_weap_ne
+                {
+                        name = "look_for_weap_ne";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_unit setvariable [""ACPL_LooseHelmet_LookForWeap"", true];" \n
+                         "" \n
+                         "_check = [_unit] call ACPL_LooseHelmet_fnc_lookforgun;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "no_gun">*/
+                                class no_gun
+                                {
+                                        itemno = ;
+                                        priority = 1.000000;
+                                        to="wait_for_10s";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"count _check == 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "gun_found">*/
+                                class gun_found
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="go_and_pick_up";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"count _check > 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait_for_10s">*/
+                class wait_for_10s
+                {
+                        name = "wait_for_10s";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"_time = time + 10;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "look_again">*/
+                                class look_again
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="look_for_weap_ne";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "go_and_pick_up">*/
+                class go_and_pick_up
+                {
+                        name = "go_and_pick_up";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/"[_unit, _check] spawn ACPL_LooseHelmet_fnc_pickup;" \n
+                         "_unit setvariable [""ACPL_LooseHelmet_GoPickUp"", false];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "picked_up">*/
+                                class picked_up
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="equipped_with__gun";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_unit getvariable [""ACPL_LooseHelmet_GoPickUp"", false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "equipped_with__gun">*/
+                class equipped_with__gun
+                {
+                        name = "equipped_with__gun";
+                        itemno = ;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "dead__2">*/
+                                class dead__2
+                                {
+                                        itemno = ;
+                                        priority = 2.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "no">*/
+                                class no
+                                {
+                                        itemno = ;
+                                        priority = 1.000000;
+                                        to="look_for_weap_ne";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(primaryweapon _unit == """") && (handgunweapon _unit == """")"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "yes">*/
+                                class yes
+                                {
+                                        itemno = ;
+                                        priority = 0.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(primaryweapon _unit != """") || (handgunweapon _unit != """")"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Start";
+        finalStates[] =
+        {
+                "end",
+        };
+};
+/*%FSM</COMPILE>*/

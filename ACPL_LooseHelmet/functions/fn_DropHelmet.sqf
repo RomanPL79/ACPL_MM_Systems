@@ -35,7 +35,7 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		_nvg = hmd _unit;
 		
 		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
-		private _torque = [(_velocity select 0)/100,(_velocity select 1)/100,0];
+		private _torque = [(_velocity select 0)/500,(_velocity select 1)/500,0];
 		
 		private _med_velocity = (((_new_velocity select 0) + (_new_velocity select 1) + ((_new_velocity select 2) / 3)) / 3);
 		
@@ -89,78 +89,27 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 			_dummy0 setVelocity [(random 1), (random 1), (random 3)];
 			_dummy0 addTorque (_dummy vectorModelToWorld [(random 5), (random 1), 0]);
 			
-			[_dummy0, _weaponHolder0, _med_velocity, _nvg] spawn {
-				params ["_dummy", "_weaponholder", "_med_velocity", "_nvg"];
-				private ["_vel", "_pos", "_moving"];
-				
-				_moving = true;
-				
-				private _time = time + 20;
-				
-				while {_moving} do {
-				
-					_vel = velocity _dummy;
-					_pos = getposATL _dummy;
-					
-					if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || (time > _time)) then {
-						_dummy enableSimulationGlobal false;
-						_weaponholder enableSimulationGlobal true;
-						[_dummy,true] remoteExec ["hideobject",0,true];
-						
-						[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
-						
-						_moving = false;
-					};
-					
-					sleep 0.05;
-				};
-				
-				if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
-					[_weaponholder, true] call ACPL_LooseHelmet_fnc_Destroy;
-				};
-			};
+			private _time = time + 20;
+			[_dummy0, _weaponHolder0, _time, [_weaponholder0, "NVG", _nvg, _dummy0]] spawn ACPL_LooseHelmet_fnc_notMoving;
 		};
-		
-		if (!(isPlayer _unit)) then {
-			if (_nvg == "") then {
-				[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUp;
-			} else {
-				[_unit, _weaponholder, "HELMET", _helmet, true, _weaponHolder0, _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
-			};
-		};
-		
-		_moving = true;
-		
-		private _time = time + 20;
-		
-		while {_moving} do {
-			
-			_vel = velocity _dummy;
-			_pos = getposATL _dummy;
-			_wh_pos = getposATL _weaponHolder;
-			
-			if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || (_time < time)) then {
-				_dummy enableSimulationGlobal false;
-				_weaponholder enableSimulationGlobal true;
-				[_dummy,true] remoteExec ["hideobject",0,true];
-				
-				[_weaponholder, "HELMET", _helmet, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
 
-				_moving = false;
+		private _time = time + 20;
+		[_dummy, _weaponHolder, _time, [_weaponholder, "HELMET", _helmet, _dummy]] spawn ACPL_LooseHelmet_fnc_notMoving;
+
+		if (!(isPlayer _unit)) then {
+			sleep (random [2,4,8]);
+			if (_nvg == "") then {
+				[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
+			} else {
+				[_unit, _weaponholder, "HELMET", _helmet, true, _weaponHolder0, _nvg] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
 			};
-			
-			sleep 0.05;
-		};
-		
-		if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
-			[_weaponholder, true] call ACPL_LooseHelmet_fnc_Destroy;
 		};
 	};
 } else {
 	if ((_random < ACPL_LooseHelmet_HelmetChance) && (ACPL_LooseHelmet_Enabled_Losenvgs) && (hmd _unit != "")) then {
 		
 		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
-		private _torque = [(_velocity select 0)/100,(_velocity select 1)/100,0];
+		private _torque = [(_velocity select 0)/500,(_velocity select 1)/500,0];
 		
 		_nvg = hmd _unit;
 		
@@ -185,37 +134,11 @@ if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_Loo
 		_dummy0 setVelocity [(random 1), (random 1), (random 3)];
 		_dummy0 addTorque (_dummy0 vectorModelToWorld [(random 5), (random 1), 0]);
 		
-		[_unit, _weaponHolder0, "NVG", _nvg] spawn ACPL_LooseHelmet_fnc_PickUp;
-		
-		[_dummy0, _weaponHolder0, _nvg] spawn {
-			params ["_dummy", "_weaponholder", "_nvg"];
-			private ["_vel", "_pos", "_moving"];
-			
-			_moving = true;
-			
-			private _time = time + 20;
-			
-			while {_moving} do {
-			
-				_vel = velocity _dummy;
-				_pos = getposATL _dummy;
-				
-				if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || (_time < time)) then {
-					_dummy enableSimulationGlobal false;
-					_weaponholder enableSimulationGlobal true;
-					[_dummy,true] remoteExec ["hideobject",0,true];
-					
-					[_weaponholder, "NVG", _nvg, _dummy] call ACPL_LooseHelmet_fnc_player_pickup;
-					
-					_moving = false;
-				};
-				
-				sleep 0.05;
-			};
-			
-			if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
-				[_weaponholder, true] call ACPL_LooseHelmet_fnc_Destroy;
-			};
+		private _time = time + 20;
+		[_dummy0, _weaponHolder0, _time, [_weaponholder0, "NVG", _nvg, _dummy0]] spawn ACPL_LooseHelmet_fnc_notMoving;
+		if (!(isPlayer _unit)) then {
+			sleep (random [2,4,8]);
+			[_unit, _weaponHolder0, "NVG", _nvg] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
 		};
 	};
 };

@@ -197,5 +197,27 @@
 			<English>You are not able to pick up this object using inventory - use action in scroll menu instead</English>
 			<Polish>Nie możesz podnieść tego przedmiotu za pomocą inwentarza - zamiast tego użyj opcji w menu pod kółkiem myszy</Polish>
 		</Key>
+
+		<Key ID="STR_ACPL_LooseHelmet_Cleaning_Enabled">
+			<Original>Enable Cleaning</Original>
+			<English>Enable Cleaning</English>
+			<Polish>Aktywuj Czyszczenie</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_Cleaning_Enabled_desc">
+			<Original>Enable cleaning of dropped items.</Original>
+			<English>Enable cleaning of dropped items.</English>
+			<Polish>Aktywuj czyszczenie upuszczonych przedmiotów.</Polish>
+		</Key>
+
+		<Key ID="STR_ACPL_LooseHelmet_Cleaning_Time">
+			<Original>Time to Clean</Original>
+			<English>Time to Clean</English>
+			<Polish>Czas do wyczyszczenia</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_Cleaning_Time_desc">
+			<Original>How much time object must exist to be deleted.</Original>
+			<English>How much time object must exist to be deleted.</English>
+			<Polish>Jak długo obiekt musi istnieć aby zostać usunięty.</Polish>
+		</Key>
 	</Package>
 </Project>

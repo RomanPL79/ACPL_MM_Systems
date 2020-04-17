@@ -51,6 +51,7 @@ if (alive _unit) then {
 	if (!(_random < ACPL_LooseHelmet_WeaponChance) && (_weapon == "")) exitwith {};
 	if ((_primary) && (_unit getvariable ["ACPL_LooseWeapon_fix_gun",false])) exitwith {};
 	private _weaponHolder_dummy = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
+	[_unit] spawn ACPL_LooseHelmet_fnc_noWeapCheck;
 	
 	_weaponHolder_dummy setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
 	
@@ -94,30 +95,11 @@ if (alive _unit) then {
 	
 	private ["_pos", "_vel"];
 	
-	private _moving = true;
 	private _time = time + 20;
-	
-	while {_moving} do {
-		_vel = velocity _dummy;
-		_pos = getposATL _dummy;
-		if (((_vel select 0 == 0) && (_vel select 1 == 0) && (_vel select 2 == 0)) || time > _time) then {
-			_dummy enableSimulationGlobal false;
-			_weaponHolder_dummy enableSimulationGlobal true;
-			[_dummy,true] remoteExec ["hideobject",0,true];
-			
-			[_weaponHolder_dummy, "WEAPON", _items, _dummy, _type] call ACPL_LooseHelmet_fnc_player_pickup;
-			
-			_moving = false;
-		};
-			
-		sleep 0.05;
-	};
+	[_dummy, _weaponHolder_dummy, _time, [_weaponHolder_dummy, "WEAPON", _items, _dummy, _type]] spawn ACPL_LooseHelmet_fnc_notMoving;
 	
 	if (!(isPlayer _unit)) then {
-		[_unit, _weaponHolder_dummy, "GUN", _items] spawn ACPL_LooseHelmet_fnc_PickUp;
-	};
-	
-	if (ACPL_LooseHelmet_Destroy && random 100 < ACPL_LooseHelmet_DestroyChance) then {
-		[_weaponHolder_dummy, true] call ACPL_LooseHelmet_fnc_Destroy;
+		sleep (random [2,3,6]);
+		[_unit, _weaponHolder_dummy, "GUN", _items] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
 	};
 };
