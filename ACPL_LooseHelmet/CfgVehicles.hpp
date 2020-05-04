@@ -22,3 +22,4 @@ class ACPL_LooseHelmet_invisible_can: Items_base_F
 };
 
 #include "cfgACEActions.hpp"
+#include "modules\modules.hpp"

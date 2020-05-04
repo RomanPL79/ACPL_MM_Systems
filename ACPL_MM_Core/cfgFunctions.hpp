@@ -27,9 +27,6 @@ class ACPL_MM_Core {
 		//[] call ACPL_MM_Core_fnc_MedicalAddExcluded
 		class MedicalAddExcluded {};
 		
-		//[] call ACPL_MM_Core_fnc_CalculateCamo
-		class CalculateCamo {};
-		
 		//[] call ACPL_MM_Core_fnc_CheckEnemy
 		class CheckEnemy {};
 		
@@ -158,14 +155,6 @@ class ACPL_MM_Core {
 		{
 			ext = ".fsm";
 		};
-	};
-
-	class betterSupp
-	{
-		file = "ACPL_MM_Core\betterSupp";
-		
-		//[] spawn ACPL_MM_Core_fnc_BS_init;
-		class BS_init {};
 	};
 
 	class DoSupp

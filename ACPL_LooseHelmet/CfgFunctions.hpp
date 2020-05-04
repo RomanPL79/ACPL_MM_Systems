@@ -24,9 +24,6 @@ class ACPL_LooseHelmet {
 		//[] call ACPL_LooseHelmet_fnc_FixAction;
 		class FixAction {};
 		
-		//[] call ACPL_LooseHelmet_fnc_player_pickup;
-		class player_pickup {};
-		
 		//[] class ACPL_LooseHelmet_fnc_inventoryhandler;
 		class inventoryhandler {};
 		
@@ -41,6 +38,15 @@ class ACPL_LooseHelmet {
 
 		//[] spawn ACPL_LooseHelmet_fnc_notMoving;
 		class notMoving {};
+
+		//[] spawn ACPL_LooseHelmet_fnc_DoMove;
+		class doMove {};
+
+		//[] spawn ACPL_LooseHelmet_fnc_DoStop;
+		class DoStop {};
+
+		//[] spawn ACPL_LooseHelmet_fnc_DisableLooseHelmet_module;
+		class DisableLooseHelmet_module {};
 	}
 	
 	class FSM

@@ -29,9 +29,9 @@ AIC_fnc_addWaypointsActionHandler = {
 	AIC_fnc_setGroupControlAddingWaypoints(_groupControlId,true);
 };
 
-["GROUP","Add Waypoints",[],AIC_fnc_addWaypointsActionHandler] call AIC_fnc_addCommandMenuAction;
-["GROUP","Reset Garrison",[],AIC_fnc_ResetActionHandler] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Add Waypoints",[],AIC_fnc_addWaypointsActionHandler] call AIC_fnc_addCommandMenuAction;
+["GROUP","Add Waypoints",["Waypoints"],AIC_fnc_addWaypointsActionHandler] call AIC_fnc_addCommandMenuAction;
+["GROUP","Reset Garrison",["Waypoints"],AIC_fnc_ResetActionHandler] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Add Waypoints",["Waypoints"],AIC_fnc_addWaypointsActionHandler] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_setGroupColorActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -47,11 +47,11 @@ AIC_fnc_setGroupColorActionHandler = {
 	hint ("Color set to " + toLower (_color select 0));
 };
 
-["GROUP","Red",["Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_RED]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Blue",["Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_BLUE]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Green",["Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_GREEN]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Black",["Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_BLACK]] call AIC_fnc_addCommandMenuAction;
-["GROUP","White",["Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_WHITE]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Red",["Manage Group", "Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_RED]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Blue",["Manage Group", "Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_BLUE]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Green",["Manage Group", "Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_GREEN]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Black",["Manage Group", "Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_BLACK]] call AIC_fnc_addCommandMenuAction;
+["GROUP","White",["Manage Group", "Set Group Color"],AIC_fnc_setGroupColorActionHandler,[AIC_COLOR_WHITE]] call AIC_fnc_addCommandMenuAction;
 
 
 AIC_fnc_setGroupBehaviourActionHandler = {
@@ -64,11 +64,11 @@ AIC_fnc_setGroupBehaviourActionHandler = {
 	hint ("Behaviour set to " + toLower _mode);
 };
 
-["GROUP","Careless",["Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["CARELESS"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Safe",["Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["SAFE"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Aware",["Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["AWARE"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Combat",["Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["COMBAT"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Stealth",["Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["STEALTH"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Careless",["Manage Group", "Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["CARELESS"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Safe",["Manage Group", "Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["SAFE"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Aware",["Manage Group", "Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["AWARE"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Combat",["Manage Group", "Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["COMBAT"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Stealth",["Manage Group", "Set Group Behaviour"],AIC_fnc_setGroupBehaviourActionHandler,["STEALTH"]] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_joinGroupActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -85,7 +85,7 @@ AIC_fnc_joinGroupActionHandler = {
 	};
 };
 
-["GROUP","Join A Group",["Group Size"],AIC_fnc_joinGroupActionHandler,[]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Join A Group",["Manage Group", "Group Size"],AIC_fnc_joinGroupActionHandler,[]] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_splitGroupHalfActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -105,7 +105,7 @@ AIC_fnc_splitGroupHalfActionHandler = {
 	hint ("Group Split in Half");
 };
 
-["GROUP","In Half",["Group Size","Split Group"],AIC_fnc_splitGroupHalfActionHandler,[],{
+["GROUP","In Half",["Manage Group","Group Size","Split Group"],AIC_fnc_splitGroupHalfActionHandler,[],{
 	params ["_groupControlId"];
 	private ["_group"];
 	_group = AIC_fnc_getGroupControlGroup(_groupControlId);
@@ -141,7 +141,7 @@ AIC_fnc_splitGroupUnitsActionHandler = {
 	
 };
 
-["GROUP","Into Individual Units",["Group Size","Split Group"],AIC_fnc_splitGroupUnitsActionHandler,[],{
+["GROUP","Into Individual Units",["Manage Group", "Group Size","Split Group"],AIC_fnc_splitGroupUnitsActionHandler,[],{
 	params ["_groupControlId"];
 	private ["_group"];
 	_group = AIC_fnc_getGroupControlGroup(_groupControlId);
@@ -158,9 +158,9 @@ AIC_fnc_setGroupSpeedActionHandler = {
 	hint ("Speed set to " + _label);
 };	
 		
-["GROUP","Half Speed",["Set Group Speed"],AIC_fnc_setGroupSpeedActionHandler,["LIMITED", "Half Speed"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Full Speed (In Formation)",["Set Group Speed"],AIC_fnc_setGroupSpeedActionHandler,["NORMAL", "Full Speed (In Formation)"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Full (No Formation)",["Set Group Speed"],AIC_fnc_setGroupSpeedActionHandler,["FULL", "Full (No Formation)"]] call AIC_fnc_addCommandMenuAction;	
+["GROUP","Half Speed",["Manage Group", "Set Group Speed"],AIC_fnc_setGroupSpeedActionHandler,["LIMITED", "Half Speed"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Full Speed (In Formation)",["Manage Group", "Set Group Speed"],AIC_fnc_setGroupSpeedActionHandler,["NORMAL", "Full Speed (In Formation)"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Full (No Formation)",["Manage Group", "Set Group Speed"],AIC_fnc_setGroupSpeedActionHandler,["FULL", "Full (No Formation)"]] call AIC_fnc_addCommandMenuAction;	
 
 AIC_fnc_setGroupFormationActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -172,15 +172,15 @@ AIC_fnc_setGroupFormationActionHandler = {
 	hint ("Formation set to " + toLower _mode);
 };
 
-["GROUP","Column",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["COLUMN"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Stag. Column",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["STAG COLUMN"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Wedge",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["WEDGE"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Echelon Left",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["ECH LEFT"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Echelon Right",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["ECH RIGHT"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","V",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["VEE"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Line",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["LINE"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","File",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["FILE"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Diamond",["Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["DIAMOND"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Column",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["COLUMN"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Stag. Column",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["STAG COLUMN"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Wedge",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["WEDGE"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Echelon Left",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["ECH LEFT"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Echelon Right",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["ECH RIGHT"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","V",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["VEE"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Line",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["LINE"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","File",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["FILE"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Diamond",["Manage Group", "Set Group Formation"],AIC_fnc_setGroupFormationActionHandler,["DIAMOND"]] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_commandMenuIsAir = {
 	params ["_menuParams","_actionParams"];
@@ -209,14 +209,14 @@ AIC_fnc_setFlyInHeightActionHandler = {
 	hint ("Fly in height set to " + (str _height) + " meters");
 };
 
-["GROUP","10 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[10],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","20 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[20],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","40 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[40],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","100 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[100],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","250 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[250],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","500 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[500],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","1000 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[1000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["GROUP","2000 meters",["Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[2000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","10 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[10],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","20 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[20],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","40 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[40],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","100 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[100],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","250 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[250],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","500 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[500],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","1000 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[1000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["GROUP","2000 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setFlyInHeightActionHandler,[2000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_setGroupCombatModeActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -228,11 +228,11 @@ AIC_fnc_setGroupCombatModeActionHandler = {
 	hint ("Combat mode set to " + toLower _modeLabel);
 };
 
-["GROUP","Never fire",["Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["BLUE","Never fire"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Hold fire - defend only",["Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["GREEN","Hold fire - defend only"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Hold fire, engage at will",["Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["WHITE","Hold fire, engage at will"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Fire at will",["Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["YELLOW","Fire at will"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Fire at will, engage at will",["Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["RED","Fire at will, engage at will"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Never fire",["Manage Group", "Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["BLUE","Never fire"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Hold fire - defend only",["Manage Group", "Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["GREEN","Hold fire - defend only"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Hold fire, engage at will",["Manage Group", "Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["WHITE","Hold fire, engage at will"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Fire at will",["Manage Group", "Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["YELLOW","Fire at will"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Fire at will, engage at will",["Manage Group", "Set Group Combat Mode"],AIC_fnc_setGroupCombatModeActionHandler,["RED","Fire at will, engage at will"]] call AIC_fnc_addCommandMenuAction;
 		
 AIC_fnc_clearAllWaypointsActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -244,7 +244,7 @@ AIC_fnc_clearAllWaypointsActionHandler = {
 	hint ("All waypoints cleared");
 };
 
-["GROUP","Confirm Cancel All",["Clear All Waypoints"],AIC_fnc_clearAllWaypointsActionHandler] call AIC_fnc_addCommandMenuAction;		
+["GROUP","Confirm Cancel All",["Waypoints", "Clear All Waypoints"],AIC_fnc_clearAllWaypointsActionHandler] call AIC_fnc_addCommandMenuAction;		
 
 AIC_fnc_remoteViewActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -423,7 +423,7 @@ AIC_fnc_assignVehicleActionHandler = {
 	};
 };
 
-["GROUP","Assign Vehicle",[],AIC_fnc_assignVehicleActionHandler,[]] call AIC_fnc_addCommandMenuAction;		
+["GROUP","Assign Vehicle",["Manage Group"],AIC_fnc_assignVehicleActionHandler,[]] call AIC_fnc_addCommandMenuAction;		
 
 AIC_fnc_unassignVehicleActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -437,7 +437,7 @@ AIC_fnc_unassignVehicleActionHandler = {
 	hint ("All vehicles unassigned");
 };
 
-["GROUP","Unassign All Vehicle(s)",[],AIC_fnc_unassignVehicleActionHandler,[],{
+["GROUP","Unassign All Vehicle(s)",["Manage Group"],AIC_fnc_unassignVehicleActionHandler,[],{
 	params ["_groupControlId"];
 	private ["_group"];
 	_group = AIC_fnc_getGroupControlGroup(_groupControlId);
@@ -476,7 +476,7 @@ AIC_fnc_unloadOtherGroupsActionHandler = {
 	hint ((str count _unloadedGroups) + " other group(s) unloaded");
 };
 
-["GROUP","Unload Other Group(s)",[],AIC_fnc_unloadOtherGroupsActionHandler,[],{
+["GROUP","Unload Other Group(s)",["Manage Group"],AIC_fnc_unloadOtherGroupsActionHandler,[],{
 	params ["_groupControlId"];
 	private ["_group"];
 	_group = AIC_fnc_getGroupControlGroup(_groupControlId);
@@ -508,7 +508,7 @@ AIC_fnc_landActionHandler = {
 	};
 };
 
-["GROUP","Land",[],AIC_fnc_landActionHandler,[],{
+["GROUP","Land",["Air Unit"],AIC_fnc_landActionHandler,[],{
 	params ["_groupControlId"];
 	private ["_group"];
 	_group = AIC_fnc_getGroupControlGroup(_groupControlId);
@@ -554,7 +554,7 @@ AIC_fnc_rappelActionHandler = {
 	};
 };
 
-["GROUP","Rappel Other Group(s)",[],AIC_fnc_rappelActionHandler,[],{
+["GROUP","Rappel Other Group(s)",["Air Unit"],AIC_fnc_rappelActionHandler,[],{
 	params ["_groupControlId"];
 	private ["_group"];
 	_group = AIC_fnc_getGroupControlGroup(_groupControlId);
@@ -584,8 +584,8 @@ AIC_fnc_setGroupAutoCombatActionHandler = {
 	hint ("AutoCombat " + toLower _mode);
 };
 
-["GROUP","On",["Set Group Behaviour","Toggle Auto Combat"],AIC_fnc_setGroupAutoCombatActionHandler,["On"]] call AIC_fnc_addCommandMenuAction;
-["GROUP","Off",["Set Group Behaviour","Toggle Auto Combat"],AIC_fnc_setGroupAutoCombatActionHandler,["Off"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","On",["Manage Group", "Set Group Behaviour","Toggle Auto Combat"],AIC_fnc_setGroupAutoCombatActionHandler,["On"]] call AIC_fnc_addCommandMenuAction;
+["GROUP","Off",["Manage Group", "Set Group Behaviour","Toggle Auto Combat"],AIC_fnc_setGroupAutoCombatActionHandler,["Off"]] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_deleteWaypointHandler = {
 	params ["_menuParams","_actionParams"];
@@ -596,7 +596,7 @@ AIC_fnc_deleteWaypointHandler = {
 	[_groupControlId,"REFRESH_WAYPOINTS",[]] call AIC_fnc_groupControlEventHandler;
 };
 
-["WAYPOINT","Delete Waypoint",[],AIC_fnc_deleteWaypointHandler] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Delete Waypoint",["Waypoints"],AIC_fnc_deleteWaypointHandler] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_setWaypointFormationActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -611,15 +611,15 @@ AIC_fnc_setWaypointFormationActionHandler = {
 	hint ("Formation set to " + toLower _mode);
 };
 
-["WAYPOINT","Column",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["COLUMN"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Stag. Column",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["STAG COLUMN"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Wedge",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["WEDGE"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Echelon Left",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["ECH LEFT"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Echelon Right",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["ECH RIGHT"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","V",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["VEE"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Line",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["LINE"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","File",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["FILE"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Diamond",["Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["DIAMOND"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Column",["Manage Group", "Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["COLUMN"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Stag. Column",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["STAG COLUMN"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Wedge",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["WEDGE"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Echelon Left",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["ECH LEFT"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Echelon Right",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["ECH RIGHT"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","V",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["VEE"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Line",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["LINE"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","File",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["FILE"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Diamond",["Manage Group","Set Group Formation"],AIC_fnc_setWaypointFormationActionHandler,["DIAMOND"]] call AIC_fnc_addCommandMenuAction;
 								
 AIC_fnc_setWaypointTypeActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -678,38 +678,38 @@ AIC_fnc_setWaypointTypeLambsActionHandler = {
 	hint ("Type set to " + toLower _label);
 };
 
-["WAYPOINT","Move (default)",["Set Waypoint Type"],AIC_fnc_setWaypointTypeActionHandler,["MOVE","Move"]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","Seek & Destroy",["Set Waypoint Type"],AIC_fnc_setWaypointTypeActionHandler,["SAD","Seek & Destroy"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Move (default)",["Waypoints", "Set Waypoint Type"],AIC_fnc_setWaypointTypeActionHandler,["MOVE","Move"]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","Seek & Destroy",["Waypoints", "Set Waypoint Type"],AIC_fnc_setWaypointTypeActionHandler,["SAD","Seek & Destroy"]] call AIC_fnc_addCommandMenuAction;
 
-["WAYPOINT","10m Radius",["Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 10]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","25m Radius",["Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 25]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","50m Radius",["Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 50]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","100m Radius",["Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 100]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","10m Radius",["Waypoints", "Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 10]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","25m Radius",["Waypoints", "Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 25]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","50m Radius",["Waypoints", "Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 50]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","100m Radius",["Waypoints", "Set Waypoint Type", "CQB"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","CQB",'\z\lambs\addons\wp\scripts\fnc_wpCQB.sqf', 100]] call AIC_fnc_addCommandMenuAction;
 
-["WAYPOINT","10m Radius",["Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","25m Radius",["Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","50m Radius",["Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","100m Radius",["Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","10m Radius",["Waypoints", "Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","25m Radius",["Waypoints", "Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","50m Radius",["Waypoints", "Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","100m Radius",["Waypoints", "Set Waypoint Type", "GARRISON"],AIC_fnc_setWaypointTypeLambsActionHandler,["SCRIPTED","Garrison", '\z\lambs\addons\wp\scripts\fnc_wpGarrison.sqf', 10]] call AIC_fnc_addCommandMenuAction;
 
-["WAYPOINT","ASSAULT",["Set Waypoint Type"],AIC_fnc_setWaypointTypeLambsActionHandler,["lambs_danger_Attack","Assault", '\z\lambs\addons\wp\scripts\fnc_wpAssault.sqf']] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","RETREAT",["Set Waypoint Type"],AIC_fnc_setWaypointTypeLambsActionHandler,["lambs_danger_Retreat","Retreat", '\z\lambs\addons\wp\scripts\fnc_wpRetreat.sqf']] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","ASSAULT",["Waypoints", "Set Waypoint Type"],AIC_fnc_setWaypointTypeLambsActionHandler,["lambs_danger_Attack","Assault", '\z\lambs\addons\wp\scripts\fnc_wpAssault.sqf']] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","RETREAT",["Waypoints", "Set Waypoint Type"],AIC_fnc_setWaypointTypeLambsActionHandler,["lambs_danger_Retreat","Retreat", '\z\lambs\addons\wp\scripts\fnc_wpRetreat.sqf']] call AIC_fnc_addCommandMenuAction;
 
-["WAYPOINT","10M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[10,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","100M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[100,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","250M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[250,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","500M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[500,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","1000M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[1000,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","2000M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[2000,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","3000M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[3000,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","4000M Radius",["Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[4000,true]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","10M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[10,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","100M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[100,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","250M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[250,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","500M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[500,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","1000M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[1000,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","2000M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[2000,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","3000M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[3000,false]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","4000M Radius",["Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[4000,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","10M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[10,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","100M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[100,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","250M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[250,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","500M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[500,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","1000M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[1000,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","2000M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[2000,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","3000M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[3000,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","4000M Radius",["Waypoints", "Set Waypoint Type","Loiter (Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[4000,true]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","10M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[10,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","100M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[100,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","250M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[250,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","500M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[500,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","1000M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[1000,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","2000M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[2000,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","3000M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[3000,false]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","4000M Radius",["Waypoints", "Set Waypoint Type","Loiter (C-Clockwise)"],AIC_fnc_setLoiterTypeActionHandler,[4000,false]] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_setWaypointFlyInHeightActionHandlerScript = {
 	params ["_group","_height"]; 
@@ -735,14 +735,14 @@ AIC_fnc_setWaypointFlyInHeightActionHandler = {
 	hint ("Waypoint fly in height set to " + (str _height) + " meters");
 };
 
-["WAYPOINT","10 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[10],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","20 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[20],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","40 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[40],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","100 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[100],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","250 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[250],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","500 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[500],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","1000 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[1000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","2000 meters",["Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[2000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","10 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[10],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","20 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[20],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","40 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[40],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","100 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[100],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","250 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[250],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","500 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[500],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","1000 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[1000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","2000 meters",["Air Unit", "Set Fly in Height"],AIC_fnc_setWaypointFlyInHeightActionHandler,[2000],AIC_fnc_commandMenuIsAir] call AIC_fnc_addCommandMenuAction;
 
 AIC_fnc_setWaypointDurationActionHandler = {
 	params ["_menuParams","_actionParams"];
@@ -756,11 +756,11 @@ AIC_fnc_setWaypointDurationActionHandler = {
 	hint ("Waypoint duration set to " + (str _duration) + " mins");
 };
 
-["WAYPOINT","None",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[0]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","1 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[1]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","2 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[2]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","3 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[3]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","4 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[4]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","5 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[5]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","10 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[10]] call AIC_fnc_addCommandMenuAction;
-["WAYPOINT","20 Min",["Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[20]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","None",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[0]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","1 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[1]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","2 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[2]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","3 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[3]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","4 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[4]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","5 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[5]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","10 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[10]] call AIC_fnc_addCommandMenuAction;
+["WAYPOINT","20 Min",["Waypoints", "Set Duration"],AIC_fnc_setWaypointDurationActionHandler,[20]] call AIC_fnc_addCommandMenuAction;

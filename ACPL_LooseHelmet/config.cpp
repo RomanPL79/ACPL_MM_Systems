@@ -9,8 +9,7 @@ class CfgPatches {
 		"A3_Data_F_Tank_Loadorder",
 		"cba_common",
 		"cba_settings",
-		"ace_interaction",
-		"ACPL_MM_Core"
+		"ace_interaction"
 	};
 	
     version = 2;
@@ -19,6 +18,8 @@ class CfgPatches {
     authorUrl = "https://steamcommunity.com/groups/acpl_milsim";
   };
 };
+
+#include "cfgFactionClasses.hpp"
 
 class CfgVehicles {
 	#include "cfgVehicles.hpp"
@@ -59,7 +60,16 @@ class Extended_InventoryOpened_EventHandlers {
 	class Man;
 	class CAManBase: Man {
 		class ACPL_LooseHelmet {
-			InventoryOpened = "params ['_unit', '_container'];[[_unit, _container], ACPL_LooseHelmet_fnc_inventoryhandler] remoteExec ['spawn',_unit];";
+			InventoryOpened = "params ['_unit', '_container'];[[_unit, _container, true], ACPL_LooseHelmet_fnc_inventoryhandler] remoteExec ['spawn',_unit];";
+		};
+	};
+};
+
+class Extended_InventoryClosed_EventHandlers {
+	class Man;
+	class CAManBase: Man {
+		class ACPL_LooseHelmet {
+			InventoryClosed = "params ['_unit', '_container'];[[_unit, _container, false], ACPL_LooseHelmet_fnc_inventoryhandler] remoteExec ['spawn',_unit];";
 		};
 	};
 };

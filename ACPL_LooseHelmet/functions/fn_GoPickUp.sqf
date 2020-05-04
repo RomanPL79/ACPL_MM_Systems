@@ -49,7 +49,7 @@ if (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false]) then {
 
 //making unit go to weaponhandler by another function and waiting
 
-[_unit, getposATL _weaponhandler, _weaponhandler, true] spawn ACPL_MM_Core_fnc_DoMove;
+[_unit, getposATL _weaponhandler, _weaponhandler, true] spawn ACPL_LooseHelmet_fnc_DoMove;
 
 WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false])};
 
@@ -104,13 +104,7 @@ _unit setvariable ["ACPL_MM_Core_DoMove", false];
 //if DoStop then is returning to position
 
 if (_unit getvariable ["ACPL_MM_Core_DoStop_Enabled", false]) then {
-	private _pos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getPosATL _unit)];
-
-	[_unit, _pos] spawn ACPL_MM_Core_fnc_DoStop_DoMove;
-	
-	WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false])};
-	
-	[_unit, true] spawn ACPL_MM_Core_fnc_DoStop_Prepare;
+	[_unit] spawn ACPL_LooseHelmet_fnc_DoStop;
 };
 
 _unit setvariable ["ACPL_LooseHelmet_Busy", false];

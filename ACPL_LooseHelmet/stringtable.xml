@@ -219,5 +219,22 @@
 			<English>How much time object must exist to be deleted.</English>
 			<Polish>Jak długo obiekt musi istnieć aby zostać usunięty.</Polish>
 		</Key>
+
+		<Key ID="STR_ACPL_LooseHelmet_Faction">
+			<Original>ACPL Loose Helmet</Original>
+			<English>ACPL Loose Helmet</English>
+			<Polish>ACPL Loose Helmet</Polish>
+		</Key>
+
+		<Key ID="STR_ACPL_LooseHelmet_Module">
+			<Original>Disable Loose Helmet</Original>
+			<English>Disable Loose Helmet</English>
+			<Polish>Wyłącz Loose Helmet</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_Module_desc">
+			<Original>Disable Loose Helmet system for this mission.</Original>
+			<English>Disable Loose Helmet system for this mission.</English>
+			<Polish>Wyłącz system Loose Helmet dla tej misji.</Polish>
+		</Key>
 	</Package>
 </Project>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ACPL_FireSupport">
+	<Package name="ACPL_FireSupport">
+        <Key ID="STR_ACPL_FireSupport_empty">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
+
+        <Key ID="STR_ACPL_FireSupport_Menu">
+            <Original>Fire Support</Original>
+            <English>Fire Support</English>
+            <Polish>Wsparcie Ogniowe</Polish>
+        </Key>
+
+        <Key ID="STR_ACPL_FireSupport_Artillery">
+            <Original>Artillery</Original>
+            <English>Artillery</English>
+            <Polish>Artyleria</Polish>
+        </Key>
+         <Key ID="STR_ACPL_FireSupport_CancelFireMission">
+            <Original>Cancel Fire Mission</Original>
+            <English>Cancel Fire Mission</English>
+            <Polish>Przerwij Misję Ogniową</Polish>
+        </Key>
+         <Key ID="STR_ACPL_FireSupport_CancelFireMission_hint">
+            <Original>Fire mission has been canceled</Original>
+            <English>Fire mission has been canceled</English>
+            <Polish>Misja ogniowa została przerwana</Polish>
+        </Key>
+
+        <Key ID="STR_ACPL_FireSupport_Heli">
+            <Original>Helicopters</Original>
+            <English>Helicopters</English>
+            <Polish>Helikoptery</Polish>
+        </Key>
+
+        <Key ID="STR_ACPL_FireSupport_Plane">
+            <Original>Planes</Original>
+            <English>Planes</English>
+            <Polish>Samoloty</Polish>
+        </Key>
+
+        <Key ID="STR_ACPL_FireSupport_Busy">
+            <Original>Busy</Original>
+            <English>Busy</English>
+            <Polish>Zajęty</Polish>
+        </Key>
+	</Package>
+</Project>

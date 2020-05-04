@@ -24,9 +24,11 @@
 
 	_allunits = [];
 	_textIcons = "";
+	_groups = [];
 	{
 		_group = _x;
 		_allunits = _allunits + units _group;
+		_groups pushback _group;
 
 		//--- Group icon
 		/*
@@ -158,13 +160,28 @@
 	} foreach _result;
 */
 
+	_groups_info = "";
 
+	if (count _groups == 1) then {
+		_groups_info = groupId (_groups select 0);
+	} else {
+		private _id = 0;
+		{
+			if (_id == 0) then {
+				_groups_info = groupId (_groups select 0);
+			} else {
+				_groups_info = _groups_info + ", " + groupId (_groups select _id);
+			};
+			_id = _id + 1;
+		} foreach _groups;
+	};
 
 
 	//--- Display text
 	terminate _loading;
 	_text = parsetext (
-		"<t size='1.3' color='#ffffff' font='PuristaMedium' underline='true' align='left'>SITREP</t>" + 
+		format ["<t>%1</t>",_groups_info] + 
+		"<br /><t size='1.3' color='#ffffff' font='PuristaMedium' underline='true' align='left'>SITREP</t>" + 
 		format ["<t size='0.9' align='right'>%1</t><br />",[daytime] call bis_fnc_timetostring] + 
 	 	_textIcons + "<br />" + 
 		format ["<t>%1</t>",_unitInfo] + 
