@@ -13,6 +13,6 @@ _object setVariable ["ace_rearm_currentsupply", _value, true];
 
 _object addmagazinecargoglobal [_class, 1];
 
-private _text = ((getText (configFile >> "CfgMagazines" >> _x >> "displayName")) + localize "STR_ACPL_Support_GetAmmo_added");
+private _text = ((getText (configFile >> "CfgMagazines" >> _x >> "displayName")) + localize "STR_ACPL_ACEGetAmmo_GetAmmo_added");
 
 [_text] remoteExec ["hint",_player];

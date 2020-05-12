@@ -84,7 +84,7 @@ item79[] = {"false",4,218,917.176636,1625.047974,1007.176575,1675.047974,1.00000
 item80[] = {"check",2,250,1022.443726,1522.428223,1112.443726,1572.428223,0.000000,"check"};
 item81[] = {"",7,210,1063.203369,1361.861938,1071.203369,1369.861938,0.000000,""};
 item82[] = {"",7,210,1301.628784,1360.416138,1309.628784,1368.416138,0.000000,""};
-item83[] = {"",7,210,958.055542,1323.285645,966.055542,1331.285645,0.000000,""};
+item83[] = {"_",8,218,916.671814,1295.583252,1006.671814,1345.583252,0.000000,""};
 item84[] = {"daed",4,218,878.249084,1912.136841,968.249084,1962.136841,0.000000,"daed"};
 item85[] = {"",7,210,2288.875732,1931.454712,2296.875732,1939.454712,0.000000,""};
 item86[] = {"",7,210,2288.976807,1064.738403,2296.976807,1072.738403,0.000000,""};
@@ -209,7 +209,7 @@ link107[] = {82,36};
 link108[] = {82,58};
 link109[] = {82,61};
 link110[] = {82,87};
-link111[] = {83,29};
+link111[] = {83,27};
 link112[] = {84,85};
 link113[] = {85,86};
 link114[] = {86,24};
@@ -225,8 +225,8 @@ link123[] = {95,14};
 link124[] = {95,15};
 link125[] = {96,14};
 link126[] = {96,15};
-globals[] = {0.000000,0,0,0,0,640,480,1,331,6316128,1,1027.307129,2051.268066,1373.921143,611.806335,1224,911,1};
-window[] = {2,-1,-1,-1,-1,1107,200,1640,200,3,1242};
+globals[] = {0.000000,0,0,0,0,640,480,1,331,6316128,1,715.410828,2175.667725,2168.558350,1082.909790,1224,910,1};
+window[] = {2,-1,-1,-1,-1,1141,234,1674,234,3,1242};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -616,7 +616,7 @@ class FSM
                 {
                         name = "On_foot_Loop__2";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"_t = (time + 1);" \n
+                        init = /*%FSM<STATEINIT""">*/"_t = (time + 5);" \n
                          "" \n
                          "_react = _unit getvariable [""ACPL_MM_Core_DoStop_react"", false];" \n
                          "_roam = _unit getvariable [""ACPL_MM_Core_DoStop_roam"", false];" \n
@@ -798,14 +798,14 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "nothing_to_do">*/
-                                class nothing_to_do
+                                /*%FSM<LINK "_">*/
+                                class _
                                 {
                                         itemno = ;
                                         priority = 0.000000;
-                                        to="wait_1";
+                                        to="On_foot_Loop__2";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!(_react) && !(_roam) && !(_wup) && !(_wp) && !(_ntr) && !(_ptr) && !(_supp) && !(_anim) && !(_dosupp) && !(_static)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1109,7 +1109,7 @@ class FSM
                 {
                         name = "more_to_check";
                         itemno = ;
-                        init = /*%FSM<STATEINIT""">*/"_t = time + 0.25;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = time + 1;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

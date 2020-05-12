@@ -1,10 +1,15 @@
-params ["_eye", "_unit"];
+params ["_eye", "_unit", "_specified", "_enemy"];
 
 private _return = false;
 
 private _side = side _unit;
 private _enemy = [_side] call ACPL_MM_Core_fnc_CheckEnemy;
-private _objects = nearestObjects [_unit, ["Man"], 2000];
+private _objects = [];
+if (_specified) then {
+	_objects = [_enemy];
+} else {
+	_objects = nearestObjects [_unit, ["Man"], 2000];
+};
 
 {
 	private _eyepos = eyepos _x;

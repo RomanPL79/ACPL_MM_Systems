@@ -8,16 +8,9 @@ private _time = _unit getvariable ["ACPL_MM_Core_DoSupp_end", (time + 20)];
 private _density = _unit getvariable ["ACPL_MM_Core_DoSupp_density", "BURST"];
 private _lastweapon = _unit getvariable ["ACPL_MM_Core_DoSupp_LastWeapon", ""];
 
-private _check = [];
-{
-	private _x_0 = _x select 0;
-	
-	if (!(_x_0 in ACPL_MM_Core_BeeingSuppressed)) then {
-		_check = _check + [_x];
-	};
-} foreach _list;
+private _check = _list select {!(_x in ACPL_MM_Core_BeeingSuppressed)};
 
-if (!((count _check) == (count _list)) && !(count _check == 0)) then {
+if (count _check == 0 && count _list != 0) then {
 	_list = _check;
 };
 
@@ -26,6 +19,8 @@ private _target = _random select 0;
 private _target_pos = getposATL _target;
 private _positions = _random select 1;
 
+ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed + [_target];
+
 private _targets = [];
 
 for "_i" from 0 to 9 do {
@@ -33,8 +28,6 @@ for "_i" from 0 to 9 do {
 	
 	_targets = _targets + [_pos];
 };
-
-ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed + [_target];
 
 _unit setVariable ["VCOM_NOAI",true];
 _unit setVariable ["Vcm_Disable",true];
@@ -46,11 +39,76 @@ private _gunner = false;
 
 private _typeof = typeof _target;
 
+private _distance = _unit distance _target;
+if (_distance < 20) exitwith {
+	ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
+	
+	_unit setVariable ["VCOM_NOAI",false];
+	_unit setVariable ["Vcm_Disable",false];
+	_unit setvariable ["TCL_Disabled",false];
+	_unit setVariable ["lambs_danger_disableAI",false];
+};
+
+private _turret = [];
+private _weapons = [];
+private _shooter = _unit;
+private _currentWeapon = "";
+
 if (vehicle _unit != _unit) then {
 	_vehicle = true;
 	
 	if (gunner (vehicle _unit) == _unit) then {
 		_gunner = true;
+
+		if (_distance > 20 && _distance < 300) then {
+			_unit setvariable ["ACPL_MM_Core_DoSupp_density", "FULLAUTO", true];
+			_density = "FULLAUTO";
+		};
+		if (_distance > 300 && _distance < 900) then {
+			_unit setvariable ["ACPL_MM_Core_DoSupp_density", "BURST", true];
+			_density = "BURST";
+		};
+		if (_distance > 900) then {
+			_unit setvariable ["ACPL_MM_Core_DoSupp_density", "SINGLE", true];
+			_density = "SINGLE";
+		};
+
+		private _turrets = allTurrets _veh;
+		{
+			if (_veh turretUnit _x == _unit) then {
+				_turret = _x;
+			};
+		} foreach _turrets;
+		_weapons = _veh weaponsTurret _turret;
+
+		_shooter = vehicle _unit;
+		_currentWeapon = _weapons select 0;
+	};
+} else {
+	if (_distance > 20 && _distance < 150) then {
+		_unit setvariable ["ACPL_MM_Core_DoSupp_density", "FULLAUTO", true];
+		_density = "FULLAUTO";
+	};
+	if (_distance > 150 && _distance < 400) then {
+		_unit setvariable ["ACPL_MM_Core_DoSupp_density", "BURST", true];
+		_density = "BURST";
+	};
+	if (_distance > 400) then {
+		_unit setvariable ["ACPL_MM_Core_DoSupp_density", "SINGLE", true];
+		_density = "SINGLE";
+	};
+
+	if (primaryWeapon _unit != "") then {_currentWeapon = primaryweapon _unit;} else {
+		if (handgunWeapon _unit != "") then {_currentWeapon = handgunWeapon _unit;} else {
+			if (true) exitwith {
+				ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
+	
+				_unit setVariable ["VCOM_NOAI",false];
+				_unit setVariable ["Vcm_Disable",false];
+				_unit setvariable ["TCL_Disabled",false];
+				_unit setVariable ["lambs_danger_disableAI",false];
+			};
+		};
 	};
 };
 
@@ -73,205 +131,55 @@ private _angle = [_unit, _target] call {
 
 private _wait = _angle / 30;
 
-private _distance = _unit distance _target;
-if (_distance < 20) exitwith {
-	ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
-	
-	_unit setVariable ["VCOM_NOAI",false];
-	_unit setVariable ["Vcm_Disable",false];
-	_unit setvariable ["TCL_Disabled",false];
-	_unit setVariable ["lambs_danger_disableAI",false];
-};
+_shooter forcespeed 0;
 
+private _firemode = "";
+_unit setvariable ["ACPL_MM_Core_DoSupp_LastWeapon", _currentWeapon];
+_lastweapon = _currentWeapon;
+private _weapons = weapons _shooter;
+private _modes = (getArray (configFile >> "cfgweapons" >> _currentWeapon >> "modes"));
+_modes apply {toUpper _x};
+private _position = "AUTO";
 
-if (_vehicle) then {
-	if (_gunner) then {
-		if (_distance > 20 && _distance < 300) then {
-			_unit setvariable ["ACPL_MM_Core_DoSupp_density", "FULLAUTO", true];
-			_density = "FULLAUTO";
-		};
-		if (_distance > 300 && _distance < 900) then {
-			_unit setvariable ["ACPL_MM_Core_DoSupp_density", "BURST", true];
-			_density = "BURST";
-		};
-		if (_distance > 900) then {
-			_unit setvariable ["ACPL_MM_Core_DoSupp_density", "SINGLE", true];
-			_density = "SINGLE";
-		};
-		
-		private _veh = vehicle _unit;
-		
-		_veh forcespeed 0;
-		
-		private _turrets = allTurrets _veh;
-		private _turret = [];
-		{
-			if (_veh turretUnit _x == _unit) then {
-				_turret = _x;
-			};
-		} foreach _turrets;
-		
-		
-		private _weapons = _veh weaponsTurret _turret;
-		private _currentWeapon = _weapons select 0;
-		if (_lastweapon in _weapons) then {_currentWeapon = _lastweapon};
-		_unit setvariable ["ACPL_MM_Core_DoSupp_LastWeapon", _currentWeapon];
-		
-		private _config = (getArray (configFile >> "cfgweapons" >> _currentWeapon >> "modes"));
-		private _modes = [];
-		{
-			_modes = _modes + [toUpper(_x)];
-		} foreach _config;
-		private _firemode = "";
-		
-		switch (_density) do {
-			case "SINGLE": {
-				_firemode = "SINGLE";
-			};
-			case "BURST": {
+switch (_density) do {
+	case "SINGLE": {
+		_firemode = "SINGLE";
+	};
+	case "BURST": {
+		if ("BURST" in _modes && !_vehicle) then {
+			_firemode = "BURST";
+		} else {
+			if ("FULLAUTO" in _modes && !_vehicle) then {
 				_firemode = "BURST_R";
 			};
-			case "FULLAUTO": {
-				_firemode = "FULLAUTO";
-			};
 		};
-		
-		if (_firemode == "") then {_firemode = "SINGLE";};
-		
-		_unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", true, true];
-		
-		_shot = _targets select floor(random(count _targets));
-		private _dummy = "ACPL_MM_Core_InvisibleTarget" createVehicle [0,0,0];
-		private _pos = _target modelToWorld _shot;
-		_dummy setpos _pos;
-		_dummy allowdamage false;
-		
-		_unit reveal [_dummy, 4];
-		_unit doTarget _dummy;
-		
-		_unit disableAI "AUTOTARGET";
-		_veh disableAI "AUTOTARGET";
-		//_unit disableAI "TARGET";
-		
-		sleep _wait;
-		_time = _time + _wait;
-		
-		while {(alive _unit) && (time < _time) && (_unit getvariable ["ACPL_MM_Core_DoSupp_FSM", false])} do {
-			if (_unit getvariable ["ACPL_MM_Core_DoSupp_Reload", false]) then {
-				
-				_unit setvariable ["ACPL_MM_Core_DoSupp_Reload", false, true];
-				
-				_weapons = _weapons - [_currentWeapon];
-				_weapons pushback _currentWeapon;
-				
-				_currentWeapon = _weapons select 0;
-				_unit setvariable ["ACPL_MM_Core_DoSupp_LastWeapon", _currentWeapon];
-			};
-			
-			sleep 0.1;
-			
-			[_unit, _currentWeapon, _firemode, true, _turret] spawn ACPL_MM_Core_fnc_DoSupp_fire;
-			
-			WaitUntil {sleep 0.1;_unit getvariable ["ACPL_MM_Core_DoSupp_Done", false]};
-			
-			deletevehicle _dummy;
-			
-			_shot = _targets select floor(random(count _targets));
-			_dummy = "ACPL_MM_Core_InvisibleTarget" createVehicle [0,0,0];
-			
-			private _shooter_lof = eyepos _unit;
-			
-			if (([_unit, "VIEW", _dummy] checkVisibility [_shooter_lof, eyepos _target]) > 0) then {
-				_pos = _target modelToWorld _shot;
-				_dummy setpos _pos;
-			} else {
-				_pos = _target_pos;
-				_pos set [0, (_pos select 0) + (_shot select 0)];
-				_pos set [1, (_pos select 1) + (_shot select 1)];
-				_pos set [2, (_pos select 2) + (_shot select 2)];
-				_dummy setposATL _pos;
-			};
-			
-			_pos = _target modelToWorld _shot;
-			_dummy setpos _pos;
-			_dummy allowdamage false;
-			
-			_unit reveal [_dummy, 4];
-			_unit doTarget _dummy;
-			
-			sleep (random [0.25, 0.6, 2]);
-		};
-		
-		_unit lookAt objNull;
-		_unit doWatch objNull;
-		
-		_unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", false, true];
-		
-		_veh forcespeed 99999;
-		_unit enableAI "AUTOTARGET";
-		_veh enableAI "AUTOTARGET";
-		//_unit enableAI "TARGET";
-		
-		deletevehicle _dummy;
 	};
-} else {
-	if (_distance > 20 && _distance < 150) then {
-		_unit setvariable ["ACPL_MM_Core_DoSupp_density", "FULLAUTO", true];
-		_density = "FULLAUTO";
-	};
-	if (_distance > 150 && _distance < 400) then {
-		_unit setvariable ["ACPL_MM_Core_DoSupp_density", "BURST", true];
-		_density = "BURST";
-	};
-	if (_distance > 400) then {
-		_unit setvariable ["ACPL_MM_Core_DoSupp_density", "SINGLE", true];
-		_density = "SINGLE";
-	};
-	
-	private _position = "AUTO";
-	
-	private _weapons = weapons _unit;
-	private _p_weap = primaryweapon _unit;
-	private _s_weap = secondaryweapon _unit;
-	private _h_weap = handgunweapon _unit;
-	
-	private _weap = "";
-	
-	if (_p_weap in _weapons) then {
-		_weap = _p_weap;
-	} else {
-		if (_s_weap in _weapons) then {
-			_weap = _s_weap;
+	case "FULLAUTO": {
+		if ("FULLAUTO" in _modes && !_vehicle) then {
+			_firemode = "FULLAUTO";
 		} else {
-			if (_h_weap in _weapons) then {
-				_weap = _h_weap;
-			} else {
-				if (true) exitwith {
-					_unit lookAt objNull;
-					_unit doWatch objNull;
-						
-					_unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", false, true];
-						
-					_unit forcespeed 99999;
-					
-					ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
-					
-					_unit setVariable ["VCOM_NOAI",false];
-					_unit setVariable ["Vcm_Disable",false];
-					_unit setvariable ["TCL_Disabled",false];
-					_unit setVariable ["lambs_danger_disableAI",false];
-				};
-			};
+			_firemode = "SINGLE";
 		};
 	};
-	
-	private _config = (getArray (configFile >> "cfgweapons" >> _weap >> "modes"));
-	private _modes = [];
-	
-	{
-		_modes = _modes + [toUpper(_x)];
-	} foreach _config;
-	
+};
+
+if (_firemode == "") then {_firemode = "SINGLE";};
+
+_unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", true, true];
+		
+_shot = _targets select floor(random(count _targets));
+private _dummy = "ACPL_MM_Core_InvisibleTarget" createVehicle [0,0,0];
+private _pos = _target modelToWorld _shot;
+_dummy setpos _pos;
+_dummy allowdamage false;
+		
+_unit reveal [_dummy, 4];
+_unit doTarget _dummy;
+		
+_unit disableAI "AUTOTARGET";
+_shooter disableAI "AUTOTARGET";
+
+if (!"AUTO" in _positions) then {
 	if ("DOWN" in _positions) then {
 		_position = "DOWN";
 	} else {
@@ -283,119 +191,83 @@ if (_vehicle) then {
 			};
 		};
 	};
-	
+};
+
+if (_position != "AUTO" && !_vehicle) then {
 	[_unit, _position] spawn ACPL_MM_Core_fnc_DoSupp_StayInPos;
-	
-	_unit forcespeed 0;
-	
-	private _firemode = "";
-	
-	switch (_density) do {
-		case "SINGLE": {
-			_firemode = "SINGLE";
-		};
-		case "BURST": {
-			if ("BURST" in _modes) then {
-				_firemode = "BURST";
-			} else {
-				if ("FULLAUTO" in _modes) then {
-					_firemode = "BURST_R";
-				};
-			};
-		};
-		case "FULLAUTO": {
-			if ("FULLAUTO" in _modes) then {
-				_firemode = "FULLAUTO";
-			} else {
-				_firemode = "SINGLE";
-			};
-		};
+};
+
+_unit setBehaviour "COMBAT";
+
+sleep _wait;
+_time = _time + _wait;
+		
+while {(alive _unit) && (time < _time) && (_unit getvariable ["ACPL_MM_Core_DoSupp_FSM", false])} do {
+	if (_unit getvariable ["ACPL_MM_Core_DoSupp_Reload", false] && _gunner && count _weapons > 1) then {
+				
+		_unit setvariable ["ACPL_MM_Core_DoSupp_Reload", false, true];
+				
+		_weapons = _weapons - [_currentWeapon];
+		_weapons pushback _currentWeapon;
+				
+		_currentWeapon = _weapons select 0;
+		_unit setvariable ["ACPL_MM_Core_DoSupp_LastWeapon", _currentWeapon];
+	};
+	if (_unit getvariable ["ACPL_MM_Core_DoStop_Reloading", false]) then {
+		waitUntil {sleep 0.1;!(_unit getvariable ["ACPL_MM_Core_DoStop_Reloading", false])};
 	};
 	
-	if (_firemode == "") then {_firemode = "SINGLE";};
+	sleep 0.1;
 	
-	_shot = _targets select floor(random(count _targets));
-	private _dummy = "ACPL_MM_Core_InvisibleTarget" createVehicle [0,0,0];
-	private _pos = _target modelToWorld _shot;
-	_dummy setpos _pos;
-	_dummy allowdamage false;
-	
-	_unit setBehaviour "COMBAT";
-	
-	_unit lookAt objNull;
-	_unit doWatch objNull;
-	_unit doWatch _dummy;
-	_unit lookAt _dummy;
-	_unit lookAt _dummy;
-	_unit doTarget _dummy;
-	_unit doTarget _dummy;
-	
-	//_unit disableAI "AUTOTARGET";
-	_unit disableAI "TARGET";
-	
-	_wait = _wait / 2;
-		
-	sleep _wait;
-	_time = _time + _wait;
-	
-	_unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", true, true];
-	sleep 0.5;
-	
-	while {(alive _unit) && (time < _time) && (_unit getvariable ["ACPL_MM_Core_DoSupp_FSM", false])} do {
-		if (_unit getvariable ["ACPL_MM_Core_DoStop_Reloading", false]) then {
-			waitUntil {sleep 0.1;!(_unit getvariable ["ACPL_MM_Core_DoStop_Reloading", false])};
-		};
-		
+	if (_gunner) then {
+		[_unit, _currentWeapon, _firemode, true, _turret] spawn ACPL_MM_Core_fnc_DoSupp_fire;
+	} else {
 		[_unit, _weap, _firemode] spawn ACPL_MM_Core_fnc_DoSupp_fire;
-			
-		WaitUntil {sleep 0.1;_unit getvariable ["ACPL_MM_Core_DoSupp_Done", false]};
-		
-		deletevehicle _dummy;
-		
-		sleep (random [0.5, 1, 2]);
-		
-		_shot = _targets select floor(random(count _targets));
-		
-		_dummy = "ACPL_MM_Core_InvisibleTarget" createVehicle [0,0,0];
-		
-		private _shooter_lof = eyepos _unit;
-		_shooter_lof set [2, (_shooter_lof select 2) - 0.2];
-		
-		if (([_unit, "VIEW", _dummy] checkVisibility [_shooter_lof, eyepos _target]) > 0) then {
-			_pos = _target modelToWorld _shot;
-			_dummy setpos _pos;
-		} else {
-			_pos = _target_pos;
-			_pos set [0, (_pos select 0) + (_shot select 0)];
-			_pos set [1, (_pos select 1) + (_shot select 1)];
-			_pos set [2, (_pos select 2) + (_shot select 2)];
-			_dummy setposATL _pos;
-		};
-		
-		_dummy allowdamage false;
-		
-		_unit doWatch _dummy;
-		_unit lookAt _dummy;
-		_unit lookAt _dummy;
-		_unit doTarget _dummy;
-		_unit doTarget _dummy;
 	};
 	
-	_unit lookAt objNull;
-	_unit doWatch objNull;
-		
-	_unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", false, true];
-		
-	_unit forcespeed 99999;
-	//_unit enableAI "AUTOTARGET";
-	_unit enableAI "TARGET";
+	WaitUntil {sleep 0.1;_unit getvariable ["ACPL_MM_Core_DoSupp_Done", false]};
 	
 	deletevehicle _dummy;
 	
-	_unit setBehaviour "AWARE";
+	_shot = _targets select floor(random(count _targets));
+	_dummy = "ACPL_MM_Core_InvisibleTarget" createVehicle [0,0,0];
+	
+	private _shooter_lof = eyepos _shooter;
+	
+	if (([_unit, "VIEW", _dummy] checkVisibility [_shooter_lof, eyepos _target]) > 0) then {
+		_pos = _target modelToWorld _shot;
+		_dummy setpos _pos;
+	} else {
+		_pos = _target_pos;
+		_pos set [0, (_pos select 0) + (_shot select 0)];
+		_pos set [1, (_pos select 1) + (_shot select 1)];
+		_pos set [2, (_pos select 2) + (_shot select 2)];
+		_dummy setposATL _pos;
+	};
+	
+	_pos = _target modelToWorld _shot;
+	_dummy setpos _pos;
+	_dummy allowdamage false;
+			
+	_unit reveal [_dummy, 4];
+	_unit doTarget _dummy;
+	
+	sleep (random [0.25, 0.6, 2]);
 };
 
+_unit lookAt objNull;
+_unit doWatch objNull;
+
 _unit setvariable ["ACPL_MM_Core_DoSupp_Suppressing", false, true];
+
+_shooter forcespeed 99999;
+_unit enableAI "AUTOTARGET";
+_shooter enableAI "AUTOTARGET";
+//_unit enableAI "TARGET";
+		
+deletevehicle _dummy;
+
+_unit setBehaviour "AWARE";
 
 ACPL_MM_Core_BeeingSuppressed = ACPL_MM_Core_BeeingSuppressed - [_target];
 

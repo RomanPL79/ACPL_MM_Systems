@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ACPL_ACEGetAmmo">
+	<Package name="ACPL_ACEGetAmmo">
+        <Key ID="STR_ACPL_ACEGetAmmo_empty">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
+		
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo">
+			<Original>Get Ammo</Original>
+            <English>Get Ammo</English>
+			<Polish>Weź Amunicje</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_added">
+			<Original> has been added to object cargo</Original>
+            <English> has been added to object cargo</English>
+			<Polish> został dodany do wyposażenia obiektu</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_group">
+			<Original> rounds mags group:</Original>
+            <English> rounds mags group:</English>
+			<Polish> pociskowa grupa:</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_CheckAmmo">
+			<Original>Check Ammo Amount</Original>
+            <English>Check Ammo Amount</English>
+			<Polish>Sprawdź Ilość Amunicji</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_hint">
+			<Original>Current ammo amount: </Original>
+            <English>Current ammo amount: </English>
+			<Polish>Aktualna ilość amunicji: </Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_cost">
+			<Original> (cost: </Original>
+            <English> (cost: </English>
+			<Polish> (koszt: </Polish>
+		</Key>
+	</Package>
+</Project>

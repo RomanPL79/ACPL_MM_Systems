@@ -4,7 +4,7 @@ class ACPL_MM_Core_Taskmaster_UpdateTask_module: Module_F {
 	displayName = "$STR_ACPL_MM_Core_Taskmaster_UpdateTask_Module";
 	function = "ACPL_MM_Core_fnc_shk_actualize";
 	functionPriority = 1;
-	scope = 2;  //show in editor
+	scope = 1;  //show in editor
 	isGlobal = 0; //run on server
 	isTriggerActivated  = 1; //Wait for triggers
 	isDisposable = 0;

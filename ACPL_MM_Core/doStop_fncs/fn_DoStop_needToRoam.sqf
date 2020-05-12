@@ -13,20 +13,23 @@ if (!([_unit] call ACPL_MM_Core_fnc_isInCombat)) then {
 		_nexttime = time + _random;
 		_unit setvariable ["ACPL_MM_Core_DoStop_Roam_NextTime", _nexttime, true];
 		
-		private _building = _unit getvariable ["ACPL_MM_Core_DoStop_building", ObjNull];
-		
-		if (isNull _building) then {
-			_building = ((nearestObjects [_unit, ["House", "Building"], 50]) select 0);
-			_unit setvariable ["ACPL_MM_Core_DoStop_building", _building];
-		};
-		
+		private _building = _unit getvariable ["ACPL_MM_Core_DoStop_building", Nil];
+
 		private _positions = [_building] call BIS_fnc_buildingPositions;
+		
+		if (isNil "_building" && count [_building] call BIS_fnc_buildingPositions > 0) then {
+			_buildings = ((nearestObjects [_unit, ["House", "Building"], 50]) select {count [_x] call BIS_fnc_buildingPositions > 0});
+			if (count _buildings == 0) exitwith {false};
+			_building = buildings select 0;
+			_unit setvariable ["ACPL_MM_Core_DoStop_building", _building];
+			_positions = [_building] call BIS_fnc_buildingPositions;
+		};
 		
 		if ((getposATL _unit) distance (_unit getvariable "ACPL_MM_Core_DoStop_startPos") > 2) then {
 			_positions = _positions + [(_unit getvariable "ACPL_MM_Core_DoStop_startPos")];
 		};
 		
-		private _positions_c = [_positions] call ACPL_MM_Core_fnc_CheckTakenPos;
+		private _positions_c = _positions select {!(_x in ACPL_MM_Core_TakenPos) && (count nearestObjects [_x, ["Man"], 2] == 0)};
 		
 		if ((count _positions_c) > 0) then {
 			_return = true;

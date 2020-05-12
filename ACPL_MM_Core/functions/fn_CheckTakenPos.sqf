@@ -10,6 +10,7 @@ private _takenpos = {
 	private _return = true;
 	
 	if (isNil "ACPL_MM_Core_TakenPos") then {ACPL_MM_Core_TakenPos = [];};
+	if (_pos in ACPL_MM_Core_TakenPos) exitwith {_return};
 	
 	{
 		if ((count _x >= 2) && (count _pos >= 2)) then {

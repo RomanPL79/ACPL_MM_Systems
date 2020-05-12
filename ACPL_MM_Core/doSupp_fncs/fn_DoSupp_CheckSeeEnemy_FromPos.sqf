@@ -3,9 +3,8 @@ params ["_unit", "_target"];
 private _eyepos = eyepos _unit;
 private _stance = toUpper(stance _unit);
 private _t_eye = eyepos _target;
+if (vehicle _target != _target) then {_t_eye = getposasl _target;};
 _eyepos set [2, (_eyepos select 2) - 0.2];
-
-private _gunoffset = (_unit selectionPosition "weapon") select 2;
 
 private _return = [];
 private _pos = [];

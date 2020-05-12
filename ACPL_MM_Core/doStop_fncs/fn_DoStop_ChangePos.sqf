@@ -11,7 +11,11 @@ _unit setvariable ["ACPL_MM_Core_DoStop_actPos", _pos, true];
 
 _unit setvariable ["ACPL_MM_Core_DoStop_DoMove", false, true];
 
-WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false])};
+private _time = time + 30;
+
+WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false]) || (_unit distance _pos < 5 && time > _time)};
+
+_unit setvariable ["ACPL_MM_Core_DoMove", false]);
 
 _unit setvariable ["ACPL_MM_Core_DoStop_DoMove", true, true];
 

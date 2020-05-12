@@ -38,8 +38,3 @@ class Extended_InitPost_EventHandlers
 		};
 	};
 };
-
-class cfgVehicles
-{
-	#include "cfgACEActions.hpp"
-};
