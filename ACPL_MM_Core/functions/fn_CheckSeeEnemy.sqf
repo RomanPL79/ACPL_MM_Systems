@@ -1,4 +1,4 @@
-params ["_eye", "_unit", "_specified", "_enemy"];
+params ["_eye", "_unit", ["_specified", false], ["_enemy", ObjNull]];
 
 private _return = false;
 

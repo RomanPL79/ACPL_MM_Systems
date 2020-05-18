@@ -18,22 +18,22 @@
             <Chinese></Chinese>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_settings_name">
-            <Original>ACPL SkillSystem Settings</Original>
-            <English>ACPL SkillSystem Settings</English>
-            <Polish>ACPL SkillSystem Ustawienia</Polish>
-            <Russian>ACPL SkillSystem Настройки</Russian>
+            <Original>PSZ SkillSystem Settings</Original>
+            <English>PSZ SkillSystem Settings</English>
+            <Polish>PSZ SkillSystem Ustawienia</Polish>
+            <Russian>PSZ SkillSystem Настройки</Russian>
         </Key>
         <Key ID="STR_ACPL_SkillSystem_category">
-            <Original>ACPL SkillSystem Modules</Original>
-            <English>ACPL SkillSystem Modules</English>
-            <Polish>ACPL SkillSystem Moduły</Polish>
-            <Russian>ACPL SkillSystem Модули</Russian>
+            <Original>PSZ SkillSystem Modules</Original>
+            <English>PSZ SkillSystem Modules</English>
+            <Polish>PSZ SkillSystem Moduły</Polish>
+            <Russian>PSZ SkillSystem Модули</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_exclude_module">
-            <Original>ACPL Skill Exclude Units Module</Original>
-            <English>ACPL Skill Exclude Units Module</English>
-            <Polish>ACPL Moduł Wykluczenia Jednostek</Polish>
-            <Russian>ACPL Модуль Исключения Единиц</Russian>
+            <Original>PSZ Skill Exclude Units Module</Original>
+            <English>PSZ Skill Exclude Units Module</English>
+            <Polish>PSZ Moduł Wykluczenia Jednostek</Polish>
+            <Russian>PSZ Модуль Исключения Единиц</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_exclude_module_desc">
             <Original>This module exclude every synchronized unit from SkillSystem</Original>
@@ -42,22 +42,22 @@
             <Russian>Этот модуль исключает каждую синхронизированную единицу из SkillSystem</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_settings_module">
-            <Original>ACPL Skill Settings Module</Original>
-            <English>ACPL Skill Settings Module</English>
-            <Polish>ACPL Moduł Ustawień Umiejętności</Polish>
-            <Russian>ACPL Модуль перезагрузки навыков</Russian>
+            <Original>PSZ Skill Settings Module</Original>
+            <English>PSZ Skill Settings Module</English>
+            <Polish>PSZ Moduł Ustawień Umiejętności</Polish>
+            <Russian>PSZ Модуль перезагрузки навыков</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_custom_settings_module">
-            <Original>ACPL Custom Skill Settings Module</Original>
-            <English>ACPL Custom Skill Settings Module</English>
-            <Polish>ACPL Moduł Własnych Ustawień Umiejętności</Polish>
-            <Russian>ACPL Модуль пользовательские перезагрузки навыков</Russian>
+            <Original>PSZ Custom Skill Settings Module</Original>
+            <English>PSZ Custom Skill Settings Module</English>
+            <Polish>PSZ Moduł Własnych Ustawień Umiejętności</Polish>
+            <Russian>PSZ Модуль пользовательские перезагрузки навыков</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_reload_module">
-            <Original>ACPL Reload Skill Module</Original>
-            <English>ACPL Reload Skill Module</English>
-            <Polish>ACPL Moduł Restartu Umiejętności</Polish>
-            <Russian>ACPL Модуль Настройки Навыков</Russian>
+            <Original>PSZ Reload Skill Module</Original>
+            <English>PSZ Reload Skill Module</English>
+            <Polish>PSZ Moduł Restartu Umiejętności</Polish>
+            <Russian>PSZ Модуль Настройки Навыков</Russian>
         </Key>
 		<Key ID="STR_ACPL_SkillSystem_settings_module_desc">
             <Original>Module which sets AI's skills presets</Original>
