@@ -27,16 +27,16 @@ switch (_stance) do {
 
 _time = time + random [3,5,6];
 
-[_unit,_duckstance] remoteExec ["playAction",_unit];
-[_unit,_duckpos] remoteExec ["setunitpos",_unit];
+[_unit,_duckstance] remoteExecCall ["playAction",_unit];
+[_unit,_duckpos] remoteExecCall ["setunitpos",_unit];
 
 while {(_time > time) && (alive _unit)} do {
 	if ((stance _unit) != _duckstance) then {
-		[_unit,_duckstance] remoteExec ["playAction",_unit];
+		[_unit,_duckstance] remoteExecCall ["playAction",_unit];
 	};
 	sleep 0.1;
 };
 
 _unit setvariable ["ACPL_MM_Core_DoStop_Reloading", false, true];
 
-[_unit, _unitpos] remoteExec ["setunitpos",_unit];
+[_unit, _unitpos] remoteExecCall ["setunitpos",_unit];

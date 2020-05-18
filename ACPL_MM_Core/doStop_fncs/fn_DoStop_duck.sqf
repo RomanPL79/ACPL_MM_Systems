@@ -6,20 +6,20 @@ while {([_unit] call ACPL_MM_Core_fnc_DoStop_checkSuppresed) && (alive _unit)} d
 	
 	switch (_pos) do {
 		case "UP": {
-			[_unit,"PlayerCrouch"] remoteExec ["playAction",_unit];
-			[_unit,_pos] remoteExec ["setunitpos",_unit];
+			[_unit,"PlayerCrouch"] remoteExecCall ["playAction",_unit];
+			[_unit,_pos] remoteExecCall ["setunitpos",_unit];
 		};
 		case "MIDDLE": {
-			[_unit,"PlayerProne"] remoteExec ["playAction",_unit];
-			[_unit,_pos] remoteExec ["setunitpos",_unit];
+			[_unit,"PlayerProne"] remoteExecCall ["playAction",_unit];
+			[_unit,_pos] remoteExecCall ["setunitpos",_unit];
 		};
 		case "DOWN": {
-			[_unit,"PlayerProne"] remoteExec ["playAction",_unit];
-			[_unit,_pos] remoteExec ["setunitpos",_unit];
+			[_unit,"PlayerProne"] remoteExecCall ["playAction",_unit];
+			[_unit,_pos] remoteExecCall ["setunitpos",_unit];
 		};
 		case "AUTO": {
-			[_unit,"PlayerProne"] remoteExec ["playAction",_unit];
-			[_unit,_pos] remoteExec ["setunitpos",_unit];
+			[_unit,"PlayerProne"] remoteExecCall ["playAction",_unit];
+			[_unit,_pos] remoteExecCall ["setunitpos",_unit];
 		};
 	};
 	

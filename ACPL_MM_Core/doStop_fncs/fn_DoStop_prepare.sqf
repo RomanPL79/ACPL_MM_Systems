@@ -41,7 +41,7 @@ switch (_type) do {
 		
 		_unit forceWalk false;
 		
-		[_unit, true] remoteExec ["enableSimulation", 0, true];
+		[_unit, true] remoteExec ["enableSimulation", _unit, true];
 	};
 };
 
