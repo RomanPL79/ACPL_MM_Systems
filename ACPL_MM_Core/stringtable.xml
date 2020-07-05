@@ -572,6 +572,16 @@
             <English>This module is creating list of possible to spawn units from synchronised groups. Units from groups will be despawn.</English>
 			<Polish>Ten moduł tworzy listę jednostek możliwych to zespawnowania z synchronizowanych grup. Jednostki z grup zostaną despawnowane.</Polish>
 		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_CreateList_DisableGear">
+			<Original>Disable Gear</Original>
+            <English>Disable Gear</English>
+			<Polish>Wyłącz Wyposażenie</Polish>
+		</Key>
+		<Key ID="STR_ACPL_MM_Core_Spawner_CreateList_DisableGear_desc">
+			<Original>Disable saving of custom gear and adding it when spawned.</Original>
+            <English>Disable saving of custom gear and adding it when spawned.</English>
+			<Polish>Wyłacz zapisywanie zmienionego wyposażenia i dodawania go przy spawnowaniu.</Polish>
+		</Key>
 		<Key ID="STR_ACPL_MM_Core_Spawner_Spawn_Module">
 			<Original>ACPL Spawner Spawn</Original>
             <English>ACPL Spawner Spawn</English>

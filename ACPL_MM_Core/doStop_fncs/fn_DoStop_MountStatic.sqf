@@ -1,59 +1,47 @@
-params ["_unit"];
+params [
+	["_unit", ObjNull]
+];
 
-private _statics = _unit getvariable ["ACPL_DoStop_MM_Core_DoStop_Static", []];
+private _statics = _unit nearEntities [["StaticWeapon", "Static", "Static Weapon"], 50];
 
-{
-	if (_x getvariable ["ACPL_MM_Core_Static_Reserved", false]) then {_statics = _statics - [_x];};
-} foreach _statics;
-
-_unit setvariable ["ACPL_DoStop_MM_Core_DoStop_Static_Done", false, true];
-
-if (count _statics > 0) then {
-	private _random = _statics select floor(random(count _statics));
-	
-	if (_random getvariable ["ACPL_MM_Core_Static_Reserved", false]) then {
-		_statics = _statics - [_random];
-		if (count _statics > 0) then {
-			_random = _statics select floor(random(count _statics));
-		} else {
-			_unit setvariable ["ACPL_DoStop_MM_Core_DoStop_Static_Done", true, true];
-		};
-	};
-	
-	private _actpos = _unit getvariable ["ACPL_MM_Core_DoStop_actPos", (getposATL _unit)];
-	
-	private _pos = getposATL _random;
-	
-	[_unit, _pos, "UP"] spawn ACPL_MM_Core_fnc_DoStop_ChangePos;
-	
-	_random setvariable ["ACPL_MM_Core_Static_Reserved", true, true];
-	_random setvariable ["ACPL_MM_Core_Static_Reserved_Unit", _unit, true];
-	
-	WaitUntil {sleep 1;(_unit getvariable ["ACPL_MM_Core_DoStop_DoMove", false])};
-	
-	_unit action ["getInGunner", _random];
-	
-	WaitUntil {sleep 1;(gunner _random == _unit)};
-	
-	_unit setvariable ["ACPL_DoStop_MM_Core_DoStop_Static_Done", true, true];
-	
-	_random setvariable ["ACPL_MM_Core_Static_Reserved", false, true];
-	_random setvariable ["ACPL_MM_Core_Static_Reserved_Unit", Nil, true];
-	
-	ACPL_MM_Core_TakenPos = ACPL_MM_Core_TakenPos - [_actpos];
-	
-	if (!(_random getvariable ["ACPL_MM_Core_DoStop_Reloaded_EH", false])) then {
-		_random setvariable ["ACPL_MM_Core_DoStop_Reloaded_EH", true, true];
-		_random addEventHandler ["Reloaded", {
-			params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
-			
-			if (!((gunner _unit) in allPlayers)) then {
-				[_unit,(_oldMagazine select 0)] remoteExec ["addmagazine",_unit];
-			};
-		}];
-	};
-} else {
-	_unit setvariable ["ACPL_DoStop_MM_Core_DoStop_Static_Done", true, true];
+_statics = _statics select {
+	isNull (gunner _x) && 
+	!(alive (_x getvariable ["ACPL_MM_Core_Static_Reserved", (gunner _x)])) &&
+	count (magazines _x) > 0
 };
 
-_unit setvariable ["ACPL_DoStop_MM_Core_DoStop_Static_Done", true, true];
+if (count _statics == 0) exitwith {};
+
+private _static = _statics select 0;
+_static setVariable ["ACPL_MM_Core_Static_Reserved", _unit];
+_unit setVariable ["ACPL_MM_DoStop_Busy", true];
+
+ACPL_MM_Core_TakenPos deleteAt (ACPL_MM_Core_TakenPos find (_unit getVariable ["ACPL_MM_Core_DoStop_pos", (getposATL _unit)]));
+
+_unit forcewalk false;
+_unit assignAsGunner _static;
+[_unit] orderGetIn true;
+
+_unit enableAI "PATH";
+_unit setUnitPos "AUTO";
+
+_unit addEventHandler ["GetIn", {
+	params ["", "", "_unit", ""];
+
+	_unit setVariable ["ACPL_MM_DoStop_Busy", false];
+	_unit removeEventHandler _thisEventHandler;
+	private _data = _unit getVariable ["ACPL_MM_DoStop_Params", []];
+	_data set [11, true];
+	_unit setVariable ["ACPL_MM_DoStop_Params", _data];
+}];
+
+if (!(_static getvariable ["ACPL_MM_Core_DoStop_Reloaded_EH", false])) then {
+	_static setvariable ["ACPL_MM_Core_DoStop_Reloaded_EH", true];
+	_static addEventHandler ["Reloaded", {
+		params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
+		
+		if (!((gunner _unit) in allPlayers)) then {
+			[_unit,(_oldMagazine select 0)] remoteExec ["addmagazine",_unit];
+		};
+	}];
+};

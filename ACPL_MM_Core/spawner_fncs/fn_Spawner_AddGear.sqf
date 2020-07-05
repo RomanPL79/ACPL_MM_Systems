@@ -1,63 +1,63 @@
-params ["_unit", "_gear"];
+params [
+	["_unit", ObjNull], 
+	["_gear", []]
+];
 
-[_unit] remoteExec ["removeuniform",_unit];
-[_unit] remoteExec ["removevest",_unit];
-[_unit] remoteExec ["removebackpack",_unit];
-[_unit] remoteExec ["removeallweapons",_unit];
-{[_unit, _x] remoteExec ["unlinkItem",_unit];} foreach (assignedItems _unit);
-[_unit] remoteExec ["removeheadgear",_unit];
-[_unit] remoteExec ["removegoggles",_unit];
+_gear params [
+	"_uniform", 
+	"_u_items", 
+	"_vest", 
+	"_v_items", 
+	"_backpack", 
+	"_b_items", 
+	"_headgear", 
+	"_goggles", 
+	"_items", 
+	"_p_weap", 
+	"_s_weap", 
+	"_h_weap",
+	"_p_items",
+	"_s_items",
+	"_h_items",
+	"_face"
+];
 
-private _uniform = _gear select 0;
-private _u_items = _gear select 1;
-private _vest = _gear select 2;
-private _v_items = _gear select 3;
-private _backpack = _gear select 4;
-private _b_items = _gear select 5;
-private _headgear = _gear select 6;
-private _goggles = _gear select 7;
-private _items = _gear select 8;
+removeUniform _unit;
+removevest _unit;
+removebackpack _unit;
+removeallweapons _unit;
+{_unit unlinkItem _x;} foreach (assignedItems _unit);
+removeHeadgear _unit;
+removegoggles _unit;
 
-private _p_weap = _gear select 9;
-private _s_weap = _gear select 10;
-private _h_weap = _gear select 11;
+_unit forceadduniform _uniform;
+_unit addvest _vest;
+_unit addbackpack _backpack;
+_unit addheadgear _headgear;
+_unit addgoggles _goggles;
 
-private _p_items = _gear select 12;
-private _s_items = _gear select 13;
-private _h_items = _gear select 14;
+{_unit addWeapon _x;} foreach [_p_weap, _s_weap, _h_weap];
 
-private _face = _gear select 15;
+{_unit addprimaryweaponitem _x;} foreach _p_items;
+{_unit addsecondaryweaponitem _x;} foreach _s_items;
+{_unit addhandgunitem _x;} foreach _h_items;
 
-[_unit,_uniform] remoteExec ["forceadduniform",_unit];
-[_unit,_vest] remoteExec ["addvest",_unit];
-[_unit,_backpack] remoteExec ["addbackpack",_unit];
-[_unit,_headgear] remoteExec ["addheadgear",_unit];
-[_unit,_goggles] remoteExec ["addgoggles",_unit];
-
-[_unit,_p_weap] remoteExec ["addweapon",_unit];
-[_unit,_s_weap] remoteExec ["addweapon",_unit];
-[_unit,_h_weap] remoteExec ["addweapon",_unit];
-
-{[_unit,_x] remoteExec ["addprimaryweaponitem",_unit];} foreach _p_items;
-{[_unit,_x] remoteExec ["addsecondaryweaponitem",_unit];} foreach _s_items;
-{[_unit,_x] remoteExec ["addhandgunitem",_unit];} foreach _h_items;
-
-{[_unit,_x] remoteExec ["linkItem",_unit];} foreach _items;
+{_unit linkItem _x;} foreach _items;
 
 {
 	for "_i" from 1 to (_x select 1) do {
-		[_unit,(_x select 0)] remoteExec ["additemtouniform",_unit];
+		_unit additemtouniform (_x select 0);
 	};
 } foreach _u_items;
 {
 	for "_i" from 1 to (_x select 1) do {
-		[_unit,(_x select 0)] remoteExec ["additemtovest",_unit];
+		_unit additemtovest (_x select 0);
 	};
 } foreach _v_items;
 {
 	for "_i" from 1 to (_x select 1) do {
-		[_unit,(_x select 0)] remoteExec ["additemtobackpack",_unit];
+		_unit additemtobackpack (_x select 0);
 	};
 } foreach _b_items;
 
-[_unit,_face] remoteExec ["setFace",0,true];
+_unit setFace _face;

@@ -3,13 +3,9 @@ params [
 	["_reset", false]
 ];
 
-if (!isserver) exitwith {};
-
-WaitUntil {sleep 1;!(isNil "ACPL_MM_Core_MedicalSupplies_Enabled")};
+if !(local _unit) exitwith {};
 
 if (!ACPL_MM_Core_MedicalSupplies_Enabled) exitwith {};
-
-WaitUntil {sleep 1;(time > 10)};
 
 if (_unit getvariable ["ACPL_MM_Core_Medical_Excluded", false] || _unit getvariable ["ACPL_MM_Core_Medical_Done", false]) exitwith {};
 _unit setvariable ["ACPL_MM_Core_Medical_Done", true];
@@ -74,25 +70,33 @@ if (_medic) then {
 	_plasma500 = ACPL_MM_Core_MedicalSupplies_plasma500;
 	_torniquet = ACPL_MM_Core_MedicalSupplies_torniquet;
 	_pak = ACPL_MM_Core_MedicalSupplies_PAK;
+	_splint = ACPL_MM_Core_MedicalSupplies_splints;
 };
 
-for "_i" from 1 to _bandages do {[_unit,"ACE_fieldDressing"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _e_bandages do {[_unit,"ACE_elasticBandage"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _adenosine do {[_unit,"ACE_adenosine"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _splint do {[_unit,"ACE_splint"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _blood250 do {[_unit,"ACE_bloodIV_250"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _blood500 do {[_unit,"ACE_bloodIV_500"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _blood1 do {[_unit,"ACE_bloodIV"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _epinephrine do {[_unit,"ACE_epinephrine"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _morphine do {[_unit,"ACE_morphine"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _p_bandages do {[_unit,"ACE_packingBandage"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _pak do {[_unit,"ACE_personalAidKit"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _plasma1 do {[_unit,"ACE_plasmaIV"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _plasma250 do {[_unit,"ACE_plasmaIV_250"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _plasma500 do {[_unit,"ACE_plasmaIV_500"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _saline1 do {[_unit,"ACE_salineIV"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _saline250 do {[_unit,"ACE_salineIV_250"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _saline500 do {[_unit,"ACE_salineIV_500"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _sewing do {[_unit,"ACE_surgicalKit"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _torniquet do {[_unit,"ace_tourniquet"] remoteExec ["additem",_unit];};
-for "_i" from 1 to _quick do {[_unit,"ACE_quikclot"] remoteExec ["additem",_unit];};
+// Adding medicaments
+{
+	_x params ["_amount", "_class"];
+	
+	for "_i" from 1 to _amount do {_unit additem _class;};
+} foreach [
+	[_bandages, "ACE_fieldDressing"],
+	[_e_bandages, "ACE_elasticBandage"],
+	[_adenosine, "ACE_adenosine"],
+	[_splint, "ACE_splint"],
+	[_blood250, "ACE_bloodIV_250"],
+	[_blood500, "ACE_bloodIV_500"],
+	[_blood1, "ACE_bloodIV"],
+	[_epinephrine, "ACE_epinephrine"],
+	[_morphine, "ACE_morphine"],
+	[_p_bandages, "ACE_packingBandage"],
+	[_pak, "ACE_personalAidKit"],
+	[_plasma1, "ACE_plasmaIV"],
+	[_plasma250, "ACE_plasmaIV_250"],
+	[_plasma500, "ACE_plasmaIV_500"],
+	[_saline1, "ACE_salineIV"],
+	[_saline250, "ACE_salineIV_250"],
+	[_saline500, "ACE_salineIV_500"],
+	[_sewing, "ACE_surgicalKit"],
+	[_torniquet, "ace_tourniquet"],
+	[_quick, "ACE_quikclot"]
+];

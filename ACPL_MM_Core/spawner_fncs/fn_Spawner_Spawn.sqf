@@ -4,7 +4,9 @@ params [
 	["_activated", false]
 ];
 
-waitUntil {sleep 1;time > 10};
+if (time < 10) exitwith {
+	[{_this call ACPL_MM_Core_fnc_Spawner_Spawn;}, _this, 10] call CBA_fnc_waitAndExecute;
+};
 
 if (_activated) then {
 	private _list = [];
@@ -37,8 +39,6 @@ if (_activated) then {
 		private _random = _list_d select floor(random(count _list_d));
 		_list_d = _list_d - [_random];
 		
-		[_random] spawn ACPL_MM_Core_fnc_Spawner_SpawnGroup;
-		
-		sleep 5;
+		[_random] call ACPL_MM_Core_fnc_Spawner_SpawnGroup;
 	};
 };

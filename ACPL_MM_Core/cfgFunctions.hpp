@@ -56,171 +56,16 @@ class ACPL_MM_Core {
 		
 		//[] call ACPL_MM_Core_fnc_zbecache_exclude_module
 		class zbecache_exclude_module {};
-	};
-	
-	class DoStop {
-		file = "ACPL_MM_Core\doStop_fncs";
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_init
-		class DoStop_init {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_Prepare
-		class DoStop_Prepare {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_isBusy
-		class DoStop_isBusy {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_needToReact
-		class DoStop_needToReact {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_needToRoam
-		class DoStop_needToRoam {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_checkWrongUnitPos
-		class DoStop_checkWrongUnitPos {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_checkWrongPos
-		class DoStop_checkWrongPos {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_DoMove
-		class DoStop_DoMove {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_canrunCheck
-		class DoStop_canrunCheck {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_runCheck
-		class DoStop_runCheck {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_checkSuppresed
-		class DoStop_checkSuppresed {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_Suppressed
-		class DoStop_Suppressed {};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoStop_hide
-		class DoStop_hide {};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoStop_duck
-		class DoStop_duck {};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoStop_ChangePos
-		class DoStop_ChangePos {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_isStaticNearby
-		class DoStop_isStaticNearby {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_MountStatic
-		class DoStop_MountStatic {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_Static_hasammo
-		class DoStop_Static_hasammo {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_Static_isDestroyed
-		class DoStop_Static_isDestroyed {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_exitVehEnd
-		class DoStop_exitVehEnd {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_start
-		class DoStop_start {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_checkDoSupp
-		class DoStop_checkDoSupp {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_CheckSeeEnemy_FromPos
-		class DoStop_CheckSeeEnemy_FromPos {};
-		
-		//[] call ACPL_MM_Core_fnc_DoStop_Reload
-		class DoStop_Reload {};
+
+		//[] call ACPL_MM_Core_fnc_KnowsAboutEnemy
+		class KnowsAboutEnemy {};
 	};
 
-	class DoStop_FSMs
-	{
-		file = "ACPL_MM_Core\doStop_fncs\FSMs";
-		
-		//[] spawn ACPL_MM_Core_fnc_DoStop;
-		class DoStop
-		{
-			ext = ".fsm";
-		};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoRoam;
-		class DoRoam
-		{
-			ext = ".fsm";
-		};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoReact;
-		class DoReact
-		{
-			ext = ".fsm";
-		};
-	};
+	#include "doStop_fncs\functions.hpp"
 
-	class DoSupp
-	{
-		file = "ACPL_MM_Core\doSupp_fncs";
-		
-		//[] spawn ACPL_MM_Core_fnc_DoSupp_fnc;
-		class DoSupp_fnc {};
-		
-		//[] call ACPL_MM_Core_fnc_DoSupp_ListAvaibleTargets;
-		class DoSupp_ListAvaibleTargets {};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoSupp_OrderSupp;
-		class DoSupp_OrderSupp {};
-		
-		//[] call ACPL_MM_Core_fnc_DoSupp_isBusy;
-		class DoSupp_isBusy {};
-		
-		//[] call ACPL_MM_Core_fnc_DoSupp_fire;
-		class DoSupp_fire {};
-		
-		//[] call ACPL_MM_Core_fnc_DoSupp_CheckSeeEnemy_FromPos;
-		class DoSupp_CheckSeeEnemy_FromPos {};
-		
-		//[] call ACPL_MM_Core_fnc_DoSupp_StayInPos;
-		class DoSupp_StayInPos {};
-	};
+	#include "doSupp_fncs\functions.hpp"
 
-	class DoSupp_FSMs
-	{
-		file = "ACPL_MM_Core\doSupp_fncs\FSMs";
-		
-		//[] spawn ACPL_MM_Core_fnc_DoSupp;
-		class DoSupp {
-			ext = ".fsm";
-		};
-	};
-
-	class Spawner
-	{
-		file = "ACPL_MM_Core\spawner_fncs";
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_CreateList;
-		class Spawner_CreateList {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo;
-		class Spawner_LogInfo {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo_unit;
-		class Spawner_LogInfo_unit {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo_veh;
-		class Spawner_LogInfo_veh {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_LogInfo_way;
-		class Spawner_LogInfo_way {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_Spawn;
-		class Spawner_Spawn {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_SpawnGroup;
-		class Spawner_SpawnGroup {};
-		
-		//[] spawn ACPL_MM_Core_fnc_Spawner_AddGear;
-		class Spawner_AddGear {};
-	};
+	#include "spawner_fncs\functions.hpp"
 
 	class Taskmaster
 	{
@@ -275,27 +120,6 @@ class ACPL_MM_Core {
 		
 		//[] spawn ACPL_MM_Core_fnc_CM_Mark;
 		class CM_Mark {};
-	};
-
-	class DoPatrol
-	{
-		file = "ACPL_MM_Core\doPatrol_fncs";
-		
-		//[] spawn ACPL_MM_Core_fnc_DoPatrol_init;
-		class DoPatrol_init {};
-		
-		//[] spawn ACPL_MM_Core_fnc_DoPatrol_selectPos;
-		class DoPatrol_selectPos {};
-	};
-	
-	class DoPatrol_FSM
-	{
-		file = "ACPL_MM_Core\doPatrol_fncs\FSMs";
-		
-		//[] spawn ACPL_MM_Core_fnc_DoPatrol_DoPatrol;
-		class DoPatrol {
-			ext = ".fsm";
-		};
 	};
 	
 	class headless

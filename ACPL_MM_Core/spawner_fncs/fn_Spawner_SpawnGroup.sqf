@@ -16,23 +16,23 @@ private _group = createGroup [_side, false];
 	private _pos = _x select 1;
 	private _dir = _x select 2;
 	
-	private _veh = _class createVehicle [0,0,0];
+	private _veh = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 	
 	_veh setdir _dir;
-	_veh setposATL _pos;
 	
 	_veh_spawned = _veh_spawned + [_veh];
-	
-	sleep 0.2;
 } foreach _vehicles;
 
 {
-	private _pos = _x select 0;
-	private _class = _x select 1;
-	private _gear = _x select 2;
-	private _veh = _x select 3;
+	_x params [
+		["_pos", [0,0,0]],
+		["_class", ""],
+		["_gear", []],
+		["_veh", []],
+		["_addGear", false]
+	];
 	
-	private _unit = _group createUnit [_class, [0,0,0], [], 0, "NONE"];
+	private _unit = _group createUnit [_class, _pos, [], 0, "CAN_COLLIDE"];
 	
 	if (_veh select 0) then {
 		private _v_data = _veh select 1;
@@ -63,9 +63,7 @@ private _group = createGroup [_side, false];
 		_unit setposATL _pos;
 	};
 	
-	[_unit, _gear] spawn ACPL_MM_Core_fnc_Spawner_AddGear;
-	
-	sleep 0.2;
+	if (_addGear) then {[_unit, _gear] call ACPL_MM_Core_fnc_Spawner_AddGear;};
 } foreach _units;
 
 {

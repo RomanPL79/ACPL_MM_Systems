@@ -1,4 +1,7 @@
-params ["_group"];
+params [
+	["_group", ObjNull],
+	["_gear", false]
+];
 
 private _return = [];
 private _units = units _group;
@@ -12,7 +15,7 @@ private _side = side _group;
 	};
 } foreach _units;
 
-private _info_units = [_units, _vehicles] call ACPL_MM_Core_fnc_Spawner_LogInfo_unit;
+private _info_units = [_units, _vehicles, _gear] call ACPL_MM_Core_fnc_Spawner_LogInfo_unit;
 private _info_vehs = [_vehicles] call ACPL_MM_Core_fnc_Spawner_LogInfo_veh;
 private _info_waypoints = [_group] call ACPL_MM_Core_fnc_Spawner_LogInfo_way;
 

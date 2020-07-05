@@ -1,21 +1,32 @@
-params ["_unit", "_pos"];
+params [
+	["_unit", ObjNull], 
+	["_pos", [0,0,0]],
+	["_reseted", 0]
+];
 
-_unit EnableAI "PATH";
-_unit setUnitPos "UP";
-_unit forceWalk false;
+// When unit did not move then fix stucked unit
+if (speed _unit <= 0) then {
+	_unit doMove _pos;
+	_reseted = _reseted + 1;
+};
 
-[_unit, _pos] spawn ACPL_MM_Core_fnc_DoMove;
+// If stuck for 10 sec then exit function
+if (_reseted > 9) exitwith {
+	[_unit] call ACPL_MM_Core_fnc_DoStop_Prepare;
+	_unit setvariable ["ACPL_MM_DoStop_Busy", false];
+};
 
-_unit setvariable ["ACPL_MM_Core_DoStop_DoMove", false, true];
-private _time = time + 30;
+// If unit is on the position on close enought then stop the unit
+if (
+	_unit distance _pos < 2 || 
+	(
+		_unit distance _pos < 5 && 
+		_reseted > 2
+	)
+) exitwith {
+	[_unit] call ACPL_MM_Core_fnc_DoStop_Prepare;
+	_unit setvariable ["ACPL_MM_DoStop_Busy", false];
+};
 
-WaitUntil {sleep 1;!(_unit getvariable ["ACPL_MM_Core_DoMove", false]) || (_unit distance _pos < 5 && time > _time)};
-
-_unit setvariable ["ACPL_MM_Core_DoMove", false]);
-_unit setvariable ["ACPL_MM_Core_DoStop_DoMove", true, true];
-
-private _unitpos = _unit getvariable ["ACPL_MM_Core_DoStop_pos", "UP"];
-
-_unit DisableAI "PATH";
-_unit setUnitPos _unitpos;
-_unit forceWalk true;
+// call function again
+[{_this call ACPL_MM_Core_fnc_DoStop_DoMove}, [_unit, _pos, _reseted], 1] call CBA_fnc_waitAndExecute;
