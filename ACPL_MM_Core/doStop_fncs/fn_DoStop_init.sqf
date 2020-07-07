@@ -14,7 +14,7 @@ private _units = synchronizedObjects _logic;
 	_x setVariable ["zbe_cacheDisabled",true];
 } foreach _units;
 
-private _pos = _logic getvariable ["ACPL_MM_Core_DoStop_stance", "UP"];
+private _pos = _logic getvariable ["ACPL_MM_Core_DoStop_pos", "UP"];
 private _duck = _logic getvariable ["ACPL_MM_Core_DoStop_duck", true];
 private _run = _logic getvariable ["ACPL_MM_Core_DoStop_run", false];
 private _canrun = _logic getvariable ["ACPL_MM_Core_DoStop_canrun", true];

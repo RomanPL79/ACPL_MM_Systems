@@ -44,6 +44,8 @@ if !(_vehicle) then {
 	};
 };
 
+[_unit] call ACPL_MM_Core_fnc_DoStop_Prepare;
+
 if !(_group getvariable ["ACPL_MM_DoStop", false]) then {
 	_group setvariable ["ACPL_MM_DoStop", true];
 	_unit setvariable ["ACPL_MM_DoStop", true];
