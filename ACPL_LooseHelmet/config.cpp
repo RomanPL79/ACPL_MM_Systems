@@ -1,7 +1,8 @@
 class CfgPatches {
   class ACPL_LooseHelmet {
     units[] = {
-		ACPL_LooseHelmet_invisible_can
+		ACPL_LooseHelmet_invisible_can,
+		ACPL_LooseHelmet_Disable_Module
 	};
     weapons[] = {};
     requiredVersion = 0;
@@ -9,7 +10,13 @@ class CfgPatches {
 		"A3_Data_F_Tank_Loadorder",
 		"cba_common",
 		"cba_settings",
-		"ace_interaction"
+		"ace_interaction",
+		"A3_UI_F",
+		"A3_UI_F_Curator",
+		"A3_Functions_F",
+		"A3_Functions_F_Curator",
+		"A3_Modules_F",
+		"A3_Modules_F_Curator"
 	};
 	
     version = 2;
@@ -39,11 +46,14 @@ class Extended_PreInit_EventHandlers
 	};
 };
 
-class Extended_PostInit_EventHandlers
+class Extended_InitPost_EventHandlers
 {
-	class ACPL_LooseHelmet
-	{
-		init="call compile preProcessFileLineNumbers 'ACPL_LooseHelmet\functions\Init.sqf'";
+	class Man;
+	class CAManBase: Man {
+		class ACPL_LooseHelmet
+		{
+			init="_this call ACPL_LooseHelmet_fnc_Player_HandleSimulation;";
+		};
 	};
 };
 
@@ -51,7 +61,7 @@ class Extended_HitPart_EventHandlers {
 	class Man;
 	class CAManBase: Man {
 		class ACPL_LooseHelmet {
-			HitPart = "(_this select 0) params ['_unit', '_shooter', '_projectile', '_position', '_velocity', '_selection', '_ammo', '_vector', '_radius', '_surfaceType', '_isDirect'];[[_unit, _shooter, _projectile, _position, _velocity, _selection, _ammo, _vector, _radius, _surfaceType, _isDirect],ACPL_LooseHelmet_fnc_HitHandler] remoteExec ['spawn',2];";
+			HitPart = "(_this select 0) call ACPL_LooseHelmet_fnc_HitHandler;";
 		};
 	};
 };
@@ -60,7 +70,7 @@ class Extended_InventoryOpened_EventHandlers {
 	class Man;
 	class CAManBase: Man {
 		class ACPL_LooseHelmet {
-			InventoryOpened = "params ['_unit', '_container'];[[_unit, _container, true], ACPL_LooseHelmet_fnc_inventoryhandler] remoteExec ['spawn',_unit];";
+			InventoryOpened = "params ['_unit', '_container'];[_unit, _container, true] call ACPL_LooseHelmet_fnc_inventoryhandler;";
 		};
 	};
 };
@@ -69,7 +79,15 @@ class Extended_InventoryClosed_EventHandlers {
 	class Man;
 	class CAManBase: Man {
 		class ACPL_LooseHelmet {
-			InventoryClosed = "params ['_unit', '_container'];[[_unit, _container, false], ACPL_LooseHelmet_fnc_inventoryhandler] remoteExec ['spawn',_unit];";
+			InventoryClosed = "params ['_unit', '_container'];[_unit, _container, false] call ACPL_LooseHelmet_fnc_inventoryhandler;";
 		};
 	};
+};
+
+class ACPL_LooseHelmet_GUI_Module
+{
+	idd = -1;
+	movingEnabled = 1;
+	enablesimulation = 1;
+	onLoad="with uiNamespace do {ACPL_LooseHelmet_GUI_Module_Display = _this select 0}";
 };

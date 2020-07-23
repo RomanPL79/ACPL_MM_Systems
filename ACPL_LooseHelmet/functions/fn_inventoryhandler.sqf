@@ -13,11 +13,11 @@ private _dummy = _cointainter getvariable ["ACPL_LooseHelmet_WH_Dummy", ObjNull]
 
 if (_forbidden) then {
 	if (_opened) then {
-		[_cointainter, true] remoteExec ["enableSimulation",0];
-		[_dummy, true] remoteExec ["enableSimulation",0];
+		_cointainter enableSimulation true;
+		_dummy enableSimulation true;
 	} else {
-		[_cointainter, false] remoteExec ["enableSimulation",0];
-		[_dummy, false] remoteExec ["enableSimulation",0];
+		_cointainter enableSimulation false;
+		_dummy enableSimulation false;
 
 
 		if ((count weaponCargo _cointainter) == 0 && (count itemCargo _cointainter) == 0) then {

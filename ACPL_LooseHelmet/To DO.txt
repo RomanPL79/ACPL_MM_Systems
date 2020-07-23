@@ -1,0 +1,8 @@
+- prędkość spadającego hełmu (zbyt duża?) [done]
+- punkt przyczepienia broni (za daleko od puszki) [done]
+- hełm nie znika po podniesieniu
+- nvg lewituje nad głową osoby gubiącej [done]
+- złe wykrywanie momentu w którym zgubiony przedmiot upada [done]
+- moduł niewidoczny w zeusie [done]
+- AI nie podnosi broni [done]
+- poprawki do wykrywania włącznika/wyłącznika symulacji

@@ -221,9 +221,9 @@
 		</Key>
 
 		<Key ID="STR_ACPL_LooseHelmet_Faction">
-			<Original>ACPL Loose Helmet</Original>
-			<English>ACPL Loose Helmet</English>
-			<Polish>ACPL Loose Helmet</Polish>
+			<Original>ACPL LooseHelmet</Original>
+			<English>ACPL LooseHelmet</English>
+			<Polish>ACPL LooseHelmet</Polish>
 		</Key>
 
 		<Key ID="STR_ACPL_LooseHelmet_Module">
@@ -235,6 +235,16 @@
 			<Original>Disable Loose Helmet system for this mission.</Original>
 			<English>Disable Loose Helmet system for this mission.</English>
 			<Polish>Wyłącz system Loose Helmet dla tej misji.</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_Module_State">
+			<Original>Enable System?</Original>
+			<English>Enable System?</English>
+			<Polish>Włączyć system?</Polish>
+		</Key>
+		<Key ID="STR_ACPL_LooseHelmet_Module_State_desc">
+			<Original>Should system be enabled?</Original>
+			<English>Should system be enabled?</English>
+			<Polish>Czy system powinien być włączony?</Polish>
 		</Key>
 	</Package>
 </Project>

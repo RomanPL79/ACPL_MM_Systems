@@ -1,144 +1,34 @@
-// ----------------------------------------------------------------------------
-//	Function: ACPL_LooseHelmet_fnc_DropHelmet
-//
-//	Description: 	Function that is checking if helmet should be dropped and dropping it
-//
-//	Parameters: 
-//		- unit			who should be checked
-//		- velocity		velocity of bullet
-//
-//	Returns: nothing
-//
-//	Author: [ACPL] Roman79
-//	
-//	Version: 1
-//	
-//	Execution: spawn
-//
-//----------------------------------------------------------------------------
+params [
+	["_unit", ObjNull], 
+	["_velocity", [0, 0, 0]]
+];
 
-params ["_unit", "_velocity"];
-private ["_weaponHolder0", "_moving", "_pos", "_vel", "_mass", "_dummy0"];
+// If unit is not local or is in vehicle then exit
+if (!(local _unit) || vehicle _unit != _unit || !(alive _unit)) exitwith {};
 
-if (vehicle _unit != _unit) exitwith {};
-
-private _weaponHolder_ap = [-0.1,-0.62,-0.7];
-private _weaponHolder0_ap = [-0.1,-0.72,0.6];
-
-private _nvg = "";
-
+// Checks that should lose anything
 private _random = random 100;
-if ((_random < ACPL_LooseHelmet_HelmetChance) AND !(_unit getvariable ["ACPL_LooseWeapon_fix_helmet", false])) then {
+if (_random > ACPL_LooseHelmet_HelmetChance) exitwith {};
 
-	private _helmet = headgear _unit;
+// Gets unit's headgear
+private _nvg = hmd _unit;
+private _helmet = headgear _unit;
+
+// Checks conditions
+if (!(_unit getvariable ["ACPL_LooseWeapon_fix_helmet", false])) then {
+	// If has helmet then lose it
 	if (_helmet != "") then {
-		_nvg = hmd _unit;
-		
-		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
-		private _torque = [(_velocity select 0)/500,(_velocity select 1)/500,0];
-		
-		private _med_velocity = (((_new_velocity select 0) + (_new_velocity select 1) + ((_new_velocity select 2) / 3)) / 3);
-		
-		private _mass = getNumber (configfile >> "CfgWeapons" >> _helmet >> "ItemInfo" >> "mass");
-		
-		private _weaponHolder = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
-		_weaponHolder addItemCargoGlobal [_helmet,1];
-		[_unit] remoteExec ["removeHeadgear",0];
-		
-		_weaponHolder setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
-		
-		private _dummy = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
-		_dummy enableSimulationGlobal true;
-		_dummy allowdamage false;
-		
-		_dummy setmass _mass;
-		
-		if (_nvg != "") then {
-			_dummy0 = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
-			_dummy0 enableSimulationGlobal true;
-			_dummy0 allowdamage false;
-			
-			[_unit, _nvg] remoteExec ["unlinkItem",0];
-			_weaponHolder0 = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
-			_weaponHolder0 addItemCargoGlobal [_nvg,1];
-			_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
-			
-			[_weaponHolder0, _unit] remoteExecCall ["disableCollisionWith", 0];
-			
-			_weaponHolder0 setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
-		};
-		
-		_weaponHolder attachTo [_dummy, _weaponHolder_ap]; 
-		_weaponHolder setVectorDirAndUp [[0, 0, 0.5],[0, -0.5, -1]];
-		
-		private _attachpos_dummy = _unit selectionPosition "head";
-		private _attachpos_dummy0 = _unit selectionPosition "head";
-		_attachpos_dummy0 set [2, (_attachpos_dummy0 select 2) + 0.03];
-		
-		[_weaponHolder, _unit] remoteExecCall ["disableCollisionWith", 0];
-		
-		_dummy setPos (_unit modelToWorld _attachpos_dummy); 
-		if (_nvg != "") then {_dummy0 setPos (_unit modelToWorld _attachpos_dummy0);};
 
-		_dummy setDir (getdir _unit);
-		if (_nvg != "") then {_dummy0 setDir (getdir _unit);};
+		[_unit, _velocity, _helmet] call ACPL_LooseHelmet_fnc_LoseHelmet;
+	};
 
-		_dummy setVelocity _new_velocity;
-		_dummy addTorque (_dummy vectorModelToWorld _torque);
-		if (_nvg != "") then {
-			_dummy0 setVelocity [(random 1), (random 1), (random 3)];
-			_dummy0 addTorque (_dummy vectorModelToWorld [(random 5), (random 1), 0]);
-			
-			private _time = time + 20;
-			[_dummy0, _weaponHolder0, _time, [_weaponholder0, "NVG", _nvg, _dummy0]] spawn ACPL_LooseHelmet_fnc_notMoving;
-		};
-
-		private _time = time + 20;
-		[_dummy, _weaponHolder, _time, [_weaponholder, "HELMET", _helmet, _dummy]] spawn ACPL_LooseHelmet_fnc_notMoving;
-
-		if (!(isPlayer _unit)) then {
-			sleep (random [2,4,8]);
-			if (_nvg == "") then {
-				[_unit, _weaponholder, "HELMET", _helmet] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
-			} else {
-				[_unit, _weaponholder, "HELMET", _helmet, true, _weaponHolder0, _nvg] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
-			};
-		};
+	// If has NVG then lose it
+	if (_nvg != "") then {
+		[_unit, _nvg] call ACPL_LooseHelmet_fnc_LoseNVG;
 	};
 } else {
-	if ((_random < ACPL_LooseHelmet_HelmetChance) && (ACPL_LooseHelmet_Enabled_Losenvgs) && (hmd _unit != "")) then {
-		
-		private _new_velocity = [(_velocity select 0)/75,(_velocity select 1)/75,(_velocity select 2)/14];
-		private _torque = [(_velocity select 0)/500,(_velocity select 1)/500,0];
-		
-		_nvg = hmd _unit;
-		
-		_dummy0 = createVehicle ["ACPL_LooseHelmet_invisible_can", [0,0,0], [], 0, "CAN_COLLIDE"];
-		_dummy0 enableSimulationGlobal true;
-		_dummy0 allowdamage false;
-			
-		[_unit, _nvg] remoteExec ["unlinkItem",0];
-		_weaponHolder0 = createVehicle ["WeaponHolderSimulated_Scripted", [0,0,0], [], 0, "CAN_COLLIDE"];
-		_weaponHolder0 addItemCargoGlobal [_nvg,1];
-		_weaponHolder0 attachTo [_dummy0, _weaponHolder0_ap];
-		
-		_weaponHolder0 setvariable ["ACPL_LooseHelmet_WH_Forbidden", true, true];
-		
-		private _attachpos_dummy0 = _unit selectionPosition "head";
-		_attachpos_dummy0 set [2, (_attachpos_dummy0 select 2) + 0.03];
-		
-		_dummy0 setPos (_unit modelToWorld _attachpos_dummy0);
-		
-		_dummy0 setDir (getdir _unit);
-		
-		_dummy0 setVelocity [(random 1), (random 1), (random 3)];
-		_dummy0 addTorque (_dummy0 vectorModelToWorld [(random 5), (random 1), 0]);
-		
-		private _time = time + 20;
-		[_dummy0, _weaponHolder0, _time, [_weaponholder0, "NVG", _nvg, _dummy0]] spawn ACPL_LooseHelmet_fnc_notMoving;
-		if (!(isPlayer _unit)) then {
-			sleep (random [2,4,8]);
-			[_unit, _weaponHolder0, "NVG", _nvg] spawn ACPL_LooseHelmet_fnc_PickUpFSM;
-		};
+	// If helmet fastened and has nvgs then lose it
+	if (ACPL_LooseHelmet_Enabled_Losenvgs && _nvg != "") then {
+		[_unit, _nvg] call ACPL_LooseHelmet_fnc_LoseNVG;
 	};
 };

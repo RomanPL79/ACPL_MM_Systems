@@ -1,22 +1,3 @@
-/* ----------------------------------------------------------------------------
-	Function: ACPL_LooseHelmet_fnc_NeedToPickUp
-
-	Description: Checking that is necessary picking up that item
-
-	Parameters: 
-		- unit			unit who will be picking up item
-		- type			type of item ("GUN", "HELMET" or "NVG")
-
-	Returns: true or false
-
-	Author: [ACPL] Roman79
-	
-	Version: 1
-	
-	Execution: call
-
----------------------------------------------------------------------------- */
-
 params ["_unit", "_type"];
 
 private _return = false;
@@ -24,7 +5,7 @@ private _return = false;
 //getting basic data
 
 switch (_type) do {
-	case "GUN": {
+	case "WEAPON": {
 		//if it was weapon then checking if unit has any backup weapon
 		
 		private _noweapon = primaryWeapon _unit == "" && handgunWeapon _unit == "" && secondaryWeapon _unit == "";

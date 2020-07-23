@@ -1,24 +1,3 @@
-/* ----------------------------------------------------------------------------
-	Function: ACPL_LooseHelmet_fnc_FixAction;
-
-	Description: 	This function is checking that weapon or helmet is fasten or not and 
-					it's fasting it or unfasting
-
-	Parameters: 
-		- unit		unit who should be checked
-		- type		type of item: "GUN" or "HELMET"
-		- fasten	whether to fasten or unfasten the item
-
-	Returns: 
-
-	Author: [ACPL] Roman79
-	
-	Version: 1
-	
-	Execution: call
-
----------------------------------------------------------------------------- */
-
 params [
 	["_unit", objNull],
 	["_type", "HELMET"],
