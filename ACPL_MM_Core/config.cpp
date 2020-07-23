@@ -63,3 +63,11 @@ class CfgFunctions
 class CfgVehicles {
 	#include "cfgVehicles.hpp"
 };
+
+class ACPL_MM_Core_GUI_Module
+{
+	idd = -1;
+	movingEnabled = 1;
+	enablesimulation = 1;
+	onLoad="with uiNamespace do {ACPL_MM_Core_GUI_Module_Display = _this select 0}";
+};

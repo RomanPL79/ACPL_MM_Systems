@@ -20,4 +20,6 @@ class ACPL_MM_Core {
 	#include "CustomMarkers_fncs\functions.hpp"
 
 	#include "Headless_fncs\functions.hpp"
+
+	#include "gui_fncs\functions.hpp"
 };

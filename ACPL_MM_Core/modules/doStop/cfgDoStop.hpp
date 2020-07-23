@@ -5,13 +5,14 @@ class ACPL_MM_Core_DoStop_module: Module_F {
 	function = "ACPL_MM_Core_fnc_DoStop_init";
 	functionPriority = 1;
 	scope = 2;  //show in editor
+	scopeCurator = 2;
 	isGlobal = 0; //run on server
 	isTriggerActivated  = 0; //Wait for triggers
 	isDisposable = 1;
-	is3DEN = 0;
+	is3DEN = 1;
 	//icon = "\SkillSystem\icons\acpl_icon(.paa)";
 	class Arguments {
-		class ACPL_MM_Core_DoStop_pos {
+		class ACPL_MM_Core_DoStop_pos: Combo {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_Position";
 			property = "ACPL_MM_Core_DoStop_pos";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_Position_desc";
@@ -37,63 +38,63 @@ class ACPL_MM_Core_DoStop_module: Module_F {
 				};
 			};
 		};
-		class ACPL_MM_Core_DoStop_duck {
+		class ACPL_MM_Core_DoStop_duck: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_Duck";
 			property = "ACPL_MM_Core_DoStop_duck";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_Duck_desc";
 			typeName = "BOOL";
 			defaultValue = 1;
 		};
-		class ACPL_MM_Core_DoStop_run {
+		class ACPL_MM_Core_DoStop_run: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_run";
 			property = "ACPL_MM_Core_DoStop_run";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_run_desc";
 			typeName = "BOOL";
 			defaultValue = 0;
 		};
-		class ACPL_MM_Core_DoStop_canrun {
+		class ACPL_MM_Core_DoStop_canrun: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_canrun";
 			property = "ACPL_MM_Core_DoStop_canrun";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_canrun_desc";
 			typeName = "BOOL";
 			defaultValue = 0;
 		};
-		class ACPL_MM_Core_DoStop_canrun_chance {
+		class ACPL_MM_Core_DoStop_canrun_chance: Edit {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_canrun_chance";
 			property = "ACPL_MM_Core_DoStop_canrun_chance";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_canrun_chance_desc";
 			typeName = "NUMBER";
 			defaultValue = 30;
 		};
-		class ACPL_MM_Core_DoStop_canrun_distance {
+		class ACPL_MM_Core_DoStop_canrun_distance: Edit {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_canrun_distance";
 			property = "ACPL_MM_Core_DoStop_canrun_distance";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_canrun_distance_desc";
 			typeName = "NUMBER";
 			defaultValue = 150;
 		};
-		class ACPL_MM_Core_DoStop_roam {
+		class ACPL_MM_Core_DoStop_roam: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_roam";
 			property = "ACPL_MM_Core_DoStop_roam";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_roam_desc";
 			typeName = "BOOL";
 			defaultValue = 0;
 		};
-		class ACPL_MM_Core_DoStop_react {
+		class ACPL_MM_Core_DoStop_react: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_react";
 			property = "ACPL_MM_Core_DoStop_react";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_react_desc";
 			typeName = "BOOL";
 			defaultValue = 0;
 		};
-		class ACPL_MM_Core_DoStop_anim {
+		class ACPL_MM_Core_DoStop_anim: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_animation";
 			property = "ACPL_MM_Core_DoStop_anim";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_animation_desc";
 			typeName = "BOOL";
 			defaultValue = 1;
 		};
-		class ACPL_MM_Core_DoStop_anim_list {
+		class ACPL_MM_Core_DoStop_anim_list: Combo {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_animlist";
 			property = "ACPL_MM_Core_DoStop_anim_list";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_animlist_desc";
@@ -115,7 +116,7 @@ class ACPL_MM_Core_DoStop_module: Module_F {
 				};
 			};
 		};
-		class ACPL_MM_Core_DoStop_dosupp {
+		class ACPL_MM_Core_DoStop_dosupp: Checkbox {
 			displayName = "$STR_ACPL_MM_Core_DoStop_Module_dosupp";
 			property = "ACPL_MM_Core_DoStop_dosupp";
 			description = "$STR_ACPL_MM_Core_DoStop_Module_dosupp_desc";
