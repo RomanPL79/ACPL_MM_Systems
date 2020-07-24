@@ -8,6 +8,9 @@ params [
 	["_queued", false]
 ];
 
+// If player then exit
+if (isPlayer _unit) exitwith {};
+
 // If unit is dead then exit
 if !(alive _unit) exitwith {_holder setVariable ["ACPL_LooseHelmet_WH_reserved", false, true];};
 
