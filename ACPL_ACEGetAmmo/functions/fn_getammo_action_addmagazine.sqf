@@ -1,18 +1,22 @@
 params [
 	["_object", ObjNull],
-	["_class", ""],
+	["_data", ""],
 	["_player", ObjNull]
 ];
 
-private _value = getNumber (configfile >> "CfgMagazines" >> _class >> "value");
+systemchat str(_data);
+
+_data params ["_class", "_amouth"];
+
+private _value = (getNumber (configfile >> "CfgMagazines" >> _class >> "value")) * _amouth;
 private _ammo = _object getVariable ["ace_rearm_currentsupply", 0];
 
 _value = (_ammo - _value);
 
 _object setVariable ["ace_rearm_currentsupply", _value, true];
 
-_object addmagazinecargoglobal [_class, 1];
+_object addmagazinecargoglobal [_class, _amouth];
 
-private _text = ((getText (configFile >> "CfgMagazines" >> _x >> "displayName")) + localize "STR_ACPL_ACEGetAmmo_GetAmmo_added");
+private _text = ((getText (configFile >> "CfgMagazines" >> _class >> "displayName")) + localize "STR_ACPL_ACEGetAmmo_GetAmmo_added");
 
-[_text] remoteExec ["hint",_player];
+hint _text;

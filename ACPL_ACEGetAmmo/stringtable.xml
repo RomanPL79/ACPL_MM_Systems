@@ -43,10 +43,47 @@
             <English>Current ammo amount: </English>
 			<Polish>Aktualna ilość amunicji: </Polish>
 		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_hint_tooltip">
+			<Original>Maximal value of ammo which may be added</Original>
+            <English>Maximal value of ammo which may be added</English>
+			<Polish>Maksymalna ilość amunicji, która może być dodana</Polish>
+		</Key>
 		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_cost">
-			<Original> (cost: </Original>
-            <English> (cost: </English>
-			<Polish> (koszt: </Polish>
+			<Original>Cost of magazine: </Original>
+            <English>Cost of magazine: </English>
+			<Polish>Koszt magazynka: </Polish>
+		</Key>
+
+		<Key ID="STR_ACPL_ACEGetAmmo_label_1_text">
+			<Original>Select magazine:</Original>
+            <English>Select magazine:</English>
+			<Polish>Wybierz magazynek:</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_label_1_tooltip">
+			<Original>Select magazine which you want add to the cargo</Original>
+            <English>Select magazine which you want add to the cargo</English>
+			<Polish>Wybierz magazynek, który chcesz dodać do wyposażenia</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_label_2_text">
+			<Original>Set number of magazines:</Original>
+            <English>Set number of magazines:</English>
+			<Polish>Wybierz ilość magazynków:</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_label_2_tooltip">
+			<Original>Select amount of magazines which should be added to the cargo</Original>
+            <English>Select amount of magazines which should be added to the cargo</English>
+			<Polish>Wybierz ilość magazynków, która powinna zostać dodana do wyposażenia</Polish>
+		</Key>
+
+		<Key ID="STR_ACPL_ACEGetAmmo_module_button_confirm">
+			<Original>Confirm</Original>
+            <English>Confirm</English>
+			<Polish>Potwierdź</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_module_button_cancel">
+			<Original>Cancel</Original>
+            <English>Cancel</English>
+			<Polish>Anuluj</Polish>
 		</Key>
 	</Package>
 </Project>

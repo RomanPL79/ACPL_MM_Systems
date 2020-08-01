@@ -28,3 +28,11 @@ class cfgVehicles
 {
 	#include "cfgACEActions.hpp"
 };
+
+class ACPL_ACEGetAmmo_GUI
+{
+	idd = -1;
+	movingEnabled = 1;
+	enablesimulation = 1;
+	onLoad="with uiNamespace do {ACPL_ACEGetAmmo_GUI = _this select 0}";
+};

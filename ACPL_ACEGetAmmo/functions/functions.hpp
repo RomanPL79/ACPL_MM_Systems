@@ -10,6 +10,7 @@ class GetAmmo {
 	//[] call ACPL_ACEGetAmmo_fnc_getammo_action_createchildren
 	class getammo_action_createchildren {};
 
-	//[] call ACPL_ACEGetAmmo_fnc_getammo_check_hasammo
-	class getammo_check_hasammo {};
+	class createDialog {};
+
+	class dialog_getData {};
 };
