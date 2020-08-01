@@ -29,6 +29,11 @@ class cfgVehicles
 	#include "cfgACEActions.hpp"
 };
 
+class cfgMagazines
+{
+	#include "cfgMagazines.hpp"
+};
+
 class ACPL_ACEGetAmmo_GUI
 {
 	idd = -1;
