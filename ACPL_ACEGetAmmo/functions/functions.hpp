@@ -13,4 +13,12 @@ class GetAmmo {
 	class createDialog {};
 
 	class dialog_getData {};
+
+	class moduleInit {};
+
+	class createModuleDialog {};
+
+	class inventoryOpened {};
+
+	class addCrate {};
 };

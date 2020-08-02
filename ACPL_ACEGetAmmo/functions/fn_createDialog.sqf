@@ -1,12 +1,13 @@
 /*
-	ACPL_ACEGetAmmo_fnc_dialog_Create
+	ACPL_ACEGetAmmo_fnc_dialogCreate
 */
 
 #include "\a3\ui_f\hpp\definedikcodes.inc"
 
 params [
 	["_object", ObjNull],
-	["_weapon", ""]
+	["_weapon", ""],
+	["_vehicle", false]
 ];
 
 // Checks that display were created and data is provided
@@ -91,7 +92,11 @@ _header ctrlCommit 0;
 private _elements = [];
 
 // Adds information about actual ammo limit
-private _ammoLimit = _object getVariable ["ace_rearm_currentsupply", 0];
+private _ammoLimit = _object getVariable ["acpl_acegetammo_value", 0];
+if (_ammoLimit isEqualTo 0) then {
+	_ammoLimit = getNumber (configfile >> 'CfgVehicles' >> (typeOf _target) >> 'ACPL_ACEgetAmmo' >>'value');
+	_object setVariable ["acpl_acegetammo_value", _ammoLimit, true];
+};
 
 _posY = _posY + ([_base, (_element_height + _element_spacer)] call _calculate_y);
 private _pos_label_0 = [
@@ -151,7 +156,7 @@ _element_list ctrlAddEventHandler ["LBSelChanged", {
 
 	private _slider = _element getvariable ["ACPL_ACEGetAmmo_Slider", -1];
 	private _magazine = _element lbData _index;
-	private _ammo = ACPL_ACEGetAmmo_Vehicle getVariable ["ace_rearm_currentsupply", 0];
+	private _ammo = ACPL_ACEGetAmmo_Vehicle getVariable ["acpl_acegetammo_value", 0];
 	private _value = getNumber (configFile >> "CfgMagazines" >> _magazine >> "ACPL_GetAmmo" >> "cost");
 
 	private _max = floor (_ammo / _value);
@@ -272,7 +277,7 @@ _element ctrlCommit 0;
 _element_list ctrlCommit 0;
 
 // Adds slider to the list
-_elements pushback ["LIST", _element_list];
+_elements pushback ["LISTWEAP", _element_list];
 _elements pushback ["SLIDER", _textField];
 
 private _pos_label_2 = [
@@ -305,7 +310,8 @@ _confirm ctrlAddEventHandler ["ButtonClick", {
     params ["_ctrl"];
     private _display = ctrlParent _ctrl;
 	private _data = [_display] call ACPL_ACEGetAmmo_fnc_dialog_getData;
-	[ACPL_ACEGetAmmo_Vehicle, _data, player] call ACPL_ACEGetAmmo_fnc_getammo_action_addmagazine;
+	private _vehicle = _display getVariable ["ACPL_ACEGetAmmo_display_vehicle", false];
+	[ACPL_ACEGetAmmo_Vehicle, _data, player, _vehicle] call ACPL_ACEGetAmmo_fnc_getammo_action_addmagazine;
     closeDialog 1;
 }];
 _confirm ctrlCommit 0;
@@ -332,10 +338,12 @@ _display displayAddEventHandler ["KeyDown",  {
     params ["_display", "_code"];
     if (_code in [DIK_NUMPADENTER, DIK_RETURN]) then {
         private _data = [_display] call ACPL_ACEGetAmmo_fnc_dialog_getData;
-        [ACPL_ACEGetAmmo_Vehicle, _data, player] call ACPL_ACEGetAmmo_fnc_getammo_action_addmagazine;
+		private _vehicle = _display getVariable ["ACPL_ACEGetAmmo_display_vehicle", false];
+        [ACPL_ACEGetAmmo_Vehicle, _data, player, _vehicle] call ACPL_ACEGetAmmo_fnc_getammo_action_addmagazine;
         closeDialog 1;
     };
 }];
 
 // Saves variables needed later
 _display setVariable ["ACPL_ACEGetAmmo_display_elements", _elements];
+_display setVariable ["ACPL_ACEGetAmmo_display_vehicle", _vehicle];

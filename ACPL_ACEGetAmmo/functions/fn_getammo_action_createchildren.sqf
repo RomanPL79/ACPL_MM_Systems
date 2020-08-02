@@ -1,10 +1,13 @@
 params [
 	["_target", ObjNull],
-	["_player", ObjNull]
+	["_player", ObjNull],
+	["_vehicle", false]
 ];
 
 private _actions = [];
-private _weapons = (weapons _player) select {
+private _weapons = if (_vehicle) then {weapons _target} else {weapons _player};
+if (count _weapons == 0) exitwith {[]};
+_weapons = _weapons select {
 	private _mags = ([_x] call bis_fnc_compatibleMagazines) select {getNumber (configfile >> "CfgMagazines" >> _x >> "scope") == 2};
 	count _mags > 0
 };
@@ -14,13 +17,15 @@ private _weapons = (weapons _player) select {
 		params [
 			["_target", ObjNull],
 			["_player", ObjNull],
-			["_weapon", ""]
+			["_var", ["", false]]
 		];
 
-		[_target, _weapon] call ACPL_ACEGetAmmo_fnc_CreateDialog;
+		_var params ["_weapon", "_vehicle"];
+
+		[_target, _weapon, _vehicle] call ACPL_ACEGetAmmo_fnc_CreateDialog;
 	};
 	private _childCondition = {
-		_target getvariable ['ace_rearm_currentsupply', 0] > 0
+		_target getvariable ['acpl_acegetammo_value', 0] > 0
 	};
 	
 	private _action = [
@@ -30,7 +35,7 @@ private _weapons = (weapons _player) select {
 		_childStatement, 
 		_childCondition, 
 		{}, 
-		_x
+		[_x, _vehicle]
 	] call ace_interact_menu_fnc_createAction;
 	_actions pushBack [_action, [], _target];
 } forEach _weapons;

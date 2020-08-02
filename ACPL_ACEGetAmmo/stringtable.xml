@@ -17,11 +17,59 @@
             <Chinesesimp></Chinesesimp>
             <Chinese></Chinese>
         </Key>
+
+		<Key ID="STR_ACPL_ACEgetAmmo_item_AmmoBox">
+			<Original>Ammobox</Original>
+            <English>Ammobox</English>
+			<Polish>Skrzynka z amunicją</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEgetAmmo_item_AmmoBox_desc">
+			<Original>Ammobox which contains 10 points of ammo (double click when inventory of vehicle or box to add to pool)</Original>
+            <English>Ammobox which contains 10 points of ammo (double click when inventory of vehicle or box to add to pool)</English>
+			<Polish>Skrzynka z amunicją zawierająca 10 punktów amunicji (kliknij dwukrotnie w wyposażeniu pojazdu lub skrzyni aby dodać do puli)</Polish>
+		</Key>
 		
+		<Key ID="STR_ACPL_ACEgetAmmo_modules_category">
+			<Original>ACPL ACE Get Ammo</Original>
+            <English>ACPL ACE Get Ammo</English>
+			<Polish>ACPL ACE Get Ammo</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEgetAmmo_module_name">
+			<Original>Set Ammo</Original>
+            <English>Set Ammo</English>
+			<Polish>Ustaw Amunicję</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEgetAmmo_module_desc">
+			<Original>Set amount of ammo in selected object</Original>
+            <English>Set amount of ammo in selected object</English>
+			<Polish>Ustaw ilość amunicji w wybranym obiekcie</Polish>
+		</Key>
+
+		<Key ID="STR_ACPL_ACEgetAmmo_unlimited">
+			<Original>This object has unlimited ammo supply - you're unable to add any supply to this vehicle</Original>
+            <English>This object has unlimited ammo supply - you're unable to add any supply to this vehicle</English>
+			<Polish>Ten obiekt ma nieograniczone zapasy amunicji - nie jesteś wstanie dodać zapasów do tego pojazdu</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_noObject">
+			<Original>No object was selected</Original>
+            <English>No object was selected</English>
+			<Polish>Nie wybrano obiektu</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_wrongObject">
+			<Original>Wrong type of object had been selected</Original>
+            <English>Wrong type of object had been selected</English>
+			<Polish>Wybrano zły rodzaj obiektu</Polish>
+		</Key>
+
 		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo">
 			<Original>Get Ammo</Original>
             <English>Get Ammo</English>
 			<Polish>Weź Amunicje</Polish>
+		</Key>
+		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_Vehicle">
+			<Original>Add Vehicle Ammo</Original>
+            <English>Add Vehicle Ammo</English>
+			<Polish>Dodaj Amunicje do Pojazdu</Polish>
 		</Key>
 		<Key ID="STR_ACPL_ACEGetAmmo_GetAmmo_added">
 			<Original> has been added to object cargo</Original>
